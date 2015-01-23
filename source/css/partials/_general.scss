@@ -1,0 +1,43 @@
+
+
+body {
+	background: #fff;
+	padding: 30vh 0;
+	color: #333;
+	font-family: "TiemposText-Regular";
+	// font-family: "AtlasGrotesk-Regular";
+	font-size: 16px;
+	// letter-spacing: 0.05em;
+	// @include font-smoothing();
+}
+
+.vertical {
+	position: absolute;
+	top: 5em; right: 5em;
+	transform: rotate(90deg);
+	transform-origin: top left;
+}
+
+header {
+	padding: 5em 10em;
+}
+
+section {
+	background: #f9f9f9;
+	height: 200px;
+}
+
+main {
+	background: #f0f0ea;
+	height: 500px;
+}
+
+.logo {
+	font-family: "TiemposText-Medium";
+	// font-weight: bold;
+}
+
+.title {
+	font-style: italic;
+	color: #777;
+}
