@@ -4,10 +4,11 @@ body {
 	background: #fff;
 	padding: 30vh 0;
 	color: #333;
-	font-family: "TiemposText-Regular";
+	// font-family: "TiemposText-Regular";
 	// font-family: "AtlasGrotesk-Regular";
-	font-size: 16px;
-	// letter-spacing: 0.05em;
+	font-family: sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
 	// @include font-smoothing();
 }
 
@@ -19,25 +20,76 @@ body {
 }
 
 header {
-	padding: 5em 10em;
+	position: fixed;
+	top: 0; left: 0; right: 0;
+	display: flex;
+	flex-direction: column;
+	// justify-content: space-between;
+	padding: 4em 2em;
+	// font-family: "AtlasTypewriterRegular";
+	font-family: "InputMono-Regular";
+	font-size: 12px;
+	
+	.logo {
+		display: block;
+		margin-bottom: 4em;
+		// color: ;
+		// font-family: "TiemposText-Medium";
+		font-weight: 600;
+	}
+	
+	nav {
+		position: fixed;
+		top: 50%;
+		transform: rotate(90deg) translateX(-50%);
+		transform-origin: bottom left;
+		a {
+			border-bottom: 1px #999 dotted;
+		}
+		a + a {
+			margin-left: 2em;
+		}
+	}
+	
 }
 
 section {
-	background: #f9f9f9;
-	height: 200px;
+	padding: 6rem;
 }
 
 main {
-	background: #f0f0ea;
-	height: 500px;
+	
+	.project {
+		.title {
+			font-weight: bold;
+		}
+	}
+	
 }
 
-.logo {
-	font-family: "TiemposText-Medium";
-	// font-weight: bold;
+.about {
+	h1 {
+		max-width: 15em;
+		.small {
+			opacity: 0.6;
+			font-size: 12px;
+			vertical-align: middle;
+		}
+	}
 }
 
-.title {
-	font-style: italic;
-	color: #777;
+
+.label {
+	position: absolute;
+	top: 30rem; left: 17rem;
+	font-family: "AtlasGrotesk-Regular";
+	font-size: 18px;
+	background: #6af0b2;
+	color: #2d4836;
+	line-height: 1.25;
+	padding: 1em;
+	max-width: 13em;
+	p {
+		letter-spacing: 0;
+	}
 }
