@@ -1,17 +1,50 @@
 /**
  * Module dependencies
  */
-import http from 'http';
-import koa from 'koala';
 
-import router from './lib/router';
-import socket from './lib/socket';
+require('colors')
 
-export default var app = koa();
+var http = require('http');
 
-app.use(router());
-app.get('/')
-app.sock('/live', socket);
+var koa = require('koala');
+var mount = require('koa-mount');
+var serve = require('koa-static');
+
+var pkg = require('./package');
+var config = require('./lib/config');
+var Socket = require('./lib/socket');
+
+var app = koa();
+var socket = new Socket(config.SOCKET_PORT);
+
+app.use(mount('/live', socket.callback()));
+app.use(serve(__public));
 
 
-http.createServer(app.callback()).listen(8080);
+if (!module.parent) {
+    http.createServer(app.callback()).listen(config.PORT);
+}
+
+/**
+ * CLI interface for the server
+ */
+console.log(
+    `\n${pkg.name} is running...`.green,
+    `\nListening on http://localhost:${config.PORT}`,
+    `\nEnvironment: ${config.ENV}`,
+    `\nCtrl+C to shut down`.grey
+);
+process.on('SIGINT', function() {
+    console.log(
+        "\nServer has shutdown".red,
+        "\nServer was running for",
+        Math.round(process.uptime()),
+        "seconds"
+    );
+    process.exit(0);
+});
+
+/**
+ * Export server as a module
+ */
+module.exports = app;
