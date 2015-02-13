@@ -1,21 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Ross Zurowski, designer</title>
-	<meta charset="utf-8"/>
-	<meta name="description" content="" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+{% extend 'layout/site' %}
 
-	<link rel="shortcut icon" type="image/ico" href="/favicon.png" />
-	<link rel="stylesheet" media="screen, projection" href="/assets/css/styles.css" />
-
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-</head>
-<body>
+{% block content %}
 	Hi
 	<input type="text" value="{{ hello }}" />
-	<script src="/assets/js/index.js"></script>
-</body>
-</html>
+{% endblock %}

@@ -16,12 +16,12 @@ var Socket = require('./socket/server');
 
 module.exports = function (app) {
 	
-	router.use(function *(next) {
-		let start = Date.now();
-		yield next;
-		let end = Date.now();
-		console.log(`${end - start}ms`);
-	})
+	// router.use(function *(next) {
+	// 	let start = Date.now();
+	// 	yield next;
+	// 	let end = Date.now();
+	// 	console.log(`${end - start}ms`);
+	// })
 	
 	// Error middleware
 	router.use(error);
@@ -76,15 +76,17 @@ function * error(next) {
 				else this.body = { error: http.STATUS_CODES[this.status] }
 				break;
 			case 'html':
-				this.body = yield this.render('404', {
+				this.body = yield this.render('error', {
 					env: config.ENV,
 					ctx: this,
 					request: this.request,
 					response: this.response,
-					error: err.message,
-					stack: err.stack,
-					status: this.status,
-					code: err.code
+					error: {
+						message: err.message,
+						stack: err.stack,
+						status: this.status,
+						code: err.code
+					}
 				});
 				break;
 		}

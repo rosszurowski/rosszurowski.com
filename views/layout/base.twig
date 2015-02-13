@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Ross Zurowski, designer</title>
+	<title>{{ site.title }}</title>
 	<meta charset="utf-8"/>
-	<meta name="description" content="" />
+	<meta name="description" content="{{ site.description }}" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
-	<link rel="shortcut icon" type="image/ico" href="/favicon.png" />
+	<link rel="shortcut icon" type="image/ico" href="/favicon.png?20150213" />
 	<link rel="stylesheet" media="screen, projection" href="/assets/css/styles.css" />
 
 	<!--[if lt IE 9]>
@@ -14,6 +14,9 @@
 	<![endif]-->
 </head>
 <body>
-	<code>404 Error, ok?</code>
+	{% block body %}
+	<script src="/assets/js/libraries.js"></script>
+	<script src="/assets/js/index.js"></script>
+	{% endblock %}
 </body>
 </html>

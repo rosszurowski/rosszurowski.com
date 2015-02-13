@@ -5,6 +5,9 @@
 resources/
 research/
 
+# Ignore content files
+content/
+
 # Ignore manifest and build files
 node_modules/
 components/

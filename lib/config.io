@@ -12,4 +12,5 @@ const SOCKET_PORT = exports.SOCKET_PORT = PORT + 1;
 GLOBAL.__root     = require('app-root-path').path;
 GLOBAL.__public   = join(__root, 'public');
 GLOBAL.__content  = join(__root, 'content');
+GLOBAL.__shared   = join(__content, '_shared.yml');
 GLOBAL.__views    = join(__root, 'views');

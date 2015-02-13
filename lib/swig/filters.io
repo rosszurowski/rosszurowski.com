@@ -1,13 +1,22 @@
 var url  = require('url');
 var crypto = require('crypto');
+var markdown = require('marked');
 
+/**
+ * Parse the given content as Markdown
+ * @param {String} input
+ * @returns {String} output
+ */
+exports.markdown = function (input) {
+	return markdown(input);
+}
 
 /**
  * Returns a domain name from a URL
  * @param {String} url
  * @returns {String}
  */
-exports.domain = function(input) {
+exports.domain = function (input) {
 	if (!input) return '';
 	return url.parse(input, false, true).host;
 }
@@ -17,7 +26,7 @@ exports.domain = function(input) {
  * @param {String} url
  * @returns {String}
  */
-exports.stripDomain = function(input) {
+exports.stripDomain = function (input) {
 	if (!input) return '';
 	return url.parse(input, false, true).path;
 }
@@ -27,6 +36,6 @@ exports.stripDomain = function(input) {
  * @param {String} input
  * @returns {String}
  */
-exports.md5 = function(input) {
+exports.md5 = function (input) {
 	return crypto.createHash('md5').update(input).digest('hex');
 }

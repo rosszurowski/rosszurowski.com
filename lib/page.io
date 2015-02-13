@@ -1,5 +1,10 @@
 "use strict";
 
+/**
+ * General page controller, which takes files from the `__content` directory
+ * and renders them out as pages. 
+ */
+
 var fs = require('mz/fs');
 var yaml = require('yamljs');
 var join = require('path').join;
@@ -12,20 +17,21 @@ module.exports = function (root) {
 	return function *(next) {
 		
 		let page = yield resolve(root, this.url);
-		
 		if (!page) return yield next;
 		
 		let files = yield fs.readdir(join(root, page));
 		let index = files.filter(path => path.endsWith('yml')).shift();
+		if (!index) return yield next;
 		
 		let metadata = yaml.parse(yield fs.readFile(join(root, page, index), 'utf8'));
-		let site = yaml.parse(yield fs.readFile(join(root, '_site.yml'), 'utf8'));
+		let site = yaml.parse(yield fs.readFile(__shared, 'utf8'));
 		
 		let template = index.split('.').shift();
 		
 		let locals = {};
 		locals[template] = metadata;
-		locals['site'] = site;
+		
+		locals = merge(site, locals);
 		
 		this.body = yield this.render(template, locals);
 	}
@@ -56,7 +62,10 @@ function *resolve(root, url) {
 	// see which one matches the url
 	pages = pages.filter(path => url.startsWith(path));
 	
-	let page = pages.pop();
+	let page;
+	
+	if (pages.length) page = pages.pop();
+	else if (url === '') page = 'home';
 	
 	return page;
 }
