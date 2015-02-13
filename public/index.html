@@ -1,29 +1,33 @@
 <!DOCTYPE html>
-<html>
-  <head>
-	<style>
-	  body {
-		font-family: "Helvetica Neue", sans-serif;
-		letter-spacing: 1px;
-	  }
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="utf-8"/>
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
-	  div {
-		display: inline;
-	  }
-	</style>
+	<link rel="shortcut icon" type="image/ico" href="/favicon.png" />
+	<link rel="stylesheet" media="screen, projection" href="/assets/css/styles.css" />
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+	Hi
+	<input type="text" value="Hello" />
 	<script>
-
-	  var host = window.document.location.host.replace(/:.*/, '');
-	  var ws = new WebSocket('ws://' + host + ':8081');
-	  ws.onmessage = function (event) {
-		console.log(JSON.parse(event.data));
-	  };
+		var host = window.document.location.host.replace(/:.*/, '');
+		var ws = new WebSocket('ws://' + window.document.location.host + '/live');
+		var field = document.querySelector('input[type="text"]');
+		ws.onmessage = function (event) {
+			var data = JSON.parse(event.data);
+			field.value = data.body;
+		};
+		field.addEventListener('input', function (e) {
+			console.log(this.value);
+			ws.send(JSON.stringify({ author: 'Hello', body: this.value }));
+		});
 	</script>
-  </head>
-  <body>
-	<strong>Server Stats</strong><br>
-	RSS: <div id='rss'></div><br>
-	Heap total: <div id='heapTotal'></div><br>
-	Heap used: <div id='heapUsed'></div><br>
-  </body>
+</body>
 </html>

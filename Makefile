@@ -12,7 +12,7 @@ all: build
 	@true
 # Run server
 server:
-	@iojs app.js
+	@npm start
 # Compile assets
 assets: js css misc
 # Test
