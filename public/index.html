@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title></title>
+	<title>Ross Zurowski, designer</title>
 	<meta charset="utf-8"/>
 	<meta name="description" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
@@ -17,7 +17,6 @@
 	Hi
 	<input type="text" value="Hello" />
 	<script>
-		var host = window.document.location.host.replace(/:.*/, '');
 		var ws = new WebSocket('ws://' + window.document.location.host + '/live');
 		var field = document.querySelector('input[type="text"]');
 		ws.onmessage = function (event) {
