@@ -1,36 +1,49 @@
+## Makefile for rosszurowski.com
+
+ASSETS = assets
+BUILD  = public/assets
+
+JS   = $(shell find $(ASSETS)/js -type f -name '*.js')
+LIB  = $(shell find $(ASSETS)/js/libraries -type f -name '*.js')
+CSS  = $(shell find $(ASSETS)/css -type f -name '*.scss' -o -name '*.sass')
 
 # Default tasks
 all: build
 	@true
-build: assets scripts styles
-assets: build/index.html build/favicon.png
-scripts: build/assets/index.js
-styles: build/assets/styles.css
-
-
-# Copy assets
-build/%.png: source/%.png
-	@mkdir -p $(@D)
-	@cp $< $@
-build/%.html: source/%.html
-	@mkdir -p $(@D)
-	@cp $< $@
-
-# Compile scripts with Duo
-build/assets/index.js: $(wildcard ./source/js/**/*.js)
-	@mkdir -p $(@D)
-	@duo ./source/js/index.js --quiet --stdout > $@
-
-
-# Compile styles with sass
-build/assets/styles.css: $(wildcard ./source/css/**/*.scss)
-	@mkdir -p $(@D)
-	@sassc --sourcemap --load-path ./source/css/ source/css/styles.scss $@
-	@autoprefixer $@ --clean --browsers "last 2 versions"
-
-# Clean built directories
+# Run server
+server:
+	@iojs app.js
+# Compile assets
+assets: js css misc
+# Test
+test:
+	@echo "No test specified"
+	@exit 1
+# Clean asset directories
 clean:
 	@rm -rf ./build/
 	@rm -rf ./components/
 
-.PHONY: all build clean assets scripts styles
+
+# Compile scripts with Duo
+js: $(BUILD)/js/index.js $(BUILD)/js/libraries.js
+$(BUILD)/js/index.js: $(JS)
+	@mkdir -p $(@D)
+	@duo $(ASSETS)/js/index.js --quiet --stdout > $@
+$(BUILD)/js/libraries.js: $(LIB)
+	@mkdir -p $(@D)
+	@cat $^ | uglifyjs --mangle --output $@
+
+# Compile styles with SASS
+css: $(BUILD)/css/styles.css
+$(BUILD)/css/styles.css: $(CSS)
+	@mkdir -p $(@D)
+	@sassc --sourcemap --load-path $(ASSETS)/css $(ASSETS)/css/styles.scss $@
+	@autoprefixer $@ --clean --browsers "last 2 versions"
+	@csso $@ $@
+	
+# Imagemin for images
+misc:
+	@true
+
+.PHONY: all server build clean assets js css

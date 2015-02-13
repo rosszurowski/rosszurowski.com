@@ -1,6 +1,12 @@
+# Ignore system junk
 .DS_Store
+
+# Ignore design files
 resources/
 research/
+
+# Ignore manifest and build files
+node_modules/
 components/
 build/
-node_modules/
+public/assets/
