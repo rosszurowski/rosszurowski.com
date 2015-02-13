@@ -1,0 +1,21 @@
+{
+  "name": "rosszurowski",
+  "version": "0.0.1",
+  "description": "A portfolio site for designer and developer Ross Zurowski",
+  "main": "app.js",
+  "private": true,
+  "scripts": {
+    "start": "6to5-node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rosszurowski/rosszurowski.com.git"
+  },
+  "author": "Ross Zurowski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rosszurowski/rosszurowski.com/issues"
+  },
+  "homepage": "https://github.com/rosszurowski/rosszurowski.com"
+}

@@ -3,3 +3,4 @@ resources/
 research/
 components/
 build/
+node_modules/
