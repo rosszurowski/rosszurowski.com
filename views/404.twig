@@ -14,19 +14,6 @@
 	<![endif]-->
 </head>
 <body>
-	Hi
-	<input type="text" value="Hello" />
-	<script>
-		var ws = new WebSocket('ws://' + window.document.location.host + '/live');
-		var field = document.querySelector('input[type="text"]');
-		ws.onmessage = function (event) {
-			var data = JSON.parse(event.data);
-			field.value = data.body;
-		};
-		field.addEventListener('input', function (e) {
-			console.log(this.value);
-			ws.send(JSON.stringify({ author: 'Hello', body: this.value }));
-		});
-	</script>
+	<code>404 Error, ok?</code>
 </body>
 </html>

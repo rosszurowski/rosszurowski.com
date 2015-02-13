@@ -8,7 +8,7 @@ LIB  = $(shell find $(ASSETS)/js/libraries -type f -name '*.js')
 CSS  = $(shell find $(ASSETS)/css -type f -name '*.scss' -o -name '*.sass')
 
 # Default tasks
-all: build
+all: assets
 	@true
 # Run server
 server:
@@ -21,9 +21,10 @@ test:
 	@exit 1
 # Clean asset directories
 clean:
-	@rm -rf ./build/
 	@rm -rf ./components/
 
+node_modules: package.json
+	@npm install
 
 # Compile scripts with Duo
 js: $(BUILD)/js/index.js $(BUILD)/js/libraries.js

@@ -1,25 +1,23 @@
+require('colors')
+require.extensions['.io'] =
+require.extensions['.js'];
+
 /**
  * Module dependencies
  */
-
-require('colors')
-
 var http = require('http');
-
-var koa = require('koala');
+var koa = require('koa');
 var mount = require('koa-mount');
 var serve = require('koa-static');
 
 var pkg = require('./package');
 var config = require('./lib/config');
-var Socket = require('./lib/socket');
+
+var router = require('./lib/router');
+var Socket = require('./lib/socket/server');
 
 var app = koa();
-var socket = new Socket(config.SOCKET_PORT);
-
-app.use(mount('/live', socket.callback()));
-app.use(serve(__public));
-
+app.use(router(app));
 
 if (!module.parent) {
     http.createServer(app.callback()).listen(config.PORT);
@@ -32,7 +30,7 @@ console.log(
     `\n${pkg.name} is running...`.green,
     `\nListening on http://localhost:${config.PORT}`,
     `\nEnvironment: ${config.ENV}`,
-    `\nCtrl+C to shut down`.grey
+    `\nCtrl+C to shut down\n`.grey
 );
 process.on('SIGINT', function() {
     console.log(
