@@ -1,10 +1,14 @@
 // Stylesheet
 
-@import "modules/mixins";
-@import "modules/variables";
+@import "shared/mixins";
+@import "shared/variables";
+@import "shared/animations";
 
 @import "partials/normalize";
-@import "partials/reset";
-
 @import "partials/general";
 @import "partials/typography";
+
+@import "modules/navigation";
+@import "modules/footer";
+
+@import "pages/home";

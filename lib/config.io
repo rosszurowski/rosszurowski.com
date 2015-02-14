@@ -5,7 +5,7 @@
 var join = require('path').join;
 
 const PORT = exports.PORT = process.env.PORT || 8080;
-const ENV = exports.ENV = process.env.NODE_ENV || 'developement';
+const ENV = exports.ENV = process.env.NODE_ENV || 'development';
 
 const SOCKET_PORT = exports.SOCKET_PORT = PORT + 1;
 

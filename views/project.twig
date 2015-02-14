@@ -1,10 +1,23 @@
 {% extends 'layout/site' %}
 
 {% block content %}
-	Project {{ project.title }}
-	
-	<article>
-		{{ project.content | markdown | safe }}
-	</article>
+
+	<section class="content">
+		
+		<a href="/">Back to index</a>
+		
+		<div class="description">
+			{{ project.title }}
+		</div>
+		
+		<article>
+			{{ project.content | markdown | safe }}
+		</article>
+		
+	</section>
+
+	<section class="visuals">
+		
+	</section>
 	
 {% endblock %}

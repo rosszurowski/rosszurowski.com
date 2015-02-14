@@ -1,0 +1,8 @@
+<article>
+	{{ title }}
+	<img src="{{ thumbnail }}" />
+	<div class="description">
+		{{ description }}
+	</div>
+	<footer>Filed under {% for tag in tags %}<a href="{{ tag.href }}">{{ tag.name }}</a>{% endif %}</footer>
+</article>

@@ -1,6 +1,7 @@
 "use strict";
 
 var config = require('./config');
+var debug = require('debug')('router');
 
 var http = require('http');
 var mount = require('koa-mount');
@@ -12,16 +13,17 @@ var loader = require('./swig/loader');
 var filters = require('./swig/filters');
 
 var page = require('./page');
+var experiments = require('./controllers/experiments');
 var Socket = require('./socket/server');
 
 module.exports = function (app) {
 	
-	// router.use(function *(next) {
-	// 	let start = Date.now();
-	// 	yield next;
-	// 	let end = Date.now();
-	// 	console.log(`${end - start}ms`);
-	// })
+	router.use(function *(next) {
+		let start = Date.now();
+		yield next;
+		let end = Date.now();
+		debug('Response time: %s', `${end - start}ms`.yellow);
+	})
 	
 	// Error middleware
 	router.use(error);
@@ -30,10 +32,14 @@ module.exports = function (app) {
 	// Serve public files
 	router.use(serve(__public));
 	
+	// General middleware
+	router.use(locals());
+	
 	// Mount controllers
 	let socket = new Socket(config.SOCKET_PORT);
 	
 	router.use(mount('/live', socket.callback()));
+	router.use(mount('/experiments', experiments.callback()));
 	router.use(page(__content));
 
 	// Use Swig for templates
@@ -50,7 +56,12 @@ module.exports = function (app) {
 
 
 
-
+function locals(opts) {
+	return function * (next) {
+		this.state.now = Date.now();
+		yield next;
+	}
+}
 
 // 404 handler
 function * missing(next) {

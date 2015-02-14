@@ -1,0 +1,16 @@
+footer {	
+	display: flex;
+	justify-content: space-between;
+	margin-top: 6em;
+
+	color: #ccc;
+	font-size: 11px;
+	
+	cursor: default;
+	-webkit-user-select: none;
+	
+	a {
+		color: currentColor;
+	}
+	
+}

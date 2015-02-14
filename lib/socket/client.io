@@ -39,7 +39,7 @@ function receive(message) {
 	try {
 		message = JSON.parse(message);
 	} catch(e) {
-		console.error('Could not parse JSON message:', message);
+		console.error('Could not parse JSON message: %j', message);
 		return;
 	}
 	this.emit('message', this, message);

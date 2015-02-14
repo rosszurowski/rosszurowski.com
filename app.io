@@ -34,10 +34,10 @@ console.log(
 );
 process.on('SIGINT', function() {
     console.log(
-        "\nServer has shutdown".red,
-        "\nServer was running for",
+        `\nServer has shutdown`.red,
+        `\nServer was running for`,
         Math.round(process.uptime()),
-        "seconds"
+        `seconds`
     );
     process.exit(0);
 });

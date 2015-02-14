@@ -5,6 +5,7 @@
  */
 
 var assert = require('assert');
+var debug = require('debug')('socket:server');
 var Socket = require('ws').Server;
 var Client = require('./client');
 
@@ -46,7 +47,7 @@ function connection(connection) {
 	client.on('message', receive.bind(this));
 	client.on('close', disconnect.bind(this));
 	this.clients.add(client);
-	console.log('Connect:'.gray, client.id);
+	debug('Connect:'.gray, client.id);
 }
 
 /**
@@ -60,5 +61,5 @@ function receive(client, message) {
 
 function disconnect(client) {
 	this.clients.delete(client);
-	console.log('Disconnect:'.gray, client.id);
+	debug('Disconnect:'.gray, client.id);
 }
