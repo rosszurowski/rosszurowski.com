@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>{{ site.title }}</title>
+	<title>{% block title %}{{ site.title }}{% endblock %}</title>
 	<meta charset="utf-8"/>
-	<meta name="description" content="{{ site.description }}" />
+	<meta name="description" content="{% block description %}{{ site.description }}{% endblock %}" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
-	<link rel="shortcut icon" type="image/ico" href="/favicon.png?20150213" />
+	<link rel="shortcut icon" type="image/ico" href="/favicon.png" />
 	<link rel="stylesheet" media="screen, projection" href="/assets/css/styles.css" />
 
 	<!--[if lt IE 9]>

@@ -7,11 +7,11 @@
 		<a href="/">Back to index</a>
 		
 		<div class="description">
-			{{ project.title }}
+			{{ page.title }}
 		</div>
 		
-		<article>
-			{{ project.content | markdown | safe }}
+		<article class="project">
+			{{ page.content | markdown | safe }}
 		</article>
 		
 	</section>

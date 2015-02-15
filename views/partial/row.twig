@@ -1,0 +1,13 @@
+{% if project.link %}
+<a href="{{ project.link }}" target="_blank" class="row link">
+{% else %}
+<a href="{{ project.url }}" class="row">
+{% endif %}
+	{% if project.year === '--' -%}
+		<div class="year dash"></div>
+	{%- else -%}
+		<div class="year">{{ project.year }}</div>
+	{%- endif %}
+	<div class="name"><span class="link">{{ project.title }}</span></div>
+	<div class="format">{{ project.tags | join(', ') }}</div>
+</a>

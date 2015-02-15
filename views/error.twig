@@ -1,9 +1,14 @@
 {% extends 'layout/site' %}
 
+{% block title -%}
+	{{ error.status }} Error &mdash; {{ site.title }}
+{%- endblock %}
+
 {% block content %}
 	<pre>
-  {{ error.status }} Error, ok?
-  
+  {{ error.status }} Error
+{% if 'development' === env %}
   {{ error.stack }}
+{%- endif %}
 	</pre>
 {% endblock %}

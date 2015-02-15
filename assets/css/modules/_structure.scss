@@ -1,0 +1,22 @@
+.content {
+
+	background: #fff;
+	position: absolute;
+	top: 0; left: 0;
+	min-height: 100%;
+	
+	max-width: 38em;
+	width: 90%;
+	padding: 3rem 3rem 3rem 3.5rem;
+	
+	transition: max-width 400ms $ease;
+	
+	&.wide { max-width: 50em; }
+	
+}
+
+.graphic {
+	position: fixed;
+	top: 0; bottom: 0; right: 0;
+	left: 37.5em;
+}

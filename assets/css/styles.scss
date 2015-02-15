@@ -8,7 +8,11 @@
 @import "partials/general";
 @import "partials/typography";
 
+@import "modules/structure";
 @import "modules/navigation";
 @import "modules/footer";
 
 @import "pages/home";
+@import "pages/project";
+
+@import "utilities/font-face";

@@ -4,17 +4,7 @@
 
 	<section class="content">
 	
-		<nav class="menu">
-			<div>
-				<a href="/" class="active">Projects</a>
-				<a href="/experiments">Experiments</a>
-				<a href="/information">Information</a>
-			</div>
-			<div>
-				<!-- <a href="#" target="_blank">Thesis</a> -->
-				<a href="http://rosszurowski.tumblr.com" target="_blank">Tumblr</a>
-			</div>
-		</nav>
+		{% include 'partial/navigation' %}
 	
 		<header class="intro">
 			<h2>Ross Zurowski</h2>
@@ -22,24 +12,24 @@
 		</header>
 		
 		<div class="description">
-			<p>Exploring systems, structures, and affordances.</p>
+			<p>{{ page.headline }}</p>
 		</div>
 		
 		<div class="gradient"></div>
 		
-		<div class="structure">
+		<div class="projects">
 			<div class="line"></div>
 			<div class="header row">
-				<div class="year">Year</div>
-				<div class="name">Project</div>
-				<div class="format">Type</div>
+				<div>Year</div>
+				<div>Title</div>
+				<div>Type</div>
 			</div>
-			<a href="/palantir" class="row">
+<!-- 			<a href="/palantir" class="row">
 				<div class="year dash"></div>
 				<div class="name"><span class="link">Palantir</span></div>
 				<div class="format">internship, product design</div>
 			</a>
-			<a href="https://github.com/rosszurowski/mime-sniffer" target="_blank" class="row">
+			<a href="https://github.com/rosszurowski/docker-nginx-hhvm" target="_blank" class="row">
 				<div class="year">2015</div>
 				<div class="name"><span class="link">docker-nginx-hhvm</span></div>
 				<div class="format">development</div>
@@ -84,9 +74,19 @@
 				<div class="name"><span class="link">R. Alice Photography</span></div>
 				<div class="format">web, development</div>
 			</a>
-		{% for project in projects %}
-			{% include 'partials/project' with project %}
+			<a href="#" class="row">
+				<div class="year"></div>
+				<div class="name"><span class="link"></span></div>
+				<div class="format"></div>
+			</a> -->
+		{% set projects = pages | where('template', 'project') %}
+		{% for project in projects  | sort('year', 'DESC') %}
+			{% include 'partial/row' with project %}
 		{% endfor %}
+		</div>
+		
+		<div class="lead-in">
+			<a href="/information">More information</a>
 		</div>
 		
 		<footer>
@@ -97,6 +97,6 @@
 		
 	</section>
 	
-	<section class="visual"></section>
+	<section class="graphic"></section>
 
 {% endblock %}

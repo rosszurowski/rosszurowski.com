@@ -3,6 +3,7 @@
 var config = require('./config');
 var debug = require('debug')('router');
 
+var fs = require('mz/fs');
 var http = require('http');
 var mount = require('koa-mount');
 var router = require('koa-router')();
@@ -12,27 +13,30 @@ var swig = require('./swig/renderer');
 var loader = require('./swig/loader');
 var filters = require('./swig/filters');
 
-var page = require('./page');
+var cache = require('./middleware/cache');
+var errors = require('./middleware/errors');
+
+var pages = require('./controllers/pages');
 var experiments = require('./controllers/experiments');
 var Socket = require('./socket/server');
 
-module.exports = function (app) {
+module.exports = function(app) {
 	
 	router.use(function *(next) {
 		let start = Date.now();
 		yield next;
 		let end = Date.now();
 		debug('Response time: %s', `${end - start}ms`.yellow);
-	})
-	
-	// Error middleware
-	router.use(error);
-	router.use(missing);
+	});
+
+	// Basic Middleware
+	router.use(cache());
+	router.use(errors());
 	
 	// Serve public files
 	router.use(serve(__public));
 	
-	// General middleware
+	// Twig middleware
 	router.use(locals());
 	
 	// Mount controllers
@@ -40,7 +44,7 @@ module.exports = function (app) {
 	
 	router.use(mount('/live', socket.callback()));
 	router.use(mount('/experiments', experiments.callback()));
-	router.use(page(__content));
+	router.use(pages(__content));
 
 	// Use Swig for templates
 	swig(app, {
@@ -58,48 +62,17 @@ module.exports = function (app) {
 
 function locals(opts) {
 	return function * (next) {
+		
+		let pages = [
+			{ template: 'project', title: 'hi', year: 2015 },
+			{ template: 'project', title: 'dawg', year: 2018 },
+			{ template: 'information', title: 'yo' }
+		];
+		this.state.pages = pages;
+		
 		this.state.now = Date.now();
+		this.state.url = this.url;
 		yield next;
-	}
-}
-
-// 404 handler
-function * missing(next) {
-	yield next;
-	if (this.response.body) return;
-	if (this.response.status !== 404) return;
-	this.throw(404);
-}
-
-// Error handler
-function * error(next) {
-	try { yield next; }
-	catch(err) {
-		this.status = err.status || 500;
-		this.app.emit('error', err, this);
-		switch (this.accepts('html', 'text', 'json')) {
-			case 'text':
-				if ('development' === config.ENV) this.body = err.message;
-				else throw err;
-				break;
-			case 'json':
-				if ('development' === config.ENV) this.body = { error: err.message };
-				else this.body = { error: http.STATUS_CODES[this.status] }
-				break;
-			case 'html':
-				this.body = yield this.render('error', {
-					env: config.ENV,
-					ctx: this,
-					request: this.request,
-					response: this.response,
-					error: {
-						message: err.message,
-						stack: err.stack,
-						status: this.status,
-						code: err.code
-					}
-				});
-				break;
-		}
+		
 	}
 }
