@@ -1,31 +1,24 @@
-var Router = require('./lib/router');
-var Socket = require('./lib/socket');
+"use strict";
 
 var throttle = require('component/throttle');
 
+var Router = require('./src/router');
+var Socket = require('./src/socket');
+
+var controllers = require('./controllers/index');
+
 document.on('DOMContentLoaded', function () {
 	
-	var router = new Router()
-		.on('/', handleHome)
-		.on('/:project/', handleProject)
-		.start();
+	var router = new Router();
 	
-	function handleHome() {
-		
-		console.log('home');
-		var container = document.find('.graphic');
-		var canvas = document.createElement('canvas');
-		container.appendChild(canvas);
-		
-		window.on('resize', resize, false);
-		resize();
-		
-		function resize() {
-			canvas.width = container.clientWidth;
-			canvas.height = container.clientHeight;
-		}
-		
-	}
+	controllers.forEach(function (controller) {
+		router
+			.on(controller.route)
+			.in(controller.in)
+			.out(controller.out);
+	});
+
+	router.start();
 	
 	function handleProject() {
 		console.log('project');

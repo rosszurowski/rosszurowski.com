@@ -1,3 +1,32 @@
-.project {
-	font-size: 24px;
+main.project {
+
+	.view {
+		align-items: center;
+	}
+
+	.title {
+		font-family: $serif;
+		font-size: 18px;
+		margin-bottom: 3rem;
+	}
+
+	.description {
+		max-width: 30em;
+		font-size: 14px;
+	}
+
+	.browser {
+		width: 90%;
+		height: 70vh;
+		margin: 0 auto;
+		iframe {
+			width: 125.1%;
+			height: 125.1%;
+			transform: scale(0.8) translateZ(0);
+			transform-origin: 0 0;
+			backface-visibility: hidden;
+			@include font-smoothing();
+		}
+	}
+
 }

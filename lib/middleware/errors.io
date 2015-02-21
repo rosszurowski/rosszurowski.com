@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Error handling middleware, all lumped together
  */
@@ -23,22 +25,23 @@ function *missing(next) {
  * Handle all errors
  */
 function *error(next) {
+	let env = process.env.NODE_ENV || 'development';
 	try { yield next; }
 	catch(err) {
 		this.status = err.status || 500;
 		this.app.emit('error', err, this);
 		switch (this.accepts('html', 'text', 'json')) {
 			case 'text':
-				if ('development' === process.env.NODE_ENV) this.body = err.message;
+				if ('development' === env) this.body = err.message;
 				else throw err;
 				break;
 			case 'json':
-				if ('development' === process.env.NODE_ENV) this.body = { error: err.message };
+				if ('development' === env) this.body = { error: err.message };
 				else this.body = { error: http.STATUS_CODES[this.status] }
 				break;
 			case 'html':
 				this.body = yield this.render('error', {
-					env: process.env.NODE_ENV,
+					env: env,
 					ctx: this,
 					request: this.request,
 					response: this.response,

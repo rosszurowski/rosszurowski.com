@@ -4,6 +4,7 @@ var config = require('./config');
 var debug = require('debug')('router');
 
 var fs = require('mz/fs');
+var path = require('path');
 var http = require('http');
 var mount = require('koa-mount');
 var router = require('koa-router')();
@@ -29,14 +30,15 @@ module.exports = function(app) {
 		debug('Response time: %s', `${end - start}ms`.yellow);
 	});
 
-	// Basic Middleware
-	router.use(cache());
+	// Error handlers
 	router.use(errors());
 	
 	// Serve public files
 	router.use(serve(__public));
 	
-	// Twig middleware
+	// Middleware
+	if ('production' === config.ENV)
+		router.use(cache());
 	router.use(locals());
 	
 	// Mount controllers
@@ -63,15 +65,12 @@ module.exports = function(app) {
 function locals(opts) {
 	return function * (next) {
 		
-		let pages = [
-			{ template: 'project', title: 'hi', year: 2015 },
-			{ template: 'project', title: 'dawg', year: 2018 },
-			{ template: 'information', title: 'yo' }
-		];
-		this.state.pages = pages;
-		
 		this.state.now = Date.now();
 		this.state.url = this.url;
+		
+		this.state.join = path.join;
+		this.state.relative = path.relative;
+		
 		yield next;
 		
 	}

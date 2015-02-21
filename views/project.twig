@@ -1,23 +1,28 @@
 {% extends 'layout/site' %}
 
+{% block description -%}
+	{{ page.meta.description | default(site.description) }}
+{%- endblock %}
+
 {% block content %}
 
 	<section class="content">
 		
-		<a href="/">Back to index</a>
+		{% include 'partial/navigation' %}
 		
-		<div class="description">
-			{{ page.title }}
-		</div>
+		<h2 class="title">{{ page.title }}</h2>
 		
-		<article class="project">
+		<article class="description">
 			{{ page.content | markdown | safe }}
 		</article>
 		
 	</section>
 
-	<section class="visuals">
-		
+	<section class="view">
+		{% if page.partial %}
+			{% set partial = relative(__views, join(__content, page.slug, page.partial)) %}
+			{% include partial with page only %}
+		{% endif %}
 	</section>
 	
 {% endblock %}

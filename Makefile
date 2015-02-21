@@ -11,8 +11,11 @@ CSS  = $(shell find $(ASSETS)/css -type f -name '*.scss' -o -name '*.sass')
 all: assets
 	@true
 # Run server
-server:
-	@npm start
+start: assets
+	@iojs --harmony --harmony_arrow_functions app.io
+# Run development server
+develop: assets
+	@nodemon --harmony --harmony_arrow_functions app.io
 # Compile assets
 assets: js css misc
 # Test
@@ -47,4 +50,4 @@ $(BUILD)/css/styles.css: $(CSS)
 misc:
 	@true
 
-.PHONY: all server build clean assets js css
+.PHONY: all start develop test clean assets js css misc

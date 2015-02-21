@@ -12,91 +12,33 @@
 		</header>
 		
 		<div class="description">
-			<p>{{ page.headline }}</p>
+			<p>{{ page.headline | markdown | safe }}</p>
 		</div>
 		
-		<div class="gradient"></div>
+		<!-- <div class="gradient"></div> -->
 		
 		<div class="projects">
-			<div class="line"></div>
 			<div class="header row">
-				<div>Year</div>
+				<div>Date</div>
 				<div>Title</div>
 				<div>Type</div>
 			</div>
-<!-- 			<a href="/palantir" class="row">
-				<div class="year dash"></div>
-				<div class="name"><span class="link">Palantir</span></div>
-				<div class="format">internship, product design</div>
-			</a>
-			<a href="https://github.com/rosszurowski/docker-nginx-hhvm" target="_blank" class="row">
-				<div class="year">2015</div>
-				<div class="name"><span class="link">docker-nginx-hhvm</span></div>
-				<div class="format">development</div>
-			</a>
-			<a href="https://github.com/rosszurowski/mime-sniffer" target="_blank" class="row">
-				<div class="year">2015</div>
-				<div class="name"><span class="link">mime-sniffer</span></div>
-				<div class="format">development</div>
-			</a>
-			<a href="/strata" class="row">
-				<div class="year">2014</div>
-				<div class="name"><span class="link">Strata</span></div>
-				<div class="format">typeface</div>
-			</a>
-			<a href="/facebook" class="row">
-				<div class="year">2014</div>
-				<div class="name"><span class="link">Facebook, Inc.</span></div>
-				<div class="format">internship, product design</div>
-			</a>
-			<a href="/caleb-winters" class="row">
-				<div class="year">2014</div>
-				<div class="name"><span class="link">Caleb Winters</span></div>
-				<div class="format">web, development</div>
-			</a>
-			<a href="https://github.com/rosszurowski/deploy" target="_blank" class="row">
-				<div class="year">2013</div>
-				<div class="name"><span class="link">Deploy</span></div>
-				<div class="format">development</div>
-			</a>
-			<a href="/format" class="row">
-				<div class="year">2013</div>
-				<div class="name"><span class="link">Format</span></div>
-				<div class="format">web, front-end</div>
-			</a>
-			<a href="/pocket-change" class="row">
-				<div class="year">2012</div>
-				<div class="name"><span class="link">Pocket Change Apparel</span></div>
-				<div class="format">web, development</div>
-			</a>
-			<a href="/r-alice-photography" class="row">
-				<div class="year">2011</div>
-				<div class="name"><span class="link">R. Alice Photography</span></div>
-				<div class="format">web, development</div>
-			</a>
-			<a href="#" class="row">
-				<div class="year"></div>
-				<div class="name"><span class="link"></span></div>
-				<div class="format"></div>
-			</a> -->
-		{% set projects = pages | where('template', 'project') %}
-		{% for project in projects  | sort('year', 'DESC') %}
-			{% include 'partial/row' with project %}
-		{% endfor %}
+			{% set projects = pages | where('template', 'project') %}
+			{% for project in projects  | sort('year', 'DESC') -%}
+				{% include 'partial/row' with project %}
+			{%- endfor %}
 		</div>
 		
 		<div class="lead-in">
-			<a href="/information">More information</a>
+			<a href="/information">Call to Action</a>
 		</div>
 		
-		<footer>
-			<div>L15</div>
-			<div>Made in Toronto</div>
-			<div>{{ now | date('Y') }}</div>
-		</footer>
+		{% include 'partial/footer' %}
 		
 	</section>
 	
-	<section class="graphic"></section>
+	<section class="view" data-view>
+		<div class="line"></div>
+	</section>
 
 {% endblock %}

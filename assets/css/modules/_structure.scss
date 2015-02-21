@@ -1,3 +1,5 @@
+$column-width: 38em;
+
 .content {
 
 	background: #fff;
@@ -5,9 +7,9 @@
 	top: 0; left: 0;
 	min-height: 100%;
 	
-	max-width: 38em;
+	max-width: $column-width;
 	width: 90%;
-	padding: 3rem 3rem 3rem 3.5rem;
+	padding: 3rem 3rem 2rem 4rem;
 	
 	transition: max-width 400ms $ease;
 	
@@ -15,8 +17,14 @@
 	
 }
 
-.graphic {
+.view {
+	display: flex;
 	position: fixed;
 	top: 0; bottom: 0; right: 0;
-	left: 37.5em;
+	left: $column-width;
+	transition: background 400ms ease;
+}
+
+nav {
+	margin-bottom: 4em;
 }

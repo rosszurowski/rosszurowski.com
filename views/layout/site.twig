@@ -9,9 +9,12 @@
 {%- endblock %}
 
 {% block body %}
-	<main>
+	<main class="{{ page.template }}">
 		{% block content %}
 		{% endblock %}
 	</main>
-	{% parent %}
+	{% block scripts %}
+	<script src="/assets/js/libraries.js"></script>
+	<script src="/assets/js/index.js"></script>
+	{% endblock %}
 {% endblock %}

@@ -1,0 +1,17 @@
+.browser {
+	
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-top: 24px #aaa solid;
+	background: #fff;
+	overflow: hidden;
+	
+	iframe {
+		border: none;
+		outline: none;
+		width: 100%;
+		margin: 0; padding: 0;
+		vertical-align: top;
+	}
+	
+}

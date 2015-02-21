@@ -45,8 +45,11 @@ module.exports = function (root) {
 		// Locals
 		let shared = yaml.parse(yield fs.readFile(__shared, 'utf8'));
 		this.state = merge(this.state, shared);
-		this.state.pages = pages.map(page => page.locals);
-		this.state.page = page.locals;
+		this.state['site'] = this.state['site'] || {};
+		this.state['site']['lastModified'] = (yield fs.stat(__root)).mtime;
+		
+		this.state['pages'] = pages.map(page => page.locals); // convert page to locals
+		this.state['page'] = page.locals;
 		
 		console.log(page);
 		yield page.render(this);

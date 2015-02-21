@@ -5,8 +5,8 @@
   "main": "app.js",
   "private": true,
   "scripts": {
-    "start": "iojs --harmony --harmony_arrow_functions app.io",
-    "develop": "nodemon --harmony --harmony_arrow_functions app.io",
+    "start": "make server",
+    "develop": "make develop",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
