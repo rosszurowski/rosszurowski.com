@@ -10,11 +10,19 @@
 		
 		{% include 'partial/navigation' %}
 		
-		<h2 class="title">{{ page.title }}</h2>
+		<div class="intro">
+			<h2 class="title">{{ page.title }}</h2>
+			<h4>{{ page.description | markdown | safe }}</h4>
+		</div>
 		
 		<article class="description">
 			{{ page.content | markdown | safe }}
 		</article>
+		
+		<nav class="pagination">
+			<a href="#"><span class="arrow">&larr;</span> Previous</a>
+			<a href="#">Next <span class="arrow">&rarr;</span></a>
+		</nav>
 		
 	</section>
 

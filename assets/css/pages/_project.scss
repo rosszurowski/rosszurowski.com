@@ -1,24 +1,51 @@
 main.project {
 
 	.view {
+		padding: 2rem 3rem 2rem 2rem;
 		align-items: center;
 	}
 
-	.title {
-		font-family: $serif;
-		font-size: 18px;
+	.intro {
 		margin-bottom: 3rem;
 	}
 
+	.title {
+		font-size: inherit;
+		font-weight: 500;
+	}
+
 	.description {
-		max-width: 30em;
-		font-size: 14px;
+		
+		max-width: 25em;
+		// column-count: 2;
+		margin-bottom: 4rem;
+		
+		color: #444;
+		font-size: 16px;
+		line-height: 1.75;
+		
+		a {
+			color: inherit;
+			border-bottom: 0.15em currentColor solid;
+		}
+		
+	}
+
+	.pagination {
+		display: flex;
+		justify-content: space-between;
+		
+		span {
+			padding: 0.5em;
+			vertical-align: middle;
+		}
+		
 	}
 
 	.browser {
 		width: 90%;
-		height: 70vh;
 		margin: 0 auto;
+		box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.05);
 		iframe {
 			width: 125.1%;
 			height: 125.1%;

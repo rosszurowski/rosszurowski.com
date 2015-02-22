@@ -3,11 +3,11 @@
 }
 
 html {
-	background: #f3f2f2;
+	background: $gray;
 }
 	
 body {
-	font-family: "Theinhardt", "Helvetica Neue", Arial, sans-serif;
+	font-family: $sans;
 	font-size: 100%;
 	line-height: 1.5;
 }

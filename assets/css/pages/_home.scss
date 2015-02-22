@@ -1,13 +1,4 @@
 main.home {
-
-	.gradient {
-		position: absolute;
-		top: 12rem; right: -1em;
-		width: 14em; height: 4em;
-		background: linear-gradient(45deg, #5bbadf 0%,#7dcbbd 100%);
-		transform: translateZ(0);
-		z-index: 1;
-	}
 	
 	canvas {
 		width: 100%;
@@ -29,7 +20,6 @@ main.home {
 	.intro {
 		
 		font-weight: normal;
-		font-size: 18px;
 		line-height: 1.3;
 		
 		margin-bottom: 6em;
@@ -37,7 +27,6 @@ main.home {
 		h2 {
 			font-size: inherit;
 			font-weight: 500;
-			letter-spacing: 0.05em;
 		}
 		
 	}
@@ -60,80 +49,79 @@ main.home {
 	.projects {
 		
 		position: relative;
+		display: flex;
+		flex-direction: column;
 		margin-bottom: 4em;
+
+	}
+	
+	.project {
 		
-		.year,
+		position: relative;
+		display: block;
+
+		.thumbnail,
+		.thumbnail img,
+		.title,
 		.tags {
-			@include font-smoothing();
-			color: #696969;
-			font-family: $monospaced;
-			font-size: 11px;
+			display: block;
 		}
 		
-		.year.dash::after {
-			content: ' ';
-			display: inline-block;
-			background: #e0e0e0;
-			width: 1.5rem; height: 2px;
-			vertical-align: middle;
+		.thumbnail {
+			background: #3b3b3b;
+		}
+		
+		.thumbnail img {
+			transition: opacity 250ms ease;
+		}
+		
+		& + .project {
+			margin-top: 1.5rem;
+		}
+		
+		&:nth-child(2) { width: 60%; }
+		&:nth-child(3) { width: 60%; align-self: flex-end; }
+		
+		.meta {
+			position: absolute;
+			left: 1.5rem; bottom: 1rem;
+			margin-top: 1em;
+			opacity: 0.0;
+			
+			color: #fff;
+			line-height: 1.5;
+			
+			transition: opacity 200ms ease, transform 200ms $ease;
+		}
+		
+		&:hover {
+			.thumbnail img {
+				opacity: 0.25;
+			}
+			.meta {
+				opacity: 0.95;
+				transform: translateY(0);
+			}
 		}
 		
 		.title {
-			@include font-smoothing();
 			font-size: 13px;
-			letter-spacing: 0.02em;
-			span {
-				color: #000;
-				font-weight: 500;
-			}
-			&:hover span {
-				border-bottom: 0.175em currentColor solid;
-			}
-		}
-		
-		.tags > a {
-			color: inherit;
-			&:hover {
-				padding-bottom: 3px;
-				border-bottom: 0.175rem currentColor solid;
-			}
-		}
-		
-	}
-	
-	.row {
-		display: flex;
-		color: inherit;
-		font-size: 13px;
-		
-		&.header {
-			padding: 0;
-			margin: 0 0 2em;	
-		}
-		
-		&.header > div {
-			padding: 0;
-			color: #ccc;
-			font-size: 10px;
 			font-weight: 500;
-			letter-spacing: 2px;
-			text-transform: uppercase;
 		}
 		
-		& > div,
-		& > a {
-			padding: 0.65rem 0;
+		.tags {
+			font-family: $monospaced;
+			font-size: 11px;
 		}
-		
-		& :nth-child(1) { flex: 1 0 22%; }
-		& :nth-child(2) { flex: 1 0 38%; }
-		& :nth-child(3) { flex: 1 0 40%; }
-		
+
 	}
+
 	
 	.lead-in {
+		
 		background: $bright;
-		padding: 0.75em 1em 0.5em;
+		border-radius: 2px;
+		padding: 0.9em 1em 0.75em;
 		text-align: center;
 		
 		a {

@@ -4,12 +4,13 @@ $column-width: 38em;
 
 	background: #fff;
 	position: absolute;
-	top: 0; left: 0;
-	min-height: 100%;
+	top: 0; right: 0;
+	z-index: 2;
 	
+	padding: 3rem 3rem 2rem 3.5rem;
+	min-height: 100%;
 	max-width: $column-width;
 	width: 90%;
-	padding: 3rem 3rem 2rem 4rem;
 	
 	transition: max-width 400ms $ease;
 	
@@ -20,8 +21,9 @@ $column-width: 38em;
 .view {
 	display: flex;
 	position: fixed;
-	top: 0; bottom: 0; right: 0;
-	left: $column-width;
+	top: 0; right: $column-width;
+	bottom: 0; left: 0;
+	z-index: 1;
 	transition: background 400ms ease;
 }
 

@@ -11,26 +11,21 @@
 			<h4>Designer &amp; Developer</h4>
 		</header>
 		
-		<div class="description">
-			<p>{{ page.headline | markdown | safe }}</p>
-		</div>
-		
-		<!-- <div class="gradient"></div> -->
-		
 		<div class="projects">
-			<div class="header row">
-				<div>Date</div>
-				<div>Title</div>
-				<div>Type</div>
-			</div>
-			{% set projects = pages | where('template', 'project') %}
-			{% for project in projects  | sort('year', 'DESC') -%}
-				{% include 'partial/row' with project %}
-			{%- endfor %}
-		</div>
-		
-		<div class="lead-in">
-			<a href="/information">Call to Action</a>
+			{% set projects = pages | where('template', 'project') -%}
+			{% set projects = projects | filter('thumbnail') -%}
+			{% set projects = projects | sort('year', 'DESC') -%}
+			{% for project in projects %}
+				<div class="project{% if project.title === 'Rebecca Alice' %} small{% endif %}">
+					<a href="{{ project.url }}" class="thumbnail">
+						<img src="{{ join('/', project.slug, project.thumbnail) }}" />
+					</a>
+					<div class="meta">
+						<div class="title">{{ project.title }}</div>
+						<div class="tags">{{ project.year | date('Y') }}</div>
+					</div>
+				</div>
+			{% endfor %}
 		</div>
 		
 		{% include 'partial/footer' %}

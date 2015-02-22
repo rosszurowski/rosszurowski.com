@@ -1,10 +1,14 @@
 .browser {
 	
+	$frame-height: 28px;
+	$frame-color: #aaa;
+	
+	position: relative;
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
-	border-top: 24px #aaa solid;
+	border-top: $frame-height $frame-color solid;
 	background: #fff;
-	overflow: hidden;
+	// overflow: hidden;
 	
 	iframe {
 		border: none;
@@ -12,6 +16,33 @@
 		width: 100%;
 		margin: 0; padding: 0;
 		vertical-align: top;
+	}
+	
+	&::before,
+	&::after {
+		position: absolute;
+		top: -$frame-height;
+		color: darken($frame-color, 25%);
+		line-height: $frame-height * 1.12;
+		z-index: 9;
+	}
+	
+	// buttons
+	&::before {
+		content: '•••';
+		left: $frame-height/2;
+		font-family: Arial, sans-serif;
+		font-size: 1.4rem;
+		letter-spacing: 0.25em;
+	}
+	
+	// url
+	&::after {
+		content: attr(data-url);
+		left: 0; right: 0;
+		font-family: $monospaced;
+		font-size: 11px;
+		text-align: center;
 	}
 	
 }

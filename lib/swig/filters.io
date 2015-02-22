@@ -21,9 +21,26 @@ exports.markdown = function (input) {
  * @returns {Array} output
  */
 exports.where = function (input, prop, value) {
-	if (!Array.isArray(input)) throw new Error('Tag `filter` used on non-array');
+	if (!Array.isArray(input)) throw new Error(`Filter 'filter' used on non-array`);
 	return input.filter((obj) => obj[prop] === value);
 }
+
+/**
+ * Filters an input collection based upon the given value
+ * @param {Array} input
+ * @param {String} prop
+ * @returns {Array} output
+ */
+exports.filter = function (input, prop) {
+	if (!Array.isArray(input)) throw new Error(`Filter 'filter' used on non-array`)
+	
+	let result = input.filter((val) => {
+		return val[prop] != void 0;
+	});
+	
+	return result;
+}
+
 
 /**
  * Sort an input collection based on a given propery and order
@@ -33,11 +50,11 @@ exports.where = function (input, prop, value) {
  * @returns {Array} output
  */
 exports.sort = function (input, prop, order) {
-	if (!Array.isArray(input)) throw new Error('Tag `sort` used on non-array');
+	if (!Array.isArray(input)) throw new Error(`Filter 'sort' used on non-array`);
 	
 	order = order || 'ASC';
 	order = order.toUpperCase();
-	if (order !== 'ASC' && order !== 'DESC') throw new Error(`Unknown sort order \`${order}\``);
+	if (order !== 'ASC' && order !== 'DESC') throw new Error(`Unknown sort order '${order}'`);
 	
 	let result = input.sort((ao, bo) => {
 		let a = ao[prop];
