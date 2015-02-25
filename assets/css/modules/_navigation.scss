@@ -1,6 +1,7 @@
 .menu {
 	
-	font-size: 13px;
+	font-size: 11px;
+	font-family: $monospaced;
 	margin-bottom: 8em;
 	
 	display: flex;
@@ -35,7 +36,6 @@
 	
 	.project-name {
 		position: relative;
-		margin-right: 1em;
 	}
 	
 }

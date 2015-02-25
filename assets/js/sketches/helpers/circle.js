@@ -43,7 +43,7 @@ Circle.prototype.render = function (ctx) {
 	ctx.fillStyle = this.fill;
 	ctx.globalCompositeOperation = 'screen';
 	ctx.beginPath();
-	ctx.ellipse(0, 0, this.radius, this.radius, 0, 0, TWO_PI, false);
+	ctx.arc(0, 0, this.radius, 0, TWO_PI, false);
 	ctx.closePath();
 	ctx.fill();
 	ctx.restore();
