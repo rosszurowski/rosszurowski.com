@@ -1,0 +1,50 @@
+.browser {
+	
+	$frame-height: 28px;
+	$frame-color: #aaa;
+	
+	position: relative;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-top: $frame-height $frame-color solid;
+	background: #fff;
+	// overflow: hidden;
+	
+	iframe {
+		position: absolute;
+		top: 0; left: 0; right: 0; bottom: 0;
+		width: 100%; height: 100%;
+		border: 0;
+		outline: none;
+		margin: 0; padding: 0;
+		vertical-align: top;
+	}
+	
+	&::before,
+	&::after {
+		position: absolute;
+		top: -$frame-height;
+		color: darken($frame-color, 25%);
+		line-height: $frame-height * 1.12;
+		z-index: 9;
+	}
+	
+	// buttons
+	&::before {
+		content: '•••';
+		left: $frame-height/2;
+		font-family: Arial, sans-serif;
+		font-size: 1.4rem;
+		letter-spacing: 0.25em;
+	}
+	
+	// url
+	&::after {
+		content: attr(data-url);
+		left: 0; right: 0;
+		font-family: $monospaced;
+		font-size: 11px;
+		text-align: center;
+	}
+	
+}

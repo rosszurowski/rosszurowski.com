@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{% block title %}{{ site.title }}{% endblock %}</title>
+	<meta charset="utf-8"/>
+	<meta name="description" content="{% block description %}{{ site.description }}{% endblock %}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+	<link rel="shortcut icon" type="image/ico" href="/favicon.png" />
+	<link rel="stylesheet" media="screen, projection" href="/assets/css/styles.css" />
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+	{% block body %}
+	{% endblock %}
+</body>
+</html>

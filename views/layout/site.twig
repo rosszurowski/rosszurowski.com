@@ -1,0 +1,20 @@
+{% extends 'layout/base' %}
+
+{# `Title — Site` or just `Site` #}
+{% block title -%}
+	{% if page.title -%}
+		{{ page.title }} &mdash; 
+	{%- endif -%}
+	{% parent %}
+{%- endblock %}
+
+{% block body %}
+	<main class="{{ page.template }}">
+		{% block content %}
+		{% endblock %}
+	</main>
+	{% block scripts %}
+	<script src="/assets/js/libraries.js"></script>
+	<script src="/assets/js/index.js"></script>
+	{% endblock %}
+{% endblock %}

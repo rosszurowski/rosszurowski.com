@@ -1,0 +1,24 @@
+title: Caleb Winters
+year: 2014-02-01
+
+meta:
+  description: "A portfolio site for sound designer and composer Caleb Winters, designed and developed by Ross Zurowski."
+
+description: |
+  A portfolio site for sound designer and composer Caleb&nbsp;Winters.
+
+content: |
+  
+  Generous whitespace, along with a relatively flat informational hierarchy and a distinctive geometric sans-serif helped form a quirky-yet-mature atmosphere around Caleb's work.
+  
+  Fluid transitions between pages allows for quicker navigation of the site and helps reflect the cinematic nature of his work. Both of these aspects were vital when applying to sound production studios where applicants have only a short timeframe to impress employers.
+  
+  By using newer web technologies, we were able to create an immersive media-heavy site within a tight deadline that would have otherwise been impossible.
+  
+
+site: http://calebwinters.ca
+partial: caleb-winters.twig
+thumbnail: thumbnail.png
+
+
+tags: [www, dev]
