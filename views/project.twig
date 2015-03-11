@@ -7,7 +7,7 @@
 {% block content %}
 
 	<section class="content">
-		
+	
 		{% include 'partial/navigation' %}
 		
 		<div class="intro">
@@ -20,10 +20,12 @@
 		</article>
 		
 		<nav class="pagination">
-			<a href="#"><span class="arrow">&larr;</span> Previous</a>
-			<a href="#">Next <span class="arrow">&rarr;</span></a>
+			{%- set previous = pages[page.index-1] %}
+			{%- set next = pages[page.index+1] %}
+			<a href="{{ previous.url }}"><span class="arrow">&larr;</span> {{ previous.title }}</a>
+			<a href="{{ next.url }}">{{ next.title }} <span class="arrow">&rarr;</span></a>
 		</nav>
-		
+
 	</section>
 
 	<section class="view">

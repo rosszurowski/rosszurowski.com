@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * A class to model page-related data
+ * A sub-set of page specifically geared towards experiments
  */
 
 var fs = require('mz/fs');
@@ -9,7 +9,7 @@ var join = require('path').join;
 var merge = require('merge');
 var yaml = require('yamljs');
 
-class Page {
+class Experiment {
 	
 	constructor(root, slug) {
 		if (!root) throw new Error('Must pass `root` to new page');
@@ -27,54 +27,22 @@ class Page {
 		this.files = this.files.filter((path) => !path.startsWith('.')); // no hidden files
 		this.manifest = this.files.filter(path => path.endsWith('yml')).shift();
 		if (!this.manifest) return;
-		this.template = this.manifest.split('.').shift();
 		this.data = yaml.parse(yield fs.readFile(join(this.root, this.slug, this.manifest), 'utf8'));
 	}
 	
-	/**
-	 * Renders page template and output
-	 * @param {Context} ctx
-	 * @returns {Response}
-	 */
-	*render(ctx) {
-		
-		switch (this.template) {
-			case 'redirect':
-				if (!this.data.destination)
-					throw new Error('Redirect yml file does not specify a destination');
-				ctx.status = this.data.status || 302;
-				ctx.redirect(this.data.destination);
-				return;
-				break;
-		}
-		
-		ctx.body = yield ctx.render(this.template);
-
-	}
-	
-	/**
-	 * Returns page locals
-	 * @returns {Boolean}
-	 */
-	locals(list) {
+	get locals() {
 		let injected = {
-			index: list.indexOf(this),
 			slug: this.slug,
 			url: this.url,
-			template: this.template
+			frame: `${this.root.replace(__content, '')}/${this.slug}/frame`
 		}
 		return merge(this.data, injected);
 	}
 	
 	get url() {
-		return `/${this.slug}/`;
+		return `${this.root.replace(__content, '')}/${this.slug}`
 	}
+	
 }
 
-module.exports = Page;
-
-function get(arr, index) {
-	index = index < 0 ? arr.length : index;
-	index = index % arr.length;
-	return arr[index];
-}
+module.exports = Experiment;

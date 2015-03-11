@@ -6,52 +6,34 @@ var debug = require('debug')('controller:pages');
 var fs = require('mz/fs');
 var join = require('path').join;
 var merge = require('merge');
-var send = require('koa-send');
-var yaml = require('yamljs');
 
+var serve = require('../helpers/serve');
+var shared = require('../helpers/shared');
 var Page = require('../models/page');
 
 module.exports = function (root) {
 	
 	return function *(next) {
 		
-		// build pages hash
 		let pages = yield hash(root);
-		// resolve current page
 		let page = yield resolve(pages, this.url);
 		if (!page) return yield next;
 		
-		// respond with resource (if need be)
 		let resource = this.url;
 		resource = resource.replace(page.slug, '');
 		resource = resource.replace(/\/+/g, '/');
 		
-		// Serve the file if we're requesting a resource.
+		// Serve the file, if we're requesting one.
 		if ('/' !== resource) {
-			if (resource.startsWith('.')) return yield next;
-			if (resource.endsWith('yml')) return yield next;
-			let path = join(root, page.slug, resource);
-			let stat = fs.lstat(path);
-			try {
-				stat = yield stat;
-			} catch(err) {
-				if ('ENOENT' === err.code) return yield next;
-				else throw err;
-			}
-			if (!stat.isFile()) return yield next;
-			return yield send(this, path);
+			return yield serve(this, root, page.slug, resource);
 		}
 		
 		// Locals
-		let shared = yaml.parse(yield fs.readFile(__shared, 'utf8'));
-		this.state = merge(this.state, shared);
-		this.state['site'] = this.state['site'] || {};
-		this.state['site']['lastModified'] = (yield fs.stat(__root)).mtime;
+		this.state = merge(this.state, yield shared());
+		this.state['pages'] = pages.map(page => page.locals(pages));
+		this.state['page'] = page.locals(pages);
 		
-		this.state['pages'] = pages.map(page => page.locals); // convert page to locals
-		this.state['page'] = page.locals;
-		
-		console.log(page);
+		debug(page);
 		yield page.render(this);
 		
 	}
@@ -82,7 +64,7 @@ function *hash(root) {
 
 /**
  * Resolve a URL to a folder
- * @param {Array} pagse
+ * @param {Array} pages
  * @param {String} url
  * @returns {String} path
  */
@@ -91,12 +73,13 @@ function *resolve(pages, url) {
 	url = url.replace(/(^\/|\/$)/g, ''); // remove leading/trailing slashes
 	url = url.split('/').shift(); // get first segment
 
-	let results = pages.filter((page) => url === page.slug);
 	let page;
+	let results = pages.filter((page) => url === page.slug);
 	
 	if (results.length) page = results.pop();
 	else if (url === '') page = pages.filter((page) => 'home' === page.slug).pop();
 	else if (url === 'home') page = undefined;
 
 	return page;
+
 }

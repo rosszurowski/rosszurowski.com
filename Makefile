@@ -8,16 +8,19 @@ LIB  = $(shell find $(ASSETS)/js/libraries -type f -name '*.js')
 CSS  = $(shell find $(ASSETS)/css -type f -name '*.scss' -o -name '*.sass')
 
 # Default tasks
-all: assets
-	@true
+all: install assets server
+# Install deps
+install:
+	@npm install --production
 # Run server
-start: assets
+server: assets
 	@iojs --harmony --harmony_arrow_functions app.io
 # Run development server
-develop: assets
+dev: assets
 	@nodemon --harmony --harmony_arrow_functions app.io
 # Compile assets
 assets: js css misc
+	@true
 # Test
 test:
 	@echo "No test specified"

@@ -43,6 +43,7 @@
 	}
 
 	NodeList.prototype.forEach = Array.prototype.slice.call(this).forEach;
+	NodeList.prototype.map = Array.prototype.slice.call(this).map;
 	NodeList.prototype.first = function() { return this[0]; }
 	NodeList.prototype.last = function() { return this[this.length - 1]; }
 

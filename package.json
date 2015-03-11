@@ -2,11 +2,11 @@
   "name": "rosszurowski",
   "version": "0.0.1",
   "description": "A portfolio site for designer and developer Ross Zurowski",
-  "main": "app.js",
+  "main": "app.io",
   "private": true,
   "scripts": {
     "start": "make server",
-    "develop": "make develop",
+    "develop": "make dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +22,7 @@
   "dependencies": {
     "app-root-path": "^1.0.0",
     "colors": "^1.0.3",
+    "debug": "^2.1.2",
     "koa": "^0.17.0",
     "koa-cash": "^1.0.1",
     "koa-compose": "^2.3.0",

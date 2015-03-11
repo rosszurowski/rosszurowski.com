@@ -4,10 +4,12 @@
 
 html {
 	background: $gray;
+	height: 100%;
 }
 	
 body {
 	font-family: $sans;
 	font-size: 100%;
 	line-height: 1.5;
+	min-height: 100%;
 }

@@ -7,8 +7,6 @@ require.extensions['.js'];
  */
 var http = require('http');
 var koa = require('koa');
-var mount = require('koa-mount');
-var serve = require('koa-static');
 
 var pkg = require('./package');
 var config = require('./lib/config');

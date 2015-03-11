@@ -1,3 +1,4 @@
 module.exports = [
-	require('./home')
+	require('./home'),
+	require('./experiments')
 ];

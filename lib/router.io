@@ -45,7 +45,8 @@ module.exports = function(app) {
 	let socket = new Socket(config.SOCKET_PORT);
 	
 	router.use(mount('/live', socket.callback()));
-	router.use(mount('/experiments', experiments.callback()));
+	router.use(mount('/experiments', experiments(path.join(__content, 'experiments'))));
+	
 	router.use(pages(__content));
 
 	// Use Swig for templates

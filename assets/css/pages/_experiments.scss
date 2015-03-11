@@ -1,0 +1,18 @@
+main.experiments {
+	
+	position: relative;
+	padding: 4em;
+	
+	nav {
+		position: fixed;
+		top: 1.5em; left: 4em;
+		z-index: 9;
+	}
+	
+	iframe {
+		position: absolute;
+		width: calc(100vw - 8em);
+		height: calc(100vh - 8em);
+	}
+	
+}
