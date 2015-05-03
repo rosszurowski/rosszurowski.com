@@ -1,56 +1,58 @@
 ## Makefile for rosszurowski.com
 
+#
+# Variables
+#
+
 ASSETS = assets
 BUILD  = public/assets
 
 JS   = $(shell find $(ASSETS)/js -type f -name '*.js')
 LIB  = $(shell find $(ASSETS)/js/libraries -type f -name '*.js')
 CSS  = $(shell find $(ASSETS)/css -type f -name '*.scss' -o -name '*.sass')
+MAIN = $(ASSETS)/js/index.js
 
-# Default tasks
+#
+# Tasks
+#
+
 all: install assets server
-# Install deps
-install:
-	@npm install --production
-# Run server
+	
+js: $(BUILD)/js/index.js $(BUILD)/js/libraries.js
+css: $(BUILD)/css/styles.css
+
+assets: js css misc
+
+install: node_modules
 server: assets
 	@iojs --harmony --harmony_arrow_functions app.io
-# Run development server
-dev: assets
+develop: assets
 	@nodemon --harmony --harmony_arrow_functions app.io
-# Compile assets
-assets: js css misc
-	@true
-# Test
-test:
-	@echo "No test specified"
-	@exit 1
-# Clean asset directories
+test: lint
+lint: $(MAIN)
+	@standard
 clean:
 	@rm -rf ./components/
+
+#
+# Targets
+#
 
 node_modules: package.json
 	@npm install
 
-# Compile scripts with Duo
-js: $(BUILD)/js/index.js $(BUILD)/js/libraries.js
-$(BUILD)/js/index.js: $(JS)
+$(BUILD)/js/index.js: node_modules $(JS)
 	@mkdir -p $(@D)
-	@duo $(ASSETS)/js/index.js --quiet --stdout > $@
+	@browserify $(MAIN) -o $@
 $(BUILD)/js/libraries.js: $(LIB)
 	@mkdir -p $(@D)
 	@cat $^ | uglifyjs --mangle --output $@
 
-# Compile styles with SASS
-css: $(BUILD)/css/styles.css
 $(BUILD)/css/styles.css: $(CSS)
 	@mkdir -p $(@D)
 	@sassc --sourcemap --load-path $(ASSETS)/css $(ASSETS)/css/styles.scss $@
 	@autoprefixer $@ --clean --browsers "last 2 versions"
 	@csso $@ $@
-	
-# Imagemin for images
-misc:
-	@true
+
 
 .PHONY: all start develop test clean assets js css misc

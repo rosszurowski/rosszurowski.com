@@ -1,10 +1,6 @@
 "use strict";
 
-var throttle = require('component/throttle');
-
 var Router = require('./src/router');
-var Socket = require('./src/socket');
-
 var controllers = require('./controllers/index');
 
 document.on('DOMContentLoaded', function () {
@@ -19,10 +15,6 @@ document.on('DOMContentLoaded', function () {
 	});
 
 	router.start();
-	
-	function handleProject() {
-		console.log('project');
-	}
 	
 	// var host = window.document.location.host.replace(/:.*/, '');
 	// var socket = new Socket(host + ':8081/live');
