@@ -21,9 +21,9 @@ var pages = require('./controllers/pages');
 var experiments = require('./controllers/experiments');
 var Socket = require('./socket/server');
 
-module.exports = function(app) {
+module.exports = function (app) {
 	
-	router.use(function *(next) {
+	router.use(function * (next) {
 		let start = Date.now();
 		yield next;
 		let end = Date.now();

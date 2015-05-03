@@ -14,7 +14,7 @@ module.exports = function (opts) {
 /**
  * Throw a 404 error
  */
-function *missing(next) {
+function * missing (next) {
 	yield next;
 	if (this.response.body) return;
 	if (this.response.status !== 404) return;
@@ -24,10 +24,11 @@ function *missing(next) {
 /**
  * Handle all errors
  */
-function *error(next) {
+function * error (next) {
 	let env = process.env.NODE_ENV || 'development';
-	try { yield next; }
-	catch(err) {
+	try { 
+		yield next; 
+	} catch(err) {
 		this.status = err.status || 500;
 		this.app.emit('error', err, this);
 		switch (this.accepts('html', 'text', 'json')) {

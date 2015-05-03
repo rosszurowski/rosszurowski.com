@@ -29,7 +29,7 @@ module.exports = function (opts) {
 	});
 	
 	return compose([cache, check]);
-	
+
 }
 
 function *check(next) {
