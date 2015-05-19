@@ -42,8 +42,6 @@ install: node_modules
 # look into as well, either for the whole site, or just for static assets.
 deploy:
 	@echo "\033[0mDeploying branch \033[0;33m$(BRANCH)\033[0m to Github pages...\033[0;90m"
-	@[ -z $(git status -s) ] && git stash -q && echo "Yo"
-	@git co -q $(BRANCH)
 	@make clean && make build
 	@echo $(DOMAIN) > $(BUILD)/CNAME
 	@(cd $(BUILD) && \
@@ -52,7 +50,6 @@ deploy:
 		git commit -q -m "Deployment (auto-commit)" && \
 		git push "git@github.com:$(REPO).git" master:gh-pages --force)
 	@make clean
-	@git stash pop -q
 	@echo "\033[0mDeployed to \033[0;32mhttp://$(DOMAIN)\033[0m"
 
 lint: $(SCRIPTS)
