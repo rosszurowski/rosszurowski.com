@@ -41,16 +41,18 @@ install: node_modules
 # For now, we're deploying to Github Pages. Amazon S3 might be an option to
 # look into as well, either for the whole site, or just for static assets.
 deploy:
-	@echo "\033[0mDeploying branch \033[0;33m$(BRANCH)\033[0m to Github pages...\033[0;90m"
+	@echo "Deploying branch \033[0;33m$(BRANCH)\033[0m to Github pages..."
 	@make clean && make build
 	@echo $(DOMAIN) > $(BUILD)/CNAME
 	@(cd $(BUILD) && \
 		git init -q .  && \
 		git add . && \
 		git commit -q -m "Deployment (auto-commit)" && \
-		git push "git@github.com:$(REPO).git" master:gh-pages --force)
+		echo "\033[0;90m" && \
+		git push "git@github.com:$(REPO).git" master:gh-pages --force && \
+		echo "\033[0m")
 	@make clean
-	@echo "\033[0mDeployed to \033[0;32mhttp://$(DOMAIN)\033[0m"
+	@echo "Deployed to \033[0;32mhttp://$(DOMAIN)\033[0m"
 
 lint: $(SCRIPTS)
 	@standard $^
