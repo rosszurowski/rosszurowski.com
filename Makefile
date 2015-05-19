@@ -1,38 +1,63 @@
-## Makefile for rosszurowski.com
+
+#
+# Binaries
+#
+
+export PATH := ./node_modules/.bin/:$(PATH)
+BIN := ./node_modules/.bin
 
 #
 # Variables
 #
 
-ASSETS = assets
-BUILD  = public/assets
+PORT    = 8080
+SOURCE  = ./source
+BUILD   = ./build
+SCRIPTS = $(shell find $(SOURCE)/js -type f -name '*.js')
+STYLES  = $(shell find $(SOURCE)/css -type f -name '*.scss')
 
-JS   = $(shell find $(ASSETS)/js -type f -name '*.js')
-LIB  = $(shell find $(ASSETS)/js/libraries -type f -name '*.js')
-CSS  = $(shell find $(ASSETS)/css -type f -name '*.scss' -o -name '*.sass')
-MAIN = $(ASSETS)/js/index.js
+REPO    = rosszurowski/rosszurowski.com
 
 #
 # Tasks
 #
 
-all: install assets server
-	
-js: $(BUILD)/js/index.js $(BUILD)/js/libraries.js
-css: $(BUILD)/css/styles.css
+default: build
+	@true
 
-assets: js css misc
+build: assets scripts styles
+
+develop:
+	@budo $(SOURCE)/js/index.js:assets/index.js \
+		--dir $(BUILD) \
+		--port $(PORT) \
+		--transform babelify \
+		--live | garnish & watch make --silent assets styles
 
 install: node_modules
-server: assets
-	@iojs --harmony --harmony_arrow_functions app.io
-develop: assets
-	@nodemon --harmony --harmony_arrow_functions app.io
-test: lint
-lint: $(MAIN)
-	@standard
+
+deploy:
+	@echo "\033[0;32mDeploying to Github pages...\033[0m"
+	@make clean && make build
+	@(cd $(BUILD) && git init . && git add . && git commit -m "Deployment (auto-commit)")
+	@git push "git@github.com:$(REPO).git" HEAD:gh-pages --force
+
+lint: $(SCRIPTS)
+	@standard $^
+
 clean:
-	@rm -rf ./components/
+	@rm -rf build/
+
+clean-deps:	
+	@rm -rf node_modules/
+
+#
+# Shorthands
+#
+
+assets: $(BUILD)/index.html
+scripts: $(BUILD)/assets/index.js
+styles: $(BUILD)/assets/styles.css
 
 #
 # Targets
@@ -41,18 +66,21 @@ clean:
 node_modules: package.json
 	@npm install
 
-$(BUILD)/js/index.js: node_modules $(JS)
+$(BUILD)/%: $(SOURCE)/%
 	@mkdir -p $(@D)
-	@browserify $(MAIN) -o $@
-$(BUILD)/js/libraries.js: $(LIB)
+	@cp $< $@
+
+$(BUILD)/assets/index.js: $(SCRIPTS)
 	@mkdir -p $(@D)
-	@cat $^ | uglifyjs --mangle --output $@
+	@browserify $(SOURCE)/js/index.js -t babelify -o $@
 
-$(BUILD)/css/styles.css: $(CSS)
+$(BUILD)/assets/styles.css: $(STYLES)
 	@mkdir -p $(@D)
-	@sassc --sourcemap --load-path $(ASSETS)/css $(ASSETS)/css/styles.scss $@
-	@autoprefixer $@ --clean --browsers "last 2 versions"
-	@csso $@ $@
+	@sassc --sourcemap --load-path $(SOURCE)/css/ $(SOURCE)/css/styles.scss $@
+	@autoprefixer $@ --clean --map --browsers "last 2 versions"
 
+#
+# Phony
+#
 
-.PHONY: all start develop test clean assets js css misc
+.PHONY: develop clean

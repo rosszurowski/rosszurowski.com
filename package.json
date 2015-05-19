@@ -1,69 +1,16 @@
 {
   "name": "rosszurowski",
   "version": "0.0.1",
-  "description": "A portfolio site for designer and developer Ross Zurowski",
-  "main": "app.io",
+  "description": "A portfolio site for Ross Zurowski",
+  "main": "index.js",
   "private": true,
-  "scripts": {
-    "start": "make server",
-    "develop": "make dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "dependencies": {
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rosszurowski/rosszurowski.com.git"
+  "devDependencies": {
+    "babelify": "^6.0.2",
+    "browserify": "^9.0.8",
+    "budo": "^4.0.0"
   },
   "author": "Ross Zurowski",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/rosszurowski/rosszurowski.com/issues"
-  },
-  "homepage": "https://github.com/rosszurowski/rosszurowski.com",
-  "dependencies": {
-    "app-root-path": "^1.0.0",
-    "colors": "^1.0.3",
-    "debug": "^2.1.2",
-    "koa": "^0.17.0",
-    "koa-cash": "^1.0.1",
-    "koa-compose": "^2.3.0",
-    "koa-mount": "^1.3.0",
-    "koa-router": "^4.1.0",
-    "koa-send": "^1.3.1",
-    "koa-static": "^1.4.9",
-    "lru-cache": "^2.5.0",
-    "marked": "^0.3.3",
-    "merge": "^1.2.0",
-    "mz": "^1.3.0",
-    "node-uuid": "^1.4.2",
-    "swig": "^1.4.2",
-    "ws": "^0.7.1",
-    "yamljs": "^0.2.1"
-  },
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "node": true
-    },
-    "rules": {
-      "no-debugger": 1,
-      "no-empty": 1,
-      "no-invalid-regexp": 1,
-      "radix": 1,
-      "no-warning-comments": 1,
-      "no-unused-expressions": 1,
-      "no-native-reassign": 1,
-      "no-fallthrough": 1,
-      "no-undef": 2,
-      "no-dupe-keys": 2,
-      "no-empty-class": 2,
-      "no-self-compare": 2,
-      "valid-typeof": 2,
-      "no-unused-vars": 2,
-      "handle-callback-err": 2,
-      "no-shadow-restricted-names": 2,
-      "new-cap": 2,
-      "no-spaced-func": 2,
-      "no-space-before-semi": 2
-    }
-  }
+  "license": "MIT"
 }
