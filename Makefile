@@ -16,6 +16,7 @@ BUILD   = ./build
 SCRIPTS = $(shell find $(SOURCE)/js -type f -name '*.js')
 STYLES  = $(shell find $(SOURCE)/css -type f -name '*.scss')
 
+DOMAIN  = repo.rosszurowski.com
 REPO    = rosszurowski/rosszurowski.com
 BRANCH  = $(shell git rev-parse --abbrev-ref HEAD)
 
@@ -40,11 +41,14 @@ install: node_modules
 deploy:
 	@echo "\033[0;32mDeploying \033[0;33m$(BRANCH)\033[0;32m to Github pages...\033[0m"
 	@make clean && make build
+	@echo $(DOMAIN) > $(BUILD)/CNAME
 	@(cd $(BUILD) && \
-		git init . && \
+		git init -q .  && \
 		git add . && \
-		git commit -m "Deployment (auto-commit)" && \
+		git commit -q -m "Deployment (auto-commit)" && \
 		git push "git@github.com:$(REPO).git" master:gh-pages --force)
+	@make clean
+	@echo "\033[0;90mDeployed to \033[0mhttp://$(DOMAIN)\033[0;90m\033[0m"
 
 lint: $(SCRIPTS)
 	@standard $^
