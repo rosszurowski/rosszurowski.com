@@ -17,7 +17,7 @@ SCRIPTS = $(shell find $(SOURCE)/js -type f -name '*.js')
 STYLES  = $(shell find $(SOURCE)/css -type f -name '*.scss')
 
 REPO    = rosszurowski/rosszurowski.com
-BRANCH  = static
+BRANCH  = $(shell git rev-parse --abbrev-ref HEAD)
 
 #
 # Tasks
@@ -38,13 +38,13 @@ develop:
 install: node_modules
 
 deploy:
-	@echo "\033[0;32mDeploying to Github pages...\033[0m"
+	@echo "\033[0;32mDeploying \033[0;33m$(BRANCH)\033[0;32m to Github pages...\033[0m"
 	@make clean && make build
 	@(cd $(BUILD) && \
 		git init . && \
 		git add . && \
 		git commit -m "Deployment (auto-commit)" && \
-		git push "git@github.com:$(REPO).git" $(BRANCH):gh-pages --force)
+		git push "git@github.com:$(REPO).git" master:gh-pages --force)
 
 lint: $(SCRIPTS)
 	@standard $^
