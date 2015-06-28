@@ -7,7 +7,7 @@
 
 body {
   background: $background;
-  padding: 2rem;
+  padding: 4rem 2rem 2rem;
   font-size: 12px;
   font-family: $type-stack;
   line-height: 1.7;
@@ -24,10 +24,19 @@ a {
   font-size: 16px;
 }
 
-header {
+.header {
   position: fixed;
+  top: 2rem; left: 2rem; right: 2rem;
   display: flex;
-  justify-content: space-between;
+}
+
+.masthead {
+  flex-basis: calc(20% + 0.5rem);
+  .logo {
+    display: block;
+  }
+  .title {
+  }
 }
 
 .logo {
@@ -35,30 +44,31 @@ header {
 }
 
 .project {
- 
  display: flex;
- border-top: 1px #666 solid;
- padding: 1rem 0;
- 
+ border-top: 1px #ccc solid;
+ padding: 1.2rem 1rem 1rem;
+ transition: background 100ms ease;
  .date {
    flex: 0 0 20%;
  }
- 
  .title {
+   flex-basis: 20%;
    font-weight: bold;
  }
- 
+ .description {
+   color: #ccc;
+ }
  .tags {
    margin-left: auto;
  }
- 
- .tag {
-   $underline: #666;
-   border-bottom: 1px $underline solid;
-   padding-bottom: 0.15em;
-   font-size: 11px;
- }
-  
+  .tag {
+    padding-left: 0.75em;
+    font-size: 11px;
+  }
+  &:hover {
+    background: lighten($background, 2%);
+    cursor: pointer;
+  } 
 }
 
 .intro {

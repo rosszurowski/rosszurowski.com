@@ -60,14 +60,14 @@ lint: $(SCRIPTS)
 clean:
 	@rm -rf build/
 
-clean-deps:	
+clean-deps:
 	@rm -rf node_modules/
 
 #
 # Shorthands
 #
 
-assets: $(BUILD)/index.html
+assets: $(BUILD)/index.html $(BUILD)/favicon.png
 scripts: $(BUILD)/assets/index.js
 styles: $(BUILD)/assets/styles.css
 
