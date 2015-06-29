@@ -15,10 +15,14 @@ SOURCE  = ./source
 BUILD   = ./build
 SCRIPTS = $(shell find $(SOURCE)/js -type f -name '*.js')
 STYLES  = $(shell find $(SOURCE)/css -type f -name '*.scss')
+ASSETS  = $(BUILD)/index.html $(BUILD)/favicon.png
+FONTS   = $(patsubst $(SOURCE)/%, $(BUILD)/assets/%, $(wildcard $(SOURCE)/fonts/*))
 
 DOMAIN  = repo.rosszurowski.com
 REPO    = rosszurowski/rosszurowski.com
 BRANCH  = $(shell git rev-parse --abbrev-ref HEAD)
+
+ENV    ?= development
 
 #
 # Tasks
@@ -30,11 +34,11 @@ default: build
 build: assets scripts styles
 
 develop:
-	@budo $(SOURCE)/js/index.js:assets/index.js \
+	@budo $(SOURCE)/js/index.js:assets/bundle.js \
 		--dir $(BUILD) \
 		--port $(PORT) \
-		--transform babelify \
-		--live | garnish & watch make --silent assets styles
+		--live \
+		-- -t [ babelify ] | garnish & watch make --silent assets styles
 
 install: node_modules
 
@@ -42,14 +46,15 @@ install: node_modules
 # look into as well, either for the whole site, or just for static assets.
 deploy:
 	@echo "Deploying branch \033[0;33m$(BRANCH)\033[0m to Github pages..."
-	@make clean && make build
+	@make clean
+	@ENV=production make build
 	@echo $(DOMAIN) > $(BUILD)/CNAME
 	@(cd $(BUILD) && \
 		git init -q .  && \
 		git add . && \
 		git commit -q -m "Deployment (auto-commit)" && \
 		echo "\033[0;90m" && \
-		git push "git@github.com:$(REPO).git" master:gh-pages --force && \
+		git push "git@github.com:$(REPO).git" $(BRANCH):gh-pages --force && \
 		echo "\033[0m")
 	@make clean
 	@echo "Deployed to \033[0;32mhttp://$(DOMAIN)\033[0m"
@@ -67,8 +72,8 @@ clean-deps:
 # Shorthands
 #
 
-assets: $(BUILD)/index.html $(BUILD)/favicon.png
-scripts: $(BUILD)/assets/index.js
+assets: $(ASSETS) $(FONTS)
+scripts: $(BUILD)/assets/bundle.js
 styles: $(BUILD)/assets/styles.css
 
 #
@@ -82,9 +87,14 @@ $(BUILD)/%: $(SOURCE)/%
 	@mkdir -p $(@D)
 	@cp $< $@
 
-$(BUILD)/assets/index.js: $(SCRIPTS)
+$(BUILD)/assets/%: $(SOURCE)/%
 	@mkdir -p $(@D)
-	@browserify $(SOURCE)/js/index.js -t babelify -o $@
+	@cp $< $@
+
+$(BUILD)/assets/bundle.js: $(SCRIPTS)
+	@mkdir -p $(@D)
+	@browserify $(SOURCE)/js/index.js -t [ babelify --loose all ] -o $@
+	@if [[ "$(ENV)" == "production" ]]; then uglifyjs -o $@ $@; fi
 
 $(BUILD)/assets/styles.css: $(STYLES)
 	@mkdir -p $(@D)

@@ -5,6 +5,7 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
+    "domready": "^1.0.8"
   },
   "devDependencies": {
     "babelify": "^6.0.2",

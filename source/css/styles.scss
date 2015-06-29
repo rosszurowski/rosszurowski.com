@@ -1,16 +1,26 @@
 // LES DO THIS
 
 @import "modules/variables";
+@import "modules/mixins";
 
+@import "partials/font-face";
 @import "partials/normalize";
 @import "partials/navigation";
 
+$padding: 4rem;
+
+html,
 body {
+  height: 100%;
+}
+
+body {
+  @include font-smoothing();
   background: $background;
-  padding: 4rem 2rem 2rem;
-  font-size: 12px;
+  color: $type-color;
   font-family: $type-stack;
-  line-height: 1.7;
+  font-size: 13px;
+  line-height: 1.65;
 }
 
 a {
@@ -18,60 +28,44 @@ a {
   text-decoration: none;
 }
 
-.index {
-  position: fixed;
-  font-family: "FuturaPT-Heavy";
-  font-size: 16px;
-}
-
 .header {
-  position: fixed;
-  top: 2rem; left: 2rem; right: 2rem;
   display: flex;
+  position: fixed;
+  top: $padding;
+  left: $padding;
+  right: $padding;
 }
 
 .masthead {
-  flex-basis: calc(20% + 0.5rem);
+  flex-basis: 20%;
   .logo {
     display: block;
+    font-weight: bold;
   }
-  .title {
+  .slash {
+    padding: 0 0.35em 0 0.175em;
+    color: lighten($type-color, 25%);
   }
 }
 
-.logo {
-  font-weight: bold;
+.links {
+  flex-basis: 20%;
 }
 
-.project {
- display: flex;
- border-top: 1px #ccc solid;
- padding: 1.2rem 1rem 1rem;
- transition: background 100ms ease;
- .date {
-   flex: 0 0 20%;
- }
- .title {
-   flex-basis: 20%;
-   font-weight: bold;
- }
- .description {
-   color: #ccc;
- }
- .tags {
-   margin-left: auto;
- }
-  .tag {
-    padding-left: 0.75em;
-    font-size: 11px;
-  }
+.link {
+  display: block;
+  opacity: 0.5;
   &:hover {
-    background: lighten($background, 2%);
-    cursor: pointer;
-  } 
+    opacity: 1.0;
+  }
 }
 
-.intro {
-  max-width: 25rem;
-  margin-bottom: 4rem;
+.profile {
+  margin-left: auto;
+}
+
+.footer {
+  position: fixed;
+  left: $padding;
+  bottom: $padding;
 }
