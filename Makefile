@@ -10,17 +10,20 @@ BIN := ./node_modules/.bin
 # Variables
 #
 
-PORT    = 8080
-SOURCE  = ./source
-BUILD   = ./build
-SCRIPTS = $(shell find $(SOURCE)/js -type f -name '*.js')
-STYLES  = $(shell find $(SOURCE)/css -type f -name '*.scss')
-ASSETS  = $(BUILD)/index.html $(BUILD)/favicon.png
-FONTS   = $(patsubst $(SOURCE)/%, $(BUILD)/assets/%, $(wildcard $(SOURCE)/fonts/*))
+PORT     = 8080
+SOURCE   = ./source
+BUILD    = ./build
+STYLES   = $(shell find $(SOURCE)/css -type f -name '*.scss')
+SCRIPTS  = $(shell find $(SOURCE)/js -type f -name '*.js')
+# $(shell find $(SOURCE)/js -type f -name '*.js' ! -path "$(SOURCE)/js/sketches/*")
 
-DOMAIN  = repo.rosszurowski.com
-REPO    = rosszurowski/rosszurowski.com
-BRANCH  = $(shell git rev-parse --abbrev-ref HEAD)
+ASSETS   = $(BUILD)/index.html $(BUILD)/favicon.png
+FONTS    = $(patsubst $(SOURCE)/%, $(BUILD)/assets/%, $(wildcard $(SOURCE)/fonts/*))
+SKETCHES = $(patsubst $(SOURCE)/js/sketches/%, $(BUILD)/sketches/%, $(wildcard $(SOURCE)/js/sketches/*))
+
+DOMAIN   = repo.rosszurowski.com
+REPO     = rosszurowski/rosszurowski.com
+BRANCH   = $(shell git rev-parse --abbrev-ref HEAD)
 
 ENV    ?= development
 
@@ -75,6 +78,7 @@ clean-deps:
 assets: $(ASSETS) $(FONTS)
 scripts: $(BUILD)/assets/bundle.js
 styles: $(BUILD)/assets/styles.css
+sketches: $(SKETCHES)
 
 #
 # Targets
@@ -90,6 +94,11 @@ $(BUILD)/%: $(SOURCE)/%
 $(BUILD)/assets/%: $(SOURCE)/%
 	@mkdir -p $(@D)
 	@cp $< $@
+
+$(BUILD)/sketches/%: $(SOURCE)/js/sketches/%
+	@mkdir -p $(@D)
+	@browserify $< -t [ babelify --loose all ] -o $@
+	@if [[ "$(ENV)" == "production" ]]; then uglifyjs -o $@ $@; fi
 
 $(BUILD)/assets/bundle.js: $(SCRIPTS)
 	@mkdir -p $(@D)

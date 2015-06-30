@@ -1,7 +1,13 @@
 // GO TIME
 
-import domready from 'domready'
+'use strict'
 
-domready(function  () {
-	console.log('ready')
+import domready from 'domready'
+import ferrofluid from './sketches/ferrofluid'
+
+domready(function () {
+
+	const main = document.querySelector('[data-canvas]')
+	const sketch = ferrofluid(main)
+
 })

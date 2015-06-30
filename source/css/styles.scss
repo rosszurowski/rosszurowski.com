@@ -64,6 +64,12 @@ a {
   margin-left: auto;
 }
 
+canvas {
+  display: block;
+  position: relative;
+  z-index: -1;
+}
+
 .footer {
   position: fixed;
   left: $padding;
