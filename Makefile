@@ -54,7 +54,7 @@ deploy:
 		git add . && \
 		git commit -q -m "Deployment (auto-commit)" && \
 		echo "\033[0;90m" && \
-		git push "git@github.com:$(REPO).git" $(BRANCH):gh-pages --force && \
+		git push "git@github.com:$(REPO).git" HEAD:gh-pages --force && \
 		echo "\033[0m")
 	@make clean
 	@echo "Deployed to \033[0;32mhttp://$(DOMAIN)\033[0m"
