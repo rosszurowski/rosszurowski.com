@@ -11,7 +11,7 @@ import * as particle from './particle'
 /**
  * Config
  */
-const PARTICLE_COUNT = 400
+const PARTICLE_COUNT = 600
 
 const deviation = (point, range) => randf(point - (range/2), point + (range/2))
 
@@ -47,6 +47,7 @@ export default function (parent, opts) {
 
 	// Kick it off
 	bind()
+	tick()
 
 
 	/**
@@ -62,7 +63,7 @@ export default function (parent, opts) {
 		width  = canvas.width  = window.innerWidth
 		height = canvas.height = window.innerHeight
 		center = new Vector(width / 2, height / 2)
-		if (redraw !== false) tick()
+		// if (redraw !== false) tick()
 	}
 
 	function tick () {
