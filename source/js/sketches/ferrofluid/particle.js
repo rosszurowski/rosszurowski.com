@@ -2,7 +2,7 @@
 import randf from 'randf'
 import Vector from './vector'
 
-const RADIUS = 1
+const RADIUS = 0.4
 const TWO_PI = Math.PI * 2.0
 const ATTRACT_RADIUS = 95
 
@@ -53,7 +53,7 @@ export function attract (p, point) {
 		p.acceleration.y += accel * (point.y - p.position.y)
 	} else {
 		const pen = ATTRACT_RADIUS - d
-		// if (pen > 1) {
+		if (pen > 1) {
 			const difference = point
 				.subtract(p.position)
 				.normalized()
@@ -66,9 +66,9 @@ export function attract (p, point) {
 			p.velocity.y = velocity.y
 			p.acceleration.x += accel * (point.x - p.position.x)
 			p.acceleration.y += accel * (point.y - p.position.y)
-		// } else {
-			// p.velocity.x = p.velocity.y = 0
-		// }
+		} else {
+			p.velocity.x = p.velocity.y = 0
+		}
 	}
 }
 
