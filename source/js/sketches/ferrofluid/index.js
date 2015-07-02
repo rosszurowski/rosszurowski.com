@@ -5,17 +5,19 @@ import raf from 'component-raf'
 import randf from 'randf'
 import context from '2d-context'
 
+import Vector from './vector'
 import * as particle from './particle'
 
 /**
  * Config
  */
-const PARTICLE_COUNT = 500
+const PARTICLE_COUNT = 400
 
 const deviation = (point, range) => randf(point - (range/2), point + (range/2))
 
 /**
  * Ferrofluid sketch
+ * REMEMBER: heavy contrast == win
  */
 export default function (parent, opts) {
 
@@ -37,8 +39,8 @@ export default function (parent, opts) {
 		particles.push(particle.create({
 			parent: canvas,
 			id: i,
-			x: deviation(width / 2, 10),
-			y: deviation(height / 2, 10)
+			x: deviation(width / 2, 200),
+			y: deviation(height / 2, 200)
 		}))
 	}
 
@@ -59,7 +61,7 @@ export default function (parent, opts) {
 	function resize (redraw) {
 		width  = canvas.width  = window.innerWidth
 		height = canvas.height = window.innerHeight
-		center = { x: width / 2, y: height / 2 }
+		center = new Vector(width / 2, height / 2)
 		if (redraw !== false) tick()
 	}
 
