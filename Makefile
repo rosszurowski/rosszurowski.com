@@ -10,22 +10,24 @@ BIN := ./node_modules/.bin
 # Variables
 #
 
-PORT     = 8080
-SOURCE   = ./source
-BUILD    = ./build
-STYLES   = $(shell find $(SOURCE)/css -type f -name '*.scss')
-SCRIPTS  = $(shell find $(SOURCE)/js -type f -name '*.js')
+PORT      = 8080
+SOURCE    = ./source
+BUILD     = ./build
+STYLES    = $(shell find $(SOURCE)/css -type f -name '*.scss')
+SCRIPTS   = $(shell find $(SOURCE)/js -type f -name '*.js')
 # $(shell find $(SOURCE)/js -type f -name '*.js' ! -path "$(SOURCE)/js/sketches/*")
 
-ASSETS   = $(BUILD)/index.html $(BUILD)/favicon.png
-FONTS    = $(patsubst $(SOURCE)/%, $(BUILD)/assets/%, $(wildcard $(SOURCE)/fonts/*))
-SKETCHES = $(patsubst $(SOURCE)/js/sketches/%, $(BUILD)/sketches/%, $(wildcard $(SOURCE)/js/sketches/*))
+ARGS      = -t [ babelify --loose all ] -t envify -t uglifyify
 
-DOMAIN   = repo.rosszurowski.com
-REPO     = rosszurowski/rosszurowski.com
-BRANCH   = $(shell git rev-parse --abbrev-ref HEAD)
+ASSETS    = $(BUILD)/index.html $(BUILD)/favicon.png
+FONTS     = $(patsubst $(SOURCE)/%, $(BUILD)/assets/%, $(wildcard $(SOURCE)/fonts/*))
+SKETCHES  = $(patsubst $(SOURCE)/js/sketches/%, $(BUILD)/sketches/%, $(wildcard $(SOURCE)/js/sketches/*))
 
-ENV    ?= development
+DOMAIN    = repo.rosszurowski.com
+REPO      = rosszurowski/rosszurowski.com
+BRANCH    = $(shell git rev-parse --abbrev-ref HEAD)
+
+NODE_ENV ?= development
 
 #
 # Tasks
@@ -41,7 +43,7 @@ develop:
 		--dir $(BUILD) \
 		--port $(PORT) \
 		--live \
-		-- -t [ babelify ] | garnish & watch make --silent assets styles
+		-- $(ARGS)| garnish & watch make --silent assets styles
 
 install: node_modules
 
@@ -50,7 +52,7 @@ install: node_modules
 deploy:
 	@echo "Deploying branch \033[0;33m$(BRANCH)\033[0m to Github pages..."
 	@make clean
-	@ENV=production make build
+	@NODE_ENV=production make build
 	@echo $(DOMAIN) > $(BUILD)/CNAME
 	@(cd $(BUILD) && \
 		git init -q .  && \
@@ -97,13 +99,13 @@ $(BUILD)/assets/%: $(SOURCE)/%
 
 $(BUILD)/sketches/%: $(SOURCE)/js/sketches/%
 	@mkdir -p $(@D)
-	@browserify $< -t [ babelify --loose all ] -o $@
-	@if [[ "$(ENV)" == "production" ]]; then uglifyjs -o $@ $@; fi
+	@browserify $(ARGS) $< -o $@
+	@if [[ "$(NODE_ENV)" == "production" ]]; then uglifyjs -o $@ $@; fi
 
 $(BUILD)/assets/bundle.js: $(SCRIPTS)
 	@mkdir -p $(@D)
-	@browserify $(SOURCE)/js/index.js -t [ babelify --loose all ] -o $@
-	@if [[ "$(ENV)" == "production" ]]; then uglifyjs -o $@ $@; fi
+	@browserify $(ARGS) $(SOURCE)/js/index.js -o $@
+	@if [[ "$(NODE_ENV)" == "production" ]]; then uglifyjs -o $@ $@; fi
 
 $(BUILD)/assets/styles.css: $(STYLES)
 	@mkdir -p $(@D)

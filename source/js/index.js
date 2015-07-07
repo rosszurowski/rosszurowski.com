@@ -3,11 +3,11 @@
 'use strict'
 
 import domready from 'domready'
-import ferrofluid from './sketches/ferrofluid'
+import fields from './sketches/fields'
 
 domready(function () {
 
 	const main = document.querySelector('[data-canvas]')
-	const sketch = ferrofluid(main)
+	const sketch = fields(main)
 
 })

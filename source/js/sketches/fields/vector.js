@@ -53,7 +53,7 @@ export default class Vector {
 	}
 
 	magnitude() {
-		return Math.sqrt(this.x * this.x + this.y * this.y)
+		return Math.sqrt(this.dot(this))
 	}
 
 	distanceSquared(point) {

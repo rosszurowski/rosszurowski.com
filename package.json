@@ -13,7 +13,9 @@
   "devDependencies": {
     "babelify": "^6.0.2",
     "browserify": "^9.0.8",
-    "budo": "^4.0.0"
+    "budo": "^4.1.0",
+    "envify": "^3.4.0",
+    "uglifyify": "^3.0.1"
   },
   "author": "Ross Zurowski",
   "license": "MIT"

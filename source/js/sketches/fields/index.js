@@ -11,12 +11,12 @@ import * as particle from './particle'
 /**
  * Config
  */
-const PARTICLE_COUNT = 600
-
+const PARTICLE_COUNT = 250
+const PADDING = 10
 const deviation = (point, range) => randf(point - (range/2), point + (range/2))
 
 /**
- * Ferrofluid sketch
+ * Magnetic Fields sketch
  * REMEMBER: heavy contrast == win
  */
 export default function (parent, opts) {
@@ -27,7 +27,7 @@ export default function (parent, opts) {
 	let height = 0
 	let center = { x: 0, y: 0 }
 	parent.appendChild(ctx.canvas)
-	resize(false)
+	resize()
 
 	if (!ctx) {
 		throw new Error('Your browser doesn\'t support the <canvas> element')
@@ -39,11 +39,10 @@ export default function (parent, opts) {
 		particles.push(particle.create({
 			parent: canvas,
 			id: i,
-			x: deviation(width / 2, 200),
-			y: deviation(height / 2, 200)
+			x: deviation(center.x, 150),
+			y: deviation(center.y, 150)
 		}))
 	}
-
 
 	// Kick it off
 	bind()
@@ -63,7 +62,6 @@ export default function (parent, opts) {
 		width  = canvas.width  = window.innerWidth
 		height = canvas.height = window.innerHeight
 		center = new Vector(width / 2, height / 2)
-		// if (redraw !== false) tick()
 	}
 
 	function tick () {
