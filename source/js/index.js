@@ -3,11 +3,9 @@
 'use strict'
 
 import domready from 'domready'
-import fields from './sketches/fields'
 
-domready(function () {
-
-	const main = document.querySelector('[data-canvas]')
-	const sketch = fields(main)
-
+domready(() => {
+	// TODO: find a way to warp the rectangle element like heat in the summer.
+	// Akin to [this video](https://www.youtube.com/watch?v=x8NwgXhkADY)
+	console.log('hi')
 })

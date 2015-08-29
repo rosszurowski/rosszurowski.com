@@ -1,0 +1,116 @@
+
+
+html,
+body,
+main {
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  background: var(--background);
+  color: var(--type-color);
+  font-family: var(--type-stack);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  position: fixed;
+  top: 4rem;
+  left: 4rem;
+  right: 4rem;
+}
+
+.masthead {
+  flex-basis: 20%;
+  .logo {
+    display: block;
+    font-weight: bold;
+  }
+  .slash {
+    padding: 0 0.35em 0 0.175em;
+    color: lighten($type-color, 25%);
+  }
+}
+
+.links {
+  flex-basis: 20%;
+}
+
+.link {
+  display: block;
+  opacity: 0.5;
+}
+
+.link:hover {
+	opacity: 1.0;
+}
+
+.profile {
+  margin-left: auto;
+}
+
+main {
+  display: flex;
+}
+
+main div {
+  position: relative;
+  flex: 1 0 auto;
+  height: 100%;
+}
+
+canvas {
+  display: block;
+  position: relative;
+  z-index: -1;
+}
+
+.footer {
+  position: fixed;
+  left: 4rem;
+  bottom: 4rem;
+}
+
+.bar {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  width: 50vw;
+  height: 4rem;
+  background: $red;
+  z-index: 9999;
+  mix-blend-mode: multiply;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@media only screen and (max-width: 40em) {
+
+  .header {
+    top: 2rem;
+    left: 2rem;
+    right: 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .links {
+    display: inline-block;
+    margin-top: auto;
+  }
+
+  .bar {
+    top: 50%;
+    left: 50%;
+    width: 80vw;
+  }
+
+}

@@ -11,39 +11,44 @@ BIN := ./node_modules/.bin
 #
 
 PORT      = 8080
+HOST     ?= localhost
+NODE_ENV ?= development
+
 SOURCE    = ./source
 BUILD     = ./build
-STYLES    = $(shell find $(SOURCE)/css -type f -name '*.scss')
-SCRIPTS   = $(shell find $(SOURCE)/js -type f -name '*.js')
-# $(shell find $(SOURCE)/js -type f -name '*.js' ! -path "$(SOURCE)/js/sketches/*")
 
-ARGS      = -t [ babelify --loose all ] -t envify -t uglifyify
+SCRIPTS   = $(shell find $(SOURCE) -type f -name '*.js')
+STYLES    = $(shell find $(SOURCE) -type f -name '*.css')
 
 ASSETS    = $(BUILD)/index.html $(BUILD)/favicon.png
 FONTS     = $(patsubst $(SOURCE)/%, $(BUILD)/assets/%, $(wildcard $(SOURCE)/fonts/*))
-SKETCHES  = $(patsubst $(SOURCE)/js/sketches/%, $(BUILD)/sketches/%, $(wildcard $(SOURCE)/js/sketches/*))
+
+TRANSFORMS = -t [ babelify --loose all ] -t glslify -t envify -t uglifyify
+BROWSERS   = "last 2 versions"
 
 DOMAIN    = repo.rosszurowski.com
 REPO      = rosszurowski/rosszurowski.com
 BRANCH    = $(shell git rev-parse --abbrev-ref HEAD)
 
-NODE_ENV ?= development
-
 #
 # Tasks
 #
 
-default: build
-	@true
+build: install assets scripts styles
 
-build: assets scripts styles
+develop: build
+	@make -j2 develop-server develop-assets
 
-develop:
+develop-server:
 	@budo $(SOURCE)/js/index.js:assets/bundle.js \
+		--host $(HOST) \
 		--dir $(BUILD) \
 		--port $(PORT) \
 		--live \
-		-- $(ARGS)| garnish & watch make --silent assets styles
+		-- $(TRANSFORMS)| garnish
+
+develop-assets:
+	@watch make --silent assets styles
 
 install: node_modules
 
@@ -64,14 +69,11 @@ deploy:
 	@make clean
 	@echo "Deployed to \033[0;32mhttp://$(DOMAIN)\033[0m"
 
-lint: $(SCRIPTS)
-	@standard $^
+lint:
+	@xo
 
 clean:
 	@rm -rf build/
-
-clean-deps:
-	@rm -rf node_modules/
 
 #
 # Shorthands
@@ -79,8 +81,7 @@ clean-deps:
 
 assets: $(ASSETS) $(FONTS)
 scripts: $(BUILD)/assets/bundle.js
-styles: $(BUILD)/assets/styles.css
-sketches: $(SKETCHES)
+styles: $(BUILD)/assets/bundle.css
 
 #
 # Targets
@@ -97,20 +98,15 @@ $(BUILD)/assets/%: $(SOURCE)/%
 	@mkdir -p $(@D)
 	@cp $< $@
 
-$(BUILD)/sketches/%: $(SOURCE)/js/sketches/%
-	@mkdir -p $(@D)
-	@browserify $(ARGS) $< -o $@
-	@if [[ "$(NODE_ENV)" == "production" ]]; then uglifyjs -o $@ $@; fi
-
 $(BUILD)/assets/bundle.js: $(SCRIPTS)
 	@mkdir -p $(@D)
-	@browserify $(ARGS) $(SOURCE)/js/index.js -o $@
+	@browserify $(TRANSFORMS) $(SOURCE)/js/index.js -o $@
 	@if [[ "$(NODE_ENV)" == "production" ]]; then uglifyjs -o $@ $@; fi
 
-$(BUILD)/assets/styles.css: $(STYLES)
+$(BUILD)/assets/bundle.css: $(STYLES)
 	@mkdir -p $(@D)
-	@sassc --sourcemap --load-path $(SOURCE)/css/ $(SOURCE)/css/styles.scss $@
-	@autoprefixer $@ --clean --map --browsers "last 2 versions"
+	@cssnext --browsers $(BROWSERS) --sourcemap $(SOURCE)/css/index.css $@
+	@if [[ "$(NODE_ENV)" == "production" ]]; then cleancss --s0 $@ -o $@; fi
 
 #
 # Phony

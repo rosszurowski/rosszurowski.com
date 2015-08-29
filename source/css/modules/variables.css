@@ -1,0 +1,17 @@
+
+:root {
+
+	/**
+	 * Colors
+	 */
+	--background: #f5f5f5;
+	--highlight:  #ef6875; /* ff6565 */
+	--gradient:   linear-gradient(45deg, #5bbadf 0%,#7dcbbd 100%);
+
+	/**
+	 * Typography
+	 */
+	--type-stack: "Atlas Typewriter", sans-serif;
+	--type-color: #242424;
+
+}
