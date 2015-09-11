@@ -5,117 +5,24 @@ body {
   font-family: var(--type-stack);
   font-size: var(--type-root-size);
   line-height: var(--type-line-height);
-  /*-webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: grayscale;*/
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-p a {
-  border-bottom: 1px currentColor solid;
-}
-
-.header {
-  display: flex;
-}
-
-.links {
-  flex-basis: 20%;
-}
-
-.link {
-  float: left;
-  clear: left;
-  display: inline-block;
-}
-
-.profile {
-  flex: 1;
-  flex-direction: column;
-}
-
-.label {
-  font-size: var(--type-root-size);
-  font-weight: normal;
-  opacity: 0.5;
-}
-
-.supplemental {
+.thunder {
   position: absolute;
-  top: 0; left: 0;
-  padding: 4rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleX(-100%);
+  animation: blink 1000ms linear infinite;
 }
 
-.location {
-  margin-bottom: 4rem;
-  font-size: 0.75em;
-  line-height: 2.2;
-}
-
-.location .latitude,
-.location .longitude {
+svg {
   display: block;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  margin: 4rem 8rem 4rem auto;
-  max-width: 32.5em;
-}
-
-.bar {
-  position: absolute;
-  top: 50%;
-  left: 25%;
-  width: 40vw;
-  height: 3rem;
-  background: var(--highlight);
-  z-index: 9999;
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-@media only screen and (max-width: 40em) {
-
-  body {
-    background: var(--highlight);
-    color: #121212;
-    padding: 0 2rem;
-  }
-
-  .header {
-    top: 2rem;
-    left: 2rem;
-    right: 2rem;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .links {
-    display: inline-block;
-    margin-top: auto;
-  }
-
-  .location {
-    display: none;
-  }
-
-  .canvas {
-    padding: 2rem 0;
-    margin-bottom: 6rem;
-  }
-
-  .bar {
-    background: #fff;
-    position: relative;
-    top: 2rem;
-    left: 0rem;
-    transform: rotate(-45deg);
-    width: 6rem;
-    height: 2rem;
-  }
-
+@keyframes blink {
+  0%    { opacity: 1.0; }
+  58%   { opacity: 1.0; }
+  60%   { opacity: 0.0; }
+  98%   { opacity: 0.0; }
+  100%  { opacity: 1.0; }
 }
