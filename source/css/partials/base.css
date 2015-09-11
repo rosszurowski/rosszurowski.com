@@ -7,7 +7,7 @@ html {
   line-height: var(--type-line-height);
 }
 
-.thunder {
+.bolt {
   position: absolute;
   top: 50%;
   left: 50%;
