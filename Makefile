@@ -17,13 +17,10 @@ NODE_ENV ?= development
 SOURCE    = ./source
 BUILD     = ./build
 
-SCRIPTS   = $(shell find $(SOURCE) -type f -name '*.js')
 STYLES    = $(shell find $(SOURCE) -type f -name '*.css')
 
-ASSETS    = $(BUILD)/index.html $(BUILD)/favicon.png
-FONTS     = $(patsubst $(SOURCE)/%, $(BUILD)/assets/%, $(wildcard $(SOURCE)/fonts/*))
+ASSETS    = $(BUILD)/index.html $(BUILD)/404.html $(BUILD)/favicon.png $(BUILD)/preview.png
 
-TRANSFORMS = -t [ babelify --loose all ] -t glslify -t envify -t uglifyify
 BROWSERS   = "last 2 versions"
 
 DOMAIN    = rosszurowski.com
@@ -34,18 +31,13 @@ BRANCH    = $(shell git rev-parse --abbrev-ref HEAD)
 # Tasks
 #
 
-build: install assets scripts styles
+build: install assets styles
 
 develop: build
 	@make -j2 develop-server develop-assets
 
 develop-server:
-	@budo $(SOURCE)/js/index.js:assets/bundle.js \
-		--host $(HOST) \
-		--dir $(BUILD) \
-		--port $(PORT) \
-		--live \
-		-- $(TRANSFORMS)| garnish
+	@serve -p $(PORT) $(BUILD)
 
 develop-assets:
 	@watch make --silent assets styles
@@ -77,8 +69,7 @@ clean:
 # Shorthands
 #
 
-assets: $(ASSETS) $(FONTS) $(BUILD)/preview.png
-scripts: $(BUILD)/assets/bundle.js
+assets: $(ASSETS)
 styles: $(BUILD)/assets/bundle.css
 
 #
@@ -95,11 +86,6 @@ $(BUILD)/%: $(SOURCE)/%
 $(BUILD)/assets/%: $(SOURCE)/%
 	@mkdir -p $(@D)
 	@cp $< $@
-
-$(BUILD)/assets/bundle.js: $(SCRIPTS)
-	@mkdir -p $(@D)
-	@browserify $(TRANSFORMS) $(SOURCE)/js/index.js -o $@
-	@if [[ "$(NODE_ENV)" == "production" ]]; then uglifyjs -o $@ $@; fi
 
 $(BUILD)/assets/bundle.css: $(STYLES)
 	@mkdir -p $(@D)

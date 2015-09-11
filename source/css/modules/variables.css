@@ -11,7 +11,7 @@
 	/**
 	 * Typography
 	 */
-	--type-stack:       "Atlas Typewriter", sans-serif;
+	--type-stack:       sans-serif;
 	--type-color:       #242424;
 	--type-root-size:   11px;
 	--type-line-height: 1.67;
