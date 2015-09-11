@@ -1,13 +1,3 @@
-# Ross Zurowski
+# rosszurowski.com
 
-A portfolio site for me.
-
-## Getting Started
-
-```bash
-make develop
-```
-
-## License
-
-MIT
+A personal site, hosted on Github Pages. Just a placeholder for now, but things will be coming.
