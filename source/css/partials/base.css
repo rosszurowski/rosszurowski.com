@@ -1,18 +1,12 @@
 
-
-html,
-body,
-main {
-  height: 100%;
-}
-
 body {
-  -webkit-font-smoothing: antialiased;
   background: var(--background);
   color: var(--type-color);
   font-family: var(--type-stack);
-  font-size: 13px;
-  line-height: 1.65;
+  font-size: var(--type-root-size);
+  line-height: var(--type-line-height);
+  /*-webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: grayscale;*/
 }
 
 a {
@@ -20,24 +14,12 @@ a {
   text-decoration: none;
 }
 
-.header {
-  display: flex;
-  position: fixed;
-  top: 4rem;
-  left: 4rem;
-  right: 4rem;
+p a {
+  border-bottom: 1px currentColor solid;
 }
 
-.masthead {
-  flex-basis: 20%;
-  .logo {
-    display: block;
-    font-weight: bold;
-  }
-  .slash {
-    padding: 0 0.35em 0 0.175em;
-    color: lighten($type-color, 25%);
-  }
+.header {
+  display: flex;
 }
 
 .links {
@@ -45,54 +27,64 @@ a {
 }
 
 .link {
-  display: block;
-  opacity: 0.5;
-}
-
-.link:hover {
-	opacity: 1.0;
+  float: left;
+  clear: left;
+  display: inline-block;
 }
 
 .profile {
-  margin-left: auto;
+  flex: 1;
+  flex-direction: column;
 }
 
-main {
-  display: flex;
+.label {
+  font-size: var(--type-root-size);
+  font-weight: normal;
+  opacity: 0.5;
 }
 
-main div {
-  position: relative;
-  flex: 1 0 auto;
-  height: 100%;
+.supplemental {
+  position: absolute;
+  top: 0; left: 0;
+  padding: 4rem;
 }
 
-canvas {
+.location {
+  margin-bottom: 4rem;
+  font-size: 0.75em;
+  line-height: 2.2;
+}
+
+.location .latitude,
+.location .longitude {
   display: block;
-  position: relative;
-  z-index: -1;
 }
 
-.footer {
-  position: fixed;
-  left: 4rem;
-  bottom: 4rem;
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: 4rem 8rem 4rem auto;
+  max-width: 32.5em;
 }
 
 .bar {
-  display: block;
   position: absolute;
   top: 50%;
-  left: 75%;
-  width: 50vw;
-  height: 4rem;
-  background: $red;
+  left: 25%;
+  width: 40vw;
+  height: 3rem;
+  background: var(--highlight);
   z-index: 9999;
-  mix-blend-mode: multiply;
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 @media only screen and (max-width: 40em) {
+
+  body {
+    background: var(--highlight);
+    color: #121212;
+    padding: 0 2rem;
+  }
 
   .header {
     top: 2rem;
@@ -107,10 +99,23 @@ canvas {
     margin-top: auto;
   }
 
+  .location {
+    display: none;
+  }
+
+  .canvas {
+    padding: 2rem 0;
+    margin-bottom: 6rem;
+  }
+
   .bar {
-    top: 50%;
-    left: 50%;
-    width: 80vw;
+    background: #fff;
+    position: relative;
+    top: 2rem;
+    left: 0rem;
+    transform: rotate(-45deg);
+    width: 6rem;
+    height: 2rem;
   }
 
 }

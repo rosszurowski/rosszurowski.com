@@ -6,3 +6,5 @@
 @import "modules/font-face";
 
 @import "partials/base";
+@import "partials/masthead";
+@import "partials/job";

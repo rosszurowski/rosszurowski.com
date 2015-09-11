@@ -1,0 +1,15 @@
+
+.masthead {
+	margin-bottom: 4rem;
+}
+
+.masthead .logo {
+  display: block;
+  /*font-family: "Calibre-Semibold";*/
+	font-weight: bold;
+}
+
+.masthead .slash {
+  padding: 0 0.35em;
+  opacity: 0.25;
+}
