@@ -24,7 +24,7 @@ ASSETS    = $(BUILD)/index.html $(BUILD)/404.html $(BUILD)/css/blog.css $(BUILD)
 BROWSERS   = "last 2 versions"
 
 DOMAIN    = rosszurowski.com
-REPO      = rosszurowski/rosszurowski.com
+REPO      = rosszurowski/rosszurowski.github.io
 BRANCH    = $(shell git rev-parse --abbrev-ref HEAD)
 
 #
@@ -56,7 +56,7 @@ deploy:
 		git add . && \
 		git commit -q -m "Deployment (auto-commit)" && \
 		echo "\033[0;90m" && \
-		git push "git@github.com:$(REPO).git" HEAD:gh-pages --force && \
+		git push "git@github.com:$(REPO).git" HEAD:master --force && \
 		echo "\033[0m")
 	@make clean
 	@echo "Deployed to \033[0;32mhttp://$(DOMAIN)\033[0m"
