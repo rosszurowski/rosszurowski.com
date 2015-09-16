@@ -19,7 +19,7 @@ BUILD     = ./build
 
 STYLES    = $(shell find $(SOURCE) -type f -name '*.css')
 
-ASSETS    = $(BUILD)/index.html $(BUILD)/404.html $(BUILD)/favicon.png $(BUILD)/preview.png
+ASSETS    = $(BUILD)/index.html $(BUILD)/404.html $(BUILD)/css/blog.css $(BUILD)/favicon.png $(BUILD)/preview.png
 
 BROWSERS   = "last 2 versions"
 
