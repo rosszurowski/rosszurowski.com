@@ -16,8 +16,7 @@
     "clean-css": "^3.4.1",
     "cssnext": "^1.8.2",
     "envify": "^3.4.0",
-    "glslify": "^2.0.1",
-    "uglifyify": "^3.0.1"
+    "uglify-js": "^2.4.24"
   },
   "xo": {
     "esnext": true,

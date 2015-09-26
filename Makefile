@@ -22,6 +22,7 @@ STYLES    = $(shell find $(SOURCE) -type f -name '*.css')
 ASSETS    = $(BUILD)/index.html $(BUILD)/404.html $(BUILD)/css/blog.css $(BUILD)/favicon.png $(BUILD)/preview.png
 
 BROWSERS   = "last 2 versions"
+TRANSFORMS = -t [ babelify --loose all ] -t envify
 
 DOMAIN    = rosszurowski.com
 REPO      = rosszurowski/rosszurowski.github.io
@@ -31,14 +32,13 @@ BRANCH    = $(shell git rev-parse --abbrev-ref HEAD)
 # Tasks
 #
 
-build: install assets styles
+build: install assets styles scripts
 
 develop: build
 	@make -j2 develop-server develop-assets
 
 develop-server:
 	@serve -p $(PORT) $(BUILD)
-
 develop-assets:
 	@watch make --silent assets styles
 
@@ -73,6 +73,7 @@ clean:
 
 assets: $(ASSETS)
 styles: $(BUILD)/assets/bundle.css
+scripts: $(BUILD)/assets/bundle.js
 
 #
 # Targets
@@ -93,6 +94,11 @@ $(BUILD)/assets/bundle.css: $(STYLES)
 	@mkdir -p $(@D)
 	@cssnext --browsers $(BROWSERS) --sourcemap $(SOURCE)/css/index.css $@
 	@if [[ "$(NODE_ENV)" == "production" ]]; then cleancss --s0 $@ -o $@; fi
+
+$(BUILD)/assets/bundle.js: $(SCRIPTS)
+	@mkdir -p $(@D)
+	@$(BIN)/browserify $(TRANSFORMS) $(SOURCE)/js/index.js -o $@
+	@if [[ "$(NODE_ENV)" == "production" ]]; then $(BIN)/uglifyjs $@ -o $@; fi
 
 #
 # Phony
