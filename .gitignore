@@ -11,6 +11,7 @@ content/
 
 # Ignore manifest and build files
 node_modules/
+npm-debug.log
 components/
 build/
 public/assets/
