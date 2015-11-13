@@ -4,16 +4,30 @@
 	/**
 	 * Colors
 	 */
-	--background: #f9f9f9;
+	--background: hsl(220, 18%, 20%); /* #2d3339; */
 	--highlight:  #ef6875; /* ff6565 */
 	--gradient:   linear-gradient(45deg, #5bbadf 0%,#7dcbbd 100%);
+
+	--spectrum-0: #fff;
+	--spectrum-1: hsl(207, 7%, 81%);
+	--spectrum-2: hsl(203, 2%, 50%);
+	--spectrum-3: #afb7be;
+	--spectrum-4: #242424;
+
+	--red: #ef6875;
+	--yellow: #fff6a8;
 
 	/**
 	 * Typography
 	 */
-	--type-stack:       sans-serif;
-	--type-color:       #242424;
-	--type-root-size:   11px;
-	--type-line-height: 1.67;
+	--type-stack:       "Calibre", sans-serif;
+	--type-root-size:   26px;
+	--type-line-height: 1.3;
+
+	/**
+	 * Layout
+	 */
+	--padding-horizontal: 60px;
+	--padding-vertical: 50px;
 
 }

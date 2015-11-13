@@ -23,20 +23,58 @@
 
 </head>
 <body>
-	<div class="bolt">
-		<svg width="20px" height="32px" viewBox="0 0 20 32">
-	    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g transform="translate(-6.000000, 0.000000)" fill="#242424">
-          <path d="M26,13.4869333 L16.8989474,13.4869333 L20.8021053,0 L6,18.5152 L15.2147368,18.5152 L11.3178947,32 L26,13.4869333 Z" id="Shape" sketch:type="MSShapeGroup"></path>
-        </g>
-	    </g>
-		</svg>
+	<main>
+		<section class="location">
+			<a class="place" href="https://goo.gl/maps/u2NABtgJYn92" target="_blank">
+				<span class="place-latitude">43°58'13"N</span>
+				<span class="place-longitude">114°55'28"W</span>
+			</a>
+		</section>
+		<section class="profile">
+			<a href="/" class="profile-name">Ross Zurowski</a>
+		</section>
+		<section class="biography">
+			<p>Designer and developer from Toronto. Fourth-year student at <a href="http://design.yorku.ca" target="_blank">YSDN</a>.</p>
+			<p>Previously interned at <a href="#">Format</a>, <a href="#">Facebook</a>, and <a href="#">Palantir</a>. Interested in the application of design, development, and systems thinking.</p>
+		</section>
+		<!-- <section class="experience">
+			<ul>
+				<li class="job">
+					<span class="job-date">2015</span>
+					<span class="job-company">Palantir</span>
+					<span class="job-role">Product Design Intern</span>
+				</li>
+				<li class="job">
+					<span class="job-date">2014</span>
+					<span class="job-company">Facebook</span>
+					<span class="job-role">Product Design Intern</span>
+				</li>
+				<li class="job">
+					<span class="job-date">2013</span>
+					<span class="job-company">Format</span>
+					<span class="job-role">Design Consultant</span>
+				</li>
+			</ul>
+		</section> -->
+		<section class="contact">
+			<p><a href="mailto:ross@rosszurowski.com">ross@rosszurowski.com</a></p>
+		</section>
+		<section class="elsewhere">
+			<span class="elsewhere-label">Elsewhere</span>
+			<ul class="elsewhere-links">
+				<li class="elsewhere-link"><a href="http://github.com/rosszurowski">Github</a></li>
+				<li class="elsewhere-link"><a href="http://rosszurowski.tumblr.com">Tumblr</a></li>
+			</ul>
+		</section>
+	</main>
+	<div class="circle"></div>
+	<div class="canvas-wrap">
+		<canvas class="canvas loading"></canvas>
 	</div>
-	<script src="/assets/bundle.js"></script>
-	<script>
-		window.analytics||(window.analytics=[]),window.analytics.methods=["identify","track","trackLink","trackForm","trackClick","trackSubmit","page","pageview","ab","alias","ready","group","on","once","off"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var method=window.analytics.methods[i];window.analytics[method]=window.analytics.factory(method)}window.analytics.load=function(t){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)},window.analytics.SNIPPET_VERSION="2.0.8",
-		window.analytics.load("8nzrh2ueok")
-		window.analytics.page()
-	</script>
+	<section class="caption">
+		<span>Full site coming soon...</span>
+		<span>Updated Nov 2015</span>
+	</section>
+	<script src="/assets/bundle.js" async></script>
 </body>
 </html>

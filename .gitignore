@@ -6,6 +6,11 @@ design/
 resources/
 research/
 
+# Ignore licensed fonts
+*.woff
+*.ttf
+*.eot
+
 # Ignore content files
 content/
 
