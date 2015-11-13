@@ -98,7 +98,7 @@ build/assets/bundle.css: $(STYLES)
 build/assets/bundle.js: $(SCRIPTS)
 	@mkdir -p $(@D)
 	@browserify $(TRANSFORMS) source/js/index.js -o $@
-	@if [[ "$(NODE_ENV)" == "production" ]]; then $(BIN)/uglifyjs $@ -o $@; fi
+	@if [[ "$(NODE_ENV)" == "production" ]]; then uglifyjs $@ -o $@; fi
 
 #
 # Phony
