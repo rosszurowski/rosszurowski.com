@@ -9,8 +9,11 @@ import randf from 'randf'
 import Vector from './lib/vector'
 
 var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
+var even = num => Math.round(num / 2) * 2
 
 ready(() => {
+
+  document.body.classList.remove('loading')
 
   var canvas = document.querySelector('.canvas')
   var caption = document.querySelector('.caption')
@@ -21,9 +24,6 @@ ready(() => {
   var rate = 1 / 40
 
   caption.style.width = `${even(window.innerHeight)}px`
-
-  if (!mobile.test(navigator.userAgent)) app.start()
-  document.body.classList.remove('loading')
 
   var r = Math.min(app.shape[0], app.shape[1])
   var diff = 50
@@ -38,7 +38,12 @@ ready(() => {
     pts.push(p)
   }
 
-  app.on('tick', () => {
+  app.on('tick', tick)
+  app.on('resize', resize)
+  if (!mobile.test(navigator.userAgent)) app.start()
+
+
+  function tick () {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     for (let i = 0; i < pts.length; i++) {
       let pt = pts[i]
@@ -51,20 +56,16 @@ ready(() => {
       ctx.closePath()
       ctx.fill()
     }
-  })
+  }
 
-  app.on('resize', () => {
-    var center = new Vector(app.shape[0]/2, app.shape[1]/2)
-    caption.style.width = `${even(window.innerHeight)}px`
+  function resize () {
+    center = new Vector(app.shape[0]/2, app.shape[1]/2)
+    caption.style.width = `${even(document.body.clientHeight)}px`
     for (let i = 0; i < pts.length; i++) {
       let pt = pts[i]
       pt.center = center.clone().add({ x: randf(-diff, diff), y: randf(-diff, diff) })
       pt.set(Vector.create().random(randf(-r, r)).add(pt.center))
     }
-  })
-
-  function even (num) {
-    return 2 * Math.round(num / 2)
   }
 
 })
