@@ -16,7 +16,7 @@ NODE_ENV  ?= development
 STYLES     = $(shell find source -type f -name '*.css')
 SCRIPTS    = $(shell find source -type f -name '*.js')
 
-ASSETS     = build/index.html build/404.html build/css/blog.css build/favicon.png build/preview.png build/fonts/
+ASSETS     = build/index.html build/404.html build/css/blog.css build/favicon.png build/preview.png
 
 BROWSERS   = "last 1 version, > 10%"
 TRANSFORMS = -t [ babelify --loose all ] -t envify
@@ -98,7 +98,7 @@ build/assets/bundle.css: $(STYLES)
 build/assets/bundle.js: $(SCRIPTS)
 	@mkdir -p $(@D)
 	@browserify $(TRANSFORMS) source/js/index.js -o $@
-	@if [[ "$(NODE_ENV)" == "production" ]]; then $(BIN)/uglifyjs $@ -o $@; fi
+	@if [[ "$(NODE_ENV)" == "production" ]]; then uglifyjs $@ -o $@; fi
 
 #
 # Phony
