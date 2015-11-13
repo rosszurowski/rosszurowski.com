@@ -52,7 +52,7 @@ main {
   display: flex;
   justify-content: space-between;
   margin-bottom: 4rem;
-  margin-bottom: 15vh;
+  margin-bottom: 13vh;
 }
 
 .place {
@@ -147,6 +147,7 @@ main {
 }
 
 .canvas {
+  position: fixed !important;
   z-index: 9;
   opacity: 1.0;
   will-change: opacity;
@@ -189,9 +190,8 @@ main {
   body {
     height: auto;
   }
-  .contact {
-    margin-bottom: 2rem;
-  }
+  .location { margin-bottom: 11vh; }
+  .contact { margin-bottom: 3rem; }
 }
 
 @media (width <= 620px) {
