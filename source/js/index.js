@@ -12,8 +12,6 @@ var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
 
 ready(() => {
 
-  if (mobile.test(navigator.userAgent)) return
-
   var canvas = document.querySelector('.canvas')
   var caption = document.querySelector('.caption')
   var ctx = context({ canvas })
@@ -24,11 +22,8 @@ ready(() => {
 
   caption.style.width = `${even(window.innerHeight)}px`
 
-  app.start()
-  setTimeout(() => {
-    document.querySelector('.circle').remove()
-    canvas.classList.remove('loading')
-  }, 500)
+  if (!mobile.test(navigator.userAgent)) app.start()
+  document.body.classList.remove('loading')
 
   var r = Math.min(app.shape[0], app.shape[1])
   var diff = 50
@@ -64,6 +59,7 @@ ready(() => {
     for (let i = 0; i < pts.length; i++) {
       let pt = pts[i]
       pt.center = center.clone().add({ x: randf(-diff, diff), y: randf(-diff, diff) })
+      pt.set(Vector.create().random(randf(-r, r)).add(pt.center))
     }
   })
 
