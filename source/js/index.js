@@ -8,8 +8,11 @@ import randf from 'randf'
 
 import Vector from './lib/vector'
 
+var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
 
 ready(() => {
+
+  if (mobile.test(navigator.userAgent)) return
 
   var canvas = document.querySelector('.canvas')
   var caption = document.querySelector('.caption')
@@ -35,6 +38,7 @@ ready(() => {
   for (let i = 0; i < count; i++) {
     var p = Vector.create().random(randf(-r, r)).add(center)
     p.depth = randf(0.4, 0.8)
+    p.scale = randf(0.5, 1.5)
     p.center = center.clone().add({ x: randf(-diff, diff), y: randf(-diff, diff) })
     pts.push(p)
   }
@@ -48,7 +52,7 @@ ready(() => {
       ctx.fillStyle = `rgb(${color}, ${color}, ${color})`
       pt.rotate(pt.center, rate)
       ctx.beginPath()
-      ctx.arc(pt.x, pt.y, 1, 0, Math.PI * 2, true)
+      ctx.arc(pt.x, pt.y, pt.scale, 0, Math.PI * 2, true)
       ctx.closePath()
       ctx.fill()
     }

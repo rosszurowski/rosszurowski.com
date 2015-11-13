@@ -10,7 +10,7 @@ html {
   font-family: var(--type-stack);
   font-size: var(--type-root-size);
   line-height: var(--type-line-height);
-  font-weight: 300;
+  font-weight: 200;
   letter-spacing: 0.02em;
 }
 
@@ -107,30 +107,6 @@ main {
   border-bottom: 2px currentColor solid;
 }
 
-.experience {
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-.job {
-  display: flex;
-  font-size: 16px;
-}
-
-.job-date {
-  color: color(var(--background) lightness(+15%));
-  flex-basis: 15%;
-}
-
-.job-company {
-  color: var(--spectrum-0);
-  flex-basis: 20%;
-}
-
-.job-role {
-  color: var(--spectrum-2);
-}
-
 .contact {
   margin-bottom: auto;
 }
@@ -165,6 +141,7 @@ main {
   padding: 0 var(--padding-vertical);
   font-size: 12px;
   opacity: 0.5;
+  z-index: 2;
 }
 
 
@@ -203,4 +180,41 @@ main {
   50%   { opacity: 0.0; }
   99%   { opacity: 0.0; }
   100%  { opacity: 1.0; }
+}
+
+@media (height <= 660px) {
+  html,
+  body {
+    height: auto;
+  }
+  .contact {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (width <= 620px) {
+
+  body {
+    padding: 30px 20px;
+    letter-spacing: 0.01em;
+    overflow: hidden;
+  }
+  .circle,
+  canvas {
+    display: none;
+  }
+  .profile {
+    margin-bottom: 2rem;
+  }
+  main {
+    position: static;
+  }
+
+  .biography {
+    margin-bottom: 2rem;
+  }
+
+  .caption {
+    display: none;
+  }
 }
