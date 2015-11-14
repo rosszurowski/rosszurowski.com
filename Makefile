@@ -24,6 +24,7 @@ TRANSFORMS = -t [ babelify --loose all ] -t envify
 DOMAIN     = rosszurowski.com
 REPO       = rosszurowski/rosszurowski.github.io
 BRANCH     = $(shell git rev-parse --abbrev-ref HEAD)
+CHANGES    = $(shell git diff --exit-code --quiet HEAD; echo $$?)
 
 #
 # Tasks
@@ -47,8 +48,8 @@ install: node_modules
 # For now, we're deploying to Github Pages. Amazon S3 might be an option to
 # look into as well, either for the whole site, or just for static assets.
 deploy:
+	@if [[ $(CHANGES) -ne 0 ]]; then echo "\033[0;31mError:\033[0m You have uncommitted changes. Please commit changes before deploying." && exit 1; fi
 	@echo "Deploying branch \033[0;33m$(BRANCH)\033[0m to Github pages..."
-	@git stash --quiet
 	@make clean
 	@NODE_ENV=production make build
 	@echo $(DOMAIN) > build/CNAME
