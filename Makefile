@@ -48,6 +48,7 @@ install: node_modules
 # look into as well, either for the whole site, or just for static assets.
 deploy:
 	@echo "Deploying branch \033[0;33m$(BRANCH)\033[0m to Github pages..."
+	@git stash --quiet
 	@make clean
 	@NODE_ENV=production make build
 	@echo $(DOMAIN) > build/CNAME
@@ -59,6 +60,7 @@ deploy:
 		git push "git@github.com:$(REPO).git" HEAD:master --force && \
 		echo "\033[0m")
 	@make clean
+	@git stash pop --quiet
 	@echo "Deployed to \033[0;32mhttp://$(DOMAIN)\033[0m"
 
 lint:
