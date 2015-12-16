@@ -16,7 +16,7 @@ NODE_ENV  ?= development
 STYLES     = $(shell find source -type f -name '*.css')
 SCRIPTS    = $(shell find source -type f -name '*.js')
 
-ASSETS     = build/index.html build/404.html build/css/blog.css build/favicon.png build/preview.png
+ASSETS     = build/index.html build/404.html build/css/blog.css build/favicon.png build/preview.png build/workshop
 
 BROWSERS   = "last 1 version, > 10%"
 TRANSFORMS = -t [ babelify --loose all ] -t envify
@@ -86,6 +86,10 @@ node_modules: package.json
 	@npm install
 
 build/%: source/%
+	@mkdir -p $(@D)
+	@cp -r $< $@
+
+build/%: source/pages/%
 	@mkdir -p $(@D)
 	@cp -r $< $@
 
