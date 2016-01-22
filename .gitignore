@@ -6,6 +6,9 @@ design/
 resources/
 research/
 
+# Ignore SSL files
+ssl/
+
 # Ignore licensed fonts
 *.woff
 *.ttf
