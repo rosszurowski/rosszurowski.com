@@ -1,8 +1,8 @@
 
 @font-face {
   font-family: 'Calibre';
-  src: url('https://rosszurowski-assets.s3.amazonaws.com/fonts/CalibreWeb-Light.eot') format('eot'),
-       url('https://rosszurowski-assets.s3.amazonaws.com/fonts/CalibreWeb-Light.woff') format('woff');
+  src: url('/assets/fonts/CalibreWeb-Light.eot') format('eot'),
+       url('/assets/fonts/CalibreWeb-Light.woff') format('woff');
   font-weight: 200;
   font-style: normal;
 }
