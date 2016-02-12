@@ -21,8 +21,8 @@ ASSETS      = build/index.html build/404.html build/assets/blog.css build/favico
 BROWSERS    = "last 1 version, > 10%"
 TRANSFORMS  = -t [ babelify --loose all ] -t envify
 
-LE_ENDPOINT = PzTXY_-OW26m6siZN-zp3blztwFFMHBd_WduTiDs_lo
-LE_TOKEN    = PzTXY_-OW26m6siZN-zp3blztwFFMHBd_WduTiDs_lo.vN5hqf7GDEJCAPiPRFj8kfvPCpDUdpJYaCYnBZJY66E
+LE_ENDPOINT = OcV1dGe79X7lu_dHF7zgIyYWZyjm8tpDoBFM0QM2eDI
+LE_TOKEN    = OcV1dGe79X7lu_dHF7zgIyYWZyjm8tpDoBFM0QM2eDI.4zeLYj1J00nFLUI76VfzIboqcVpJg5Npce_nxFq1qP0
 
 DOMAIN      = rosszurowski.com
 REPO        = rosszurowski/rosszurowski.github.io
@@ -49,7 +49,7 @@ install: node_modules
 
 deploy:
 	@echo "Deploying branch \033[0;33m$(BRANCH)\033[0m to Amazon S3..."
-	@make clean
+	# @make clean
 	@NODE_ENV=production make build
 	@echo "\033[0;90m"
 	@aws s3 sync build s3://rosszurowski.com/ \
@@ -80,11 +80,13 @@ ssl\:generate:
 
 ssl\:upload:
 	@aws iam upload-server-certificate \
-		--server-certificate-name $(DOMAIN) \
+		--server-certificate-name $(DOMAIN)-tmp \
 		--certificate-body file://./ssl/etc/live/rosszurowski.com/cert.pem \
 		--private-key file://./ssl/etc/live/rosszurowski.com/privkey.pem \
 		--certificate-chain file://./ssl/etc/live/rosszurowski.com/chain.pem \
-		--path /cloudfront/$(DOMAIN)/
+		--path /cloudfront/
+	@bin/renew
+
 
 ssl\:delete:
 	@aws iam delete-server-certificate --server-certificate-name $(DOMAIN)
