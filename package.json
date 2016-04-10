@@ -21,8 +21,10 @@
     "clean-css": "^3.4.1",
     "cssnext": "^1.8.2",
     "envify": "^3.4.0",
+    "mkdirp": "^0.5.1",
     "uglify-js": "^2.4.24",
-    "watchify": "^3.4.0"
+    "watchify": "^3.4.0",
+    "web-resource-inliner": "^2.0.0"
   },
   "xo": {
     "esnext": true,

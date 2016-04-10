@@ -87,6 +87,11 @@ build/%: source/pages/%
 	@mkdir -p $(@D)
 	@cp -r $< $@
 
+build/index.html: source/index.html build/assets/bundle.css
+	@mkdir -p $(@D)
+	@cp -r $< $@
+	@if [[ "$(NODE_ENV)" == "production" ]]; then bin/inline-css $@ $@; fi
+
 build/assets/%: source/%
 	@mkdir -p $(@D)
 	@cp -r $< $@
