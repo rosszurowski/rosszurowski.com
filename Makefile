@@ -1,11 +1,5 @@
 
 #
-# Binaries
-#
-
-export PATH := ./node_modules/.bin/:$(PATH)
-
-#
 # Variables
 #
 
@@ -31,16 +25,16 @@ BRANCH      = $(shell git rev-parse --abbrev-ref HEAD)
 
 build: install assets styles scripts
 
-watch: build
-	@make -j4 watch-server watch-css watch-js watch-assets
-watch-server:
-	@budo --host $(HOST) --port $(PORT) --dir build --css build/assets/bundle.css & wait
-watch-css:
-	@cssnext --watch source/css/index.css build/assets/bundle.css
-watch-js:
-	@watchify $(TRANSFORMS) source/js/index.js -o build/assets/bundle.js
-watch-assets:
-	@chokidar "source/**/*.html" -c "make assets" --silent
+watch: install build
+	@onchange 'source/**/*.html' -- make content & \
+		cssnext --watch source/css/index.css build/assets/bundle.css & \
+		budo source/js/index.js:assets/bundle.js \
+			--port $(PORT) \
+			--dir build \
+			--css build/assets/bundle.css \
+			-- $(TRANSFORMS)
+
+
 
 install: node_modules
 
@@ -48,12 +42,13 @@ deploy:
 	@echo "Deploying branch \033[0;33m$(BRANCH)\033[0m to Github pages..."
 	@make clean
 	@NODE_ENV=production make build
-	@(cd $(BUILD) && \
+	@(cd build && \
+		echo "$(DOMAIN)" > CNAME && \
 		git init -q . && \
 		git add . && \
 		git commit -q -m "Deployment (auto-commit)" && \
 		echo "\033[0;90m" && \
-		git push "git@github.com:$(REPO).git" HEAD:gh-pages --force && \
+		git push "git@github.com:$(REPO).git" HEAD:master --force && \
 		echo "\033[0m")
 	@make clean
 	@echo "Deployed to \033[0;32mhttp://$(DOMAIN)/\033[0m"
