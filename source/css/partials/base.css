@@ -73,7 +73,6 @@ main {
 }
 
 .profile-name {
-  display: block;
   margin-right: 0.5rem;
   color: var(--spectrum-0);
 }
