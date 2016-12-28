@@ -51,7 +51,7 @@ deploy:
 		git push "git@github.com:$(REPO).git" HEAD:master --force && \
 		echo "\033[0m")
 	@make clean
-	@echo "Deployed to \033[0;32mhttp://$(DOMAIN)/\033[0m"
+	@echo "Deployed to \033[0;32mhttps://$(DOMAIN)/\033[0m"
 
 lint:
 	@xo
