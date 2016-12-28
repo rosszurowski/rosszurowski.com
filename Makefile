@@ -3,6 +3,8 @@
 # Variables
 #
 
+BIN = ./node_modules/.bin
+
 PORT       ?= 8080
 HOST       ?= localhost
 NODE_ENV   ?= development
@@ -10,7 +12,7 @@ NODE_ENV   ?= development
 STYLES      = $(shell find source -type f -name '*.css')
 SCRIPTS     = $(shell find source -type f -name '*.js')
 
-ASSETS      = build/index.html build/404.html build/assets/blog.css build/favicon.png build/preview.png build/assets/fonts/
+ASSETS      = build/index.html build/quotes/index.html build/404.html build/assets/blog.css build/favicon.png build/preview.png build/assets/fonts/
 
 BROWSERS    = "last 1 version, > 10%"
 TRANSFORMS  = -t [ babelify --loose all ] -t envify
@@ -26,9 +28,9 @@ BRANCH      = $(shell git rev-parse --abbrev-ref HEAD)
 build: install assets styles scripts
 
 watch: install build
-	@onchange 'source/**/*.html' -- make content & \
-		cssnext --watch source/css/index.css build/assets/bundle.css & \
-		budo source/js/index.js:assets/bundle.js \
+	@$(BIN)/onchange 'source/**/*.html' -- make content & \
+		$(BIN)/cssnext --watch source/css/index.css build/assets/bundle.css & \
+		$(BIN)/budo source/js/index.js:assets/bundle.js \
 			--port $(PORT) \
 			--dir build \
 			--css build/assets/bundle.css \
@@ -62,6 +64,7 @@ clean:
 #
 
 assets: $(ASSETS)
+content: build/index.html build/quotes/index.html
 styles: build/assets/bundle.css
 scripts: build/assets/bundle.js
 
@@ -91,13 +94,13 @@ build/assets/%: source/%
 
 build/assets/bundle.css: $(STYLES)
 	@mkdir -p $(@D)
-	@cssnext --browsers $(BROWSERS) --sourcemap source/css/index.css $@
-	@if [[ "$(NODE_ENV)" == "production" ]]; then cleancss --s0 $@ -o $@; fi
+	@$(BIN)/cssnext --browsers $(BROWSERS) --sourcemap source/css/index.css $@
+	@if [[ "$(NODE_ENV)" == "production" ]]; then $(BIN)/cleancss --s0 $@ -o $@; fi
 
 build/assets/bundle.js: $(SCRIPTS)
 	@mkdir -p $(@D)
-	@browserify $(TRANSFORMS) source/js/index.js -o $@
-	@if [[ "$(NODE_ENV)" == "production" ]]; then uglifyjs $@ -o $@; fi
+	@$(BIN)/browserify $(TRANSFORMS) source/js/index.js -o $@
+	@if [[ "$(NODE_ENV)" == "production" ]]; then $(BIN)/uglifyjs $@ -o $@; fi
 
 #
 # Phony

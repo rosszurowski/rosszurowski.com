@@ -10,6 +10,7 @@ research/
 ssl/
 
 # Ignore licensed fonts
+*.woff2
 *.woff
 *.ttf
 *.eot
