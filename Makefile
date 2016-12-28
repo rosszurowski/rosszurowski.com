@@ -12,7 +12,7 @@ NODE_ENV   ?= development
 STYLES      = $(shell find source -type f -name '*.css')
 SCRIPTS     = $(shell find source -type f -name '*.js')
 
-ASSETS      = build/index.html build/quotes/index.html build/404.html build/assets/blog.css build/favicon.png build/preview.png build/assets/fonts/
+ASSETS      = build/index.html build/clippings/index.html build/404.html build/assets/blog.css build/favicon.png build/preview.png build/assets/fonts/
 
 BROWSERS    = "last 1 version, > 10%"
 TRANSFORMS  = -t [ babelify --loose all ] -t envify
@@ -64,7 +64,7 @@ clean:
 #
 
 assets: $(ASSETS)
-content: build/index.html build/quotes/index.html
+content: build/index.html build/clippings/index.html
 styles: build/assets/bundle.css
 scripts: build/assets/bundle.js
 
