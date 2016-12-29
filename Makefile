@@ -27,7 +27,7 @@ BRANCH      = $(shell git rev-parse --abbrev-ref HEAD)
 
 build: install assets styles scripts
 
-watch: install build
+watch: clean install build
 	@$(BIN)/onchange 'source/**/*.html' -- make content & \
 		$(BIN)/cssnext --watch source/css/index.css build/assets/bundle.css & \
 		$(BIN)/budo source/js/index.js:assets/bundle.js \
