@@ -1,9 +1,0 @@
-
-@import "@rosszurowski/normalize";
-@import "@rosszurowski/vanilla";
-
-@import "modules/variables";
-
-@import "partials/font-face";
-@import "partials/base";
-@import "partials/utilities";

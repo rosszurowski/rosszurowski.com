@@ -1,26 +1,4 @@
-# Ignore system junk
-.DS_Store
-
-# Ignore design files
-design/
-resources/
-research/
-
-# Ignore SSL files
-ssl/
-
-# Ignore licensed fonts
-*.woff2
-*.woff
-*.ttf
-*.eot
-
-# Ignore content files
-content/
-
-# Ignore manifest and build files
 node_modules/
-npm-debug.log
-components/
-build/
-public/assets/
+.next/
+static/
+dist/
