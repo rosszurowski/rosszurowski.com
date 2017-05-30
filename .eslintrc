@@ -1,0 +1,15 @@
+{
+  "parser": "babel-eslint",
+  "extends": "watsi",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "max-len": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  }
+}
