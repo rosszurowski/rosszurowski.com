@@ -6,10 +6,8 @@ const Link = ({ children, external, ...props }) => (
     {children}
     <style jsx>{`
       a {
-        display: inline-block;
         color: #fc3a57;
         border-bottom: 2px transparent solid;
-        line-height: 0.85;
         text-decoration: none;
       }
 

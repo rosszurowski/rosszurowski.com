@@ -4,11 +4,6 @@ import PropTypes from 'prop-types';
 const Paragraph = ({ children }) => (
   <div>
     <p>{children}</p>
-    <style jsx>{`
-      p {
-        letter-spacing: 0.25px;
-      }
-    `}</style>
   </div>
 );
 

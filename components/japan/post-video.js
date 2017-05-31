@@ -68,7 +68,7 @@ class PostVideo extends Component {
             <Icon fill="#fff" size={24} icon={muted ? 'volumeOff' : 'volumeFull'} />
           </button>
         )}
-        <video ref={el => (this.$video = el)} loop muted={!withAudio || muted} {...rest}>
+        <video ref={el => (this.$video = el)} playsInline loop muted={!withAudio || muted} {...rest}>
           <source src={utils.getAssetUrl(`2017/japan/${srcId}.webm`)} type="video/webm" />
           <source src={utils.getAssetUrl(`2017/japan/${srcId}.mp4`)} type="video/mp4" />
         </video>

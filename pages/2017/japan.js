@@ -140,7 +140,7 @@ const JapanTripPage = () => (
           </div>
 
           <ParagraphContainer>
-            <Paragraph>The <Link href="">21 21 Design Sight gallery</Link> was another Tokyo highlight.</Paragraph>
+            <Paragraph>The 21_21 Design Sight gallery was another Tokyo highlight.</Paragraph>
           </ParagraphContainer>
 
           <div className="f mw7 center">
@@ -281,7 +281,7 @@ const JapanTripPage = () => (
         <div id="takamatsu-kobe">
           <ParagraphContainer>
             <Paragraph>The following morning I caught a train heading westward.</Paragraph>
-            <Paragraph>I stopped in Kobe for some Wagyu beef (mmm), and a look at the <Link href="">Hyogo Prefectural Art Museum</Link>.</Paragraph>
+            <Paragraph>I stopped in Kobe for some Wagyu beef (mmm), and a look at the Hyogo Prefectural Art Museum.</Paragraph>
           </ParagraphContainer>
 
           <div className="mw7 center">
