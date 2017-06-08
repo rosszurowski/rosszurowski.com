@@ -1,13 +1,12 @@
 {
-  "name": "@rosszurowski/rosszurowski.com",
+  "name": "rosszurowski",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "next build && next export -o dist && yarn build:cname && yarn build:404",
-    "build:cname": "echo 'rosszurowski.com' > dist/CNAME",
+    "build": "next build && next export -o dist && yarn build:404",
     "build:404": "mv dist/_error/index.html dist/404.html && rm -r dist/_error",
     "start": "next",
-    "deploy": "touch dist/.nojekyll && gh-pages -t -d dist -b master",
+    "deploy": "now dist --static --name rosszurowski",
     "predeploy": "yarn build"
   },
   "dependencies": {
