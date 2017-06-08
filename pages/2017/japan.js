@@ -59,7 +59,7 @@ const JapanTripPage = () => (
           </div>
           <div className="f-m mw8 center">
             <div className="w-50-m pa3"><PostImage srcId="L1020157" alt="Bike route signage in English" width={1200} height={800} /></div>
-            <div className="w-50-m pa3"><PostImage srcId="L1020158" alt="Road markings in Hiragana" width={1200} height={800} /></div>
+            <div className="w-50-m pa3"><PostImage srcId="L1020155" alt="Dog park" width={1200} height={800} /></div>
           </div>
           <ParagraphContainer>
             <Paragraph>My place was in Shibuya near <Link href="https://www.google.com/maps/place/Yoyogi+Park/@35.6708179,139.6849799,15.41z/data=!4m5!3m4!1s0x60188cb479620a33:0x34bcc78ce7f8bf3e!8m2!3d35.671736!4d139.6949447?hl=en" external>Yoyogi park</Link>, one of the largest parks in Tokyo. I walked through here on the first few mornings, stopping to watch the dogs play in the dog park.</Paragraph>
