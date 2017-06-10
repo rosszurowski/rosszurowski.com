@@ -6,8 +6,7 @@
     "build": "next build && next export -o dist && yarn build:404",
     "build:404": "mv dist/_error/index.html dist/404.html && rm -r dist/_error",
     "start": "next",
-    "deploy": "now dist --static --name rosszurowski",
-    "predeploy": "yarn build"
+    "deploy": "echo '> No custom deploy script, use `git push` instead'"
   },
   "dependencies": {
     "canvas-fit": "^1.5.0",
