@@ -1,0 +1,587 @@
+[
+  {
+    "id": 1,
+    "date": "2017-05-01T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-01.jpg",
+    "location": "Dogpatch, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "1.7",
+      "shutter": "1/60"
+    }
+  },
+  {
+    "id": 2,
+    "date": "2017-05-02T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-02.jpg",
+    "location": "Union Square, SF",
+    "dimensions": {
+      "width": 1196,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Fujifilm X100",
+      "aperture": "4.0",
+      "shutter": "1/100"
+    }
+  },
+  {
+    "id": 3,
+    "date": "2017-05-03T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-03.jpg",
+    "location": "Ritual Coffee, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "4.0",
+      "shutter": "1/400"
+    }
+  },
+  {
+    "id": 4,
+    "date": "2017-05-04T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-04.jpg",
+    "location": "Mission Creek, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.0",
+      "shutter": "1/4000"
+    }
+  },
+  {
+    "id": 5,
+    "date": "2017-05-05T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-05.jpg",
+    "location": "Shotwell Street, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 868
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/3200"
+    }
+  },
+  {
+    "id": 6,
+    "date": "2017-05-06T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-06.jpg",
+    "location": "Harrison Street, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 1200
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.0",
+      "shutter": "1/800"
+    }
+  },
+  {
+    "id": 7,
+    "date": "2017-05-07T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-07.jpg",
+    "location": "Blake Garden, Hong Kong",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.5",
+      "shutter": "1/1250"
+    }
+  },
+  {
+    "id": 8,
+    "date": "2017-05-08T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-08.jpg",
+    "location": "Yoyogi Park, Tokyo",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.0",
+      "shutter": "1/400"
+    }
+  },
+  {
+    "id": 9,
+    "date": "2017-05-09T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-09.jpg",
+    "location": "Shinjuku, Tokyo",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "4.0",
+      "shutter": "1/125"
+    }
+  },
+  {
+    "id": 10,
+    "date": "2017-05-10T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-10.jpg",
+    "location": "Shibuya, Tokyo",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "1.7",
+      "shutter": "1/160"
+    }
+  },
+  {
+    "id": 11,
+    "date": "2017-05-11T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-11.jpg",
+    "location": "Shinjuku Gyoen Garden, Tokyo",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.0",
+      "shutter": "1/1000"
+    }
+  },
+  {
+    "id": 12,
+    "date": "2017-05-12T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-12.jpg",
+    "location": "Hong Kong",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.0",
+      "shutter": "1/1000"
+    }
+  },
+  {
+    "id": 13,
+    "date": "2017-05-13T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-13.jpg",
+    "location": "Hyogo Prefectural Museum of Art, Kobe",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.8",
+      "shutter": "1/640"
+    }
+  },
+  {
+    "id": 14,
+    "date": "2017-05-14T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-14.jpg",
+    "location": "Naoshima",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "8.0",
+      "shutter": "1/1600"
+    }
+  },
+  {
+    "id": 15,
+    "date": "2017-05-15T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-15.jpg",
+    "location": "Takamatsu",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.0",
+      "shutter": "1/60"
+    }
+  },
+  {
+    "id": 16,
+    "date": "2017-05-16T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-16.jpg",
+    "location": "Kobe",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "4.0",
+      "shutter": "1/1600"
+    }
+  },
+  {
+    "id": 17,
+    "date": "2017-05-17T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-17.jpg",
+    "location": "Kyoto",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.0",
+      "shutter": "1/250"
+    }
+  },
+  {
+    "id": 18,
+    "date": "2017-05-18T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-18.jpg",
+    "location": "WWW X, Shibuya",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.0",
+      "shutter": "1/60"
+    }
+  },
+  {
+    "id": 19,
+    "date": "2017-05-19T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-19.jpg",
+    "location": "Shinagawa, Tokyo",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "4.0",
+      "shutter": "1/3200"
+    }
+  },
+  {
+    "id": 20,
+    "date": "2017-05-20T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-20.jpg",
+    "location": "Inamuragasaki, Kamakura",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.0",
+      "shutter": "1/125"
+    }
+  },
+  {
+    "id": 21,
+    "date": "2017-05-21T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-21.jpg",
+    "location": "Roppongi, Tokyo",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "1.7",
+      "shutter": "1/60"
+    }
+  },
+  {
+    "id": 22,
+    "date": "2017-05-22T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-22.jpg",
+    "location": "Takamatsu",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "8.0",
+      "shutter": "1/400"
+    }
+  },
+  {
+    "id": 23,
+    "date": "2017-05-23T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-23.jpg",
+    "location": "Shibuya, Tokyo",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "4.0",
+      "shutter": "1/6400"
+    }
+  },
+  {
+    "id": 24,
+    "date": "2017-05-24T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-24.jpg",
+    "location": "Nara",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.8",
+      "shutter": "1/640"
+    }
+  },
+  {
+    "id": 25,
+    "date": "2017-05-25T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-25.jpg",
+    "location": "Kyoto",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.8",
+      "shutter": "1/60"
+    }
+  },
+  {
+    "id": 26,
+    "date": "2017-05-26T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-26.jpg",
+    "location": "Nara",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "4.0",
+      "shutter": "1/320"
+    }
+  },
+  {
+    "id": 27,
+    "date": "2017-05-27T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-27.jpg",
+    "location": "Naoshima",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "8.0",
+      "shutter": "1/320"
+    }
+  },
+  {
+    "id": 28,
+    "date": "2017-05-28T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-28.jpg",
+    "location": "Kyoto",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/30"
+    }
+  },
+  {
+    "id": 29,
+    "date": "2017-05-29T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-29.jpg",
+    "location": "Lima",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/15"
+    }
+  },
+  {
+    "id": 30,
+    "date": "2017-05-30T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-30.jpg",
+    "location": "Arequipa",
+    "dimensions": {
+      "width": 1200,
+      "height": 797
+    },
+    "exif": {
+      "camera": "Fujifilm X100",
+      "aperture": "14",
+      "shutter": "1/60"
+    }
+  },
+  {
+    "id": 31,
+    "date": "2017-05-31T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-31.jpg",
+    "location": "Cuajone",
+    "dimensions": {
+      "width": 1200,
+      "height": 797
+    },
+    "exif": {
+      "camera": "Fujifilm X100",
+      "aperture": "2.8",
+      "shutter": "1/550"
+    }
+  },
+  {
+    "id": 32,
+    "date": "2017-06-01T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-01.jpg",
+    "location": "Flora Grubb Gardens, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 900
+    },
+    "exif": {
+      "camera": "Fujifilm X100",
+      "aperture": "2.0",
+      "shutter": "1/40"
+    }
+  },
+  {
+    "id": 33,
+    "date": "2017-06-02T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-02.jpg",
+    "location": "Oakland",
+    "dimensions": {
+      "width": 1200,
+      "height": 797
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.8",
+      "shutter": "1/60"
+    }
+  },
+  {
+    "id": 34,
+    "date": "2017-06-03T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-03.jpg",
+    "location": "Dogpatch, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.8",
+      "shutter": "1/60"
+    }
+  },
+  {
+    "id": 35,
+    "date": "2017-06-04T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-04.jpg",
+    "location": "Blake Gardens, Hong Kong",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.8",
+      "shutter": "1/800"
+    }
+  },
+  {
+    "id": 36,
+    "date": "2017-06-05T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-05.jpg",
+    "location": "Shinjuku",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.5",
+      "shutter": "1/2500"
+    }
+  },
+  {
+    "id": 37,
+    "date": "2017-06-06T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-06.jpg",
+    "location": "Nara",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.8",
+      "shutter": "1/60"
+    }
+  },
+  {
+    "id": 38,
+    "date": "2017-06-07T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-07.jpg",
+    "location": "Meguro, Tokyo",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "8.0",
+      "shutter": "1/320"
+    }
+  },
+  {
+    "id": 39,
+    "date": "2017-06-08T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-08.jpg",
+    "location": "Hong Kong",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.8",
+      "shutter": "1/125"
+    }
+  }
+]

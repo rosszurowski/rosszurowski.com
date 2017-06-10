@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Vector from 'lib/vector';
 import randf from 'randf';
-import loop from 'canvas-loop';
+import fitter from 'canvas-fit';
 
 const POINT_COUNT = 150;
 const FRAME_RATE = 1 / 40;
@@ -12,29 +12,41 @@ const rgb = (r, g, b) => `rgb(${r}, ${g}, ${b})`;
 export default class StarField extends Component {
   componentDidMount () {
     this.ctx = this.$canvas.getContext('2d');
-    this.app = loop(this.$canvas, { scale: window.devicePixelRatio });
-    this.app.on('tick', this.handleFrameTick);
-    this.app.on('resize', this.handleResize);
+    this.scale = window.devicePixelRatio;
+    this.fitCanvas = fitter(this.$canvas, window, this.scale);
 
-    const [width, height] = this.app.shape;
+    const [width, height] = this.getCanvasSize();
 
     this.r = Math.min(width, height);
     this.center = new Vector(width * 0.65, height * 0.5);
 
     this.generatePoints();
 
-    this.app.start();
+    window.addEventListener('resize', this.handleResize);
+    this.timer = requestAnimationFrame(this.handleFrameTick);
   }
 
   componentWillUnmount () {
-    if (this.app) {
-      this.app.stop();
+    window.removeEventListener('resize', this.handleResize);
+    cancelAnimationFrame(this.timer);
+  }
+
+  getCanvasSize = () => {
+    if (!this.$canvas) {
+      return [null, null];
     }
+
+    const width = this.$canvas.width / this.scale;
+    const height = this.$canvas.height / this.scale;
+
+    return [width, height];
   }
 
   ctx = null;
-  app = null;
+  timer = null;
+  scale = null;
   r = null;
+  fitCanvas = null;
   center = null;
   points = [];
 
@@ -53,8 +65,8 @@ export default class StarField extends Component {
 
   handleFrameTick = () => {
     const ctx = this.ctx;
-    const scale = this.app.scale;
-    const [width, height] = this.app.shape;
+    const scale = this.scale;
+    const [width, height] = this.getCanvasSize();
 
     ctx.save();
     ctx.scale(scale, scale);
@@ -71,11 +83,14 @@ export default class StarField extends Component {
       ctx.fill();
     }
     ctx.restore();
+
+    requestAnimationFrame(this.handleFrameTick);
   };
 
   handleResize = () => {
-    const { shape } = this.app;
-    const [width, height] = shape;
+    this.fitCanvas();
+
+    const [width, height] = this.getCanvasSize();
     const center = new Vector(width / 2, height / 2);
 
     for (let i = 0; i < this.points.length; i++) {

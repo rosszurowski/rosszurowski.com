@@ -1,14 +1,39 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
+
 import StarField from 'components/star-field';
 import FontFaceCalibre from 'components/styles/font-face-calibre';
 
 const isClient = typeof document !== 'undefined';
 const isMobile = isClient && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
+const meta = {
+  title: 'Ross Zurowski',
+  description: 'Designer and developer from Toronto.',
+};
+
 export default () => (
   <div>
     <main>
+      <Head>
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta name="og:title" content={meta.title} />
+
+        <meta name="og:description" content={meta.description} />
+        <meta name="og:image" content="/static/og-image.png" />
+        <meta name="og:url" content="https://rosszurowski.com" />
+        <meta name="og:type" content="website" />
+        <meta name="og:site_name" content="Ross Zurowski" />
+
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:image" content="/static/og-image.png" />
+        <meta name="twitter:creator" content="@rosszurowski" />
+        <meta name="twitter:url" content="https://rosszurowski.com" />
+      </Head>
       <section className="location">
         <a className="place" href="https://goo.gl/maps/u2NABtgJYn92" target="_blank" rel="noopener noreferrer">
           <div className="place-latitude">43°58'13"N</div>
@@ -31,7 +56,7 @@ export default () => (
         <ul className="elsewhere-links">
           <li className="elsewhere-link"><a href="https://github.com/rosszurowski">Github</a></li>
           <li className="elsewhere-link"><a href="https://rosszurowski.tumblr.com">Tumblr</a></li>
-          <li className="elsewhere-link"><a href="https://rosszurowski.com/100">100 Days</a></li>
+          <li className="elsewhere-link"><Link href="/100"><a>100 Days</a></Link></li>
         </ul>
       </section>
     </main>
