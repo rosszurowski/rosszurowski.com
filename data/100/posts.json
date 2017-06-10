@@ -583,5 +583,20 @@
       "aperture": "2.8",
       "shutter": "1/125"
     }
+  },
+  {
+    "id": 40,
+    "date": "2017-06-09T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-09.jpg",
+    "location": "Yoyogi, Tokyo",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "16.0",
+      "shutter": "1/30"
+    }
   }
 ]
