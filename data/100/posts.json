@@ -598,5 +598,20 @@
       "aperture": "16.0",
       "shutter": "1/30"
     }
+  },
+  {
+    "id": 41,
+    "date": "2017-06-10T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-10.jpg",
+    "location": "Kyoto",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "4.0",
+      "shutter": "1/60"
+    }
   }
 ]
