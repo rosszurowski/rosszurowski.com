@@ -7,7 +7,7 @@ import FontFaceCalibre from 'components/styles/font-face-calibre';
 
 import { color } from 'lib/100/styles';
 
-import posts from 'data/100/posts.json';
+import posts from 'data/100.json';
 
 const title = '100 Days';
 const description = 'A photography project by designer Ross Zurowski. 100 days of photos.';

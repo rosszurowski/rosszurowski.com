@@ -628,5 +628,20 @@
       "aperture": "8.0",
       "shutter": "1/80"
     }
+  },
+  {
+    "id": 43,
+    "date": "2017-06-12T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-12.jpg",
+    "location": "Ocean Beach, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "4.0",
+      "shutter": "1/800"
+    }
   }
 ]
