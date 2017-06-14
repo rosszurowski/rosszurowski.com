@@ -16,8 +16,6 @@
     "randf": "^1.0.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-medium-image-zoom": "^1.0.3",
-    "recompose": "^0.23.4",
     "scrollmonitor": "^1.2.3",
     "styled-jsx": "^0.5.7",
     "tinytime": "^0.2.6"
@@ -30,7 +28,6 @@
     "eslint": "^3.19.0",
     "eslint-config-watsi": "^1.0.15",
     "eslint-import-resolver-babel-module": "^3.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "gh-pages": "^1.0.0"
+    "eslint-plugin-import": "^2.2.0"
   }
 }
