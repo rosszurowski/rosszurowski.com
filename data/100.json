@@ -643,5 +643,20 @@
       "aperture": "4.0",
       "shutter": "1/800"
     }
+  },
+  {
+    "id": 44,
+    "date": "2017-06-13T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-13.jpg",
+    "location": "Fort Portal, Uganda",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.8",
+      "shutter": "1/320"
+    }
   }
 ]
