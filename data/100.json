@@ -673,5 +673,20 @@
       "aperture": "4.0",
       "shutter": "1/250"
     }
+  },
+  {
+    "id": 46,
+    "date": "2017-06-15T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-15.jpg",
+    "location": "The Mission, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "4.0",
+      "shutter": "1/500"
+    }
   }
 ]
