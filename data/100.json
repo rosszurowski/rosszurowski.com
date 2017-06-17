@@ -688,5 +688,20 @@
       "aperture": "4.0",
       "shutter": "1/500"
     }
+  },
+  {
+    "id": 47,
+    "date": "2017-06-16T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-16.jpg",
+    "location": "Hong Kong",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.8",
+      "shutter": "1/200"
+    }
   }
 ]
