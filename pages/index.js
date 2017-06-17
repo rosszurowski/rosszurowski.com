@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
+import Page from 'components/layouts/page';
 import StarField from 'components/star-field';
 import FontFaceCalibre from 'components/styles/font-face-calibre';
 
@@ -14,7 +15,7 @@ const meta = {
 };
 
 export default () => (
-  <div>
+  <Page>
     <main>
       <Head>
         <title>{meta.title}</title>
@@ -269,5 +270,5 @@ export default () => (
         }
       }
     `}</style>
-  </div>
+  </Page>
 );

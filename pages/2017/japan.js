@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Head from 'next/head';
 
+import Page from 'components/layouts/page';
 import FontFaceCalibre from 'components/styles/font-face-calibre';
 import GlobalStyles from 'components/japan/global-styles';
 
@@ -17,23 +17,11 @@ import EndNotes from 'components/japan/end-notes';
 
 import utils from 'lib/utils';
 
-const meta = {
-  title: 'Japan Trip — Ross Zurowski',
-  description: '',
-  previewImageUrl: utils.getAssetUrl('2017/japan/og-image.jpg'),
-};
-
 const JapanTripPage = () => (
-  <div>
-    <Head>
-      <title>{meta.title}</title>
-      <meta name="description" content={meta.description} />
-
-      <meta name="og:title" content={meta.title} />
-      <meta name="og:description" content={meta.description} />
-      <meta name="og:image" content={meta.previewImageUrl} />
-      <meta name="og:site_name" content="Ross Zurowski" />
-    </Head>
+  <Page
+    title="Japan Trip"
+    description="A few photos from a trip to Japan in May 2017."
+    previewImageUrl={utils.getAssetUrl('2017/japan/og-image.jpg')}>
     <FontFaceCalibre />
     <GlobalStyles />
 
@@ -577,7 +565,7 @@ const JapanTripPage = () => (
         <p>And thanks to you for reading! You can also check out <Link href="https://rosszurowski.com/100">my 100 days project</Link> for more photos.</p>
       </div>
     </EndNotes>
-  </div>
+  </Page>
 );
 
 export default JapanTripPage;

@@ -980,11 +980,11 @@ babel-types@^6.19.0, babel-types@^6.21.0, babel-types@^6.23.0, babel-types@^6.24
     lodash "^4.2.0"
     to-fast-properties "^1.0.1"
 
-babylon@6.14.1, babylon@^6.11.0:
+babylon@6.14.1:
   version "6.14.1"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.14.1.tgz#956275fab72753ad9b3435d7afe58f8bf0a29815"
 
-babylon@^6.17.0, babylon@^6.17.2:
+babylon@^6.11.0, babylon@^6.17.0, babylon@^6.17.2:
   version "6.17.3"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.17.3.tgz#1327d709950b558f204e5352587fd0290f8d8e48"
 
@@ -1142,8 +1142,8 @@ camelcase@^3.0.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-3.0.0.tgz#32fc4b9fcdaf845fcdf7e73bb97cac2261f0ab0a"
 
 caniuse-lite@^1.0.30000684:
-  version "1.0.30000684"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000684.tgz#0c1032d0b36e14d1ac199f93ef2d1c42d3f03fd7"
+  version "1.0.30000686"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000686.tgz#d9d9ec6110e5533be544a689003f7596532c67d3"
 
 canvas-fit@^1.5.0:
   version "1.5.0"
@@ -2853,8 +2853,8 @@ ncp@~2.0.0:
   resolved "https://registry.yarnpkg.com/ncp/-/ncp-2.0.0.tgz#195a21d6c46e361d2fb1281ba38b91e9df7bdbb3"
 
 next@beta:
-  version "3.0.0-beta14"
-  resolved "https://registry.yarnpkg.com/next/-/next-3.0.0-beta14.tgz#5d03867b5ba346bb4c805673ce7dda54e9282007"
+  version "3.0.0-beta16"
+  resolved "https://registry.yarnpkg.com/next/-/next-3.0.0-beta16.tgz#c6e237d6792805500cb0e836a1c0e420ca611c40"
   dependencies:
     ansi-html "0.0.7"
     babel-core "6.24.0"
@@ -2906,7 +2906,7 @@ next@beta:
     url "0.11.0"
     uuid "3.0.1"
     walk "^2.3.9"
-    webpack "2.6.0"
+    webpack "2.6.1"
     webpack-dev-middleware "1.10.2"
     webpack-hot-middleware "2.18.0"
     write-file-webpack-plugin "4.1.0"
@@ -4143,9 +4143,9 @@ webpack-sources@^0.2.3:
     source-list-map "^1.1.1"
     source-map "~0.5.3"
 
-webpack@2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-2.6.0.tgz#7e650a92816abff5db5f43316b0b8b19b13d76c1"
+webpack@2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-2.6.1.tgz#2e0457f0abb1ac5df3ab106c69c672f236785f07"
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^2.0.0"

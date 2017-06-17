@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
+import Page from 'components/layouts/page';
 import Header from 'components/100/header';
 import PostList from 'components/100/post-list';
 import FontFaceCalibre from 'components/styles/font-face-calibre';
@@ -16,18 +17,7 @@ export default () => {
   const orderedPosts = posts.slice().reverse();
 
   return (
-    <main>
-      <Head>
-        <title>{title} &mdash; Ross Zurowski</title>
-        <meta charSet="utf-8" />
-        <meta name="description" content={description} />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:url" content="https://rosszurowski.com/100" />
-      </Head>
-
+    <Page title={title} description={description}>
       <Header />
       <div>
         <PostList posts={orderedPosts} />
@@ -67,6 +57,6 @@ export default () => {
           text-rendering: optimizeLegibility;
         }
       `}</style>
-    </main>
+    </Page>
   );
 };
