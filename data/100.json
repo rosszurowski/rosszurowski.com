@@ -703,5 +703,50 @@
       "aperture": "2.8",
       "shutter": "1/200"
     }
+  },
+  {
+    "id": 48,
+    "date": "2017-06-17T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-17.jpg",
+    "location": "Rotterdam",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Fujifilm X100",
+      "aperture": "2.8",
+      "shutter": "1/200"
+    }
+  },
+  {
+    "id": 49,
+    "date": "2017-06-18T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-18.jpg",
+    "location": "Arequipa",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Fujifilm X100",
+      "aperture": "2.8",
+      "shutter": "1/200"
+    }
+  },
+  {
+    "id": 50,
+    "date": "2017-06-19T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-19.jpg",
+    "location": "Iceland",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Canon 5D Mark II",
+      "aperture": "4.0",
+      "shutter": "1/200"
+    }
   }
 ]
