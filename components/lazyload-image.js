@@ -14,12 +14,16 @@ if (typeof global.window !== 'undefined') {
   require('lazysizes');
 }
 
+const first = arr => arr[0];
+const removeWidth = str => str.replace(/\s*\d+(w|x)$/, '');
+
 const LazyloadImage = ({ srcSet, alt, width, height, preload }) => (
   <span>
     <img
-      src="data:image/gif;base64,R0lGODlhAQABAPAAAPLy8v///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+      src={removeWidth(first(srcSet))}
+      srcSet="data:image/gif;base64,R0lGODlhAQABAPAAAPLy8v///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
       alt={alt}
-      data-srcset={Array.isArray(srcSet) ? srcSet.join(', ') : srcSet}
+      data-srcset={srcSet.join(', ')}
       data-sizes="auto"
       className={`js-lazysizes ${preload ? 'js-lazysizes-preload' : ''}`} />
     <canvas width={width} height={height} />
@@ -52,10 +56,7 @@ const LazyloadImage = ({ srcSet, alt, width, height, preload }) => (
 );
 
 LazyloadImage.propTypes = {
-  srcSet: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.string),
-    PropTypes.string,
-  ]).isRequired,
+  srcSet: PropTypes.arrayOf(PropTypes.string).isRequired,
   alt: PropTypes.string,
   width: PropTypes.number,
   height: PropTypes.number,

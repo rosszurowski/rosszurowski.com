@@ -6,10 +6,10 @@ import LazyloadImage from 'components/lazyload-image';
 const PostImage = ({ src, ...props }) => {
   const srcWithoutJPGExtension = src.replace(/\.jpe?g$/, '');
   const srcSet = [
-    `${srcWithoutJPGExtension}-800w.jpg 800w`,
     `${srcWithoutJPGExtension}-1200w.jpg 1200w`,
     `${srcWithoutJPGExtension}-2400w.jpg 2400w`,
-  ].join(', ');
+    `${srcWithoutJPGExtension}-800w.jpg 800w`,
+  ];
 
   return (
     <span>
