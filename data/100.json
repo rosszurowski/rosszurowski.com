@@ -748,5 +748,35 @@
       "aperture": "4.0",
       "shutter": "1/200"
     }
+  },
+  {
+    "id": 51,
+    "date": "2017-06-20T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-20.jpg",
+    "location": "Arigashiyama, Kyoto",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "1.7",
+      "shutter": "1/320"
+    }
+  },
+  {
+    "id": 52,
+    "date": "2017-06-21T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-21.jpg",
+    "location": "Fort Mason, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "4.0",
+      "shutter": "1/500"
+    }
   }
 ]
