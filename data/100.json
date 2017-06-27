@@ -778,5 +778,65 @@
       "aperture": "4.0",
       "shutter": "1/500"
     }
+  },
+  {
+    "id": 53,
+    "date": "2017-06-22T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-22.jpg",
+    "location": "Los Angeles",
+    "dimensions": {
+      "width": 1200,
+      "height": 797
+    },
+    "exif": {
+      "camera": "Fujifilm X100",
+      "aperture": "?",
+      "shutter": "?"
+    }
+  },
+  {
+    "id": 54,
+    "date": "2017-06-23T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-23.jpg",
+    "location": "Los Angeles",
+    "dimensions": {
+      "width": 1200,
+      "height": 797
+    },
+    "exif": {
+      "camera": "Fujifilm X100",
+      "aperture": "?",
+      "shutter": "?"
+    }
+  },
+  {
+    "id": 55,
+    "date": "2017-06-24T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-24.jpg",
+    "location": "Andes, Peru",
+    "dimensions": {
+      "width": 1200,
+      "height": 796
+    },
+    "exif": {
+      "camera": "Yashica T4",
+      "aperture": "8",
+      "shutter": "1/500"
+    }
+  },
+  {
+    "id": 56,
+    "date": "2017-06-25T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-25.jpg",
+    "location": "Atlanic Ocean, near the Netherlands",
+    "dimensions": {
+      "width": 1200,
+      "height": 797
+    },
+    "exif": {
+      "camera": "Fujifilm X100",
+      "aperture": "4.0",
+      "shutter": "1/500"
+    }
   }
 ]
