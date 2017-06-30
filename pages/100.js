@@ -19,6 +19,11 @@ export default () => {
   return (
     <Page title={title} description={description}>
       <Header />
+      <div className="notice-wrapper">
+        <div className="notice">
+          This project is on hold while I‘m travelling without access to internet. It‘ll resume when I‘m back on <em>July 8th</em>. Thanks for following along!
+        </div>
+      </div>
       <div>
         <PostList posts={orderedPosts} />
       </div>
@@ -55,6 +60,21 @@ export default () => {
         h1, h2, h3, h4, h5, h6 {
           font-weight: normal;
           text-rendering: optimizeLegibility;
+        }
+
+        .notice-wrapper {
+          margin-left: auto;
+          margin-right: auto;
+          max-width: 40rem;
+          width: 90%;
+        }
+
+        .notice {
+          background-color: rgba(0, 191, 131, 0.1);
+          color: ${color.green};
+          padding: 36px;
+          font-size: 19px;
+          text-align: center;
         }
       `}</style>
     </Page>
