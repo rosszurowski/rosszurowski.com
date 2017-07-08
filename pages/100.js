@@ -1,6 +1,4 @@
 import React from 'react';
-import Head from 'next/head';
-
 import Page from 'components/layouts/page';
 import Header from 'components/100/header';
 import PostList from 'components/100/post-list';
@@ -19,11 +17,6 @@ export default () => {
   return (
     <Page title={title} description={description}>
       <Header />
-      <div className="notice-wrapper">
-        <div className="notice">
-          This project is on hold while I‘m travelling without access to internet. It‘ll resume when I‘m back on <em>July 8th</em>. Thanks for following along!
-        </div>
-      </div>
       <div>
         <PostList posts={orderedPosts} />
       </div>

@@ -838,5 +838,170 @@
       "aperture": "4.0",
       "shutter": "1/500"
     }
+  },
+  {
+    "id": 57,
+    "date": "2017-06-26T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-26.jpg",
+    "location": "",
+    "dimensions": {
+      "width": 1200,
+      "height": 797
+    },
+    "exif": {
+      "camera": "Yashica T4",
+      "aperture": "2.8",
+      "shutter": "?"
+    }
+  },
+  {
+    "id": 58,
+    "date": "2017-06-27T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-27.jpg",
+    "location": "Ocean Beach, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "4.0",
+      "shutter": "1/2000"
+    }
+  },
+  {
+    "id": 59,
+    "date": "2017-06-28T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-28.jpg",
+    "location": "Ocean Beach, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "8.0",
+      "shutter": "1/200"
+    }
+  },
+  {
+    "id": 60,
+    "date": "2017-06-29T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-29.jpg",
+    "location": "Rotterdam",
+    "dimensions": {
+      "width": 1200,
+      "height": 797
+    },
+    "exif": {
+      "camera": "Fujifilm X100",
+      "aperture": "2.8",
+      "shutter": "1/60"
+    }
+  },
+  {
+    "id": 61,
+    "date": "2017-06-30T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-30.jpg",
+    "location": "",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/600"
+    }
+  },
+  {
+    "id": 62,
+    "date": "2017-07-01T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-01.jpg",
+    "location": "Bláskógabyggth",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/600"
+    }
+  },
+  {
+    "id": 63,
+    "date": "2017-07-02T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-02.jpg",
+    "location": "Southern Coast, Iceland",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "8.0",
+      "shutter": "1/125"
+    }
+  },
+  {
+    "id": 64,
+    "date": "2017-07-03T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-03.jpg",
+    "location": "Myvarn Geological Area, Iceland",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/600"
+    }
+  },
+  {
+    "id": 65,
+    "date": "2017-07-04T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-04.jpg",
+    "location": "Akkrahreppur, Iceland",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/600"
+    }
+  },
+  {
+    "id": 66,
+    "date": "2017-07-05T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-05.jpg",
+    "location": "Snaefellsbaer, Iceland",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/600"
+    }
+  },
+  {
+    "id": 67,
+    "date": "2017-07-06T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-06.jpg",
+    "location": "Snaefellsjökull National Park, Iceland",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/600"
+    }
   }
 ]
