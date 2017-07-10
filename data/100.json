@@ -948,7 +948,7 @@
     "id": 64,
     "date": "2017-07-03T07:00:00Z",
     "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-03.jpg",
-    "location": "Myvarn Geological Area, Iceland",
+    "location": "Myvatn Geological Area, Iceland",
     "dimensions": {
       "width": 1200,
       "height": 1600
@@ -994,6 +994,66 @@
     "date": "2017-07-06T07:00:00Z",
     "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-06.jpg",
     "location": "Snaefellsjökull National Park, Iceland",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/600"
+    }
+  },
+  {
+    "id": 68,
+    "date": "2017-07-07T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-07.jpg",
+    "location": "Northeastern Iceland",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/600"
+    }
+  },
+  {
+    "id": 69,
+    "date": "2017-07-08T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-08.jpg",
+    "location": "Eastern Iceland",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/600"
+    }
+  },
+  {
+    "id": 70,
+    "date": "2017-07-09T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-09.jpg",
+    "location": "Myvatn Geological Area, Iceland",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/600"
+    }
+  },
+  {
+    "id": 71,
+    "date": "2017-07-10T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-10.jpg",
+    "location": "Myvatn Geological Area, Iceland",
     "dimensions": {
       "width": 1200,
       "height": 1600
