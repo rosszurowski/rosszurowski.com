@@ -1063,5 +1063,20 @@
       "aperture": "2.2",
       "shutter": "1/600"
     }
+  },
+  {
+    "id": 72,
+    "date": "2017-07-11T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-11.jpg",
+    "location": "Snaefellsjökull National Park, Iceland",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/160"
+    }
   }
 ]
