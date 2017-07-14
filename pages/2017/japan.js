@@ -1,5 +1,4 @@
 import React from 'react';
-import Head from 'next/head';
 
 import Page from 'components/layouts/page';
 import FontFaceCalibre from 'components/styles/font-face-calibre';

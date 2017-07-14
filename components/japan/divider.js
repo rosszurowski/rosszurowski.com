@@ -15,7 +15,7 @@ const Divider = () => (
 );
 
 Divider.propTypes = {
-  type: PropTypes.oneOf(['sleep', 'travel']),
+  type: PropTypes.oneOf(['sleep', 'travel']).isRequired,
 };
 
 export default Divider;

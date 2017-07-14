@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import scrollMonitor from 'scrollmonitor';
 import Icon from 'components/japan/icon';
 
-import config from 'lib/config';
 import utils from 'lib/utils';
 
 class PostVideo extends Component {

@@ -6,7 +6,8 @@
     "build": "NODE_ENV=production next build && next export -o dist && yarn build:404",
     "build:404": "mv dist/_error/index.html dist/404.html && rm -r dist/_error",
     "start": "next",
-    "deploy": "echo '> No custom deploy script, use `git push` instead'"
+    "deploy": "echo '> No custom deploy script, use `git push` instead'",
+    "lint": "eslint {pages,lib,components}/"
   },
   "dependencies": {
     "canvas-fit": "^1.5.0",
