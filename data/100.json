@@ -1078,5 +1078,50 @@
       "aperture": "2.2",
       "shutter": "1/160"
     }
+  },
+  {
+    "id": 73,
+    "date": "2017-07-12T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-12.jpg",
+    "location": "Kamakura",
+    "dimensions": {
+      "width": 1200,
+      "height": 1601
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/160"
+    }
+  },
+  {
+    "id": 74,
+    "date": "2017-07-13T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-13.jpg",
+    "location": "Meguro, Tokyo",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "8.0",
+      "shutter": "1/250"
+    }
+  },
+  {
+    "id": 75,
+    "date": "2017-07-14T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-14.jpg",
+    "location": "Harajuku, Tokyo",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "8.0",
+      "shutter": "1/1000"
+    }
   }
 ]
