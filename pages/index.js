@@ -37,8 +37,8 @@ export default () => (
       </Head>
       <section className="location">
         <a className="place" href="https://goo.gl/maps/u2NABtgJYn92" target="_blank" rel="noopener noreferrer">
-          <div className="place-latitude">43°58'13"N</div>
-          <div className="place-longitude">114°55'28"W</div>
+          <div className="place-latitude">43°58&apos;13&quot;N</div>
+          <div className="place-longitude">114°55&apos;28&quot;W</div>
         </a>
       </section>
       <section className="profile">
