@@ -56,6 +56,7 @@ export default () => (
         <span className="elsewhere-label">Elsewhere</span>
         <ul className="elsewhere-links">
           <li className="elsewhere-link"><a href="https://github.com/rosszurowski">Github</a></li>
+          <li className="elsewhere-link"><a href="https://are.na/ross-zurowski">Are.na</a></li>
           <li className="elsewhere-link"><Link href="/100"><a>100 Days</a></Link></li>
         </ul>
       </section>
