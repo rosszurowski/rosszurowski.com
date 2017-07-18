@@ -1138,5 +1138,20 @@
       "aperture": "8.0",
       "shutter": "1/1000"
     }
+  },
+  {
+    "id": 77,
+    "date": "2017-07-16T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-16.jpg",
+    "location": "De Young Museum, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 1446
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.2",
+      "shutter": "1/2000"
+    }
   }
 ]
