@@ -243,6 +243,21 @@
     "id": 17,
     "date": "2017-05-17T07:00:00Z",
     "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-17.jpg",
+    "location": "Kobe",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "4.0",
+      "shutter": "1/1600"
+    }
+  },
+  {
+    "id": 18,
+    "date": "2017-05-18T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-18.jpg",
     "location": "Kyoto",
     "dimensions": {
       "width": 1200,
@@ -255,9 +270,9 @@
     }
   },
   {
-    "id": 18,
-    "date": "2017-05-18T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-18.jpg",
+    "id": 19,
+    "date": "2017-05-19T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-19.jpg",
     "location": "WWW X, Shibuya",
     "dimensions": {
       "width": 1200,
@@ -270,9 +285,9 @@
     }
   },
   {
-    "id": 19,
-    "date": "2017-05-19T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-19.jpg",
+    "id": 20,
+    "date": "2017-05-20T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-20.jpg",
     "location": "Shinagawa, Tokyo",
     "dimensions": {
       "width": 1200,
@@ -285,9 +300,9 @@
     }
   },
   {
-    "id": 20,
-    "date": "2017-05-20T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-20.jpg",
+    "id": 21,
+    "date": "2017-05-21T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-21.jpg",
     "location": "Inamuragasaki, Kamakura",
     "dimensions": {
       "width": 1200,
@@ -300,9 +315,9 @@
     }
   },
   {
-    "id": 21,
-    "date": "2017-05-21T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-21.jpg",
+    "id": 22,
+    "date": "2017-05-22T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-22.jpg",
     "location": "Roppongi, Tokyo",
     "dimensions": {
       "width": 1200,
@@ -315,9 +330,9 @@
     }
   },
   {
-    "id": 22,
-    "date": "2017-05-22T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-22.jpg",
+    "id": 23,
+    "date": "2017-05-23T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-23.jpg",
     "location": "Takamatsu",
     "dimensions": {
       "width": 1200,
@@ -330,9 +345,9 @@
     }
   },
   {
-    "id": 23,
-    "date": "2017-05-23T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-23.jpg",
+    "id": 24,
+    "date": "2017-05-24T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-24.jpg",
     "location": "Shibuya, Tokyo",
     "dimensions": {
       "width": 1200,
@@ -345,9 +360,9 @@
     }
   },
   {
-    "id": 24,
-    "date": "2017-05-24T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-24.jpg",
+    "id": 25,
+    "date": "2017-05-25T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-25.jpg",
     "location": "Nara",
     "dimensions": {
       "width": 1200,
@@ -360,9 +375,9 @@
     }
   },
   {
-    "id": 25,
-    "date": "2017-05-25T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-25.jpg",
+    "id": 26,
+    "date": "2017-05-26T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-26.jpg",
     "location": "Kyoto",
     "dimensions": {
       "width": 1200,
@@ -375,9 +390,9 @@
     }
   },
   {
-    "id": 26,
-    "date": "2017-05-26T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-26.jpg",
+    "id": 27,
+    "date": "2017-05-27T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-27.jpg",
     "location": "Nara",
     "dimensions": {
       "width": 1200,
@@ -390,9 +405,9 @@
     }
   },
   {
-    "id": 27,
-    "date": "2017-05-27T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-27.jpg",
+    "id": 28,
+    "date": "2017-05-28T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-28.jpg",
     "location": "Naoshima",
     "dimensions": {
       "width": 1200,
@@ -405,9 +420,9 @@
     }
   },
   {
-    "id": 28,
-    "date": "2017-05-28T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-28.jpg",
+    "id": 29,
+    "date": "2017-05-29T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-29.jpg",
     "location": "Kyoto",
     "dimensions": {
       "width": 1200,
@@ -420,9 +435,9 @@
     }
   },
   {
-    "id": 29,
-    "date": "2017-05-29T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-29.jpg",
+    "id": 30,
+    "date": "2017-05-30T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-30.jpg",
     "location": "Lima",
     "dimensions": {
       "width": 1200,
@@ -435,9 +450,9 @@
     }
   },
   {
-    "id": 30,
-    "date": "2017-05-30T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-30.jpg",
+    "id": 31,
+    "date": "2017-05-31T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-31.jpg",
     "location": "Arequipa",
     "dimensions": {
       "width": 1200,
@@ -450,9 +465,9 @@
     }
   },
   {
-    "id": 31,
-    "date": "2017-05-31T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/05-31.jpg",
+    "id": 32,
+    "date": "2017-06-01T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-01.jpg",
     "location": "Cuajone",
     "dimensions": {
       "width": 1200,
@@ -465,9 +480,9 @@
     }
   },
   {
-    "id": 32,
-    "date": "2017-06-01T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-01.jpg",
+    "id": 33,
+    "date": "2017-06-02T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-02.jpg",
     "location": "Flora Grubb Gardens, SF",
     "dimensions": {
       "width": 1200,
@@ -480,9 +495,9 @@
     }
   },
   {
-    "id": 33,
-    "date": "2017-06-02T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-02.jpg",
+    "id": 34,
+    "date": "2017-06-03T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-03.jpg",
     "location": "Oakland",
     "dimensions": {
       "width": 1200,
@@ -495,9 +510,9 @@
     }
   },
   {
-    "id": 34,
-    "date": "2017-06-03T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-03.jpg",
+    "id": 35,
+    "date": "2017-06-04T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-04.jpg",
     "location": "Dogpatch, SF",
     "dimensions": {
       "width": 1200,
@@ -510,9 +525,9 @@
     }
   },
   {
-    "id": 35,
-    "date": "2017-06-04T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-04.jpg",
+    "id": 36,
+    "date": "2017-06-05T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-05.jpg",
     "location": "Blake Gardens, Hong Kong",
     "dimensions": {
       "width": 1200,
@@ -525,9 +540,9 @@
     }
   },
   {
-    "id": 36,
-    "date": "2017-06-05T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-05.jpg",
+    "id": 37,
+    "date": "2017-06-06T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-06.jpg",
     "location": "Shinjuku",
     "dimensions": {
       "width": 1200,
@@ -540,9 +555,9 @@
     }
   },
   {
-    "id": 37,
-    "date": "2017-06-06T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-06.jpg",
+    "id": 38,
+    "date": "2017-06-07T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-07.jpg",
     "location": "Nara",
     "dimensions": {
       "width": 1200,
@@ -555,9 +570,9 @@
     }
   },
   {
-    "id": 38,
-    "date": "2017-06-07T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-07.jpg",
+    "id": 39,
+    "date": "2017-06-08T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-08.jpg",
     "location": "Meguro, Tokyo",
     "dimensions": {
       "width": 1200,
@@ -570,9 +585,9 @@
     }
   },
   {
-    "id": 39,
-    "date": "2017-06-08T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-08.jpg",
+    "id": 40,
+    "date": "2017-06-09T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-09.jpg",
     "location": "Hong Kong",
     "dimensions": {
       "width": 1200,
@@ -585,9 +600,9 @@
     }
   },
   {
-    "id": 40,
-    "date": "2017-06-09T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-09.jpg",
+    "id": 41,
+    "date": "2017-06-10T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-10.jpg",
     "location": "Yoyogi, Tokyo",
     "dimensions": {
       "width": 1200,
@@ -600,9 +615,24 @@
     }
   },
   {
-    "id": 41,
-    "date": "2017-06-10T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-10.jpg",
+    "id": 42,
+    "date": "2017-06-11T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-11.jpg",
+    "location": "Los Angeles",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "4.0",
+      "shutter": "1/60"
+    }
+  },
+  {
+    "id": 43,
+    "date": "2017-06-12T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-12.jpg",
     "location": "Kyoto",
     "dimensions": {
       "width": 1200,
@@ -615,9 +645,9 @@
     }
   },
   {
-    "id": 42,
-    "date": "2017-06-11T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-11.jpg",
+    "id": 44,
+    "date": "2017-06-13T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-13.jpg",
     "location": "Meguro, Tokyo",
     "dimensions": {
       "width": 1200,
@@ -630,9 +660,9 @@
     }
   },
   {
-    "id": 43,
-    "date": "2017-06-12T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-12.jpg",
+    "id": 45,
+    "date": "2017-06-14T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-14.jpg",
     "location": "Ocean Beach, SF",
     "dimensions": {
       "width": 1200,
@@ -645,9 +675,9 @@
     }
   },
   {
-    "id": 44,
-    "date": "2017-06-13T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-13.jpg",
+    "id": 46,
+    "date": "2017-06-15T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-15.jpg",
     "location": "Fort Portal, Uganda",
     "dimensions": {
       "width": 1200,
@@ -660,9 +690,9 @@
     }
   },
   {
-    "id": 45,
-    "date": "2017-06-14T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-14.jpg",
+    "id": 47,
+    "date": "2017-06-16T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-16.jpg",
     "location": "Hakone, Japan",
     "dimensions": {
       "width": 1200,
@@ -675,9 +705,9 @@
     }
   },
   {
-    "id": 46,
-    "date": "2017-06-15T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-15.jpg",
+    "id": 48,
+    "date": "2017-06-17T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-17.jpg",
     "location": "The Mission, SF",
     "dimensions": {
       "width": 1200,
@@ -690,9 +720,9 @@
     }
   },
   {
-    "id": 47,
-    "date": "2017-06-16T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-16.jpg",
+    "id": 49,
+    "date": "2017-06-18T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-18.jpg",
     "location": "Hong Kong",
     "dimensions": {
       "width": 1200,
@@ -705,9 +735,9 @@
     }
   },
   {
-    "id": 48,
-    "date": "2017-06-17T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-17.jpg",
+    "id": 50,
+    "date": "2017-06-19T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-19.jpg",
     "location": "Rotterdam",
     "dimensions": {
       "width": 1200,
@@ -720,9 +750,9 @@
     }
   },
   {
-    "id": 49,
-    "date": "2017-06-18T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-18.jpg",
+    "id": 51,
+    "date": "2017-06-20T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-20.jpg",
     "location": "Arequipa",
     "dimensions": {
       "width": 1200,
@@ -735,9 +765,9 @@
     }
   },
   {
-    "id": 50,
-    "date": "2017-06-19T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-19.jpg",
+    "id": 52,
+    "date": "2017-06-21T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-21.jpg",
     "location": "Iceland",
     "dimensions": {
       "width": 1200,
@@ -750,9 +780,9 @@
     }
   },
   {
-    "id": 51,
-    "date": "2017-06-20T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-20.jpg",
+    "id": 53,
+    "date": "2017-06-22T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-22.jpg",
     "location": "Arigashiyama, Kyoto",
     "dimensions": {
       "width": 1200,
@@ -765,9 +795,9 @@
     }
   },
   {
-    "id": 52,
-    "date": "2017-06-21T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-21.jpg",
+    "id": 54,
+    "date": "2017-06-23T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-23.jpg",
     "location": "Fort Mason, SF",
     "dimensions": {
       "width": 1200,
@@ -780,39 +810,39 @@
     }
   },
   {
-    "id": 53,
-    "date": "2017-06-22T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-22.jpg",
-    "location": "Los Angeles",
-    "dimensions": {
-      "width": 1200,
-      "height": 797
-    },
-    "exif": {
-      "camera": "Fujifilm X100",
-      "aperture": "?",
-      "shutter": "?"
-    }
-  },
-  {
-    "id": 54,
-    "date": "2017-06-23T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-23.jpg",
-    "location": "Los Angeles",
-    "dimensions": {
-      "width": 1200,
-      "height": 797
-    },
-    "exif": {
-      "camera": "Fujifilm X100",
-      "aperture": "?",
-      "shutter": "?"
-    }
-  },
-  {
     "id": 55,
     "date": "2017-06-24T07:00:00Z",
     "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-24.jpg",
+    "location": "Los Angeles",
+    "dimensions": {
+      "width": 1200,
+      "height": 797
+    },
+    "exif": {
+      "camera": "Fujifilm X100",
+      "aperture": "?",
+      "shutter": "?"
+    }
+  },
+  {
+    "id": 56,
+    "date": "2017-06-25T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-25.jpg",
+    "location": "Los Angeles",
+    "dimensions": {
+      "width": 1200,
+      "height": 797
+    },
+    "exif": {
+      "camera": "Fujifilm X100",
+      "aperture": "?",
+      "shutter": "?"
+    }
+  },
+  {
+    "id": 57,
+    "date": "2017-06-26T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-26.jpg",
     "location": "Andes, Peru",
     "dimensions": {
       "width": 1200,
@@ -825,9 +855,9 @@
     }
   },
   {
-    "id": 56,
-    "date": "2017-06-25T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-25.jpg",
+    "id": 58,
+    "date": "2017-06-27T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-27.jpg",
     "location": "Atlanic Ocean, near the Netherlands",
     "dimensions": {
       "width": 1200,
@@ -840,9 +870,9 @@
     }
   },
   {
-    "id": 57,
-    "date": "2017-06-26T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-26.jpg",
+    "id": 59,
+    "date": "2017-06-28T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-28.jpg",
     "location": "",
     "dimensions": {
       "width": 1200,
@@ -855,9 +885,9 @@
     }
   },
   {
-    "id": 58,
-    "date": "2017-06-27T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-27.jpg",
+    "id": 60,
+    "date": "2017-06-29T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-29.jpg",
     "location": "Ocean Beach, SF",
     "dimensions": {
       "width": 1200,
@@ -870,9 +900,9 @@
     }
   },
   {
-    "id": 59,
-    "date": "2017-06-28T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-28.jpg",
+    "id": 61,
+    "date": "2017-06-30T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-30.jpg",
     "location": "Ocean Beach, SF",
     "dimensions": {
       "width": 1200,
@@ -885,9 +915,9 @@
     }
   },
   {
-    "id": 60,
-    "date": "2017-06-29T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-29.jpg",
+    "id": 62,
+    "date": "2017-07-01T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-01.jpg",
     "location": "Rotterdam",
     "dimensions": {
       "width": 1200,
@@ -900,9 +930,9 @@
     }
   },
   {
-    "id": 61,
-    "date": "2017-06-30T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-30.jpg",
+    "id": 63,
+    "date": "2017-07-02T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-02.jpg",
     "location": "",
     "dimensions": {
       "width": 1200,
@@ -915,40 +945,10 @@
     }
   },
   {
-    "id": 62,
-    "date": "2017-07-01T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-01.jpg",
-    "location": "Bláskógabyggth",
-    "dimensions": {
-      "width": 1200,
-      "height": 1600
-    },
-    "exif": {
-      "camera": "iPhone SE",
-      "aperture": "2.2",
-      "shutter": "1/600"
-    }
-  },
-  {
-    "id": 63,
-    "date": "2017-07-02T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-02.jpg",
-    "location": "Southern Coast, Iceland",
-    "dimensions": {
-      "width": 1200,
-      "height": 800
-    },
-    "exif": {
-      "camera": "Leica Q",
-      "aperture": "8.0",
-      "shutter": "1/125"
-    }
-  },
-  {
     "id": 64,
     "date": "2017-07-03T07:00:00Z",
     "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-03.jpg",
-    "location": "Myvatn Geological Area, Iceland",
+    "location": "Bláskógabyggth",
     "dimensions": {
       "width": 1200,
       "height": 1600
@@ -963,22 +963,22 @@
     "id": 65,
     "date": "2017-07-04T07:00:00Z",
     "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-04.jpg",
-    "location": "Akkrahreppur, Iceland",
+    "location": "Southern Coast, Iceland",
     "dimensions": {
       "width": 1200,
       "height": 800
     },
     "exif": {
-      "camera": "iPhone SE",
-      "aperture": "2.2",
-      "shutter": "1/600"
+      "camera": "Leica Q",
+      "aperture": "8.0",
+      "shutter": "1/125"
     }
   },
   {
     "id": 66,
     "date": "2017-07-05T07:00:00Z",
     "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-05.jpg",
-    "location": "Snaefellsbaer, Iceland",
+    "location": "Myvatn Geological Area, Iceland",
     "dimensions": {
       "width": 1200,
       "height": 1600
@@ -993,10 +993,10 @@
     "id": 67,
     "date": "2017-07-06T07:00:00Z",
     "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-06.jpg",
-    "location": "Snaefellsjökull National Park, Iceland",
+    "location": "Akkrahreppur, Iceland",
     "dimensions": {
       "width": 1200,
-      "height": 1600
+      "height": 800
     },
     "exif": {
       "camera": "iPhone SE",
@@ -1008,7 +1008,7 @@
     "id": 68,
     "date": "2017-07-07T07:00:00Z",
     "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-07.jpg",
-    "location": "Northeastern Iceland",
+    "location": "Snaefellsbaer, Iceland",
     "dimensions": {
       "width": 1200,
       "height": 1600
@@ -1023,7 +1023,7 @@
     "id": 69,
     "date": "2017-07-08T07:00:00Z",
     "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-08.jpg",
-    "location": "Eastern Iceland",
+    "location": "Snaefellsjökull National Park, Iceland",
     "dimensions": {
       "width": 1200,
       "height": 1600
@@ -1038,7 +1038,7 @@
     "id": 70,
     "date": "2017-07-09T07:00:00Z",
     "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-09.jpg",
-    "location": "Myvatn Geological Area, Iceland",
+    "location": "Northeastern Iceland",
     "dimensions": {
       "width": 1200,
       "height": 1600
@@ -1053,7 +1053,7 @@
     "id": 71,
     "date": "2017-07-10T07:00:00Z",
     "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-10.jpg",
-    "location": "Myvatn Geological Area, Iceland",
+    "location": "Eastern Iceland",
     "dimensions": {
       "width": 1200,
       "height": 1600
@@ -1068,6 +1068,36 @@
     "id": 72,
     "date": "2017-07-11T07:00:00Z",
     "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-11.jpg",
+    "location": "Myvatn Geological Area, Iceland",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/600"
+    }
+  },
+  {
+    "id": 73,
+    "date": "2017-07-12T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-12.jpg",
+    "location": "Myvatn Geological Area, Iceland",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/600"
+    }
+  },
+  {
+    "id": 74,
+    "date": "2017-07-13T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-13.jpg",
     "location": "Snaefellsjökull National Park, Iceland",
     "dimensions": {
       "width": 1200,
@@ -1080,9 +1110,9 @@
     }
   },
   {
-    "id": 73,
-    "date": "2017-07-12T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-12.jpg",
+    "id": 75,
+    "date": "2017-07-14T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-14.jpg",
     "location": "Kamakura",
     "dimensions": {
       "width": 1200,
@@ -1095,9 +1125,9 @@
     }
   },
   {
-    "id": 74,
-    "date": "2017-07-13T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-13.jpg",
+    "id": 76,
+    "date": "2017-07-15T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-15.jpg",
     "location": "Meguro, Tokyo",
     "dimensions": {
       "width": 1200,
@@ -1110,9 +1140,9 @@
     }
   },
   {
-    "id": 75,
-    "date": "2017-07-14T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-14.jpg",
+    "id": 77,
+    "date": "2017-07-16T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-16.jpg",
     "location": "Harajuku, Tokyo",
     "dimensions": {
       "width": 1200,
@@ -1125,9 +1155,9 @@
     }
   },
   {
-    "id": 76,
-    "date": "2017-07-15T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-15.jpg",
+    "id": 78,
+    "date": "2017-07-17T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-17.jpg",
     "location": "Hayes Valley, SF",
     "dimensions": {
       "width": 1200,
@@ -1140,9 +1170,9 @@
     }
   },
   {
-    "id": 77,
-    "date": "2017-07-16T07:00:00Z",
-    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-16.jpg",
+    "id": 79,
+    "date": "2017-07-18T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-18.jpg",
     "location": "De Young Museum, SF",
     "dimensions": {
       "width": 1200,
