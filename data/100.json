@@ -1180,8 +1180,68 @@
     },
     "exif": {
       "camera": "Leica Q",
+      "aperture": "4.0",
+      "shutter": "1/160"
+    }
+  },
+  {
+    "id": 80,
+    "date": "2017-07-19T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-19.jpg",
+    "location": "De Young Museum, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "4.0",
+      "shutter": "1/40"
+    }
+  },
+  {
+    "id": 81,
+    "date": "2017-07-20T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-20.jpg",
+    "location": "Meguro, Tokyo",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "8.0",
+      "shutter": "1/200"
+    }
+  },
+  {
+    "id": 82,
+    "date": "2017-07-21T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-21.jpg",
+    "location": "Japantown, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "iPhone SE",
       "aperture": "2.2",
       "shutter": "1/2000"
+    }
+  },
+  {
+    "id": 83,
+    "date": "2017-07-22T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-22.jpg",
+    "location": "Yosemite Valley",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "4.0",
+      "shutter": "1/400"
     }
   }
 ]
