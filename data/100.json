@@ -1243,5 +1243,20 @@
       "aperture": "4.0",
       "shutter": "1/400"
     }
+  },
+  {
+    "id": 84,
+    "date": "2017-07-23T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-23.jpg",
+    "location": "Yosemite Valley",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "8.0",
+      "shutter": "1/160"
+    }
   }
 ]
