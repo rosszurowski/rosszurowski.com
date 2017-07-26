@@ -1288,5 +1288,20 @@
       "aperture": "8.0",
       "shutter": "1/60"
     }
+  },
+  {
+    "id": 87,
+    "date": "2017-07-26T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-26.jpg",
+    "location": "Soma, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "5.6",
+      "shutter": "1/125"
+    }
   }
 ]
