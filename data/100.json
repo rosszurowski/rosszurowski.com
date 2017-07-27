@@ -620,11 +620,11 @@
     "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/06-11.jpg",
     "location": "Los Angeles",
     "dimensions": {
-      "width": 1200,
-      "height": 800
+      "width": 1196,
+      "height": 1800
     },
     "exif": {
-      "camera": "Leica Q",
+      "camera": "Fujifilm X100",
       "aperture": "4.0",
       "shutter": "1/60"
     }
