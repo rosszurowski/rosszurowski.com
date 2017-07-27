@@ -1303,5 +1303,20 @@
       "aperture": "5.6",
       "shutter": "1/125"
     }
+  },
+  {
+    "id": 88,
+    "date": "2017-07-27T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-27.jpg",
+    "location": "Lower Nob Hill, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "8.0",
+      "shutter": "1/60"
+    }
   }
 ]
