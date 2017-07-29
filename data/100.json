@@ -1318,5 +1318,20 @@
       "aperture": "8.0",
       "shutter": "1/60"
     }
+  },
+  {
+    "id": 89,
+    "date": "2017-07-28T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-28.jpg",
+    "location": "Soma, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/140"
+    }
   }
 ]
