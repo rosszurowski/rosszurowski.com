@@ -1333,5 +1333,20 @@
       "aperture": "2.2",
       "shutter": "1/140"
     }
+  },
+  {
+    "id": 90,
+    "date": "2017-07-29T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-29.jpg",
+    "location": "James Fitzgerald State Beach, California",
+    "dimensions": {
+      "width": 1200,
+      "height": 800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "2.8",
+      "shutter": "1/3200"
+    }
   }
 ]
