@@ -3,11 +3,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import Page from 'components/layouts/page';
-import StarField from 'components/star-field';
+// import StarField from 'components/star-field';
+import HeatDistortion from 'components/heat-distortion';
 import FontFaceCalibre from 'components/styles/font-face-calibre';
-
-const isClient = typeof document !== 'undefined';
-const isMobile = isClient && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 const meta = {
   title: 'Ross Zurowski',
@@ -61,14 +59,12 @@ export default () => (
         </ul>
       </section>
     </main>
-    {!isMobile && (
-      <div className="canvas">
-        <StarField />
-      </div>
-    )}
+    <div className="canvas">
+      <HeatDistortion />
+    </div>
     <section className="caption">
       <span>Full site coming soon...</span>
-      <span>Updated Nov 2015</span>
+      <span>Last updated Nov 2015</span>
     </section>
     <FontFaceCalibre />
     <style jsx global>{`
