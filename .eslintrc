@@ -5,7 +5,9 @@
     "browser": true
   },
   "rules": {
-    "max-len": "off"
+    "max-len": "off",
+    "no-bitwise": "off",
+    "react/sort-comp": "off"
   },
   "settings": {
     "import/resolver": {

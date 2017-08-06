@@ -1,10 +1,17 @@
 {
   "presets": [
-    "next/babel"
+    "next/babel",
+    "flow"
   ],
   "plugins": [
     ["module-resolver", {
       "root": ["."]
+    }],
+    ["babel-plugin-inline-import", {
+      "extensions": [
+        ".vert",
+        ".frag"
+      ]
     }]
   ]
 }
