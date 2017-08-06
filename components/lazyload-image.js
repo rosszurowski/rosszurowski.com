@@ -1,7 +1,7 @@
+// @flow
 /* eslint-disable global-require */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 
 if (typeof global.window !== 'undefined') {
   global.window.lazySizesConfig = window.lazySizesConfig || {};
@@ -17,7 +17,15 @@ if (typeof global.window !== 'undefined') {
 const first = arr => arr[0];
 const removeWidth = str => str.replace(/\s*\d+(w|x)$/, '');
 
-const LazyloadImage = ({ srcSet, alt, width, height, preload }) => (
+type Props = {
+  srcSet: Array<string>,
+  alt?: string,
+  width?: number,
+  height?: number,
+  preload?: boolean
+}
+
+const LazyloadImage = ({ srcSet, alt, width, height, preload }: Props) => (
   <span>
     <img
       src={removeWidth(first(srcSet))}
@@ -54,14 +62,6 @@ const LazyloadImage = ({ srcSet, alt, width, height, preload }) => (
     `}</style>
   </span>
 );
-
-LazyloadImage.propTypes = {
-  srcSet: PropTypes.arrayOf(PropTypes.string).isRequired,
-  alt: PropTypes.string,
-  width: PropTypes.number,
-  height: PropTypes.number,
-  preload: PropTypes.bool,
-};
 
 LazyloadImage.defaultProps = {
   alt: undefined,

@@ -1,17 +1,19 @@
+// @flow
+
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import type { Children } from 'react';
 import scrollMonitor from 'scrollmonitor';
 import Icon from 'components/japan/icon';
 
 import utils from 'lib/utils';
 
 class PostVideo extends Component {
-  static propTypes = {
-    children: PropTypes.any,
-    srcId: PropTypes.string.isRequired,
-    width: PropTypes.number.isRequired,
-    height: PropTypes.number.isRequired,
-    withAudio: PropTypes.bool,
+  props: {
+    children?: Children,
+    srcId: string,
+    width: number,
+    height: number,
+    withAudio: boolean
   }
 
   static defaultProps = {
@@ -24,6 +26,9 @@ class PostVideo extends Component {
   state = {
     muted: true,
   }
+
+  elementWatcher: Object
+  $video: HTMLVideoElement
 
   componentDidMount () {
     this.elementWatcher = scrollMonitor.create(this.$video);

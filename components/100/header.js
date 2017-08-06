@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 
 import { color, font, spacing } from 'lib/100/styles';

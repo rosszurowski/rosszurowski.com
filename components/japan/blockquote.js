@@ -1,7 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
 
-const Blockquote = ({ children }) => (
+import React from 'react';
+import type { Children } from 'react';
+
+type Props = {
+  children: Children,
+};
+
+const Blockquote = ({ children }: Props) => (
   <blockquote className="pl3">
     {children}
     <style jsx>{`
@@ -14,9 +20,5 @@ const Blockquote = ({ children }) => (
     `}</style>
   </blockquote>
 );
-
-Blockquote.propTypes = {
-  children: PropTypes.any.isRequired,
-};
 
 export default Blockquote;

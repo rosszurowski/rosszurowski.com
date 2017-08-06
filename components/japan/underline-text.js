@@ -1,10 +1,27 @@
+// @flow
+
 import React from 'react';
-import PropTypes from 'prop-types';
+import type { Children } from 'react';
 import utils from 'lib/utils';
 
 const generateUnderlineStyles = type => `background-image: url('${utils.getAssetUrl(`2017/japan/underline-${type}.svg`)}');`;
 
-const UnderlineText = ({ type, children, ...props }) => (
+type Props = {
+  children: Children,
+  type:
+    | 'tokyo-1'
+    | 'tokyo-2'
+    | 'kobe'
+    | 'kyoto'
+    | 'takamatsu'
+    | 'naoshima'
+    | 'nara'
+    | 'osaka'
+    | 'hakone'
+    | 'kamakura'
+}
+
+const UnderlineText = ({ type, children, ...props }: Props) => (
   <span className={`underline-${type}`} {...props}>
     {children}
     <style jsx>{`
@@ -36,10 +53,5 @@ const UnderlineText = ({ type, children, ...props }) => (
     `}</style>
   </span>
 );
-
-UnderlineText.propTypes = {
-  children: PropTypes.any.isRequired,
-  type: PropTypes.string.isRequired,
-};
 
 export default UnderlineText;

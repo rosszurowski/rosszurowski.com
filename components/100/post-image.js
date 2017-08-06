@@ -1,9 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
 import LazyloadImage from 'components/lazyload-image';
 
-const PostImage = ({ src, ...props }) => {
+type Props = {
+  src: string
+};
+
+const PostImage = ({ src, ...props }: Props) => {
   const srcWithoutJPGExtension = src.replace(/\.jpe?g$/, '');
   const srcSet = [
     `${srcWithoutJPGExtension}-1200w.jpg?20170721 1200w`,
@@ -29,10 +31,6 @@ const PostImage = ({ src, ...props }) => {
       `}</style>
     </span>
   );
-};
-
-PostImage.propTypes = {
-  src: PropTypes.string.isRequired,
 };
 
 export default PostImage;

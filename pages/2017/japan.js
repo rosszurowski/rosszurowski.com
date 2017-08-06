@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 
 import Page from 'components/layouts/page';
@@ -20,7 +22,7 @@ const JapanTripPage = () => (
   <Page
     title="Japan Trip"
     description="A few photos from a trip to Japan in May 2017."
-    previewImageUrl={utils.getAssetUrl('2017/japan/og-image.jpg')}>
+    imagePreviewUrl={utils.getAssetUrl('2017/japan/og-image.jpg')}>
     <FontFaceCalibre />
     <GlobalStyles />
 
@@ -456,18 +458,18 @@ const JapanTripPage = () => (
 
           <div className="f f-wrap mw7 center">
             <div className="w-50 w-third-m">
-              <div className="pa2 pa3-m"><PostImage srcId="IMG_0B9A1B60AB4E" width={1200} height={900} /></div>
-              <div className="pa2 pa3-m"><PostImage srcId="L1020658" width={1200} height={1800} /></div>
-              <div className="d-none-m pa2 pa3-m"><PostImage srcId="L1020310" width={1200} height={1800} /></div>
+              <div className="pa2 pa3-m"><PostImage srcId="IMG_0B9A1B60AB4E" alt="Café line at MUJI in Ginza" width={1200} height={900} /></div>
+              <div className="pa2 pa3-m"><PostImage srcId="L1020658" alt="Garden section at MUJI in Ginza" width={1200} height={1800} /></div>
+              <div className="d-none-m pa2 pa3-m"><PostImage srcId="L1020310" alt="Furniture section at MUJI in Ginza" width={1200} height={1800} /></div>
             </div>
             <div className="w-50 w-third-m">
-              <div className="pa2 pa3-m"><PostImage srcId="IMG_28D167ADCAA6" width={1200} height={1601} /></div>
-              <div className="pa2 pa3-m"><PostImage srcId="IMG_A4E15AF68A79" width={1200} height={1601} /></div>
-              <div className="d-none-m pa2 pa3-m"><PostImage srcId="IMG_30F8EA6A3C9B" width={1200} height={900} /></div>
+              <div className="pa2 pa3-m"><PostImage srcId="IMG_28D167ADCAA6" alt="Packaged apple juice at MUJI in Ginza" width={1200} height={1601} /></div>
+              <div className="pa2 pa3-m"><PostImage srcId="IMG_A4E15AF68A79" alt="Submerged plant at MUJI in Ginza" width={1200} height={1601} /></div>
+              <div className="d-none-m pa2 pa3-m"><PostImage srcId="IMG_30F8EA6A3C9B" alt="Meal at MUJI in Ginza" width={1200} height={900} /></div>
             </div>
             <div className="d-none d-block-m w-50 w-third-m">
-              <div className="pa2 pa3-m"><PostImage srcId="L1020310" width={1200} height={1800} /></div>
-              <div className="pa2 pa3-m"><PostImage srcId="IMG_30F8EA6A3C9B" width={1200} height={900} /></div>
+              <div className="pa2 pa3-m"><PostImage srcId="L1020310" alt="Furniture section at MUJI in Ginza" width={1200} height={1800} /></div>
+              <div className="pa2 pa3-m"><PostImage srcId="IMG_30F8EA6A3C9B" alt="Meal at MUJI in Ginza" width={1200} height={900} /></div>
             </div>
           </div>
 

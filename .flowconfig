@@ -8,10 +8,12 @@
 all=warn
 
 [options]
+suppress_type=$FlowFixMe
 include_warnings=true
 module.ignore_non_literal_requires=true
 module.system.node.resolve_dirname=node_modules
 module.name_mapper='components' -> '<PROJECT_ROOT>/components'
 module.name_mapper='lib' -> '<PROJECT_ROOT>/lib'
+module.name_mapper.extension='json' -> '<PROJECT_ROOT>/lib/flow/json-module-stub.js'
 module.name_mapper.extension='vert' -> '<PROJECT_ROOT>/lib/flow/glsl-module-stub.js'
 module.name_mapper.extension='frag' -> '<PROJECT_ROOT>/lib/flow/glsl-module-stub.js'

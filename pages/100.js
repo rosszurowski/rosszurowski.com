@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import Page from 'components/layouts/page';
 import Header from 'components/100/header';

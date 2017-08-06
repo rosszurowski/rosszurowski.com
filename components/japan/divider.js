@@ -1,5 +1,6 @@
+// @flow
+
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const Divider = () => (
   <div>
@@ -13,9 +14,5 @@ const Divider = () => (
     `}</style>
   </div>
 );
-
-Divider.propTypes = {
-  type: PropTypes.oneOf(['sleep', 'travel']).isRequired,
-};
 
 export default Divider;

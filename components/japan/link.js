@@ -1,7 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
 
-const Link = ({ children, external, ...props }) => (
+import React from 'react';
+import type { Children } from 'react';
+
+type Props = {
+  children: Children,
+  external?: boolean,
+  href: string,
+}
+
+const Link = ({ children, external, ...props }: Props) => (
   <a target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined} {...props}>
     {children}
     <style jsx>{`
@@ -17,12 +25,6 @@ const Link = ({ children, external, ...props }) => (
     `}</style>
   </a>
 );
-
-Link.propTypes = {
-  children: PropTypes.any.isRequired,
-  external: PropTypes.bool,
-  href: PropTypes.string.isRequired,
-};
 
 Link.defaultProps = {
   external: false,
