@@ -1,7 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
 
-const EndNotes = ({ children, ...props }) => (
+import React from 'react';
+import type { Children } from 'react';
+
+type Props = {
+  children: Children
+};
+
+const EndNotes = ({ children, ...props }: Props) => (
   <footer {...props}>
     {children}
     <style jsx>{`
@@ -12,9 +18,5 @@ const EndNotes = ({ children, ...props }) => (
     `}</style>
   </footer>
 );
-
-EndNotes.propTypes = {
-  children: PropTypes.any.isRequired,
-};
 
 export default EndNotes;

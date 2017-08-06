@@ -1,14 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
 
-const Paragraph = ({ children }) => (
+import React from 'react';
+import type { Children } from 'react';
+
+type Props = {
+  children: Children
+};
+
+const Paragraph = ({ children }: Props) => (
   <div>
     <p>{children}</p>
   </div>
 );
-
-Paragraph.propTypes = {
-  children: PropTypes.any.isRequired,
-};
 
 export default Paragraph;

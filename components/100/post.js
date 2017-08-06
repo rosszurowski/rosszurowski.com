@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import tinytime from 'tinytime';
 
 import PostImage from 'components/100/post-image';
@@ -9,15 +8,13 @@ import { color, font, spacing } from 'lib/100/styles';
 const formatPostDate = tinytime('{MM} {DD}, {YYYY}').render;
 
 class Post extends Component {
-  static propTypes = {
-    id: PropTypes.number.isRequired,
-    date: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
-    dimensions: PropTypes.shape({
-      width: PropTypes.number.isRequired,
-      height: PropTypes.number.isRequired,
-    }).isRequired,
+  props: {
+    id: number,
+    date: string,
+    src: string,
+    location: string,
+    // eslint-disable-next-line react/no-unused-prop-types
+    dimensions: { width: number, height: number },
   }
 
   state = {

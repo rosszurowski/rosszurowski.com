@@ -1,16 +1,31 @@
+// @flow
+
 import React from 'react';
-import PropTypes from 'prop-types';
+import type { Children } from 'react';
 import Head from 'next/head';
 
-function getPageTitle (title, titleOverride) {
-  if (titleOverride) {
+const isEmpty = (v: ?any): boolean => v === undefined || v === null;
+const not = (v: any): boolean => !v;
+
+function getPageTitle (title: ?string, titleOverride: ?string) {
+  if (!isEmpty(titleOverride)) {
     return titleOverride;
   }
 
-  return title ? `${title} — Ross Zurowski` : 'Ross Zurowski';
+  return [title, `Ross Zurowski`]
+    .filter(v => not(isEmpty(v)))
+    .join(` – `);
 }
 
-const Page = ({ title, titleOverride, description, imagePreviewUrl, children }) => (
+type Props = {
+  title?: string,
+  titleOverride?: string,
+  description?: string,
+  imagePreviewUrl?: string,
+  children: Children,
+};
+
+const Page = ({ title, titleOverride, description, imagePreviewUrl, children }: Props) => (
   <div>
     <Head>
       <title>{getPageTitle(title, titleOverride)}</title>
@@ -36,14 +51,6 @@ const Page = ({ title, titleOverride, description, imagePreviewUrl, children }) 
     {children}
   </div>
 );
-
-Page.propTypes = {
-  title: PropTypes.string,
-  titleOverride: PropTypes.string,
-  description: PropTypes.string,
-  imagePreviewUrl: PropTypes.string,
-  children: PropTypes.any.isRequired,
-};
 
 Page.defaultProps = {
   title: undefined,

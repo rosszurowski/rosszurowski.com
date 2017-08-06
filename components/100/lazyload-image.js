@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 window.lazySizesConfig = window.lazySizesConfig || {};
 window.lazySizesConfig.lazyClass = 'js-lazysizes';
@@ -11,7 +10,15 @@ if (typeof global.document !== 'undefined') {
   require('lazysizes');
 }
 
-const LazyloadImage = ({ src, alt, width, height, preload }) => {
+type Props = {
+  src: string,
+  alt: string,
+  width?: number,
+  height?: number,
+  preload?: boolean
+}
+
+const LazyloadImage = ({ src, alt, width, height, preload }: Props) => {
   const srcWithoutJPGExtension = src.replace(/\.jpe?g$/, '');
   const srcset = [
     `${srcWithoutJPGExtension}-800w.jpg 800w`,
@@ -55,14 +62,6 @@ const LazyloadImage = ({ src, alt, width, height, preload }) => {
       `}</style>
     </span>
   );
-};
-
-LazyloadImage.propTypes = {
-  src: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
-  width: PropTypes.number,
-  height: PropTypes.number,
-  preload: PropTypes.bool,
 };
 
 LazyloadImage.defaultProps = {

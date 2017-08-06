@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import Vector from 'lib/vector';
 import randf from 'randf';
@@ -33,7 +35,7 @@ export default class StarField extends Component {
 
   getCanvasSize = () => {
     if (!this.$canvas) {
-      return [null, null];
+      return [0, 0];
     }
 
     const width = this.$canvas.width / this.scale;
@@ -42,12 +44,15 @@ export default class StarField extends Component {
     return [width, height];
   }
 
-  ctx = null;
-  timer = null;
-  scale = null;
-  r = null;
-  fitCanvas = null;
-  center = null;
+  $canvas: HTMLCanvasElement
+  scale: number
+
+  ctx: CanvasRenderingContext2D;
+  timer: number;
+  scale: number;
+  r: number;
+  fitCanvas: Function;
+  center: Vector;
   points = [];
 
   generatePoints = () => {

@@ -1,11 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
 import Post from 'components/100/post';
 
 import { spacing } from 'lib/100/styles';
 
-const PostList = ({ posts }) => (
+type Props = {
+  posts: Array<Object>,
+}
+
+const PostList = ({ posts }: Props) => (
   <div>
     {posts.map(post => (
       <div className="post" key={post.id}>
@@ -29,9 +31,5 @@ const PostList = ({ posts }) => (
     `}</style>
   </div>
 );
-
-PostList.propTypes = {
-  posts: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
 
 export default PostList;
