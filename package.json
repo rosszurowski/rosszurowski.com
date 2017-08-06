@@ -23,12 +23,15 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
+    "babel-plugin-inline-import": "^2.0.6",
     "babel-plugin-module-resolver": "^2.7.1",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-0": "^6.24.1",
     "dotenv": "^4.0.0",
     "eslint": "^3.19.0",
     "eslint-config-watsi": "^1.0.15",
     "eslint-import-resolver-babel-module": "^3.0.0",
-    "eslint-plugin-import": "^2.2.0"
+    "eslint-plugin-import": "^2.2.0",
+    "flow-bin": "^0.52.0"
   }
 }
