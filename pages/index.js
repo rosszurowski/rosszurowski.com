@@ -83,7 +83,7 @@ export default () => (
         -webkit-text-size-adjust: 100%;
         box-sizing: border-box;
         background: #2a303b;
-        color: #cbced1;
+        color: rgba(255, 255, 255, 0.8);
         font-family: Calibre, sans-serif;
         font-size: 24px;
         font-weight: 200;
@@ -116,9 +116,10 @@ export default () => (
       }
 
       main {
+        position: relative;
         max-width: 18rem;
         width: 90%;
-        z-index: 2;
+        z-index: 4;
       }
 
       .location {
@@ -224,7 +225,7 @@ export default () => (
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: 9;
+        z-index: 1;
         opacity: 1.0;
         will-change: opacity;
         pointer-events: none;
