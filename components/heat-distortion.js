@@ -2,49 +2,69 @@
 
 import React, { Component } from 'react';
 import fit from 'canvas-fit';
-import { getContext, createProgram, createShader } from 'lib/glsl';
+import { getContext, createProgram, createShader, createTexture, setRectangle } from 'lib/glsl';
+import type { WebGLTexture2DSource } from 'lib/glsl';
 
-import fragmentSource from 'lib/shaders/heat-distortion.frag';
-import vertexSource from 'lib/shaders/heat-distortion.vert';
+import fragmentSource from 'components/heat-distortion.frag';
+import vertexSource from 'components/heat-distortion.vert';
 
 // eslint-disable-next-line no-unused-vars
 const noop = (...rest) => {};
 
-const ITEM_SIZE = 2;
-
-const initScene = (gl: WebGLRenderingContext, width: number, height: number): void => {
-  gl.viewport(0, 0, width, height);
-  gl.clearColor(0, 0.0, 0, 0);
-  gl.clear(gl.COLOR_BUFFER_BIT);
+const initScene = (gl: WebGLRenderingContext, textureSource: WebGLTexture2DSource): void => {
+  const width = gl.canvas.width / 2;
+  const height = gl.canvas.height / 2;
 
   const fragmentShader = createShader(gl, fragmentSource, gl.FRAGMENT_SHADER);
   const vertexShader = createShader(gl, vertexSource, gl.VERTEX_SHADER);
 
   const program = createProgram(gl, fragmentShader, vertexShader);
-  const attributes = {};
-
-  const aspectRatio = width / height;
-  const vertices = new Float32Array([
-    -0.5, 0.3 * aspectRatio, 0.5, 0.5 * aspectRatio, 0.5, -0.5 * aspectRatio,
-    -0.5, 0.5 * aspectRatio, 0.5, -0.5 * aspectRatio, -0.5, -0.5 * aspectRatio,
-  ]);
-
-  const buffer = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-  gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
-
   gl.useProgram(program);
 
-  const items = vertices.length / ITEM_SIZE;
+  /**
+   * Program code
+   */
 
-  attributes.uColor = gl.getUniformLocation(program, 'uColor');
-  gl.uniform4fv(attributes.uColor, [0.9, 0.5, 0.6, 1.0]);
+  const buffers = {};
+  buffers.position = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buffers.position);
+  setRectangle(gl, 0, 0, width, height);
 
-  attributes.aVertexPosition = gl.getAttribLocation(program, 'aVertexPosition');
-  gl.enableVertexAttribArray(attributes.aVertexPosition);
-  gl.vertexAttribPointer(attributes.aVertexPosition, ITEM_SIZE, gl.FLOAT, false, 0, 0);
+  buffers.texCoord = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buffers.texCoord);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
+    0.0, 0.0,
+    1.0, 0.0,
+    0.0, 1.0,
+    0.0, 1.0,
+    1.0, 0.0,
+    1.0, 1.0,
+  ]), gl.STATIC_DRAW);
 
-  gl.drawArrays(gl.TRIANGLES, 0, items);
+  createTexture(gl, textureSource);
+
+  const uniforms = {};
+  uniforms.resolution = gl.getUniformLocation(program, 'u_resolution');
+
+  gl.viewport(0, 0, width, height);
+  gl.clearColor(0, 0.0, 0, 0);
+  gl.clear(gl.COLOR_BUFFER_BIT);
+
+  const attributes = {};
+  attributes.position = gl.getAttribLocation(program, 'a_position');
+  attributes.texCoord = gl.getAttribLocation(program, 'a_texCoord');
+
+  gl.enableVertexAttribArray(attributes.position);
+  gl.bindBuffer(gl.ARRAY_BUFFER, buffers.position);
+  gl.vertexAttribPointer(attributes.position, 2, gl.FLOAT, false, 0, 0);
+
+  gl.enableVertexAttribArray(attributes.texCoord);
+  gl.bindBuffer(gl.ARRAY_BUFFER, buffers.texCoord);
+  gl.vertexAttribPointer(attributes.texCoord, 2, gl.FLOAT, false, 0, 0);
+
+  gl.uniform2f(uniforms.resolution, width, height);
+
+  gl.drawArrays(gl.TRIANGLES, 0, 6);
 };
 
 const getRenderableSVG = (html:string, width:number, height:number) => `
@@ -57,38 +77,52 @@ const getRenderableSVG = (html:string, width:number, height:number) => `
   </svg>
 `;
 
-// let renderHTMLToCanvas;
-//
-// if (typeof global.window !== 'undefined') {
-//   const w = global.window.URL || global.window.webkitURL || global.window;
-//
-//   renderHTMLToCanvas = (ctx: CanvasRenderingContext2D, html: string): void => {
-//     if (!w) return;
-//
-//     const data = getRenderableSVG(html, ctx.canvas.width, ctx.canvas.height);
-//     const img = new Image();
-//     const svg = new Blob([data], { type: 'image/svg+xml' });
-//     const url = w.createObjectURL(svg);
-//
-//     img.onload = () => {
-//       ctx.drawImage(img, 0, 0);
-//       w.revokeObjectURL(url);
-//     };
-//
-//     img.src = url;
-//   };
-// }
+let getSVGImage;
+
+if (typeof global.window !== 'undefined') {
+  const w = global.window.URL || global.window.webkitURL || global.window;
+
+  getSVGImage = (ctx: CanvasRenderingContext2D, html:string): Promise<HTMLImageElement> => new Promise((resolve) => {
+    if (!w) return;
+
+    const data = getRenderableSVG(html, ctx.canvas.width, ctx.canvas.height);
+    const img = new Image();
+
+    img.onload = () => {
+      resolve(img);
+    };
+
+    img.crossOrigin = 'anonymous';
+    img.src = `data:image/svg+xml;charset=utf-8,${data}`;
+  });
+}
 
 export default class HeatDistortion extends Component {
   componentDidMount () {
     if (!this.canvas) return;
 
-    this.fit = fit(this.canvas, window, window.devicePixelRatio);
     this.ctx = getContext(this.canvas);
 
-    initScene(this.ctx, this.canvas.width, this.canvas.height);
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
 
+    this.fit = () => {
+      fit(this.canvas, window, window.devicePixelRatio);
+      fit(canvas, window, window.devicePixelRatio);
+      this.ctx.viewport(0, 0, this.canvas.width, this.canvas.height);
+    };
+    this.fit();
     window.addEventListener('resize', this.handleResize, false);
+
+    requestAnimationFrame(() => {
+      getSVGImage(ctx, `
+        <div style="font-size: 96px; font-family: 'Calibre', sans-serif; font-weight: 300; letter-spacing: 0.05px;">
+          <span style="color:white;">Biff! Pow! Bop!</span>
+        </div>
+      `).then((image) => {
+        initScene(this.ctx, image);
+      });
+    });
   }
 
   componentWillUnmount () {
@@ -102,14 +136,6 @@ export default class HeatDistortion extends Component {
   handleResize = () => {
     this.fit();
   }
-
-  // draw = () => {
-  //   renderHTMLToCanvas(this.ctx, `
-  //     <div style="padding: 80px; font-size: 300px; font-family: 'Calibre', sans-serif;">
-  //       <span style="color:white;">hello</span>
-  //     </div>
-  //   `);
-  // }
 
   render () {
     return <canvas ref={el => (this.canvas = el)} width={600} height={600} />;
