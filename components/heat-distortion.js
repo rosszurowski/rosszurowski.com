@@ -11,7 +11,7 @@ import vertexSource from 'components/heat-distortion.vert';
 // eslint-disable-next-line no-unused-vars
 const noop = (...rest) => {};
 
-const initScene = (gl: WebGLRenderingContext, textureSource: WebGLTexture2DSource): void => {
+const initScene = (gl: WebGLRenderingContext, textureSource: WebGLTexture2DSource): WebGLProgram => {
   const width = gl.canvas.width / 2;
   const height = gl.canvas.height / 2;
 
@@ -45,6 +45,7 @@ const initScene = (gl: WebGLRenderingContext, textureSource: WebGLTexture2DSourc
 
   const uniforms = {};
   uniforms.resolution = gl.getUniformLocation(program, 'u_resolution');
+  uniforms.time = gl.getUniformLocation(program, 'u_time');
 
   gl.viewport(0, 0, width, height);
   gl.clearColor(0, 0.0, 0, 0);
@@ -63,7 +64,14 @@ const initScene = (gl: WebGLRenderingContext, textureSource: WebGLTexture2DSourc
   gl.vertexAttribPointer(attributes.texCoord, 2, gl.FLOAT, false, 0, 0);
 
   gl.uniform2f(uniforms.resolution, width, height);
+  gl.uniform1f(uniforms.time, 0);
 
+  draw(gl);
+
+  return program;
+};
+
+const draw = (gl: WebGLRenderingContext) => {
   gl.drawArrays(gl.TRIANGLES, 0, 6);
 };
 
@@ -101,7 +109,7 @@ export default class HeatDistortion extends Component {
   componentDidMount () {
     if (!this.canvas) return;
 
-    this.ctx = getContext(this.canvas);
+    this.gl = getContext(this.canvas);
 
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
@@ -109,8 +117,9 @@ export default class HeatDistortion extends Component {
     this.fit = () => {
       fit(this.canvas, window, window.devicePixelRatio);
       fit(canvas, window, window.devicePixelRatio);
-      this.ctx.viewport(0, 0, this.canvas.width, this.canvas.height);
+      this.gl.viewport(0, 0, this.canvas.width, this.canvas.height);
     };
+
     this.fit();
     window.addEventListener('resize', this.handleResize, false);
 
@@ -120,7 +129,8 @@ export default class HeatDistortion extends Component {
           <span style="color:white;">Biff! Pow! Bop!</span>
         </div>
       `).then((image) => {
-        initScene(this.ctx, image);
+        this.program = initScene(this.gl, image);
+        this.tick();
       });
     });
   }
@@ -131,7 +141,17 @@ export default class HeatDistortion extends Component {
 
   fit: Function
   canvas: HTMLCanvasElement
-  ctx: WebGLRenderingContext
+  gl: WebGLRenderingContext
+  program: WebGLProgram
+  frame: number = 0
+
+  tick = () => {
+    const time = this.gl.getUniformLocation(this.program, 'u_time');
+    this.gl.uniform1f(time, this.frame);
+    draw(this.gl);
+    this.frame++;
+    requestAnimationFrame(this.tick);
+  }
 
   handleResize = () => {
     this.fit();
