@@ -5,8 +5,69 @@ import fit from 'canvas-fit';
 import { getContext, createProgram, createShader, createTexture, setRectangle } from 'lib/glsl';
 import type { WebGLTexture2DSource } from 'lib/glsl';
 
-import fragmentSource from 'components/heat-distortion.frag';
-import vertexSource from 'components/heat-distortion.vert';
+const fragmentSource = `
+  precision mediump float;
+
+  uniform float u_time;
+  uniform vec2 u_resolution;
+  uniform sampler2D u_image;
+
+  varying vec2 v_texCoord;
+
+  vec2 pixel() {
+    float dpi = 2.0;
+    return vec2(1.0 * dpi) / u_resolution;
+  }
+
+  float wave(float x, float freq, float speed) {
+    return sin(x * freq + ((u_time * (3.141 / 2.0)) * speed));
+  }
+
+  vec2 waves(vec2 pos) {
+    float mask = texture2D(u_image, pos).g;
+    vec2 intensity = vec2(2.0, 1.0) * pixel();
+    vec2 waves = vec2(
+      wave(pos.y, 90.0, 0.25),
+      wave(pos.x, 20.0, 0.4)
+    );
+
+    return pos + (waves * intensity);
+  }
+
+  vec2 depth(vec2 pos) {
+    vec2 intensity = vec2(0.002, 0.002);
+    float d = 0.0 - pow(texture2D(u_image, pos).r, 1.0);
+    return pos + (intensity * d);
+  }
+
+  void main() {
+    vec2 turbulence = waves(depth(v_texCoord));
+    gl_FragColor = texture2D(u_image, turbulence);
+  }
+`;
+
+const vertexSource = `
+  precision mediump float;
+
+  attribute vec2 a_position;
+  attribute vec2 a_texCoord;
+
+  uniform vec2 u_resolution;
+
+  varying vec2 v_texCoord;
+
+  vec2 toClipSpace(vec2 position, vec2 resolution) {
+    vec2 zeroToOne = a_position / u_resolution;
+    vec2 zeroToTwo = zeroToOne * 2.0;
+    vec2 clipspace = (zeroToTwo - 1.0) * vec2(1, -1);
+    return clipspace;
+  }
+
+  void main() {
+    gl_Position = vec4(toClipSpace(a_position, u_resolution), 0.0, 1.0);
+    v_texCoord = a_texCoord;
+  }
+`;
 
 // eslint-disable-next-line no-unused-vars
 const noop = (...rest) => {};
