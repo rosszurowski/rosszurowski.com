@@ -2,7 +2,16 @@
 
 import React, { Component } from 'react';
 import fit from 'canvas-fit';
-import { getContext, createProgram, createShader, createTexture, setRectangle } from 'lib/glsl';
+
+import {
+  getContext,
+  createProgram,
+  createShader,
+  createTexture,
+  createUniform,
+  setRectangle,
+} from 'lib/glsl';
+
 import type { WebGLTexture2DSource } from 'lib/glsl';
 
 const fragmentSource = `
@@ -19,30 +28,25 @@ const fragmentSource = `
     return vec2(1.0 * dpi) / u_resolution;
   }
 
-  float wave(float x, float freq, float speed) {
-    return sin(x * freq + ((u_time * (3.141 / 2.0)) * speed));
+  float wave(float val, float freq, float speed) {
+    return sin(val * freq + ((u_time * (3.141 / 2.0)) * speed));
   }
 
   vec2 waves(vec2 pos) {
-    float mask = texture2D(u_image, pos).g;
-    vec2 intensity = vec2(2.0, 1.0) * pixel();
+    vec2 intensity = vec2(1.6 , 0.8) * pixel();
     vec2 waves = vec2(
-      wave(pos.y, 90.0, 0.25),
-      wave(pos.x, 20.0, 0.4)
+      wave(pos.y, 400.0, 0.04),
+      wave(pos.x, 350.0, 0.05)
     );
 
     return pos + (waves * intensity);
   }
 
-  vec2 depth(vec2 pos) {
-    vec2 intensity = vec2(0.002, 0.002);
-    float d = 0.0 - pow(texture2D(u_image, pos).r, 1.0);
-    return pos + (intensity * d);
-  }
-
   void main() {
-    vec2 turbulence = waves(depth(v_texCoord));
-    gl_FragColor = texture2D(u_image, turbulence);
+    vec4 color = texture2D(u_image, waves(v_texCoord));
+    // vec4 color = texture2D(u_image, v_texCoord);
+
+    gl_FragColor = color;
   }
 `;
 
@@ -73,8 +77,8 @@ const vertexSource = `
 const noop = (...rest) => {};
 
 const initScene = (gl: WebGLRenderingContext, textureSource: WebGLTexture2DSource): WebGLProgram => {
-  const width = gl.canvas.width / 2;
-  const height = gl.canvas.height / 2;
+  const width = gl.canvas.width;
+  const height = gl.canvas.height;
 
   const fragmentShader = createShader(gl, fragmentSource, gl.FRAGMENT_SHADER);
   const vertexShader = createShader(gl, vertexSource, gl.VERTEX_SHADER);
@@ -154,7 +158,9 @@ if (typeof global.window !== 'undefined') {
   getSVGImage = (ctx: CanvasRenderingContext2D, html:string): Promise<HTMLImageElement> => new Promise((resolve) => {
     if (!w) return;
 
-    const data = getRenderableSVG(html, ctx.canvas.width, ctx.canvas.height);
+    // NOTE: multiplying by 2x here to get a higher resolution for type
+    // rendering. Look into better ways of solving this.
+    const data = getRenderableSVG(html, ctx.canvas.width * 2, ctx.canvas.height * 2);
     const img = new Image();
 
     img.onload = () => {
@@ -186,8 +192,30 @@ export default class HeatDistortion extends Component {
 
     requestAnimationFrame(() => {
       getSVGImage(ctx, `
-        <div style="font-size: 96px; font-family: 'Calibre', sans-serif; font-weight: 300; letter-spacing: 0.05px;">
-          <span style="color:white;">Biff! Pow! Bop!</span>
+        <div>
+          <style>
+            .profile {
+              display: flex;
+              justify-content: center;
+              flex-align: center;
+              padding: 30vh 0;
+            }
+
+            .profile-role {
+              color: #fff;
+              font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+              font-size: 96px;
+              font-weight: 300;
+              letter-spacing: 1px;
+              text-align: center;
+            }
+          </style>
+          <div class="profile">
+            <div class="profile-role">
+              <p style="margin: 0;">Making things at Watsi.</p>
+              <p>Previously interned at Facebook, Format, and Palantir.</p>
+            </div>
+          </div>
         </div>
       `).then((image) => {
         this.program = initScene(this.gl, image);
@@ -207,8 +235,7 @@ export default class HeatDistortion extends Component {
   frame: number = 0
 
   tick = () => {
-    const time = this.gl.getUniformLocation(this.program, 'u_time');
-    this.gl.uniform1f(time, this.frame);
+    createUniform(this.gl, this.program, '1f', 'u_time', this.frame);
     draw(this.gl);
     this.frame++;
     requestAnimationFrame(this.tick);
