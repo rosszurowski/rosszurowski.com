@@ -86,9 +86,9 @@ export default () => (
         box-sizing: border-box;
         background: #2a303b;
         color: rgba(255, 255, 255, 0.8);
-        font-family: Calibre, sans-serif;
-        font-size: 24px;
-        font-weight: 200;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 20px;
+        font-weight: 300;
         line-height: 1.3;
         letter-spacing: 0.02em;
       }
@@ -171,16 +171,7 @@ export default () => (
 
       .biography {
         margin-bottom: 8vh;
-      }
-
-      .biography a {
-        color: #fff6a8;
-      }
-
-      .biography a:hover,
-      .contact a:hover,
-      .elsewhere a:hover {
-        border-bottom: 2px currentColor solid;
+        color: rgba(255, 255, 255, 0.0);
       }
 
       .contact {
