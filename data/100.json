@@ -1363,5 +1363,35 @@
       "aperture": "8.0",
       "shutter": "1/320"
     }
+  },
+  {
+    "id": 92,
+    "date": "2017-07-31T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/07-31.jpg",
+    "location": "Berkeley Repertory Theatre, Berkeley",
+    "dimensions": {
+      "width": 1200,
+      "height": 1600
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/60"
+    }
+  },
+  {
+    "id": 93,
+    "date": "2017-08-01T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/08-01.jpg",
+    "location": "Van Ness, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 900
+    },
+    "exif": {
+      "camera": "iPhone SE",
+      "aperture": "2.2",
+      "shutter": "1/60"
+    }
   }
 ]
