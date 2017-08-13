@@ -1393,5 +1393,35 @@
       "aperture": "2.2",
       "shutter": "1/60"
     }
+  },
+  {
+    "id": 94,
+    "date": "2017-08-02T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/08-02.jpg",
+    "location": "Soma, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "5.6",
+      "shutter": "1/125"
+    }
+  },
+  {
+    "id": 95,
+    "date": "2017-08-03T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/08-03.jpg",
+    "location": "Nob Hill, SF",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "8.0",
+      "shutter": "1/60"
+    }
   }
 ]
