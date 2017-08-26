@@ -1,8 +1,6 @@
 // @flow
 
 import React, { Component } from 'react';
-import type { Element } from 'react';
-import ReactDOMServer from 'react-dom/server';
 import fit from 'canvas-fit';
 
 import {
@@ -35,10 +33,10 @@ const fragmentSource = `
   }
 
   vec2 waves(vec2 pos) {
-    vec2 intensity = vec2(1.6 , 0.8) * pixel();
+    vec2 intensity = vec2(4, 2) * pixel();
     vec2 waves = vec2(
-      wave(pos.y, 400.0, 0.04),
-      wave(pos.x, 350.0, 0.05)
+      wave(pos.y, 200.0, 0.02),
+      wave(pos.x, 80.0, 0.05)
     );
 
     return pos + (waves * intensity);
@@ -116,6 +114,9 @@ const initScene = (gl: WebGLRenderingContext, textureSource: WebGLTexture2DSourc
   gl.viewport(0, 0, width, height);
   gl.clearColor(0, 0.0, 0, 0);
   gl.clear(gl.COLOR_BUFFER_BIT);
+  gl.blendFunc(gl.SRC_ALPHA, gl.ONE);
+  gl.enable(gl.BLEND);
+  gl.disable(gl.DEPTH_TEST);
 
   const attributes = {};
   attributes.position = gl.getAttribLocation(program, 'a_position');
@@ -174,12 +175,12 @@ if (typeof global.window !== 'undefined') {
 }
 
 type Props = {
-  children: Element<any>,
+  html: string,
 };
 
 type State = {
   hasRendered: boolean,
-}
+};
 
 export default class HeatDistortion extends Component<Props, State> {
   props: Props
@@ -189,34 +190,30 @@ export default class HeatDistortion extends Component<Props, State> {
   }
 
   componentDidMount () {
-    if (!this.canvas) return;
+    if (!this.$canvas) return;
+    if (!this.$root) return;
 
-    this.gl = getContext(this.canvas);
+    this.gl = getContext(this.$canvas);
 
-    this.textCanvas = document.createElement('canvas');
-    this.textCtx = this.textCanvas.getContext('2d');
+    this.$textCanvas = document.createElement('canvas');
+    this.textCtx = this.$textCanvas.getContext('2d');
 
     this.fit = () => {
-      fit(this.canvas, window, window.devicePixelRatio);
-      fit(this.textCanvas, window, window.devicePixelRatio);
-      if (this.canvas) {
-        this.gl.viewport(0, 0, this.canvas.width, this.canvas.height);
+      if (this.$canvas) {
+        if (this.$root) {
+          const { $root } = this;
+          fit(this.$canvas, $root, window.devicePixelRatio);
+          fit(this.$textCanvas, $root, window.devicePixelRatio);
+        }
+        this.gl.viewport(0, 0, this.$canvas.width, this.$canvas.height);
       }
     };
 
     this.fit();
     window.addEventListener('resize', this.handleResize, false);
 
-    const html: string = ReactDOMServer.renderToStaticMarkup((
-      <div>
-        {this.props.children}
-      </div>
-    ));
-
-    this.html = html;
-
     requestAnimationFrame(() => {
-      getSVGImage(this.textCtx, this.html).then((image) => {
+      getSVGImage(this.textCtx, this.props.html).then((image) => {
         const scene = initScene(this.gl, image);
         this.program = scene.program;
         this.attributes = scene.attributes;
@@ -233,15 +230,15 @@ export default class HeatDistortion extends Component<Props, State> {
   }
 
   fit: Function
-  canvas: ?HTMLCanvasElement
-  textCanvas: ?HTMLCanvasElement
+  $root: ?HTMLElement
+  $canvas: ?HTMLCanvasElement
+  $textCanvas: ?HTMLCanvasElement
   textCtx: CanvasRenderingContext2D
   gl: WebGLRenderingContext
   program: WebGLProgram
   attributes: Object
   buffers: Object
   uniforms: Object
-  html: string
   frame: number = 0
 
   tick = () => {
@@ -253,12 +250,12 @@ export default class HeatDistortion extends Component<Props, State> {
 
   handleResize = () => {
     this.fit();
-    if (this.canvas) {
-      const { width, height } = this.canvas;
+    if (this.$canvas) {
+      const { width, height } = this.$canvas;
       const { buffers, uniforms } = this;
       this.gl.bindBuffer(this.gl.ARRAY_BUFFER, buffers.position);
       setRectangle(this.gl, 0, 0, width, height);
-      getSVGImage(this.textCtx, this.html).then((image) => {
+      getSVGImage(this.textCtx, this.props.html).then((image) => {
         createTexture(this.gl, image);
       });
       this.gl.uniform2f(uniforms.resolution, width, height);
@@ -268,12 +265,14 @@ export default class HeatDistortion extends Component<Props, State> {
 
   render () {
     return (
-      <div>
-        <div className={`text ${this.state.hasRendered ? 'is-ready' : ''}`}>
-          {this.props.children}
-        </div>
-        <canvas className={this.state.hasRendered ? 'is-ready' : ''} ref={el => (this.canvas = el)} width={600} height={600} />
+      <div ref={el => (this.$root = el)}>
+        <canvas className={this.state.hasRendered ? 'is-ready' : ''} ref={el => (this.$canvas = el)} width={600} height={600} />
         <style jsx>{`
+
+          div {
+            position: relative;
+            height: 100%;
+          }
 
           canvas,
           .text {
