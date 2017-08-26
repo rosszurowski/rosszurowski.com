@@ -1,7 +1,6 @@
 // @flow
 
-import React from 'react';
-import type { Children } from 'react';
+import React, { type Node } from 'react';
 import Head from 'next/head';
 
 const isEmpty = (v: ?any): boolean => v === undefined || v === null;
@@ -22,7 +21,7 @@ type Props = {
   titleOverride?: string,
   description?: string,
   imagePreviewUrl?: string,
-  children: Children,
+  children: Node,
 };
 
 const Page = ({ title, titleOverride, description, imagePreviewUrl, children }: Props) => (
