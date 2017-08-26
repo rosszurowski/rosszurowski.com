@@ -1,6 +1,8 @@
 // @flow
 
 import React, { Component } from 'react';
+import type { Element } from 'react';
+import ReactDOMServer from 'react-dom/server';
 import fit from 'canvas-fit';
 
 import {
@@ -44,7 +46,6 @@ const fragmentSource = `
 
   void main() {
     vec4 color = texture2D(u_image, waves(v_texCoord));
-    // vec4 color = texture2D(u_image, v_texCoord);
 
     gl_FragColor = color;
   }
@@ -76,7 +77,7 @@ const vertexSource = `
 // eslint-disable-next-line no-unused-vars
 const noop = (...rest) => {};
 
-const initScene = (gl: WebGLRenderingContext, textureSource: WebGLTexture2DSource): WebGLProgram => {
+const initScene = (gl: WebGLRenderingContext, textureSource: WebGLTexture2DSource): Object => {
   const width = gl.canvas.width;
   const height = gl.canvas.height;
 
@@ -133,7 +134,7 @@ const initScene = (gl: WebGLRenderingContext, textureSource: WebGLTexture2DSourc
 
   draw(gl);
 
-  return program;
+  return { program, attributes, buffers, uniforms };
 };
 
 const draw = (gl: WebGLRenderingContext) => {
@@ -155,12 +156,12 @@ let getSVGImage;
 if (typeof global.window !== 'undefined') {
   const w = global.window.URL || global.window.webkitURL || global.window;
 
-  getSVGImage = (ctx: CanvasRenderingContext2D, html:string): Promise<HTMLImageElement> => new Promise((resolve) => {
+  getSVGImage = (ctx: CanvasRenderingContext2D, html: string): Promise<HTMLImageElement> => new Promise((resolve) => {
     if (!w) return;
 
     // NOTE: multiplying by 2x here to get a higher resolution for type
     // rendering. Look into better ways of solving this.
-    const data = getRenderableSVG(html, ctx.canvas.width * 2, ctx.canvas.height * 2);
+    const data = getRenderableSVG(html, ctx.canvas.width / 2, ctx.canvas.height / 2);
     const img = new Image();
 
     img.onload = () => {
@@ -172,54 +173,57 @@ if (typeof global.window !== 'undefined') {
   });
 }
 
-export default class HeatDistortion extends Component {
+type Props = {
+  children: Element<any>,
+};
+
+type State = {
+  hasRendered: boolean,
+}
+
+export default class HeatDistortion extends Component<Props, State> {
+  props: Props
+
+  state = {
+    hasRendered: false,
+  }
+
   componentDidMount () {
     if (!this.canvas) return;
 
     this.gl = getContext(this.canvas);
 
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
+    this.textCanvas = document.createElement('canvas');
+    this.textCtx = this.textCanvas.getContext('2d');
 
     this.fit = () => {
       fit(this.canvas, window, window.devicePixelRatio);
-      fit(canvas, window, window.devicePixelRatio);
-      this.gl.viewport(0, 0, this.canvas.width, this.canvas.height);
+      fit(this.textCanvas, window, window.devicePixelRatio);
+      if (this.canvas) {
+        this.gl.viewport(0, 0, this.canvas.width, this.canvas.height);
+      }
     };
 
     this.fit();
     window.addEventListener('resize', this.handleResize, false);
 
-    requestAnimationFrame(() => {
-      getSVGImage(ctx, `
-        <div>
-          <style>
-            .profile {
-              display: flex;
-              justify-content: center;
-              flex-align: center;
-              padding: 30vh 0;
-            }
+    const html: string = ReactDOMServer.renderToStaticMarkup((
+      <div>
+        {this.props.children}
+      </div>
+    ));
 
-            .profile-role {
-              color: #fff;
-              font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-              font-size: 96px;
-              font-weight: 300;
-              letter-spacing: 1px;
-              text-align: center;
-            }
-          </style>
-          <div class="profile">
-            <div class="profile-role">
-              <p style="margin: 0;">Making things at Watsi.</p>
-              <p>Previously interned at Facebook, Format, and Palantir.</p>
-            </div>
-          </div>
-        </div>
-      `).then((image) => {
-        this.program = initScene(this.gl, image);
+    this.html = html;
+
+    requestAnimationFrame(() => {
+      getSVGImage(this.textCtx, this.html).then((image) => {
+        const scene = initScene(this.gl, image);
+        this.program = scene.program;
+        this.attributes = scene.attributes;
+        this.buffers = scene.buffers;
+        this.uniforms = scene.uniforms;
         this.tick();
+        this.setState({ hasRendered: true });
       });
     });
   }
@@ -229,9 +233,15 @@ export default class HeatDistortion extends Component {
   }
 
   fit: Function
-  canvas: HTMLCanvasElement
+  canvas: ?HTMLCanvasElement
+  textCanvas: ?HTMLCanvasElement
+  textCtx: CanvasRenderingContext2D
   gl: WebGLRenderingContext
   program: WebGLProgram
+  attributes: Object
+  buffers: Object
+  uniforms: Object
+  html: string
   frame: number = 0
 
   tick = () => {
@@ -243,9 +253,54 @@ export default class HeatDistortion extends Component {
 
   handleResize = () => {
     this.fit();
+    if (this.canvas) {
+      const { width, height } = this.canvas;
+      const { buffers, uniforms } = this;
+      this.gl.bindBuffer(this.gl.ARRAY_BUFFER, buffers.position);
+      setRectangle(this.gl, 0, 0, width, height);
+      getSVGImage(this.textCtx, this.html).then((image) => {
+        createTexture(this.gl, image);
+      });
+      this.gl.uniform2f(uniforms.resolution, width, height);
+      this.gl.viewport(0, 0, width, height);
+    }
   }
 
   render () {
-    return <canvas ref={el => (this.canvas = el)} width={600} height={600} />;
+    return (
+      <div>
+        <div className={`text ${this.state.hasRendered ? 'is-ready' : ''}`}>
+          {this.props.children}
+        </div>
+        <canvas className={this.state.hasRendered ? 'is-ready' : ''} ref={el => (this.canvas = el)} width={600} height={600} />
+        <style jsx>{`
+
+          canvas,
+          .text {
+            opacity: 0.0;
+            transition: opacity 1200ms ease;
+          }
+
+          .text {
+            position: relative;
+            z-index: 9;
+          }
+
+          :global(.text *) {
+            color: transparent !important;
+          }
+
+          canvas.is-ready,
+          .text.is-ready {
+            opacity: 1.0;
+          }
+
+          @keyframes fadeIn {
+            from { opacity: 0.0; }
+            to { opacity: 1.0; }
+          }
+        `}</style>
+      </div>
+    );
   }
 }
