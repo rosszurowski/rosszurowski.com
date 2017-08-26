@@ -4,15 +4,26 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
+import tinytime from 'tinytime';
+
 import Page from 'components/layouts/page';
-// import StarField from 'components/star-field';
 import HeatDistortion from 'components/heat-distortion';
+import CVPanel from 'components/cv-panel';
+
+import F from 'components/styles/f';
+import Reset from 'components/styles/reset';
 import FontFaceCalibre from 'components/styles/font-face-calibre';
+
+import ZigZag from 'components/icons/zig-zag';
 
 const meta = {
   title: 'Ross Zurowski',
   description: 'Designer and developer from Toronto.',
 };
+
+const BUILD_TIME = process.env.BUILD_TIME;
+const formatDate = tinytime('{MMMM} {DD}, {YYYY}').render;
+const randomInt = (min, max) => Math.floor(Math.random() * (max - (min + 1))) + min;
 
 export default () => (
   <Page>
@@ -34,48 +45,131 @@ export default () => (
       <meta name="twitter:creator" content="@rosszurowski" />
       <meta name="twitter:url" content="https://rosszurowski.com" />
     </Head>
+    <F />
+    <Reset />
     <FontFaceCalibre />
-    <HeatDistortion>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', fontFamily: 'Calibre, sans-serif', lineHeight: 1.2, color: 'white', textAlign: 'center', height: '100vh' }}>
-        <h1 style={{ fontSize: 96, fontWeight: 400, margin: 0 }}>Whoa!</h1>
-        <h2 style={{ fontSize: 48, fontWeight: 400, margin: 0 }}>The internet is a crazy place.</h2>
+    <main className="x xa-stretch">
+      <div className="pa-4 pa-6-s" style={{ position: 'relative' }}>
+        <div style={{ maxWidth: '23em', lineHeight: 1.6 }}>
+          <div className="mb-6">
+            <Link href="/">
+              <a><ZigZag fill="white" /></a>
+            </Link>
+          </div>
+          <div className="mb-6" style={{ lineHeight: 1.2 }}>
+            <Link href="/"><a>Ross Zurowski</a></Link>
+            <p className="mt-1" style={{ fontSize: 18, opacity: 0.6 }}>
+              <a href="mailto:ross@rosszurowski.com" target="_blank" rel="noopener noreferrer">ross@rosszurowski.com</a>
+              <span className="mh-2" style={{ position: 'relative', top: 4 }}>*</span>
+              <a href="https://github.com/rosszurowski" target="_blank" rel="noopener noreferrer">Github</a>
+              <span className="mh-2" style={{ position: 'relative', top: 4 }}>*</span>
+              <a href="https://are.na/ross-zurowski" target="_blank" rel="noopener noreferrer">Are.na</a>
+            </p>
+          </div>
+          <div className="mb-6">
+            <p>Designer and engineer from Toronto.</p>
+            <p className="mt-3">Works at <a href="https://watsi.org/" target="_blank" rel="noopener noreferrer">Watsi</a>, helping build systems for healthcare providers and low-income populations around the world.</p>
+          </div>
+          <div className="mb-5">
+            <h4 className="mb-3" style={{ color: '#ffb7b3' }}>On-going Projects</h4>
+            <p>
+              {/* <Link href="/log"><a>Writing</a></Link>, */}
+              {' '}
+              <Link href="/100"><a>100 Days</a></Link>,
+              {' '}
+              <a href="https://twitter.com/smallseasonsbot">Small Seasons Bot</a>,
+              {' '}
+              <br />
+              <a href="https://dogsofperu.tumblr.com">Dogs of Peru</a>,
+              {' '}
+              <a href="https://broken-idioms.tumblr.com">Broken Idioms</a>.
+            </p>
+          </div>
+          <div className="mb-5">
+            <h4 className="mb-3" style={{ color: '#ffb7b3' }}>CV</h4>
+            <CVPanel name="Watsi" href="https://watsi.org/" period="2016 – Present" />
+            <CVPanel name="Format" href="https://format.com/themes/" period="2013 – 2016" />
+            <CVPanel name="Palantir" href="https://palantir.com/" period="2015" />
+            <CVPanel name="Facebook" href="http://facebook.design/" period="2014" />
+          </div>
+          <div className="mb-6">
+            <h4 className="mb-3" style={{ color: '#ffb7b3' }}>Recent interests</h4>
+            <p>Tools for writing and understanding (code, words, ideas), the future of the web, sunlight on concrete, keeping plants alive, dad jokes, rice noodles, making lists.</p>
+          </div>
+          <div style={{ fontSize: 15, opacity: 0.5 }}>
+            <p>This website is published on the distributed web via <a href="https://datproject.org">Dat</a>. You can access it with <a href="https://beakerbrowser.com/">Beaker Browser</a>. Source code and past versions of this site are available via <a href="https://github.com/rosszurowski/rosszurowski.com">Github</a>.</p>
+          </div>
+        </div>
       </div>
-    </HeatDistortion>
+      <div className="canvas xx">
+        <HeatDistortion
+          html={`
+            <div style="width: 100%; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: space-around; text-align: center;">
+              <div style="background-color: #f79e98; width: 500px; height: 150px; transform: rotate(${randomInt(-90, -20)}deg)"></div>
+              <div style="background-color: #f79e98; width: 210px; height: 50px; transform: rotate(${randomInt(-50, -20)}deg)"></div>
+              <div style="background-color: #f79e98; width: 320px; height: 80px; transform: rotate(${randomInt(-90, 0)}deg)"></div>
+              <div style="position: absolute; top: ${randomInt(30, 70)}%; left: ${randomInt(0, 70)}%; color: white; font-size: 120px; font-family: 'TiemposText-Regular', 'Times New Roman', Georgia, serif; transform: rotate(${randomInt(20, 60)}deg);">the internet is craaaazyyy</div>
+            </div>
+          `} />
+      </div>
+      <div className="pa-4 pa-6-s" style={{ position: 'absolute', top: 0, right: 0, bottom: 0 }}>
+        <aside className="x xj-spaceAround" style={{ height: '100%', writingMode: 'vertical-lr' }}>
+          <div style={{ opacity: 0.5, fontSize: 15, letterSpacing: '1px' }}>{`43°58'13"N — 114°55'28"W`}</div>
+          <div style={{ marginLeft: 'auto', opacity: 0.5, fontSize: 15 }}>Last updated {BUILD_TIME ? `on ${formatDate(BUILD_TIME)}` : 'a while ago'}</div>
+        </aside>
+      </div>
+    </main>
     <style jsx global>{`
-      * {
-        box-sizing: border-box;
-      }
-
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-      }
-
       html {
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
         box-sizing: border-box;
-        background: #202228;
-        /*color: rgba(255, 255, 255, 0.8);
-        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-        font-size: 20px;
-        font-weight: 300;
-        line-height: 1.3;
-        letter-spacing: 0.02em;*/
+        background: #131313;
+        color: #fafafa;
+        font-family: Calibre, -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 22px;
+        line-height: 1.25;
+        letter-spacing: 0.05px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
+        position: relative;
+      }
+
+      main p a {
+        color: inherit;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        padding-left: 1px;
+        padding-right: 1px;
+        text-decoration: none;
+        transition: opacity 200ms ease;
+      }
+
+      main p a:hover {
+        opacity: 0.8;
+      }
+
+      .h-fade {
+        transition: opacity 200ms ease;
+      }
+
+      .h-fade:hover {
+        opacity: 0.8;
       }
 
       .canvas {
-        position: fixed !important;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        opacity: 1.0;
-        will-change: opacity;
         pointer-events: none;
-        transition: opacity 4000ms ease;
+        user-select: none;
+      }
+
+      .d-inlineBlock {
+        display: inline-block;
+      }
+
+      .h-100p {
+        height: 100%;
       }
     `}</style>
   </Page>

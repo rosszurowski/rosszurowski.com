@@ -45,7 +45,7 @@ const Page = ({ title, titleOverride, description, imagePreviewUrl, children }: 
       <meta name="twitter:image" content={imagePreviewUrl} />
       <meta name="twitter:creator" content="@rosszurowski" />
 
-      <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
+      <link rel="icon" href="/static/favicon.png?201708261612" type="image/png" />
     </Head>
     {children}
   </div>
