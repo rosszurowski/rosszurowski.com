@@ -4,8 +4,6 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import tinytime from 'tinytime';
-
 import Page from 'components/layouts/page';
 import HeatDistortion from 'components/heat-distortion';
 import CVPanel from 'components/cv-panel';
@@ -21,8 +19,6 @@ const meta = {
   description: 'Designer and developer from Toronto.',
 };
 
-const BUILD_TIME = process.env.BUILD_TIME;
-const formatDate = tinytime('{MMMM} {DD}, {YYYY}').render;
 const randomInt = (min, max) => Math.floor(Math.random() * (max - (min + 1))) + min;
 
 export default () => (
@@ -49,28 +45,28 @@ export default () => (
     <Reset />
     <FontFaceCalibre />
     <main className="x xa-stretch">
-      <div className="pa-4 pa-6-s" style={{ position: 'relative' }}>
-        <div style={{ maxWidth: '23em', lineHeight: 1.6 }}>
-          <div className="mb-6">
+      <div className="xx p-relative pa-4 pa-5-s z-1">
+        <div className="lh-1d6" style={{ maxWidth: '23em' }}>
+          <div className="mb-5 mb-6-s">
             <Link href="/">
-              <a><ZigZag fill="white" /></a>
+              <a className="h-fade"><ZigZag fill="white" /></a>
             </Link>
           </div>
-          <div className="mb-6" style={{ lineHeight: 1.2 }}>
+          <div className="mb-5 lh-1d2">
             <Link href="/"><a>Ross Zurowski</a></Link>
-            <p className="mt-1" style={{ fontSize: 18, opacity: 0.6 }}>
+            <p className="mt-1 fs-18 o-75p">
               <a href="mailto:ross@rosszurowski.com" target="_blank" rel="noopener noreferrer">ross@rosszurowski.com</a>
-              <span className="mh-2" style={{ position: 'relative', top: 4 }}>*</span>
+              <span className="mh-2 p-relative" style={{ top: 4 }}>*</span>
               <a href="https://github.com/rosszurowski" target="_blank" rel="noopener noreferrer">Github</a>
-              <span className="mh-2" style={{ position: 'relative', top: 4 }}>*</span>
+              <span className="mh-2 p-relative" style={{ top: 4 }}>*</span>
               <a href="https://are.na/ross-zurowski" target="_blank" rel="noopener noreferrer">Are.na</a>
             </p>
           </div>
-          <div className="mb-6">
-            <p>Designer and engineer from Toronto.</p>
-            <p className="mt-3">Works at <a href="https://watsi.org/" target="_blank" rel="noopener noreferrer">Watsi</a>, helping build systems for healthcare providers and low-income populations around the world.</p>
-          </div>
           <div className="mb-5">
+            <p>Designer and engineer from Toronto.</p>
+            <p className="mt-3">Working at <a href="https://watsi.org/" target="_blank" rel="noopener noreferrer">Watsi</a>, designing software for healthcare providers and low-income populations around the world.</p>
+          </div>
+          <div className="mb-4">
             <h4 className="mb-3" style={{ color: '#ffb7b3' }}>On-going Projects</h4>
             <p>
               {/* <Link href="/log"><a>Writing</a></Link>, */}
@@ -85,23 +81,23 @@ export default () => (
               <a href="https://broken-idioms.tumblr.com">Broken Idioms</a>.
             </p>
           </div>
-          <div className="mb-5">
+          <div className="mb-4">
             <h4 className="mb-3" style={{ color: '#ffb7b3' }}>CV</h4>
             <CVPanel name="Watsi" href="https://watsi.org/" period="2016 – Present" />
             <CVPanel name="Format" href="https://format.com/themes/" period="2013 – 2016" />
             <CVPanel name="Palantir" href="https://palantir.com/" period="2015" />
             <CVPanel name="Facebook" href="http://facebook.design/" period="2014" />
           </div>
-          <div className="mb-6">
+          <div className="mb-5">
             <h4 className="mb-3" style={{ color: '#ffb7b3' }}>Recent interests</h4>
             <p>Tools for writing and understanding (code, words, ideas), the future of the web, sunlight on concrete, keeping plants alive, dad jokes, rice noodles, making lists.</p>
           </div>
-          <div style={{ fontSize: 15, opacity: 0.5 }}>
-            <p>This website is published on the distributed web via <a href="https://datproject.org">Dat</a>. You can access it with <a href="https://beakerbrowser.com/">Beaker Browser</a>. Source code and past versions of this site are available via <a href="https://github.com/rosszurowski/rosszurowski.com">Github</a>.</p>
+          <div className="fs-15 o-50p">
+            <p>This website is published on the distributed web via <a href="https://datproject.org">Dat</a>. You can access it with <a href="https://beakerbrowser.com/">Beaker Browser</a>. Source code and past versions of this site are available on <a href="https://github.com/rosszurowski/rosszurowski.com">Github</a>.</p>
           </div>
         </div>
       </div>
-      <div className="canvas xx">
+      <div className="canvas xx d-none d-block-s p-absolute z-0" style={{ top: 0, right: 0, bottom: 0, width: '50vw' }}>
         <HeatDistortion
           html={`
             <div style="width: 100%; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: space-around; text-align: center;">
@@ -112,10 +108,10 @@ export default () => (
             </div>
           `} />
       </div>
-      <div className="pa-4 pa-6-s" style={{ position: 'absolute', top: 0, right: 0, bottom: 0 }}>
-        <aside className="x xj-spaceAround" style={{ height: '100%', writingMode: 'vertical-lr' }}>
-          <div style={{ opacity: 0.5, fontSize: 15, letterSpacing: '1px' }}>{`43°58'13"N — 114°55'28"W`}</div>
-          <div style={{ marginLeft: 'auto', opacity: 0.5, fontSize: 15 }}>Last updated {BUILD_TIME ? `on ${formatDate(BUILD_TIME)}` : 'a while ago'}</div>
+      <div className="d-none d-block-s pa-4 pa-5-s z-2">
+        <aside className="x xj-spaceBetween pt-4 h-100p" style={{ writingMode: 'vertical-lr' }}>
+          <div className="o-50p fs-15" style={{ letterSpacing: '1px' }}>{`43°58'13"N — 114°55'28"W`}</div>
+          <div className="o-50p fs-15" style={{ marginLeft: 'auto' }}>Last updated August 26, 2017</div>
         </aside>
       </div>
     </main>
@@ -159,20 +155,12 @@ export default () => (
       }
 
       .h-fade:hover {
-        opacity: 0.8;
+        opacity: 0.7;
       }
 
       .canvas {
         pointer-events: none;
         user-select: none;
-      }
-
-      .d-inlineBlock {
-        display: inline-block;
-      }
-
-      .h-100p {
-        height: 100%;
       }
     `}</style>
   </Page>
