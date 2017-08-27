@@ -120,11 +120,14 @@ export default () => (
       </div>
     </main>
     <style jsx global>{`
-      html {
+      html,
+      body {
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
-        box-sizing: border-box;
         background: #131313;
+      }
+
+      html {
         color: #fafafa;
         font-family: Calibre, -apple-system, BlinkMacSystemFont, sans-serif;
         font-size: 22px;

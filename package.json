@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "NODE_ENV=production next build && next export -o dist && yarn build:404",
+    "build": "NODE_ENV=production next build && next export -o dist && yarn build:404 && yarn build:dat",
     "build:404": "mv dist/_error/index.html dist/404.html && rm -r dist/_error",
+    "build:dat": "cp dat.json dist/dat.json && mkdir -p dist/.well-known && touch dist/.well-known/dat && echo $(node -p 'require(\"./dat.json\").url') > dist/.well-known/dat && echo \"TTL=0\" >> dist/.well-known/dat",
     "start": "next",
     "deploy": "echo '> No custom deploy script, use `git push` instead'",
     "lint": "eslint {pages,lib,components}/"
