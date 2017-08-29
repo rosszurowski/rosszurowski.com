@@ -1438,5 +1438,20 @@
       "aperture": "8.0",
       "shutter": "1/160"
     }
+  },
+  {
+    "id": 97,
+    "date": "2017-08-29T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/08-29.jpg",
+    "location": "Downtown, Oakland",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "8.0",
+      "shutter": "1/200"
+    }
   }
 ]
