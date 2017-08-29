@@ -1,20 +1,26 @@
 // @flow
 
 import React, { Component } from 'react';
-import type { Children } from 'react';
+import type { Element } from 'react';
 import scrollMonitor from 'scrollmonitor';
 import Icon from 'components/japan/icon';
 
 import utils from 'lib/utils';
 
-class PostVideo extends Component {
-  props: {
-    children?: Children,
-    srcId: string,
-    width: number,
-    height: number,
-    withAudio: boolean
-  }
+type Props = {
+  children?: ?Element<any>,
+  srcId: string,
+  width: number,
+  height: number,
+  withAudio: boolean,
+};
+
+type State = {
+  muted: boolean,
+};
+
+class PostVideo extends Component<Props, State> {
+  props: Props
 
   static defaultProps = {
     children: null,
@@ -28,7 +34,7 @@ class PostVideo extends Component {
   }
 
   elementWatcher: Object
-  $video: HTMLVideoElement
+  $video: ?HTMLVideoElement
 
   componentDidMount () {
     this.elementWatcher = scrollMonitor.create(this.$video);
@@ -41,11 +47,15 @@ class PostVideo extends Component {
   }
 
   handleEnterViewport = () => {
-    this.$video.play();
+    if (this.$video) {
+      this.$video.play();
+    }
   }
 
   handleLeaveViewport = () => {
-    this.$video.pause();
+    if (this.$video) {
+      this.$video.pause();
+    }
     this.setState({ muted: true });
   }
 

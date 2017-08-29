@@ -1,13 +1,13 @@
 // @flow
 
 import React from 'react';
-import type { Children } from 'react';
+import type { Element } from 'react';
 import utils from 'lib/utils';
 
 const generateUnderlineStyles = type => `background-image: url('${utils.getAssetUrl(`2017/japan/underline-${type}.svg`)}');`;
 
 type Props = {
-  children: Children,
+  children: Element<any>,
   type:
     | 'tokyo-1'
     | 'tokyo-2'

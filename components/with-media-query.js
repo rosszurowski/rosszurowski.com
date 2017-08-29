@@ -1,4 +1,7 @@
+// @flow
+
 import React, { Component } from 'react';
+import type { ComponentType } from 'react';
 
 const createMediaQueries = media => Object.keys(media).map((key) => {
   const mediaQueryString = media[key];
@@ -29,9 +32,11 @@ const createMediaSubscription = media => ({
   },
 });
 
-const withMediaQuery = media => (WrappedComponent) => {
+const withMediaQuery = (media: Object) => (WrappedComponent: ComponentType<any>) => {
   const subscription = createMediaSubscription(media);
-  class ResponsiveComponent extends Component {
+  class ResponsiveComponent extends Component<{}> {
+    unsubscribe: Function
+
     componentWillMount () {
       this.unsubscribe = subscription.subscribe(state => this.setState(state));
     }

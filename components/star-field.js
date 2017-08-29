@@ -11,8 +11,10 @@ const FRAME_DIFF = 50;
 
 const rgb = (r, g, b) => `rgb(${r}, ${g}, ${b})`;
 
-export default class StarField extends Component {
+export default class StarField extends Component<{}> {
   componentDidMount () {
+    if (!this.$canvas) return;
+
     this.ctx = this.$canvas.getContext('2d');
     this.scale = window.devicePixelRatio;
     this.fitCanvas = fitter(this.$canvas, window, this.scale);
@@ -44,7 +46,7 @@ export default class StarField extends Component {
     return [width, height];
   }
 
-  $canvas: HTMLCanvasElement
+  $canvas: ?HTMLCanvasElement
   scale: number
 
   ctx: CanvasRenderingContext2D;

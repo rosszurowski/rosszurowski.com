@@ -22,8 +22,8 @@ type Props = {
   alt?: string,
   width?: number,
   height?: number,
-  preload?: boolean
-}
+  preload: boolean,
+};
 
 const LazyloadImage = ({ srcSet, alt, width, height, preload }: Props) => (
   <span>
@@ -47,13 +47,13 @@ const LazyloadImage = ({ srcSet, alt, width, height, preload }: Props) => (
         left: 0;
         width: 100%;
         height: 100%;
-        opacity: 0.0;
+        opacity: 0;
         transition: opacity 200ms ease;
         will-change: opacity;
       }
 
       img.js-lazysizes-loaded {
-        opacity: 1.0;
+        opacity: 1;
       }
 
       canvas {
