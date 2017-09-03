@@ -1453,5 +1453,20 @@
       "aperture": "8.0",
       "shutter": "1/200"
     }
+  },
+  {
+    "id": 98,
+    "date": "2017-09-02T07:00:00Z",
+    "src": "https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/100/09-02.jpg",
+    "location": "Alamere Falls, Point Reyes, California",
+    "dimensions": {
+      "width": 1200,
+      "height": 1800
+    },
+    "exif": {
+      "camera": "Leica Q",
+      "aperture": "8.0",
+      "shutter": "1/200"
+    }
   }
 ]
