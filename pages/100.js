@@ -19,11 +19,6 @@ export default () => {
   return (
     <Page title={title} description={description}>
       <Header />
-      <div className="notice-wrapper">
-        <div className="notice">
-          This project technically ended on Aug 9th, but I still have a few more photos to post. I’ll be adding them in the coming few days. 🙈
-        </div>
-      </div>
       <div>
         <PostList posts={orderedPosts} />
       </div>
