@@ -24,7 +24,7 @@ type Props = {
   children: Node,
 };
 
-const Page = ({ title, titleOverride, description, imagePreviewUrl, children }: Props) => (
+const PageLayout = ({ title, titleOverride, description, imagePreviewUrl, children }: Props) => (
   <div>
     <Head>
       <title>{getPageTitle(title, titleOverride)}</title>
@@ -51,11 +51,11 @@ const Page = ({ title, titleOverride, description, imagePreviewUrl, children }: 
   </div>
 );
 
-Page.defaultProps = {
+PageLayout.defaultProps = {
   title: undefined,
   titleOverride: undefined,
   description: 'Designer and developer from Toronto.',
   imagePreviewUrl: '/static/og-image.png',
 };
 
-export default Page;
+export default PageLayout;

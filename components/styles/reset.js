@@ -25,7 +25,7 @@ export default () => (
       text-decoration: none;
     }
 
-    p, ul, ol {
+    p, ul, ol, blockquote {
       margin: 0;
       padding: 0;
     }
