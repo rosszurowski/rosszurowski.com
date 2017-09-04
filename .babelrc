@@ -10,7 +10,8 @@
     ["babel-plugin-inline-import", {
       "extensions": [
         ".vert",
-        ".frag"
+        ".frag",
+        ".md"
       ]
     }]
   ]

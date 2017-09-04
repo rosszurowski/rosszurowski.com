@@ -4,6 +4,8 @@ import React from 'react';
 import Page from 'components/layouts/page';
 import Header from 'components/100/header';
 import PostList from 'components/100/post-list';
+
+import Reset from 'components/styles/reset';
 import FontFaceCalibre from 'components/styles/font-face-calibre';
 
 import { color } from 'lib/100/styles';
@@ -22,16 +24,12 @@ export default () => {
       <div>
         <PostList posts={orderedPosts} />
       </div>
+      <Reset />
       <FontFaceCalibre />
       <style jsx global>{`
-        * {
-          margin: 0;
-          box-sizing: border-box;
-        }
-
         body {
           color: ${color.black};
-          font-family: 'Calibre', -apple-system, BlinkMacSystemFont, sans-serif;
+          font-family: Calibre, -apple-system, BlinkMacSystemFont, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
