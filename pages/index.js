@@ -61,7 +61,7 @@ export default () => (
             </p>
           </div>
           <div className="mb-5">
-            <p>Designer and engineer from Toronto.</p>
+            <p>Designer and developer from Toronto.</p>
             <p className="mt-3">Working at <a href="https://watsi.org/" target="_blank" rel="noopener noreferrer">Watsi</a>, designing software for healthcare providers and low-income populations around the world.</p>
           </div>
           <div className="mb-4">
