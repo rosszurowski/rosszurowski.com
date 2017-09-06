@@ -16,7 +16,7 @@ export default () => (
         <h1>100</h1>
       </div>
       <div>
-        <h4>Aug 9</h4>
+        <h4>Sep 4</h4>
       </div>
     </div>
     <style jsx>{`
