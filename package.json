@@ -8,7 +8,6 @@
     "build:dat": "cp dat.json dist/dat.json && mkdir -p dist/.well-known && touch dist/.well-known/dat && echo $(node -p 'require(\"./dat.json\").url') > dist/.well-known/dat && echo \"TTL=0\" >> dist/.well-known/dat",
     "start": "next",
     "deploy": "echo '> No custom deploy script, use `git push` instead'",
-    "lint": "eslint {pages,lib,components}/"
   },
   "dependencies": {
     "canvas-fit": "^1.5.0",
@@ -30,10 +29,6 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-0": "^6.24.1",
     "dotenv": "^4.0.0",
-    "eslint": "^4.5.0",
-    "eslint-config-watsi": "^1.0.15",
-    "eslint-import-resolver-babel-module": "^3.0.0",
-    "eslint-plugin-import": "^2.2.0",
     "flow-bin": "^0.53.1"
   }
 }
