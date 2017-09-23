@@ -1,5 +1,5 @@
 module.exports = {
-  async exportPathMap () {
+  exportPathMap () {
     return {
       '/': { page: '/' },
       '/2017/japan': { page: '/2017/japan' },
