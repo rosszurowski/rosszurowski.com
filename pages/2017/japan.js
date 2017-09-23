@@ -3,7 +3,6 @@
 import React from 'react';
 
 import Page from 'components/layouts/page';
-import FontFaceCalibre from 'components/styles/font-face-calibre';
 import GlobalStyles from 'components/japan/global-styles';
 
 import Paragraph from 'components/japan/paragraph';
@@ -23,7 +22,6 @@ const JapanTripPage = () => (
     title="Japan Trip"
     description="A few photos from a trip to Japan in May 2017."
     imagePreviewUrl={utils.getAssetUrl('2017/japan/og-image.jpg')}>
-    <FontFaceCalibre />
     <GlobalStyles />
 
     <main className="center mw8 w-90">
