@@ -8,10 +8,6 @@ import Page from 'components/layouts/page';
 import HomepageHeatDistortion from 'components/homepage-heat-distortion';
 import CVPanel from 'components/cv-panel';
 
-import UtilityStyles from 'components/styles/utilities';
-import Reset from 'components/styles/reset';
-import FontFaceCalibre from 'components/styles/font-face-calibre';
-
 import ZigZag from 'components/icons/zig-zag';
 
 const meta = {
@@ -39,11 +35,8 @@ export default () => (
       <meta name="twitter:creator" content="@rosszurowski" />
       <meta name="twitter:url" content="https://rosszurowski.com" />
     </Head>
-    <Reset />
-    <UtilityStyles />
-    <FontFaceCalibre />
     <main className="x-s xa-stretch">
-      <div className="xx p-relative pa-3 pa-5-s z-1">
+      <div className="x-1 x-auto p-relative pa-3 pa-5-s z-1">
         <div className="lh-1d6" style={{ maxWidth: '23em' }}>
           <div className="mb-5 mb-6-s">
             <Link href="/">
@@ -54,9 +47,9 @@ export default () => (
             <Link href="/"><a>Ross Zurowski</a></Link>
             <p className="x xd-column xd-row-s xa-start mt-1 fs-18 o-75p">
               <a href="mailto:ross@rosszurowski.com" target="_blank" rel="noopener noreferrer">ross@rosszurowski.com</a>
-              <span className="d-none d-inlineBlock-s mh-2 p-relative" style={{ top: 4 }}>*</span>
+              <span className="d-none fs-13 d-inlineBlock-s mh-2 p-relative" style={{ top: 3 }}>•</span>
               <a className="mt-1 mt-0-s" href="https://github.com/rosszurowski" target="_blank" rel="noopener noreferrer">Github</a>
-              <span className="d-none d-inlineBlock-s mh-2 p-relative" style={{ top: 4 }}>*</span>
+              <span className="d-none fs-13 d-inlineBlock-s mh-2 p-relative" style={{ top: 3 }}>•</span>
               <a className="mt-1 mt-0-s" href="https://are.na/ross-zurowski" target="_blank" rel="noopener noreferrer">Are.na</a>
             </p>
           </div>
