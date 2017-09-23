@@ -46,6 +46,7 @@ const PageLayout = ({ title, titleOverride, description, imagePreviewUrl, childr
       <meta name="twitter:creator" content="@rosszurowski" />
 
       <link rel="icon" href="/static/favicon.png?201708261612" type="image/png" />
+      <link rel="stylesheet" href="/static/css/index.css" type="text/css" />
     </Head>
     {children}
   </div>

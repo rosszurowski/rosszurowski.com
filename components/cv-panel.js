@@ -15,9 +15,9 @@ const CVPanel = ({ name, href, period }: Props) => (
       {period}
     </div>
     <div>
-      <a className="x xa-baseline h-fade" href={href} target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'none' }}>
+      <a className="x xa-baseline h-fade c-white td-none" href={href} target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'none' }}>
         <span style={{ width: 120 }}>{name}</span>
-        <span style={{ position: 'relative', top: 2, transform: 'rotate(-46deg)' }}><Arrow width={14} /></span>
+        <span className="p-relative" style={{ top: 2, transform: 'rotate(-46deg)' }}><Arrow width={14} /></span>
       </a>
     </div>
   </div>
