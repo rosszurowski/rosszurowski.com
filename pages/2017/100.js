@@ -5,12 +5,7 @@ import Page from 'components/layouts/page';
 import Header from 'components/100/header';
 import PostList from 'components/100/post-list';
 
-import Reset from 'components/styles/reset';
-import FontFaceCalibre from 'components/styles/font-face-calibre';
-
-import { color } from 'lib/100/styles';
-
-import posts from 'data/100.json';
+import posts from 'content/100.json';
 
 const title = '100 Days';
 const description = 'A photography project by designer Ross Zurowski. 100 days of photos.';
@@ -24,11 +19,9 @@ export default () => {
       <div>
         <PostList posts={orderedPosts} />
       </div>
-      <Reset />
-      <FontFaceCalibre />
       <style jsx global>{`
         body {
-          color: ${color.black};
+          color: #141414;
           font-family: Calibre, -apple-system, BlinkMacSystemFont, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
@@ -44,17 +37,6 @@ export default () => {
           vertical-align: top;
         }
 
-        a {
-          color: inherit;
-          text-decoration: none;
-          -webkit-tap-highlight-color: rgba(0, 0, 0, 0.0);
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-          font-weight: normal;
-          text-rendering: optimizeLegibility;
-        }
-
         .notice-wrapper {
           margin-left: auto;
           margin-right: auto;
@@ -64,7 +46,7 @@ export default () => {
 
         .notice {
           background-color: rgba(0, 191, 131, 0.1);
-          color: ${color.green};
+          color: #00bf83;
           padding: 36px;
           font-size: 19px;
           text-align: center;
