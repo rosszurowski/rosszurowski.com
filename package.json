@@ -11,7 +11,7 @@
     "build:netlify": "cp _redirects dist/",
     "build:dat": "cp dat.json dist/dat.json && mkdir -p dist/.well-known && touch dist/.well-known/dat && echo $(node -p 'require(\"./dat.json\").url') > dist/.well-known/dat && echo \"TTL=0\" >> dist/.well-known/dat",
     "start": "next",
-    "deploy": "echo '> No custom deploy script, use `git push` instead'",
+    "deploy": "echo '> No custom deploy script, use `git push` instead'"
   },
   "dependencies": {
     "canvas-fit": "^1.5.0",
