@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 import Page from 'components/layouts/page';
 import HomepageHeatDistortion from 'components/homepage-heat-distortion';
-import CVPanel from 'components/cv-panel';
+import CVPanel from 'components/homepage-cv-panel';
 
 import ZigZag from 'components/icons/zig-zag';
 
@@ -60,16 +60,13 @@ export default () => (
           <div className="mb-4">
             <h4 className="mb-3 c-pink">Current Projects</h4>
             <p>
-              {/* <Link href="/log"><a>Writing</a></Link>, */}
-              {' '}
-              <Link href="/100"><a>100 Days</a></Link>,
+              <Link href="/2017/100"><a>100 Days</a></Link>,
               {' '}
               <a href="https://twitter.com/smallseasonsbot">Small Seasons Bot</a>,
-              {' '}
               <br />
               <a href="https://dogsofperu.tumblr.com">Dogs of Peru</a>,
               {' '}
-              <a href="https://broken-idioms.tumblr.com">Broken Idioms</a>.
+              <a href="https://broken-idioms.com">Broken Idioms</a>.
             </p>
           </div>
           <div className="mb-4">
