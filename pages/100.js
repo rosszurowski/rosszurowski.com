@@ -26,31 +26,6 @@ export default () => {
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
-
-        img,
-        svg,
-        video {
-          max-height: 100%;
-          max-width: 100%;
-          height: auto;
-          width: auto;
-          vertical-align: top;
-        }
-
-        .notice-wrapper {
-          margin-left: auto;
-          margin-right: auto;
-          max-width: 40rem;
-          width: 90%;
-        }
-
-        .notice {
-          background-color: rgba(0, 191, 131, 0.1);
-          color: #00bf83;
-          padding: 36px;
-          font-size: 19px;
-          text-align: center;
-        }
       `}</style>
     </Page>
   );

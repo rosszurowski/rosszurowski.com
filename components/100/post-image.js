@@ -5,12 +5,14 @@ type Props = {
   src: string
 };
 
+const CACHE_BUST = '20170721'
+
 const PostImage = ({ src, ...props }: Props) => {
   const srcWithoutJPGExtension = src.replace(/\.jpe?g$/, '');
   const srcSet = [
-    `${srcWithoutJPGExtension}-1200w.jpg?20170721 1200w`,
-    `${srcWithoutJPGExtension}-2400w.jpg?20170721 2400w`,
-    `${srcWithoutJPGExtension}-800w.jpg?20170721 800w`,
+    `${srcWithoutJPGExtension}-1200w.jpg?${CACHE_BUST} 1200w`,
+    `${srcWithoutJPGExtension}-2400w.jpg?${CACHE_BUST} 2400w`,
+    `${srcWithoutJPGExtension}-800w.jpg?${CACHE_BUST} 800w`,
   ];
 
   return (
