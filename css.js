@@ -11,6 +11,7 @@ const fcss = hibiscss(kit({
   colors: {
     pink: '#ffb7b3',
     black: '#141414',
+    green: '#00bf83',
   },
   fontFamily: {
     sans: 'Calibre, -apple-system, BlinkMacSystemFont, Arial, sans-serif',
@@ -24,6 +25,10 @@ const fcss = hibiscss(kit({
     '33': '33px',
     '72': '72px',
   },
+  fontWeight: {
+    light: 300,
+    normal: 400,
+  },
   sizes: {
     '1': '1rem',
     '2': '2rem',
@@ -32,6 +37,7 @@ const fcss = hibiscss(kit({
     '5': '5rem',
     '100%': '100%',
   },
+  maxWidths: { 900: '900px', 1200: '1200px', '100%': '100%' },
   spacing: [0, 4, 8, 16, 32, 64, 128],
 }), breakpoints);
 

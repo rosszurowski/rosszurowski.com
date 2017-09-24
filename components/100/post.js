@@ -39,17 +39,6 @@ class Post extends Component {
         <figure className="mt-5">
           <PostImage src={src} alt={location} width={width} height={height} />
         </figure>
-        <style jsx>{`
-          figure img {
-            object-fit: contain;
-            max-width: 100%;
-            /**
-             * NOTE: the image has a dynamic 'height' attribute applied, which
-             * is necessary for this 'max-height' to have an effect.
-             */
-            max-height: 82vh;
-          }
-        `}</style>
       </article>
     );
   }
