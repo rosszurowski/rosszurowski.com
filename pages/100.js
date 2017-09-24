@@ -25,7 +25,7 @@ export default () => {
             <h1 className="d-inlineBlock c-green fw-light fs-72 ph-3 pb-1 bgr-noRepeat">100</h1>
           </div>
           <div>
-            <h4 className="fs-13 o-50p">Aug 9</h4>
+            <h4 className="fs-13 o-50p">Sep 4</h4>
           </div>
         </div>
       </header>
