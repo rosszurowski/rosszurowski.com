@@ -17,24 +17,6 @@ const meta = {
 
 export default () => (
   <Page>
-    <Head>
-      <title>{meta.title}</title>
-      <meta name="description" content={meta.description} />
-      <meta name="og:title" content={meta.title} />
-
-      <meta name="og:description" content={meta.description} />
-      <meta name="og:image" content="/static/og-image.png" />
-      <meta name="og:url" content="https://rosszurowski.com" />
-      <meta name="og:type" content="website" />
-      <meta name="og:site_name" content="Ross Zurowski" />
-
-      <meta name="twitter:title" content={meta.title} />
-      <meta name="twitter:description" content={meta.description} />
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:image" content="/static/og-image.png" />
-      <meta name="twitter:creator" content="@rosszurowski" />
-      <meta name="twitter:url" content="https://rosszurowski.com" />
-    </Head>
     <main className="x-s xa-stretch">
       <div className="x-1 x-auto p-relative pa-3 pa-5-s z-1">
         <div className="lh-1d6" style={{ maxWidth: '23em' }}>
@@ -60,7 +42,7 @@ export default () => (
           <div className="mb-4">
             <h4 className="mb-3 c-pink">Current Projects</h4>
             <p>
-              <Link href="/2017/100"><a>100 Days</a></Link>,
+              <Link href="/100"><a>100 Days</a></Link>,
               {' '}
               <a href="https://twitter.com/smallseasonsbot">Small Seasons Bot</a>,
               <br />
