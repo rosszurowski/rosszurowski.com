@@ -36,13 +36,6 @@ const GlobalStyles = () => (
       vertical-align: top;
     }
 
-    figure,
-    blockquote,
-    ul, li {
-      margin: 0;
-      padding: 0;
-    }
-
     li {
       position: relative;
       list-style: none;
@@ -64,11 +57,6 @@ const GlobalStyles = () => (
       background-size: cover;
       width: 7px;
       height: 7px;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      margin: 0;
-      font-weight: normal;
     }
 
     button {

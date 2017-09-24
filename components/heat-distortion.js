@@ -268,29 +268,17 @@ export default class HeatDistortion extends Component<Props, State> {
       <div ref={el => (this.$root = el)}>
         <canvas className={this.state.hasRendered ? 'is-ready' : ''} ref={el => (this.$canvas = el)} width={600} height={600} />
         <style jsx>{`
-
           div {
             position: relative;
             height: 100%;
           }
 
-          canvas,
-          .text {
+          canvas {
             opacity: 0.0;
             transition: opacity 1200ms ease;
           }
 
-          .text {
-            position: relative;
-            z-index: 9;
-          }
-
-          :global(.text *) {
-            color: transparent !important;
-          }
-
-          canvas.is-ready,
-          .text.is-ready {
+          canvas.is-ready {
             opacity: 1.0;
           }
 

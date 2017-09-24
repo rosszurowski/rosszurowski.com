@@ -10,8 +10,10 @@
     ["babel-plugin-inline-import", {
       "extensions": [
         ".vert",
-        ".frag"
+        ".frag",
+        ".css"
       ]
-    }]
+    }],
+    "markdown-in-js/babel"
   ]
 }

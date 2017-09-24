@@ -9,14 +9,13 @@ type Props = {
 };
 
 const HomepageVisual = ({ isDesktop }: Props) => isDesktop ? (
-  <div className="xx pe-none us-none p-absolute top-0 right-0 bottom-0 z-0" style={{ left: '30%' }}>
+  <div className="x-1 pe-none us-none p-absolute top-0 right-0 bottom-0 z-0" style={{ left: '30%' }}>
     <HeatDistortion
       html={`
         <div style="width: 100%; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: space-around; text-align: center;">
           <div style="background-color: #f79e98; width: 500px; height: 150px; transform: rotate(${randomInt(-90, -20)}deg)"></div>
-          <div style="background-color: #f79e98; width: 210px; height: 50px; transform: rotate(${randomInt(-50, -20)}deg)"></div>
-          <div style="background-color: #f79e98; width: 320px; height: 80px; transform: rotate(${randomInt(-90, 0)}deg)"></div>
-          <div style="position: absolute; top: ${randomInt(20, 60)}%; left: 0; color: white; font-size: 120px; font-family: 'TiemposText-Regular', 'Times New Roman', Georgia, serif; transform: rotate(${randomInt(20, 60)}deg);">the internet is craaaazyyy</div>
+          <div style="background-color: #f79e98; width: 210px; height: 200px; transform: rotate(${randomInt(-50, -20)}deg)"></div>
+          <div style="background-color: #f79e98; width: 320px; height: 80px; transform: rotate(${randomInt(-90, 90)}deg)"></div>
         </div>
       `} />
   </div>

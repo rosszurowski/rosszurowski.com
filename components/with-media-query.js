@@ -5,7 +5,7 @@ import type { ComponentType } from 'react';
 
 const createMediaQueries = media => Object.keys(media).map((key) => {
   const mediaQueryString = media[key];
-  const match = typeof window !== 'undefined' ? window.matchMedia(mediaQueryString) : { matches: false, addListener: () => {} };
+  const match = typeof window !== 'undefined' ? window.matchMedia(mediaQueryString) : { matches: false, addListener: a => {}, removeListener: a => {} };
   const initialValue = match.matches;
   const subscribe = (onChange) => {
     const handler = (e) => { onChange({ [key]: e.matches }); };

@@ -24,7 +24,7 @@ type Props = {
   children: Node,
 };
 
-const Page = ({ title, titleOverride, description, imagePreviewUrl, children }: Props) => (
+const PageLayout = ({ title, titleOverride, description, imagePreviewUrl, children }: Props) => (
   <div>
     <Head>
       <title>{getPageTitle(title, titleOverride)}</title>
@@ -46,16 +46,17 @@ const Page = ({ title, titleOverride, description, imagePreviewUrl, children }: 
       <meta name="twitter:creator" content="@rosszurowski" />
 
       <link rel="icon" href="/static/favicon.png?201708261612" type="image/png" />
+      <link rel="stylesheet" href="/static/css/index.css" type="text/css" />
     </Head>
     {children}
   </div>
 );
 
-Page.defaultProps = {
+PageLayout.defaultProps = {
   title: undefined,
   titleOverride: undefined,
   description: 'Designer and developer from Toronto.',
   imagePreviewUrl: '/static/og-image.png',
 };
 
-export default Page;
+export default PageLayout;
