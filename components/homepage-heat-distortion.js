@@ -9,7 +9,7 @@ type Props = {
 };
 
 const HomepageVisual = ({ isDesktop }: Props) => isDesktop ? (
-  <div className="xx pe-none us-none p-absolute top-0 right-0 bottom-0 z-0" style={{ left: '30%' }}>
+  <div className="x-1 pe-none us-none p-absolute top-0 right-0 bottom-0 z-0" style={{ left: '30%' }}>
     <HeatDistortion
       html={`
         <div style="width: 100%; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: space-around; text-align: center;">
