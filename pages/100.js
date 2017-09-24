@@ -30,13 +30,11 @@ export default () => {
         </div>
       </header>
       <div>
-        <div>
-          {orderedPosts.map(post => (
-            <div className="w-100p mw-1200 mh-auto mv-5-s" key={post.id}>
-              <Post {...post} />
-            </div>
-          ))}
-        </div>
+        {orderedPosts.map(post => (
+          <div className="w-100p mw-1200 mh-auto mv-5-s" key={post.id}>
+            <Post {...post} />
+          </div>
+        ))}
       </div>
       <style jsx global>{`
         body {
