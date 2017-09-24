@@ -46,7 +46,13 @@ const PostLayout = ({ content, title, publishedAt }: Props) => (
     <style jsx global>{`
       a {
         color: #9a72fa;
-        border-bottom: 2px solid currentColor;
+        padding-bottom: 2px;
+        border-bottom: 1px solid rgba(154, 114, 250, 0.35);
+        transition: border-bottom-color 200ms ease;
+      }
+
+      a:hover {
+        border-bottom: 1px solid rgba(154, 114, 250, 0.7);
       }
 
       p + p {
