@@ -3,7 +3,7 @@ module.exports = {
     return {
       '/': { page: '/' },
       '/2017/japan': { page: '/2017/japan' },
-      '/2017/100': { page: '/2017/100' },
+      '/100': { page: '/100' },
       '/_error': { page: '_error' },
     };
   },
