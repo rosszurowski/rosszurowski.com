@@ -85,8 +85,6 @@ export default () => (
 
       html {
         color: #fafafa;
-        font-size: 22px;
-        line-height: 1.25;
         letter-spacing: 0.05px;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -107,14 +105,6 @@ export default () => (
 
       main p a:hover {
         opacity: 0.8;
-      }
-
-      .h-fade {
-        transition: opacity 200ms ease;
-      }
-
-      .h-fade:hover {
-        opacity: 0.7;
       }
     `}</style>
   </Page>

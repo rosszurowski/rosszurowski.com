@@ -15,7 +15,7 @@ const fcss = hibiscss(kit({
     lightGray: '#f2f2f2',
   },
   fontFamily: {
-    sans: 'Calibre, -apple-system, BlinkMacSystemFont, Arial, sans-serif',
+    sans: '-apple-system, BlinkMacSystemFont, Arial, sans-serif',
     mono: 'SFMono-Regular, menlo, monaco, monospace',
   },
   fontSize: {
@@ -51,49 +51,21 @@ const fcss = hibiscss(kit({
   spacing: [0, 4, 8, 16, 32, 64, 128],
 }), breakpoints);
 
-const fontface = `
+const global = `
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-@font-face{
-  font-family: Calibre;
-  src:
-    url(/static/fonts/CalibreWeb-Regular.woff) format('woff'),
-    url(/static/fonts/CalibreWeb-Regular.woff2) format('woff2');
-  font-weight: 400;
-  font-style: normal;
+.h-fade {
+  transition: opacity 200ms ease;
 }
 
-@font-face{
-  font-family: Calibre;
-  src:
-    url(/static/fonts/CalibreWeb-RegularItalic.woff) format('woff'),
-    url(/static/fonts/CalibreWeb-RegularItalic.woff2) format('woff2');
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face{
-  font-family: Calibre;
-  src:
-    url(/static/fonts/CalibreWeb-Light.woff) format('woff'),
-    url(/static/fonts/CalibreWeb-Light.woff2) format('woff2');
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face{
-  font-family: Calibre;
-  src:
-    url(/static/fonts/CalibreWeb-LightItalic.woff) format('woff'),
-    url(/static/fonts/CalibreWeb-LightItalic.woff2) format('woff2');
-  font-weight: 200;
-  font-style: italic;
+.h-fade:hover {
+  opacity: 0.7;
 }
 `;
 
-const styles = [vanilla, fontface, fcss].join('\n');
+const styles = [vanilla, global, fcss].join('\n');
 
 console.log(csso.minify(styles).css);
