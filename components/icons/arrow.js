@@ -6,7 +6,7 @@ type Props = {
 };
 
 const baseWidth = 24;
-const baseHeight = 25;
+const baseHeight = 24;
 
 const ratio = baseHeight / baseWidth;
 
@@ -17,7 +17,7 @@ const ZigZag = ({ fill, width }: Props) => (
 );
 
 ZigZag.defaultProps = {
-  fill: 'white',
+  fill: 'black',
   width: baseWidth,
 };
 
