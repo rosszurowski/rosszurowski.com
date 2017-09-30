@@ -17,9 +17,9 @@ const meta = {
 
 export default () => (
   <Page>
-    <main className="x-s xa-stretch">
+    <main className="ff-sans x-s xa-stretch">
       <div className="x-1 x-auto p-relative pa-3 pa-5-s z-1">
-        <div className="lh-1d6" style={{ maxWidth: '23em' }}>
+        <div className="lh-1d6 mw-500">
           <div className="mb-5 mb-6-s">
             <Link href="/">
               <a className="h-fade"><ZigZag fill="white" /></a>
@@ -27,7 +27,7 @@ export default () => (
           </div>
           <div className="mb-5 lh-1d2">
             <Link href="/"><a>Ross Zurowski</a></Link>
-            <p className="x xd-column xd-row-s xa-start mt-1 fs-18 o-75p">
+            <p className="x xd-column xd-row-s xa-start mt-1 fs-15 o-75p">
               <a href="mailto:ross@rosszurowski.com" target="_blank" rel="noopener noreferrer">ross@rosszurowski.com</a>
               <span className="d-none fs-13 d-inlineBlock-s mh-2 p-relative" style={{ top: 3 }}>•</span>
               <a className="mt-1 mt-0-s" href="https://github.com/rosszurowski" target="_blank" rel="noopener noreferrer">Github</a>
@@ -62,16 +62,16 @@ export default () => (
             <h4 className="mb-3 c-pink">Recent interests</h4>
             <p>Tools for writing and understanding (code, words, ideas), the future of the web, sunlight on concrete, keeping plants alive, dad jokes, rice noodles, making lists.</p>
           </div>
-          <div className="fs-15 o-50p">
+          <div className="fs-13 o-50p">
             <p>This website is published on the distributed web via <a href="https://datproject.org">Dat</a>. You can access it with <a href="https://beakerbrowser.com/">Beaker Browser</a>. Source code and past versions of this site are available on <a href="https://github.com/rosszurowski/rosszurowski.com">Github</a>.</p>
           </div>
         </div>
       </div>
       <HomepageHeatDistortion />
       <div className="d-none d-block-s pa-4 pa-5-s z-2">
-        <aside className="x xj-spaceBetween pt-4 h-100p" style={{ writingMode: 'vertical-lr' }}>
-          <div className="o-50p fs-15" style={{ letterSpacing: '1px' }}>{`43°58'13"N — 114°55'28"W`}</div>
-          <div className="o-50p fs-15" style={{ marginLeft: 'auto' }}>Last updated August 26, 2017</div>
+        <aside className="x xj-spaceBetween pt-4 h-100p o-50p fs-13" style={{ writingMode: 'vertical-lr' }}>
+          <div className="ls-1">{`43°58'13"N — 114°55'28"W`}</div>
+          <div className="ml-auto">Last updated August 26, 2017</div>
         </aside>
       </div>
     </main>

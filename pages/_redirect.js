@@ -11,8 +11,6 @@ type Props = {
 };
 
 export default class Redirect extends Component<Props> {
-  props: Props
-
   static async getInitialProps (ctx) {
     const redirectPath = ctx.query.path || '/';
     return { redirectPath };

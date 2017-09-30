@@ -31,7 +31,7 @@ type Props = {
 
 const PostLayout = ({ content, title, publishedAt }: Props) => (
   <PageLayout title={title}>
-    <main className="ff-sans fs-18 ma-6" style={{ maxWidth: '30em', lineHeight: 1.5 }}>
+    <main className="post ff-sans fs-18 ma-6">
       <div className="h-5" />
       <header>
         <div className="o-50p">{utils.formatPostTimestamp(publishedAt)}</div>
@@ -43,19 +43,40 @@ const PostLayout = ({ content, title, publishedAt }: Props) => (
         <Link href="/"><a>Back home</a></Link>
       </div>
     </main>
-    <style jsx global>{`
-      a {
+    <style jsx>{`
+      .post {
+        letter-spacing: 0.1px;
+        line-height: 1.8;
+        max-width: 600px;
+      }
+
+      .post :global(a) {
         color: #9a72fa;
         padding-bottom: 2px;
         border-bottom: 1px solid rgba(154, 114, 250, 0.35);
         transition: border-bottom-color 200ms ease;
       }
 
-      a:hover {
+      .post :global(a:hover) {
         border-bottom: 1px solid rgba(154, 114, 250, 0.7);
       }
 
-      p + p {
+      .post :global(code),
+      .post :global(pre) {
+        font-size: 15px;
+        border-radius: 2px;
+      }
+
+      .post :global(pre) {
+        padding: 0.75em;
+        overflow-x: scroll;
+      }
+
+      .post :global(code) {
+        padding: 0.15em 0.25em;
+      }
+
+      .post :global(p + p) {
         margin-top: 1.5rem;
       }
     `}</style>

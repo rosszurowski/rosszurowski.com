@@ -12,22 +12,27 @@ const fcss = hibiscss(kit({
     pink: '#ffb7b3',
     black: '#141414',
     green: '#00bf83',
+    lightGray: '#f2f2f2',
   },
   fontFamily: {
     sans: 'Calibre, -apple-system, BlinkMacSystemFont, Arial, sans-serif',
+    mono: 'SFMono-Regular, menlo, monaco, monospace',
   },
   fontSize: {
-    '13': '13px',
-    '15': '15px',
-    '18': '18px',
-    '22': '22px',
-    '27': '27px',
-    '33': '33px',
-    '72': '72px',
+    13: '13px',
+    15: '15px',
+    18: '18px',
+    22: '22px',
+    27: '27px',
+    33: '33px',
+    72: '72px',
   },
   fontWeight: {
     light: 300,
     normal: 400,
+  },
+  letterSpacing: {
+    1: '1px',
   },
   sizes: {
     '1': '1rem',
@@ -37,11 +42,21 @@ const fcss = hibiscss(kit({
     '5': '5rem',
     '100%': '100%',
   },
-  maxWidths: { 900: '900px', 1200: '1200px', '100%': '100%' },
+  maxWidths: {
+    500: '500px',
+    900: '900px',
+    1200: '1200px',
+    '100%': '100%'
+  },
   spacing: [0, 4, 8, 16, 32, 64, 128],
 }), breakpoints);
 
 const fontface = `
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 @font-face{
   font-family: Calibre;
   src:
