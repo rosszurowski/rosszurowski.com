@@ -1,11 +1,11 @@
 // @flow
 
 import React from 'react';
-import type { Children } from 'react';
+import type { Node } from 'react';
 
 type Props = {
-  children: Children,
-  external?: boolean,
+  children: Node,
+  external: boolean,
   href: string,
 }
 

@@ -1,10 +1,10 @@
 // @flow
 
 import React from 'react';
-import type { Children } from 'react';
+import type { Node } from 'react';
 
 type Props = {
-  children: Children,
+  children: Node,
 };
 
 const Blockquote = ({ children }: Props) => (
