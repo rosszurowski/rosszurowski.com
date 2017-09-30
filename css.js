@@ -30,6 +30,10 @@ const fcss = hibiscss(kit({
   fontWeight: {
     light: 300,
     normal: 400,
+    bold: 500,
+  },
+  lineHeight: {
+    '1.7': 1.7,
   },
   letterSpacing: {
     1: '1px',
@@ -43,7 +47,7 @@ const fcss = hibiscss(kit({
     '100%': '100%',
   },
   maxWidths: {
-    500: '500px',
+    540: '540px',
     900: '900px',
     1200: '1200px',
     '100%': '100%'

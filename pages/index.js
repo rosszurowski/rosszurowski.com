@@ -17,9 +17,9 @@ const meta = {
 
 export default () => (
   <Page>
-    <main className="ff-sans x-s xa-stretch">
+    <main className="ff-sans fs-18 x-s xa-stretch">
       <div className="x-1 x-auto p-relative pa-3 pa-5-s z-1">
-        <div className="lh-1d6 mw-500">
+        <div className="lh-1d7 mw-540">
           <div className="mb-5 mb-6-s">
             <Link href="/">
               <a className="h-fade"><ZigZag fill="white" /></a>
@@ -29,9 +29,9 @@ export default () => (
             <Link href="/"><a>Ross Zurowski</a></Link>
             <p className="x xd-column xd-row-s xa-start mt-1 fs-15 o-75p">
               <a href="mailto:ross@rosszurowski.com" target="_blank" rel="noopener noreferrer">ross@rosszurowski.com</a>
-              <span className="d-none fs-13 d-inlineBlock-s mh-2 p-relative" style={{ top: 3 }}>•</span>
+              <span className="d-none d-inlineBlock-s fs-13 mh-2 p-relative" style={{ top: 1 }}>•</span>
               <a className="mt-1 mt-0-s" href="https://github.com/rosszurowski" target="_blank" rel="noopener noreferrer">Github</a>
-              <span className="d-none fs-13 d-inlineBlock-s mh-2 p-relative" style={{ top: 3 }}>•</span>
+              <span className="d-none d-inlineBlock-s fs-13 mh-2 p-relative" style={{ top: 1 }}>•</span>
               <a className="mt-1 mt-0-s" href="https://are.na/ross-zurowski" target="_blank" rel="noopener noreferrer">Are.na</a>
             </p>
           </div>

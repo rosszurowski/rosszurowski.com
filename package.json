@@ -31,6 +31,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "csso": "^3.2.0",
     "flow-bin": "^0.53.1",
-    "hibiscss": "^0.0.8"
+    "hibiscss": "^0.0.8",
+    "mz": "^2.7.0"
   }
 }

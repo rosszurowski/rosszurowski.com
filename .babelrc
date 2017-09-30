@@ -11,7 +11,8 @@
       "extensions": [
         ".vert",
         ".frag",
-        ".css"
+        ".css",
+        ".md"
       ]
     }],
     "markdown-in-js/babel"
