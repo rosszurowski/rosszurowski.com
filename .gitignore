@@ -11,3 +11,4 @@ flow-typed/
 # Ignore build artifacts
 .next/
 dist/
+static/css/index.css
