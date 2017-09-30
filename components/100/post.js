@@ -11,7 +11,6 @@ class Post extends Component {
     date: string,
     src: string,
     location: string,
-    // eslint-disable-next-line react/no-unused-prop-types
     dimensions: { width: number, height: number },
   }
 

@@ -85,7 +85,6 @@ export default () => (
 
       html {
         color: #fafafa;
-        font-family: Calibre, -apple-system, BlinkMacSystemFont, sans-serif;
         font-size: 22px;
         line-height: 1.25;
         letter-spacing: 0.05px;

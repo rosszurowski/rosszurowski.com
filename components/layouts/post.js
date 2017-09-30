@@ -7,21 +7,26 @@ import utils from 'lib/utils';
 
 import PageLayout from 'components/layouts/page';
 
-import Header from 'components/log/header';
-import Blockquote from 'components/log/blockquote';
-import List from 'components/log/list';
-import Paragraph from 'components/log/paragraph';
-
-export const compile = markdown({
-  h1: props => <Header large {...props} />,
-  h2: props => <Header medium {...props} />,
-  h3: props => <Header {...props} />,
-  blockquote: Blockquote,
-  p: Paragraph,
-  ul: List,
+export const markdownConfig = {
+  h1: (props: any) => <h1 className="mv-4 fw-bold" {...props} />,
+  h2: (props: any) => <h2 className="mv-4 fw-bold" {...props} />,
+  h3: (props: any) => <h3 className="mv-4 fw-bold" {...props} />,
+  blockquote: (props: any) => (
+    <blockquote className="pv-1 pl-3 mv-3">
+      {props.children}
+      <style jsx>{`
+        blockquote {
+          border-left: 2px #ccc solid;
+        }
+      `}</style>
+    </blockquote>
+  ),
+  ul: (props: any) => <ul className="mv-4" {...props} />,
   // eslint-disable-next-line jsx-a11y/anchor-has-content
-  a: props => <a target="_blank" rel="noopener noreferrer" {...props} />,
-});
+  a: (props: any) => <a className="post-link" target="_blank" rel="noopener noreferrer" {...props} />,
+  pre: (props: any) => <pre className="bgc-lightGray" {...props} />,
+  code: (props: any) => <code className="bgc-lightGray ff-mono" {...props} />,
+};
 
 type Props = {
   title: string,
