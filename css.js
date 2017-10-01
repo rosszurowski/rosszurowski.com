@@ -5,6 +5,7 @@ const vanilla = require('@rosszurowski/vanilla');
 
 const breakpoints = {
   s: '479px',
+  m: '959px',
 };
 
 const fcss = hibiscss(kit({
@@ -57,6 +58,8 @@ const fcss = hibiscss(kit({
 
 const global = `
 html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

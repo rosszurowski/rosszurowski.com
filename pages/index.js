@@ -17,9 +17,9 @@ const meta = {
 
 export default () => (
   <Page>
-    <main className="ff-sans fs-18 x-s xa-stretch">
+    <main className="ff-sans fs-18 lh-1d7 x-s xa-stretch">
       <div className="x-1 x-auto p-relative pa-3 pa-5-s z-1">
-        <div className="lh-1d7 mw-540">
+        <div className="mw-540">
           <div className="mb-5 mb-6-s">
             <Link href="/">
               <a className="h-fade"><ZigZag fill="white" /></a>
@@ -78,16 +78,9 @@ export default () => (
     <style jsx global>{`
       html,
       body {
-        -ms-text-size-adjust: 100%;
-        -webkit-text-size-adjust: 100%;
         background: #131313;
-      }
-
-      html {
         color: #fafafa;
         letter-spacing: 0.05px;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
       }
 
       body {
@@ -95,10 +88,10 @@ export default () => (
       }
 
       main p a {
+        display: inline-block;
+        line-height: 1.4;
         color: inherit;
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-        padding-left: 1px;
-        padding-right: 1px;
         text-decoration: none;
         transition: opacity 200ms ease;
       }

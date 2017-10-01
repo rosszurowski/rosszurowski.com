@@ -6,21 +6,27 @@ const pathsToPages = paths => paths.reduce(
   {},
 );
 
+const getLogPaths = async () => {
+  const entries = await fs.readdir('./pages/log');
+  return entries
+    .map(stripExtension)
+    .map(path => `/log/${path}`)
+}
+
 module.exports = {
   async exportPathMap () {
-    const paths = [
+    const staticPaths = [
       '/',
       '/2017/japan',
       '/100',
       '/_error',
     ];
 
-    const logEntries = (await fs.readdir('./pages/log'))
-      .map(stripExtension)
-      .map(path => `/log/${path}`);
+    const logPaths = await getLogPaths();
 
-    paths.push(logEntries)
+    const paths = staticPaths.concat(logPaths);
+    const pathMap = pathsToPages(paths);
 
-    return pathsToPages(paths);
+    return pathMap;
   },
 };

@@ -65,7 +65,7 @@ The internet now has [a GDP that rivals the largest countries](https://interneta
 
 As the web has grown into a few large companies, the implications of this centralization have started to reveal themselves:
 
-* Governments restricting access to public information[^ethopia]
+* Governments restricting access to public information[^1]
 * “Walled-garden” platforms [monetizing attention and personal data](http://idlewords.com/talks/what_happens_next_will_amaze_you.htm) in questionable ways
 * Web communities [shutting down](#) after being acquired
 * Or the same communities [being forced into investor funding](#soundcloud) after being pushed into public prominence
@@ -122,20 +122,18 @@ I’m skeptical of people applying cryptocurrency to all the world’s problems 
 
 Much of the infrastructure behind a distributed web is still early-stage. But, to people who work on or have an interest in the web, many of the solutions are pretty easy to start with today.
 
-I’d recommend checking out [Beaker Browser](https://beakerbrowser.com) , which is built on top of [Dat](https://datproject.org). Of the many projects exploring this space, they seem to be the furthest along in making a distributed web accessible to folks. Beaker Browser actually makes publishing a website on the distributed web _easier_ than the classic “buy a server and set up FTP” system we’re all used to. [^beaker]
+I’d recommend checking out [Beaker Browser](https://beakerbrowser.com) , which is built on top of [Dat](https://datproject.org). Of the many projects exploring this space, they seem to be the furthest along in making a distributed web accessible to folks. Beaker Browser actually makes publishing a website on the distributed web _easier_ than the classic “buy a server and set up FTP” system we’re all used to. [^2]
 
 The social implications of data ownership and a distributed web can seem distant from daily life. But the more I read, the more I’m convinced that this subject will likely be one of the core issues of our time.
 
 As with politics, we as web citizens have a responsibility to explore and advocate for better systems. Systems that favour a future that serves people, not a marketplace.
 
-[^ethopia]: The Ethiopian government [shuts down the internet](https://www.theguardian.com/technology/2017/may/31/ethiopia-turns-off-internet-students-sit-exams) across the country during exam periods, supposedly in an attempt to curb cheating. Turkey [has done the same thing](#) to curb political interventions.
-[^beaker]: If you want to try this on your own website, [Tom MacWright](https://macwright.org) has a good [article on the subject](https://macwright.org/2017/07/20/decentralize-your-website.html).
+[^1]: The Ethiopian government [shuts down the internet](https://www.theguardian.com/technology/2017/may/31/ethiopia-turns-off-internet-students-sit-exams) across the country during exam periods, supposedly in an attempt to curb cheating. Turkey [has done the same thing](#) to curb political interventions.
+[^2]: If you want to try this on your own website, [Tom MacWright](https://macwright.org) has a good [article on the subject](https://macwright.org/2017/07/20/decentralize-your-website.html).
 `;
 
-console.log(content);
-
 const post = {
-  title: 'First Post',
+  title: 'Decentralized Web',
   publishedAt: new Date(2017, 8, 7),
 };
 

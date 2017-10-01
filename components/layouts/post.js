@@ -27,34 +27,41 @@ type Props = {
   children: Node,
 };
 
+const BackLink = ({ isMobile = false }: { isMobile?: boolean }) => (
+  <Link href="/">
+    <a className="o-50p h-fade">
+      <span className="d-inlineBlock mr-2" style={{ transform: 'scale(-1, 1)', marginLeft: isMobile ? 0 : -20 }}><Arrow width={12} /></span>
+      Back home
+    </a>
+  </Link>
+);
+
 const PostLayout = ({ children, title, publishedAt }: Props) => (
   <PageLayout title={title}>
-    <main className="ff-sans lh-1d7 pa-5 pb-6">
+    <div className="ff-sans lh-1d7 pa-3 pb-6 ph-4-s ph-6-m pt-5-m">
       <header className="mb-6">
         <Link href="/">
           <a className="h-fade"><ZigZag fill="black" /></a>
         </Link>
       </header>
-      <article className="x fs-18">
-        <header className="x xd-column xj-spaceBetween mr-6">
+      <article className="x-m fs-18">
+        <header className="post-meta x x-1 xd-column xj-spaceBetween mb-5 mb-0-m mr-5-s mr-6-m">
           <div>
             <div className="c-purple">{title}</div>
             <div className="o-50p">{utils.formatPostTimestamp(publishedAt)}</div>
           </div>
-          <div className="mt-5">
-            <Link href="/">
-              <a>
-                <span className="d-inlineBlock mr-2" style={{ top: -2, transform: 'scale(-1, 1)', marginLeft: -22 }}><Arrow width={14} /></span>
-                Back home
-              </a>
-            </Link>
+          <div className="d-none d-block-m mt-5">
+            <BackLink />
           </div>
         </header>
-        <div className="post mr-5">
+        <div className="post">
           {children}
         </div>
+        <div className="d-block d-none-m mv-6">
+          <BackLink isMobile />
+        </div>
       </article>
-    </main>
+    </div>
     <style jsx>{`
       .c-purple {
         color: #9a72fa;
@@ -66,7 +73,11 @@ const PostLayout = ({ children, title, publishedAt }: Props) => (
 
       .post {
         font-size: 17px;
-        max-width: 600px;
+        max-width: 640px;
+      }
+
+      .post-meta {
+        max-width: 240px;
       }
 
       .post :global(a) {
