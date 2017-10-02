@@ -1,8 +1,9 @@
 const fs = require('mz/fs');
+const assign = require('object.assign');
 
 const stripExtension = str => str.replace(/\.js$/, '');
 const pathsToPages = paths => paths.reduce(
-  (pages, path) => ({ ...pages, [path]: { page: path } }),
+  (pages, path) => assign({}, pages, { [path]: { page: path } }),
   {},
 );
 
