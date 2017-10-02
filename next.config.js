@@ -4,7 +4,7 @@ const assign = require('object.assign');
 const stripExtension = str => str.replace(/\.js$/, '');
 const pathsToPages = paths => paths.reduce(
   (pages, path) => assign({}, pages, { [path]: { page: path } }),
-  {},
+  {}
 );
 
 const getLogPaths = async () => {
