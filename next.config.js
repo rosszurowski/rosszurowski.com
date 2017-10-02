@@ -14,7 +14,7 @@ const getLogPaths = async () => {
 }
 
 module.exports = {
-  async exportPathMap () {
+  exportPathMap () {
     const staticPaths = [
       '/',
       '/2017/japan',
@@ -22,11 +22,11 @@ module.exports = {
       '/_error',
     ];
 
-    const logPaths = await getLogPaths();
+    return getLogPaths().then(logPaths => {
+      const paths = staticPaths.concat(logPaths);
+      const pathMap = pathsToPages(paths);
 
-    const paths = staticPaths.concat(logPaths);
-    const pathMap = pathsToPages(paths);
-
-    return pathMap;
+      return Promise.resolve(pathMap);
+    });
   },
 };
