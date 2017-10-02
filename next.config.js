@@ -7,12 +7,13 @@ const pathsToPages = paths => paths.reduce(
   {}
 );
 
-const getLogPaths = async () => {
-  const entries = await fs.readdir('./pages/log');
-  return entries
-    .map(stripExtension)
-    .map(path => `/log/${path}`)
-}
+const getLogPaths = () => (
+  fs.readdir('./pages/log').then(entries => {
+    return entries
+      .map(stripExtension)
+      .map(path => `/log/${path}`);
+  })
+);
 
 module.exports = {
   exportPathMap () {
