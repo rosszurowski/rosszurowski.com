@@ -7,7 +7,7 @@
     ["module-resolver", {
       "root": ["."]
     }],
-    ["babel-plugin-inline-import", {
+    ["inline-import", {
       "extensions": [
         ".vert",
         ".frag",
