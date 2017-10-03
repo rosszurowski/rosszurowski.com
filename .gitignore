@@ -1,7 +1,6 @@
 # Ignore npm/yarn scraps
 node_modules/
 npm-debug.log
-yarn.lock
 yarn-debug.log
 yarn-error.log
 
@@ -11,3 +10,4 @@ flow-typed/
 # Ignore build artifacts
 .next/
 dist/
+static/css/index.css
