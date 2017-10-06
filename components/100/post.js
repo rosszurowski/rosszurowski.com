@@ -33,7 +33,7 @@ class Post extends Component {
       <article className="pv-5 ta-center" id={id}>
         <div className="fs-22">
           <div><a href={`#${id}`}>Day {id}</a></div>
-          <div className="o-50p"><a href={`#${id}`}>{formatPostDate(new Date(date))}</a></div>
+          <div className="o-50p mt-2"><a href={`#${id}`}>{formatPostDate(new Date(date))}</a></div>
         </div>
         <figure className="mt-5">
           <PostImage src={src} alt={location} width={width} height={height} />

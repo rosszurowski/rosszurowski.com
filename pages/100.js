@@ -22,7 +22,7 @@ export default () => {
             <h4 className="fs-13 o-50p">May 1</h4>
           </div>
           <div className="p-relative c-default mb-4 us-none" style={{ top: 12 }}>
-            <h1 className="d-inlineBlock c-green fw-light fs-72 ph-3 pb-1 bgr-noRepeat">100</h1>
+            <h1 className="d-inlineBlock c-green fw-light fs-64 ph-3 pb-1 bgr-noRepeat">100</h1>
           </div>
           <div>
             <h4 className="fs-13 o-50p">Sep 4</h4>
@@ -39,9 +39,7 @@ export default () => {
       <style jsx global>{`
         body {
           color: #141414;
-          font-family: Calibre, -apple-system, BlinkMacSystemFont, sans-serif;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
+          font-family: -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         header {

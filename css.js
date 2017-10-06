@@ -26,7 +26,7 @@ const fcss = hibiscss(kit({
     22: '22px',
     27: '27px',
     33: '33px',
-    72: '72px',
+    64: '64px',
   },
   fontWeight: {
     light: 300,
