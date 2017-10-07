@@ -13,8 +13,8 @@ export const config = {
   h1: (props: any) => <h1 className="mt-5 mb-4 fs-22 fw-bold" {...props} />,
   h2: (props: any) => <h2 className="mt-5 mb-4 fs-22 fw-bold" {...props} />,
   h3: (props: any) => <h3 className="mt-5 mb-4 fs-22 fw-bold" {...props} />,
-  blockquote: (props: any) => <blockquote className="pl-3 mv-4" {...props} />,
-  ul: (props: any) => <ul className="mv-4" {...props} />,
+  blockquote: (props: any) => <blockquote className="pl-3 mt-4" {...props} />,
+  ul: (props: any) => <ul className="mt-4" {...props} />,
   // eslint-disable-next-line jsx-a11y/anchor-has-content
   a: (props: any) => <a className="post-link" target="_blank" rel="noopener noreferrer" {...props} />,
   pre: (props: any) => <pre className="bgc-lightGray" {...props} />,
@@ -128,7 +128,11 @@ const PostLayout = ({ children, title, publishedAt }: Props) => (
         padding: 0.15em 0.25em;
       }
 
-      .post :global(p + p) {
+      .post :global(p + p),
+      .post :global(p + ul),
+      .post :global(p + ol)
+      .post :global(ul + p),
+      .post :global(ol + p) {
         margin-top: 1.5rem;
       }
     `}</style>
