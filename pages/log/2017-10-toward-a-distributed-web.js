@@ -6,28 +6,28 @@ import markdown from 'markdown-in-js';
 const content = markdown(config)`
 ![](https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/log/2017-09-first-post/awh-snap.png)
 
-Last week I found out [ffffound](https://ffffound.com) shut down.
+Last week I discovered that [ffffound](https://ffffound.com) shut down.
 
-I didn’t visit it often, but when I did, I was amazed by the variety of stuff on there. The site was an archive full of amazing architectural photography, scans of art prints, and all kinds of other images. Seeing it gone made me a little sad.
+I didn’t visit it often, but when I did, I was amazed by the variety of stuff on there. The site was an archive full of amazing architectural photography, abstract art scans, and all kinds of other images. Seeing it gone made me a little sad.
 
-Back in February, [Vine](https://www.theverge.com/2016/10/28/13456208/why-vine-died-twitter-shutdown) also shut down. Only a few months later, people shared similar doubts about [SoundCloud’s future](https://techcrunch.com/2017/07/12/soundshroud/).
+Back in February, [Vine](https://www.theverge.com/2016/10/28/13456208/why-vine-died-twitter-shutdown) also shut down. Only a few months later, people shared similar [doubts about SoundCloud’s future](https://techcrunch.com/2017/07/12/soundshroud/).
 
 Often supported entirely by ad money, these community-companies on the web seem to struggle to stay online.
 
 When conversations about internet shutdowns come up, people often ask, “what was their business model?” But, isn’t the web supposed to be an open, global community? Why is a business model a necessity someone to make a meaningful site?
 
-More and more, the web is feeling like a playground for businesses than [the information superhighway](https://en.wikipedia.org/wiki/Memex) it was originally conceived as.
+More and more, the web feels like a playground for businesses than [the information superhighway](https://en.wikipedia.org/wiki/Memex) it was originally conceived as.
 
 ### Early Days
 
 ![The first web server, at CERN in Geneva](https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/log/2017-09-first-post/first-web-server.jpg)
 <small>Tim Berners-Lee’s NeXT workstation ([source](https://commons.wikimedia.org/wiki/File:First_Web_Server.jpg))</small>
 
-The computer pictured above is the world’s first web server. Originally built to share documents amongst scientists at CERN, it was the first use of HTTP as a protocol. Colleagues of Tim Berners-Lee could access files on his computer from anywhere else in their local network.
+The computer pictured above is the world’s first web server. Built to share documents amongst scientists at CERN, it was the first use of the HTTP protocol, the system that drives the internet. Colleagues of Tim Berners-Lee could access files on his computer from anywhere else in their local network.
 
-On its casing is a sticky note with an amazing warning scrawled on it: “This machine is a server. DO NOT POWER IT DOWN!”  If the server is down, nobody can access the files on it. Makes sense.
+On its casing is an amazing sticky note warning: “This machine is a server. DO NOT POWER IT DOWN!” If the server is down, nobody can read the files on it. Makes sense.
 
-This is one of the fundamental bits of HTTP. HTTP is a request-response protocol: a client makes a request, and the server chooses how to respond. One server, then serves many clients. One computer has a file, and many others ask for it.
+This little sticky note is a clue to a fundamental concept behind HTTP: it's a request-response protocol. A "client" makes a request, and the "server" sends a response. One computer has a file, and many others ask for it. One server, many clients.
 
 In other words, if you were to map out how file sharing worked at CERN, it’d look a little like this:
 
@@ -101,7 +101,7 @@ We have a responsibility as citizens of the web to challenge the politics embedd
 
 
 const post = {
-  title: 'Towards a Distributed Web',
+  title: 'Toward a Distributed Web',
   publishedAt: new Date(2017, 9, 7),
 };
 
