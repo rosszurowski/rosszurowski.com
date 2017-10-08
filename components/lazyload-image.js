@@ -33,7 +33,8 @@ const LazyloadImage = ({ srcSet, alt, width, height, preload }: Props) => (
       alt={alt}
       data-srcset={srcSet.join(', ')}
       data-sizes="auto"
-      className={`js-lazysizes ${preload ? 'js-lazysizes-preload' : ''}`} />
+      className={`js-lazysizes ${preload ? 'js-lazysizes-preload' : ''}`}
+    />
     <canvas width={width} height={height} />
     <style jsx>{`
       span {

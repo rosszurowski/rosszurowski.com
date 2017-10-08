@@ -4,7 +4,7 @@ import React from 'react';
 
 type Props = {
   className?: string,
-}
+};
 
 const ParagraphContainer = ({ className, ...props }: Props) => (
   // $FlowFixMe: Flow doesn't support defaultProps in functional components

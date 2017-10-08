@@ -11,20 +11,22 @@ type Props = {
 };
 
 export default class Redirect extends Component<Props> {
-  static async getInitialProps (ctx) {
+  static async getInitialProps(ctx) {
     const redirectPath = ctx.query.path || '/';
     return { redirectPath };
   }
 
-  render () {
+  render() {
     return (
       <Page titleOverride="Redirecting...">
-        <Head>
-          {IS_PRODUCTION && <meta httpEquiv="refresh" content={`0;url=${this.props.redirectPath}`} />}
-        </Head>
+        <Head>{IS_PRODUCTION && <meta httpEquiv="refresh" content={`0;url=${this.props.redirectPath}`} />}</Head>
         <div className="pa-4">
           <p className="ff-sans">Just a sec, redirecting you...</p>
-          {!IS_PRODUCTION && <p>No redirects in dev. <a href={this.props.redirectPath}>Go here</a></p>}
+          {!IS_PRODUCTION && (
+            <p>
+              No redirects in dev. <a href={this.props.redirectPath}>Go here</a>
+            </p>
+          )}
         </div>
       </Page>
     );

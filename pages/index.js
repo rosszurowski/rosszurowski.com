@@ -22,33 +22,50 @@ export default () => (
         <div className="mw-540">
           <div className="mb-5 mb-6-s">
             <Link href="/">
-              <a className="h-fade"><ZigZag fill="white" /></a>
+              <a className="h-fade">
+                <ZigZag fill="white" />
+              </a>
             </Link>
           </div>
           <div className="mb-5 lh-1d2">
-            <Link href="/"><a>Ross Zurowski</a></Link>
+            <Link href="/">
+              <a>Ross Zurowski</a>
+            </Link>
             <p className="x xd-column xd-row-s xa-start mt-1 fs-15 o-75p">
-              <a href="mailto:ross@rosszurowski.com" target="_blank" rel="noopener noreferrer">ross@rosszurowski.com</a>
-              <span className="d-none d-inlineBlock-s fs-13 mh-2 p-relative" style={{ top: 1 }}>•</span>
-              <a className="mt-1 mt-0-s" href="https://github.com/rosszurowski" target="_blank" rel="noopener noreferrer">Github</a>
-              <span className="d-none d-inlineBlock-s fs-13 mh-2 p-relative" style={{ top: 1 }}>•</span>
-              <a className="mt-1 mt-0-s" href="https://are.na/ross-zurowski" target="_blank" rel="noopener noreferrer">Are.na</a>
+              <a href="mailto:ross@rosszurowski.com" target="_blank" rel="noopener noreferrer">
+                ross@rosszurowski.com
+              </a>
+              <span className="d-none d-inlineBlock-s fs-13 mh-2 p-relative" style={{ top: 1 }}>
+                •
+              </span>
+              <a className="mt-1 mt-0-s" href="https://github.com/rosszurowski" target="_blank" rel="noopener noreferrer">
+                Github
+              </a>
+              <span className="d-none d-inlineBlock-s fs-13 mh-2 p-relative" style={{ top: 1 }}>
+                •
+              </span>
+              <a className="mt-1 mt-0-s" href="https://are.na/ross-zurowski" target="_blank" rel="noopener noreferrer">
+                Are.na
+              </a>
             </p>
           </div>
           <div className="mb-5">
             <p>Designer and developer from Toronto.</p>
-            <p className="mt-3">Working at <a href="https://watsi.org/" target="_blank" rel="noopener noreferrer">Watsi</a>, designing software for healthcare providers and low-income populations around the world.</p>
+            <p className="mt-3">
+              Working at{' '}
+              <a href="https://watsi.org/" target="_blank" rel="noopener noreferrer">
+                Watsi
+              </a>, designing software for healthcare providers and low-income populations around the world.
+            </p>
           </div>
           <div className="mb-4">
             <h4 className="mb-3 c-pink">Current Projects</h4>
             <p>
-              <Link href="/100"><a>100 Days</a></Link>,
-              {' '}
-              <a href="https://twitter.com/smallseasonsbot">Small Seasons Bot</a>,
+              <Link href="/100">
+                <a>100 Days</a>
+              </Link>, <a href="https://twitter.com/smallseasonsbot">Small Seasons Bot</a>,
               <br />
-              <a href="https://dogsofperu.tumblr.com">Dogs of Peru</a>,
-              {' '}
-              <a href="https://broken-idioms.com">Broken Idioms</a>.
+              <a href="https://dogsofperu.tumblr.com">Dogs of Peru</a>, <a href="https://broken-idioms.com">Broken Idioms</a>.
             </p>
           </div>
           <div className="mb-4">
@@ -63,7 +80,10 @@ export default () => (
             <p>Tools for writing and understanding (code, words, ideas), the future of the web, sunlight on concrete, keeping plants alive, dad jokes, rice noodles, making lists.</p>
           </div>
           <div className="fs-13 o-50p">
-            <p>This website is published on the distributed web via <a href="https://datproject.org">Dat</a>. You can access it with <a href="https://beakerbrowser.com/">Beaker Browser</a>. Source code and past versions of this site are available on <a href="https://github.com/rosszurowski/rosszurowski.com">Github</a>.</p>
+            <p>
+              This website is published on the distributed web via <a href="https://datproject.org">Dat</a>. You can access it with <a href="https://beakerbrowser.com/">Beaker Browser</a>. Source code
+              and past versions of this site are available on <a href="https://github.com/rosszurowski/rosszurowski.com">Github</a>.
+            </p>
           </div>
         </div>
       </div>

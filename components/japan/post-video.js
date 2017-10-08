@@ -20,29 +20,29 @@ type State = {
 };
 
 class PostVideo extends Component<Props, State> {
-  props: Props
+  props: Props;
 
   static defaultProps = {
     children: null,
     width: 16,
     height: 9,
     withAudio: false,
-  }
+  };
 
   state = {
     muted: true,
-  }
+  };
 
-  elementWatcher: Object
-  $video: ?HTMLVideoElement
+  elementWatcher: Object;
+  $video: ?HTMLVideoElement;
 
-  componentDidMount () {
+  componentDidMount() {
     this.elementWatcher = scrollMonitor.create(this.$video);
     this.elementWatcher.enterViewport(this.handleEnterViewport);
     this.elementWatcher.exitViewport(this.handleLeaveViewport);
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     this.elementWatcher.destroy();
   }
 
@@ -50,14 +50,14 @@ class PostVideo extends Component<Props, State> {
     if (this.$video) {
       this.$video.play();
     }
-  }
+  };
 
   handleLeaveViewport = () => {
     if (this.$video) {
       this.$video.pause();
     }
     this.setState({ muted: true });
-  }
+  };
 
   handleMuteButtonClick = () => {
     const { muted } = this.state;
@@ -69,14 +69,14 @@ class PostVideo extends Component<Props, State> {
       this.$video.play();
     }
     this.setState({ muted: nextMutedState });
-  }
+  };
 
-  render () {
+  render() {
     const { children, srcId, width, height, withAudio, ...rest } = this.props;
     const { muted } = this.state;
 
     return (
-      <figure style={{ paddingBottom: `${(height / width) * 100}%` }}>
+      <figure style={{ paddingBottom: `${height / width * 100}%` }}>
         {withAudio && (
           <button className="mute-button" onClick={this.handleMuteButtonClick}>
             <Icon fill="#fff" size={24} icon={muted ? 'volumeOff' : 'volumeFull'} />
@@ -111,7 +111,7 @@ class PostVideo extends Component<Props, State> {
           }
 
           .mute-button:hover {
-            opacity: 1.0;
+            opacity: 1;
           }
         `}</style>
       </figure>

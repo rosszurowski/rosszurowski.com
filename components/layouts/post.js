@@ -30,7 +30,9 @@ type Props = {
 const BackLink = ({ isMobile = false }: { isMobile?: boolean }) => (
   <Link href="/">
     <a className="o-50p h-fade">
-      <span className="d-inlineBlock mr-2" style={{ transform: 'scale(-1, 1)', marginLeft: isMobile ? 0 : -20 }}><Arrow width={12} /></span>
+      <span className="d-inlineBlock mr-2" style={{ transform: 'scale(-1, 1)', marginLeft: isMobile ? 0 : -20 }}>
+        <Arrow width={12} />
+      </span>
       Back home
     </a>
   </Link>
@@ -41,7 +43,9 @@ const PostLayout = ({ children, title, publishedAt }: Props) => (
     <div className="ff-sans lh-1d7 pa-3 pb-6 ph-4-s ph-6-m pt-5-m">
       <header className="mb-6">
         <Link href="/">
-          <a className="h-fade"><ZigZag fill="black" /></a>
+          <a className="h-fade">
+            <ZigZag fill="black" />
+          </a>
         </Link>
       </header>
       <article className="x-m fs-18">
@@ -54,9 +58,7 @@ const PostLayout = ({ children, title, publishedAt }: Props) => (
             <BackLink />
           </div>
         </header>
-        <div className="post">
-          {children}
-        </div>
+        <div className="post">{children}</div>
         <div className="d-block d-none-m mv-6">
           <BackLink isMobile />
         </div>

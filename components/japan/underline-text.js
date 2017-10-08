@@ -8,18 +8,8 @@ const generateUnderlineStyles = type => `background-image: url('${utils.getAsset
 
 type Props = {
   children: Node,
-  type:
-    | 'tokyo-1'
-    | 'tokyo-2'
-    | 'kobe'
-    | 'kyoto'
-    | 'takamatsu'
-    | 'naoshima'
-    | 'nara'
-    | 'osaka'
-    | 'hakone'
-    | 'kamakura'
-}
+  type: 'tokyo-1' | 'tokyo-2' | 'kobe' | 'kyoto' | 'takamatsu' | 'naoshima' | 'nara' | 'osaka' | 'hakone' | 'kamakura',
+};
 
 const UnderlineText = ({ type, children, ...props }: Props) => (
   <span className={`underline-${type}`} {...props}>
@@ -36,20 +26,36 @@ const UnderlineText = ({ type, children, ...props }: Props) => (
         margin-right: -0.25em;
       }
 
-      span.underline-tokyo-1 { ${generateUnderlineStyles('tokyo-1')} }
-      span.underline-tokyo-2 { ${generateUnderlineStyles('tokyo-2')} }
-      span.underline-kobe { ${generateUnderlineStyles('kobe')} }
-      span.underline-kyoto { ${generateUnderlineStyles('kyoto')} }
-      span.underline-takamatsu { ${generateUnderlineStyles('takamatsu')} }
-      span.underline-naoshima { ${generateUnderlineStyles('naoshima')} }
-      span.underline-nara { ${generateUnderlineStyles('nara')} }
-      span.underline-osaka { ${generateUnderlineStyles('osaka')} }
-      span.underline-hakone { ${generateUnderlineStyles('hakone')} }
-      span.underline-kamakura {
-        ${generateUnderlineStyles('kamakura')}
-        padding-bottom: 0.2rem;
+      span.underline-tokyo-1 {
+        ${generateUnderlineStyles('tokyo-1')};
       }
-
+      span.underline-tokyo-2 {
+        ${generateUnderlineStyles('tokyo-2')};
+      }
+      span.underline-kobe {
+        ${generateUnderlineStyles('kobe')};
+      }
+      span.underline-kyoto {
+        ${generateUnderlineStyles('kyoto')};
+      }
+      span.underline-takamatsu {
+        ${generateUnderlineStyles('takamatsu')};
+      }
+      span.underline-naoshima {
+        ${generateUnderlineStyles('naoshima')};
+      }
+      span.underline-nara {
+        ${generateUnderlineStyles('nara')};
+      }
+      span.underline-osaka {
+        ${generateUnderlineStyles('osaka')};
+      }
+      span.underline-hakone {
+        ${generateUnderlineStyles('hakone')};
+      }
+      span.underline-kamakura {
+        ${generateUnderlineStyles('kamakura')} padding-bottom: 0.2rem;
+      }
     `}</style>
   </span>
 );

@@ -3,14 +3,7 @@
 import React, { Component } from 'react';
 import fit from 'canvas-fit';
 
-import {
-  getContext,
-  createProgram,
-  createShader,
-  createTexture,
-  createUniform,
-  setRectangle,
-} from 'lib/glsl';
+import { getContext, createProgram, createShader, createTexture, createUniform, setRectangle } from 'lib/glsl';
 
 import type { WebGLTexture2DSource } from 'lib/glsl';
 
@@ -96,14 +89,7 @@ const initScene = (gl: WebGLRenderingContext, textureSource: WebGLTexture2DSourc
 
   buffers.texCoord = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, buffers.texCoord);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
-    0.0, 0.0,
-    1.0, 0.0,
-    0.0, 1.0,
-    0.0, 1.0,
-    1.0, 0.0,
-    1.0, 1.0,
-  ]), gl.STATIC_DRAW);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0]), gl.STATIC_DRAW);
 
   createTexture(gl, textureSource);
 
@@ -142,7 +128,7 @@ const draw = (gl: WebGLRenderingContext) => {
   gl.drawArrays(gl.TRIANGLES, 0, 6);
 };
 
-const getRenderableSVG = (html:string, width:number, height:number) => `
+const getRenderableSVG = (html: string, width: number, height: number) => `
   <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
     <foreignObject width="100%" height="100%">
       <div xmlns="http://www.w3.org/1999/xhtml">
@@ -157,21 +143,22 @@ let getSVGImage;
 if (typeof global.window !== 'undefined') {
   const w = global.window.URL || global.window.webkitURL || global.window;
 
-  getSVGImage = (ctx: CanvasRenderingContext2D, html: string): Promise<HTMLImageElement> => new Promise((resolve) => {
-    if (!w) return;
+  getSVGImage = (ctx: CanvasRenderingContext2D, html: string): Promise<HTMLImageElement> =>
+    new Promise(resolve => {
+      if (!w) return;
 
-    // NOTE: multiplying by 2x here to get a higher resolution for type
-    // rendering. Look into better ways of solving this.
-    const data = getRenderableSVG(html, ctx.canvas.width / 2, ctx.canvas.height / 2);
-    const img = new Image();
+      // NOTE: multiplying by 2x here to get a higher resolution for type
+      // rendering. Look into better ways of solving this.
+      const data = getRenderableSVG(html, ctx.canvas.width / 2, ctx.canvas.height / 2);
+      const img = new Image();
 
-    img.onload = () => {
-      resolve(img);
-    };
+      img.onload = () => {
+        resolve(img);
+      };
 
-    img.crossOrigin = 'anonymous';
-    img.src = `data:image/svg+xml;charset=utf-8,${data}`;
-  });
+      img.crossOrigin = 'anonymous';
+      img.src = `data:image/svg+xml;charset=utf-8,${data}`;
+    });
 }
 
 type Props = {
@@ -183,13 +170,13 @@ type State = {
 };
 
 export default class HeatDistortion extends Component<Props, State> {
-  props: Props
+  props: Props;
 
   state = {
     hasRendered: false,
-  }
+  };
 
-  componentDidMount () {
+  componentDidMount() {
     if (!this.$canvas) return;
     if (!this.$root) return;
 
@@ -213,7 +200,7 @@ export default class HeatDistortion extends Component<Props, State> {
     window.addEventListener('resize', this.handleResize, false);
 
     requestAnimationFrame(() => {
-      getSVGImage(this.textCtx, this.props.html).then((image) => {
+      getSVGImage(this.textCtx, this.props.html).then(image => {
         const scene = initScene(this.gl, image);
         this.program = scene.program;
         this.attributes = scene.attributes;
@@ -225,28 +212,28 @@ export default class HeatDistortion extends Component<Props, State> {
     });
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize, false);
   }
 
-  fit: Function
-  $root: ?HTMLElement
-  $canvas: ?HTMLCanvasElement
-  $textCanvas: ?HTMLCanvasElement
-  textCtx: CanvasRenderingContext2D
-  gl: WebGLRenderingContext
-  program: WebGLProgram
-  attributes: Object
-  buffers: Object
-  uniforms: Object
-  frame: number = 0
+  fit: Function;
+  $root: ?HTMLElement;
+  $canvas: ?HTMLCanvasElement;
+  $textCanvas: ?HTMLCanvasElement;
+  textCtx: CanvasRenderingContext2D;
+  gl: WebGLRenderingContext;
+  program: WebGLProgram;
+  attributes: Object;
+  buffers: Object;
+  uniforms: Object;
+  frame: number = 0;
 
   tick = () => {
     createUniform(this.gl, this.program, '1f', 'u_time', this.frame);
     draw(this.gl);
     this.frame++;
     requestAnimationFrame(this.tick);
-  }
+  };
 
   handleResize = () => {
     this.fit();
@@ -255,15 +242,15 @@ export default class HeatDistortion extends Component<Props, State> {
       const { buffers, uniforms } = this;
       this.gl.bindBuffer(this.gl.ARRAY_BUFFER, buffers.position);
       setRectangle(this.gl, 0, 0, width, height);
-      getSVGImage(this.textCtx, this.props.html).then((image) => {
+      getSVGImage(this.textCtx, this.props.html).then(image => {
         createTexture(this.gl, image);
       });
       this.gl.uniform2f(uniforms.resolution, width, height);
       this.gl.viewport(0, 0, width, height);
     }
-  }
+  };
 
-  render () {
+  render() {
     return (
       <div ref={el => (this.$root = el)}>
         <canvas className={this.state.hasRendered ? 'is-ready' : ''} ref={el => (this.$canvas = el)} width={600} height={600} />
@@ -274,17 +261,21 @@ export default class HeatDistortion extends Component<Props, State> {
           }
 
           canvas {
-            opacity: 0.0;
+            opacity: 0;
             transition: opacity 1200ms ease;
           }
 
           canvas.is-ready {
-            opacity: 1.0;
+            opacity: 1;
           }
 
           @keyframes fadeIn {
-            from { opacity: 0.0; }
-            to { opacity: 1.0; }
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
           }
         `}</style>
       </div>

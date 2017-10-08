@@ -16,8 +16,4 @@ const post = {
   publishedAt: new Date(2017, 8, 7),
 };
 
-export default () => (
-  <PostLayout {...post}>
-    {content}
-  </PostLayout>
-);
+export default () => <PostLayout {...post}>{content}</PostLayout>;

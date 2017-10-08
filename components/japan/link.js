@@ -7,7 +7,7 @@ type Props = {
   children: Node,
   external: boolean,
   href: string,
-}
+};
 
 const Link = ({ children, external, ...props }: Props) => (
   <a target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined} {...props}>

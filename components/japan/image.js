@@ -9,11 +9,9 @@ const sizeToSrcSet = srcId => size => `${getImageUrl(srcId, size)} ${size}w`;
 
 type Props = {
   srcId: string,
-  sizes: Array<number>
-}
+  sizes: Array<number>,
+};
 
-const Image = ({ srcId, sizes, ...rest }: Props) => (
-  <LazyloadImage srcSet={sizes.map(sizeToSrcSet(srcId))} {...rest} />
-);
+const Image = ({ srcId, sizes, ...rest }: Props) => <LazyloadImage srcSet={sizes.map(sizeToSrcSet(srcId))} {...rest} />;
 
 export default Image;

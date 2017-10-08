@@ -32,6 +32,13 @@
     "fs.realpath": "^1.0.0",
     "hibiscss": "^0.0.8",
     "locate-path": "^2.0.0",
-    "mz": "^2.7.0"
+    "mz": "^2.7.0",
+    "prettier": "1.7.4"
+  },
+  "prettier": {
+    "jsxBracketSameLine": true,
+    "printWidth": 200,
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }

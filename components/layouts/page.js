@@ -6,14 +6,12 @@ import Head from 'next/head';
 const isEmpty = (v: ?any): boolean => v === undefined || v === null;
 const not = (v: any): boolean => !v;
 
-function getPageTitle (title: ?string, titleOverride: ?string) {
+function getPageTitle(title: ?string, titleOverride: ?string) {
   if (!isEmpty(titleOverride)) {
     return titleOverride;
   }
 
-  return [title, `Ross Zurowski`]
-    .filter(v => not(isEmpty(v)))
-    .join(` – `);
+  return [title, `Ross Zurowski`].filter(v => not(isEmpty(v))).join(` – `);
 }
 
 type Props = {

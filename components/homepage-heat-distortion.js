@@ -18,7 +18,8 @@ const HomepageVisual = ({ isDesktop }: Props) => (
             <div style="background-color: #f79e98; width: 210px; height: 200px; transform: rotate(${randomInt(-50, -20)}deg)"></div>
             <div style="background-color: #f79e98; width: 320px; height: 80px; transform: rotate(${randomInt(-90, 90)}deg)"></div>
           </div>
-        `} />
+        `}
+      />
     ) : null}
   </div>
 );

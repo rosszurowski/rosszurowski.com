@@ -12,28 +12,32 @@ class Post extends Component {
     src: string,
     location: string,
     dimensions: { width: number, height: number },
-  }
+  };
 
   state = {
     renderedWidth: -1,
-  }
+  };
 
-  handleImageMeasure = (dimensions) => {
+  handleImageMeasure = dimensions => {
     const { width } = dimensions;
     const renderedWidth = Math.floor(width);
 
     this.setState({ renderedWidth });
-  }
+  };
 
-  render () {
+  render() {
     const { id, date, src, location, dimensions } = this.props;
     const { width, height } = dimensions;
 
     return (
       <article className="pv-5 ta-center" id={id}>
         <div className="fs-22">
-          <div><a href={`#${id}`}>Day {id}</a></div>
-          <div className="o-50p mt-2"><a href={`#${id}`}>{formatPostDate(new Date(date))}</a></div>
+          <div>
+            <a href={`#${id}`}>Day {id}</a>
+          </div>
+          <div className="o-50p mt-2">
+            <a href={`#${id}`}>{formatPostDate(new Date(date))}</a>
+          </div>
         </div>
         <figure className="mt-5">
           <PostImage src={src} alt={location} width={width} height={height} />
