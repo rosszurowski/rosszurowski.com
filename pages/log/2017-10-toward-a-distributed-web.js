@@ -8,7 +8,7 @@ const content = markdown(config)`
 
 Last week I discovered that [ffffound](https://ffffound.com) shut down.
 
-I didn’t visit it often, but when I did, I was amazed by the variety of stuff on there. The site was an archive full of amazing architectural photography, abstract art scans, and all kinds of other images. Seeing it gone made me a little sad.
+I didn’t visit it often, but when I did, I was amazed by the variety of stuff on there. The site was an archive full of architectural photography, abstract art scans, and all kinds of other images. Seeing it gone made me a little sad.
 
 Back in February, [Vine](https://www.theverge.com/2016/10/28/13456208/why-vine-died-twitter-shutdown) also shut down. Only a few months later, people shared similar [doubts about SoundCloud’s future](https://techcrunch.com/2017/07/12/soundshroud/).
 
@@ -25,7 +25,7 @@ More and more, the web feels like a playground for businesses than [the informat
 
 The computer pictured above is the world’s first web server. Built to share documents amongst scientists at CERN, it was the first use of the HTTP protocol, the system that drives the internet. Colleagues of Tim Berners-Lee could access files on his computer from anywhere else in their local network.
 
-On its casing is an amazing sticky note warning: “This machine is a server. DO NOT POWER IT DOWN!” If the server is down, nobody can read the files on it. Makes sense.
+On its casing is a sticky note warning: “This machine is a server. DO NOT POWER IT DOWN!” Makes sense. If the server is down, nobody can read the files on it.
 
 This little sticky note is a clue to a fundamental concept behind HTTP: it's a request-response protocol. A "client" makes a request, and the "server" sends a response. One computer has a file, and many others ask for it. One server, many clients.
 
@@ -35,7 +35,7 @@ In other words, if you were to map out how file sharing worked at CERN, it’d l
 
 ### These Days
 
-The web has grown a lot since its early days. Instead of computers with sticky-notes on computers, internet infrastructure looks a little more like this:
+The web has grown a lot since its early days. Instead of sticky notes on computers, internet infrastructure looks a little more like this:
 
 ![](https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/log/2017-09-first-post/google-data-center.jpg)
 <small>Google Data Center in Florida ([source](https://www.google.com/about/datacenters/gallery/#/tech))</small>
@@ -71,17 +71,17 @@ Many of these alternatives share a resemblance with BitTorrent: one person start
 
 ![](https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/log/2017-09-first-post/structure-bittorrent.png)
 
-The distance between server and client collapses. Everyone becomes both a server and a client.
+The distance between server and client collapses. No one person owns the servers. Instead, everyone is both a server and a client.
 
 If the internet we’re moving towards today is the “corporate web”, distributed web tech tries to move towards a [cooperative](https://en.wikipedia.org/wiki/Cooperative) one: everyone works together to re-host things they’re interested in. Everyone’s responsible for keeping it online, sure, but everyone owns a piece of it.
 
 What may seem like a simple change — a shift in how digital files move about — can have huge impact when applied at scale:
 
 * How does a company make ad money if they can’t control what gets shown to people?
-* How do you make a monopoly when the only way to grow is with the help of others?
 * How do governments track and surveil people if the information was scattered across millions of computers, rather than neatly compiled by one organization in one place?
+* How do you monopolized (attention, data, etc) when the only way to grow is with the help of others?
 
-The protocol behind the web no longer gives you an easy solution to those challenges. Decentralized web tech makes forming communities easy and forming companies hard.
+Distributed web protocols no longer give easy solutions to those challenges. The decisions behind decentralization make forming communities easy and forming companies hard.
 
 All the alternatives I listed above are still in their early stages. There’s tons of challenges around usability, financing, and public interest/adoption. But for all the challenges, there’s some amazing opportunities too:
 
@@ -94,19 +94,15 @@ We have a responsibility as citizens of the web to challenge the politics embedd
 
 ### Further Reading
 
-* Paul Frazee, [What is the P2P Web?](https://pfrazee.github.io/blog/what-is-the-p2p-web)
-* Tom MacWright, [So you want to decentralize your website](https://macwright.org/2017/07/20/decentralize-your-website.html)
-* Jon Kyle Mohr, [Distributed Now](https://www.jon-kyle.com/entries/2017-08-01-distributed-now)
+* [What is the P2P Web?](https://pfrazee.github.io/blog/what-is-the-p2p-web)
+* [Beaker Browser](https://beakerbrowser.com/), a distributed web browser
+* [So you want to decentralize your website](https://macwright.org/2017/07/20/decentralize-your-website.html), a guide by [Tom MacWright] on getting your site running with Dat.
+* [Distributed Now](https://www.jon-kyle.com/entries/2017-08-01-distributed-now)
 `;
-
 
 const post = {
   title: 'Toward a Distributed Web',
   publishedAt: new Date(2017, 9, 7),
 };
 
-export default () => (
-  <PostLayout {...post}>
-    {content}
-  </PostLayout>
-);
+export default () => <PostLayout {...post}>{content}</PostLayout>;
