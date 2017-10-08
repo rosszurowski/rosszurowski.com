@@ -14,7 +14,7 @@ Back in February, [Vine](https://www.theverge.com/2016/10/28/13456208/why-vine-d
 
 Often supported entirely by ad money, these community-companies on the web seem to struggle to stay online.
 
-When conversations about internet shutdowns come up, people often ask, “what was their business model?” But, isn’t the web supposed to be an open, global community? Why is a business model a necessity someone to make a meaningful site?
+When conversations about internet shutdowns come up, people often ask, “what was their business model?” But, isn’t the web supposed to be an open, global community? Why is a business model a necessity for someone to make a meaningful site?
 
 More and more, the web feels like a playground for businesses than [the information superhighway](https://en.wikipedia.org/wiki/Memex) it was originally conceived as.
 
@@ -48,7 +48,7 @@ The one-to-many shape leads to some interesting consequences.
 
 For one, its enabled the rise of the “platform web.” Not everyone can or wants to run their own server, so people make platforms where others can contribute _without owning a server_: writing blog posts on Tumblr, sharing images on Flickr, putting life events on Facebook, etc. But running these platforms has costs, and over time, some platforms win out over others.
 
-The platform web has become a bit of a marketplace. The only way to survive is to get as big as possible, hence our current world, where [a few platforms account for over 60% of all web traffic]().
+The platform web has become a marketplace. The only way to survive is to get as big as possible, hence our current world, where [a few platforms account for over 60% of all web traffic]().
 
 And when one person or organization hosts all the code and all the data, the power dynamic changes.
 
