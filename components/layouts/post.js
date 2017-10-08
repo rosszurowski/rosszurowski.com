@@ -104,8 +104,8 @@ const PostLayout = ({ children, title, publishedAt }: Props) => (
       }
 
       .post :global(ul li) {
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
+        margin-top: 0.15em;
+        margin-bottom: 0.15em;
       }
 
       .post :global(ul li:before) {
@@ -130,7 +130,7 @@ const PostLayout = ({ children, title, publishedAt }: Props) => (
 
       .post :global(p + p),
       .post :global(p + ul),
-      .post :global(p + ol)
+      .post :global(p + ol),
       .post :global(ul + p),
       .post :global(ol + p) {
         margin-top: 1.5rem;
