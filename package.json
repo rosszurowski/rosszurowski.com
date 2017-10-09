@@ -7,8 +7,7 @@
     "build": "NODE_ENV=production next build && next export -o dist",
     "postbuild": "yarn build:dat",
     "build:css": "mkdir -p static/css/ && node css.js > static/css/index.css",
-    "build:dat":
-      "cp dat.json dist/dat.json && mkdir -p dist/.well-known && touch dist/.well-known/dat && echo $(node -p 'require(\"./dat.json\").url') > dist/.well-known/dat && echo \"TTL=0\" >> dist/.well-known/dat",
+    "build:dat": "cp dat.json dist/dat.json && mkdir -p dist/.well-known && touch dist/.well-known/dat && echo $(node -p 'require(\"./dat.json\").url') > dist/.well-known/dat && echo \"TTL=0\" >> dist/.well-known/dat",
     "start": "next"
   },
   "dependencies": {
@@ -32,8 +31,8 @@
     "fs.realpath": "^1.0.0",
     "hibiscss": "^0.0.8",
     "locate-path": "^2.0.0",
-    "mz": "^2.7.0",
-    "prettier": "1.7.4"
+    "prettier": "1.7.4",
+    "recursive-readdir": "^2.2.1"
   },
   "prettier": {
     "jsxBracketSameLine": true,
