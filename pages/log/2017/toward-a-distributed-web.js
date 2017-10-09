@@ -95,8 +95,8 @@ We have a responsibility as citizens of the web to challenge the politics embedd
 ### Further Reading
 
 * [What is the P2P Web?](https://pfrazee.github.io/blog/what-is-the-p2p-web)
-* [Beaker Browser](https://beakerbrowser.com/), a distributed web browser
-* [So you want to decentralize your website](https://macwright.org/2017/07/20/decentralize-your-website.html), a guide by [Tom MacWright] on getting your site running with Dat.
+* [Beaker Browser](https://beakerbrowser.com/)
+* [So you want to decentralize your website](https://macwright.org/2017/07/20/decentralize-your-website.html)
 * [Distributed Now](https://www.jon-kyle.com/entries/2017-08-01-distributed-now)
 `;
 
