@@ -20,12 +20,16 @@ export default class Redirect extends Component<Props> {
     return (
       <Page titleOverride="Redirecting...">
         <Head>{IS_PRODUCTION && <meta httpEquiv="refresh" content={`0;url=${this.props.redirectPath}`} />}</Head>
-        <div className="pa-4">
-          <p className="ff-sans">Just a sec, redirecting you...</p>
-          {!IS_PRODUCTION && (
-            <p>
-              No redirects in dev. <a href={this.props.redirectPath}>Go here</a>
-            </p>
+        <div className="ff-sans pa-4">
+          {IS_PRODUCTION ? (
+            <p>Just a sec, redirecting you...</p>
+          ) : (
+            <div>
+              <p>Redirect page disabled in dev.</p>
+              <p className="mt-3 h-fade">
+                <a href={this.props.redirectPath}>Go here &rarr;</a>
+              </p>
+            </div>
           )}
         </div>
       </Page>

@@ -10,12 +10,15 @@ const getLogPaths = async () => {
 
 module.exports = {
   async exportPathMap() {
-    const staticPaths = ['/', '/2017/japan', '/100', '/_error'];
+    const staticPaths = ['/', '/2017/japan', '/100'];
+    const customPaths = {
+      '/404.html': { page: '_redirect' },
+    };
 
     const logPaths = await getLogPaths();
 
     const paths = staticPaths.concat(logPaths);
-    const pathMap = pathsToPages(paths);
+    const pathMap = { ...customPaths, ...pathsToPages(paths) };
 
     return pathMap;
   },
