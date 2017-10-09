@@ -79,7 +79,7 @@ What may seem like a simple change — a shift in how digital files move about 
 
 * How does a company make ad money if they can’t control what gets shown to people?
 * How do governments track and surveil people if the information was scattered across millions of computers, rather than neatly compiled by one organization in one place?
-* How do you monopolized (attention, data, etc) when the only way to grow is with the help of others?
+* How do you monopolize (attention, data, etc) when the only way to grow is with the help of others?
 
 Distributed web protocols no longer give easy solutions to those challenges. The decisions behind decentralization make forming communities easy and forming companies hard.
 
