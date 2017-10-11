@@ -88,8 +88,8 @@ export default () => (
         </div>
       </div>
       <HomepageHeatDistortion />
-      <div className="d-none d-block-s pa-4 pa-5-s z-2">
-        <aside className="x xj-spaceBetween pt-4 h-100p o-50p fs-13" style={{ writingMode: 'vertical-lr' }}>
+      <div className="d-none d-block-s pa-4 pa-5-s z-2 sidebar" style={{ writingMode: 'vertical-lr' }}>
+        <aside className="x xj-spaceBetween pt-4 h-100p o-50p fs-13">
           <div className="ls-1">{`43°58'13"N — 114°55'28"W`}</div>
           <div className="ml-auto">Last updated August 26, 2017</div>
         </aside>
@@ -118,6 +118,14 @@ export default () => (
 
       main p a:hover {
         opacity: 0.8;
+      }
+
+      /* Firefox doesn't support writing-mode with flexbox, so lets disable this for now */
+      .sidebar {
+        display: none;
+      }
+      .sidebar:not(*:root) {
+        display: block;
       }
     `}</style>
   </Page>

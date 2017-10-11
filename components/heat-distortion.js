@@ -237,7 +237,7 @@ export default class HeatDistortion extends Component<Props, State> {
 
   handleResize = () => {
     this.fit();
-    if (this.$canvas) {
+    if (this.$canvas && this.buffers && this.uniforms) {
       const { width, height } = this.$canvas;
       const { buffers, uniforms } = this;
       this.gl.bindBuffer(this.gl.ARRAY_BUFFER, buffers.position);
