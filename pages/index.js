@@ -5,7 +5,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import Page from 'components/layouts/page';
-import HomepageHeatDistortion from 'components/homepage-heat-distortion';
 import CVPanel from 'components/homepage-cv-panel';
 
 import ZigZag from 'components/icons/zig-zag';
@@ -87,7 +86,6 @@ export default () => (
           </div>
         </div>
       </div>
-      <HomepageHeatDistortion />
       <div className="d-none d-block-s pa-4 pa-5-s z-2 sidebar" style={{ writingMode: 'vertical-lr' }}>
         <aside className="x xj-spaceBetween pt-4 h-100p o-50p fs-13">
           <div className="ls-1">{`43°58'13"N — 114°55'28"W`}</div>
