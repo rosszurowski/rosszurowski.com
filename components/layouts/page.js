@@ -1,7 +1,9 @@
 // @flow
 
 import React, { type Node } from 'react';
+import Router from 'next/router';
 import Head from 'next/head';
+import GAnalytics from 'ganalytics';
 
 const isEmpty = (v: ?any): boolean => v === undefined || v === null;
 const not = (v: any): boolean => !v;
@@ -56,5 +58,19 @@ PageLayout.defaultProps = {
   description: 'Designer and developer from Toronto.',
   imagePreviewUrl: '/static/og-image.png',
 };
+
+/**
+ * Analytics (adding it here b/c most pages use this layout)
+ */
+
+if (process.env.NODE_ENV === 'production' && typeof window !== 'undefined' && window.location.hostname !== 'localhost') {
+  const analytics = new GAnalytics('UA-28016103-1');
+
+  Router.onRouteChangeComplete = () => {
+    analytics.send('pageview');
+  };
+
+  analytics.send('pageview');
+}
 
 export default PageLayout;
