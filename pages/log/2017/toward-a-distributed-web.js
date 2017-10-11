@@ -102,7 +102,7 @@ We have a responsibility as citizens of the web to challenge the politics embedd
 
 const post = {
   title: 'Toward a Distributed Web',
-  publishedAt: new Date(2017, 9, 7),
+  publishedAt: new Date('2017-10-10T23:24:00'),
 };
 
 export default () => <PostLayout {...post}>{content}</PostLayout>;
