@@ -63,7 +63,7 @@ PageLayout.defaultProps = {
  */
 
 if (process.env.NODE_ENV === 'production' && typeof window !== 'undefined' && window.location.hostname !== 'localhost') {
-  const GAnalytics = require('ganalytics');
+  const GAnalytics = require('ganalytics').default;
   const analytics = new GAnalytics('UA-28016103-1');
 
   Router.onRouteChangeComplete = () => {
