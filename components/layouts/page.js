@@ -62,7 +62,7 @@ PageLayout.defaultProps = {
  * Analytics (adding it here b/c most pages use this layout)
  */
 
-if (process.env.NODE_ENV === 'production' && typeof window !== 'undefined' && window.location.hostname !== 'localhost') {
+if (typeof window !== 'undefined' && window.location.hostname !== 'localhost') {
   const GAnalytics = require('ganalytics').default;
   const analytics = new GAnalytics('UA-28016103-1');
 
