@@ -4,7 +4,7 @@ import PostLayout, { config } from 'components/layouts/post';
 import markdown from 'markdown-in-js';
 
 const content = markdown(config)`
-![](https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/log/2017-09-first-post/awh-snap.png)
+![](https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/log/2017/toward-a-distributed-web/awh-snap.png)
 
 Last week I discovered that [ffffound](https://ffffound.com) shut down.
 
@@ -20,7 +20,7 @@ More and more, the web feels like a playground for businesses than [the informat
 
 ### Early Days
 
-![The first web server, at CERN in Geneva](https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/log/2017-09-first-post/first-web-server.jpg)
+![The first web server, at CERN in Geneva](https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/log/2017/toward-a-distributed-web/first-web-server.jpg)
 <small>Tim Berners-Lee’s NeXT workstation ([source](https://commons.wikimedia.org/wiki/File:First_Web_Server.jpg))</small>
 
 The computer pictured above is the world’s first web server. Built to share documents amongst scientists at CERN, it was the first use of the HTTP protocol, the system that drives the internet. Colleagues of Tim Berners-Lee could access files on his computer from anywhere else in their local network.
@@ -31,14 +31,14 @@ This little sticky note is a clue to a fundamental concept behind HTTP: it's a r
 
 In other words, if you were to map out how file sharing worked at CERN, it’d look a little like this:
 
-![](https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/log/2017-09-first-post/structure-http.png)
+![](https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/log/2017/toward-a-distributed-web/structure-http.png)
 
 ### These Days
 
 The web has grown a lot since its early days. Instead of sticky notes on computers, internet infrastructure looks a little more like this:
 
-![](https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/log/2017-09-first-post/google-data-center.jpg)
-<small>Google Data Center in Florida ([source](https://www.google.com/about/datacenters/gallery/#/tech))</small>
+![](https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/log/2017/toward-a-distributed-web/google-data-center.jpg)
+<small>Google Data Center in Finland ([source](https://www.google.com/about/datacenters/gallery/#/tech))</small>
 
 How we use it has changed too. We’re not just passing around text files, but images, videos, articles, and applications.
 
@@ -69,7 +69,7 @@ One exciting area is _distributed web technologies_, protocols vying to replace 
 
 Many of these alternatives share a resemblance with BitTorrent: one person starts to host something, and everybody re-hosts it as they view it. Mapping out this structure would look a little more like this:
 
-![](https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/log/2017-09-first-post/structure-bittorrent.png)
+![](https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/log/2017/toward-a-distributed-web/structure-bittorrent.png)
 
 The distance between server and client collapses. No one person owns the servers. Instead, everyone is both a server and a client.
 
