@@ -9,11 +9,6 @@ import CVPanel from 'components/homepage-cv-panel';
 
 import ZigZag from 'components/icons/zig-zag';
 
-const meta = {
-  title: 'Ross Zurowski',
-  description: 'Designer and developer from Toronto.',
-};
-
 export default () => (
   <Page>
     <main className="ff-sans fs-18 lh-1d7 x-s xa-stretch">
