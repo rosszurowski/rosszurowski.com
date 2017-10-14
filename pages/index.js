@@ -53,21 +53,19 @@ export default () => (
             </p>
           </div>
           <div className="mb-4">
-            <h4 className="mb-3 c-pink">Current Projects</h4>
-            <p>
-              <Link href="/100">
-                <a>100 Days</a>
-              </Link>, <a href="https://twitter.com/smallseasonsbot">Small Seasons Bot</a>,
-              <br />
-              <a href="https://dogsofperu.tumblr.com">Dogs of Peru</a>, <a href="https://broken-idioms.com">Broken Idioms</a>.
-            </p>
-          </div>
-          <div className="mb-4">
             <h4 className="mb-3 c-pink">CV</h4>
             <CVPanel name="Watsi" href="https://watsi.org/" period="2016 – Present" />
             <CVPanel name="Format" href="https://format.com/themes/" period="2013 – 2016" />
             <CVPanel name="Palantir" href="https://palantir.com/" period="2015" />
             <CVPanel name="Facebook" href="http://facebook.design/" period="2014" />
+          </div>
+          <div className="mb-4">
+            <h4 className="mb-3 c-pink">Recent projects</h4>
+            <p>
+              <Link href="/100">
+                <a>100 Days</a>
+              </Link>, <a href="https://dogsofperu.tumblr.com">Dogs of Peru</a>, <a href="https://broken-idioms.com">Broken Idioms</a>.
+            </p>
           </div>
           <div className="mb-5">
             <h4 className="mb-3 c-pink">Recent interests</h4>
