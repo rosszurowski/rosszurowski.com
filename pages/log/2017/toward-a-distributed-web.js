@@ -27,11 +27,9 @@ The computer pictured above is the world’s first web server. Built to share do
 
 On its casing is a sticky note warning: “This machine is a server. DO NOT POWER IT DOWN!” Makes sense. If the server is down, nobody can read the files on it.
 
-This little sticky note is a clue to a fundamental concept behind HTTP: it's a request-response protocol. A "client" makes a request, and the "server" sends a response. One computer has a file, and many others ask for it. One server, many clients.
-
-In other words, if you were to map out how file sharing worked at CERN, it’d look a little like this:
-
 ![](https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/log/2017/toward-a-distributed-web/structure-http.png)
+
+This little sticky note is a clue to a fundamental concept behind HTTP: it's a request-response protocol. A "client" makes a request, and the "server" sends a response. One computer has a file, and many others ask for it. One server, many clients.
 
 ### These Days
 
@@ -48,7 +46,7 @@ The one-to-many shape leads to some interesting consequences.
 
 For one, its enabled the rise of the “platform web.” Not everyone can or wants to run their own server, so people make platforms where others can contribute _without owning a server_: writing blog posts on Tumblr, sharing images on Flickr, putting life events on Facebook, etc. But running these platforms has costs, and over time, some platforms win out over others.
 
-The platform web has become a marketplace. The only way to survive is to get as big as possible, hence our current world, where [a few platforms account for over 60% of all web traffic]().
+The platform web has become a marketplace. The only way to survive is to get as big as possible, hence our current world, where [a few platforms can account for the majority of all web traffic](https://moz.com/top500).
 
 And when one person or organization hosts all the code and all the data, the power dynamic changes.
 
@@ -67,11 +65,9 @@ For all that negativity, there’s tons of exciting work these days to find alte
 
 One exciting area is _distributed web technologies_, protocols vying to replace HTTP as the way we pass information across networks. There’s a few projects trying to fill this space. Some bigger ones: [IPFS](https://ipfs.io), [Zeronet](https://zeronet.io/), and [Dat](http://datproject.org/).
 
-Many of these alternatives share a resemblance with BitTorrent: one person starts to host something, and everybody re-hosts it as they view it. Mapping out this structure would look a little more like this:
-
 ![](https://rosszurowski-assets.s3.amazonaws.com/rosszurowski.com/log/2017/toward-a-distributed-web/structure-bittorrent.png)
 
-The distance between server and client collapses. No one person owns the servers. Instead, everyone is both a server and a client.
+Many of these alternatives share a resemblance with BitTorrent: one person starts to host something, and everybody re-hosts it as they view it. The distance between server and client collapses. No one person owns the servers. Instead, everyone is both a server and a client.
 
 If the internet we’re moving towards today is the “corporate web”, distributed web tech tries to move towards a [cooperative](https://en.wikipedia.org/wiki/Cooperative) one: everyone works together to re-host things they’re interested in. Everyone’s responsible for keeping it online, sure, but everyone owns a piece of it.
 

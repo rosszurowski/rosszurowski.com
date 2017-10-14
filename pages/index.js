@@ -76,7 +76,12 @@ export default () => (
           </div>
           <div className="mb-5">
             <h4 className="mb-3 c-pink">Recent interests</h4>
-            <p>Tools for writing and understanding (code, words, ideas), the future of the web, sunlight on concrete, keeping plants alive, dad jokes, rice noodles, making lists.</p>
+            <p>
+              Tools for writing and understanding (code, words, ideas), the{' '}
+              <Link href="/log/2017/toward-a-distributed-web">
+                <a>future of the web</a>
+              </Link>, sunlight on concrete, keeping plants alive, dad jokes, rice noodles, making lists.
+            </p>
           </div>
           <div className="fs-13 o-50p">
             <p>
@@ -86,7 +91,7 @@ export default () => (
           </div>
         </div>
       </div>
-      <div className="d-none d-block-s pa-4 pa-5-s z-2 sidebar" style={{ writingMode: 'vertical-lr' }}>
+      <div className="d-none d-block-s pa-4 pa-5-s z-2 moz-hide" style={{ writingMode: 'vertical-lr' }}>
         <aside className="x xj-spaceBetween pt-4 h-100p o-50p fs-13">
           <div className="ls-1">{`43°58'13"N — 114°55'28"W`}</div>
           <div className="ml-auto">Last updated August 26, 2017</div>
@@ -119,10 +124,10 @@ export default () => (
       }
 
       /* Firefox doesn't support writing-mode with flexbox, so lets disable this for now */
-      .sidebar {
+      .moz-hide {
         display: none;
       }
-      .sidebar:not(*:root) {
+      .moz-hide:not(*:root) {
         display: block;
       }
     `}</style>
