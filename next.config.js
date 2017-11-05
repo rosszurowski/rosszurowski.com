@@ -14,7 +14,7 @@ module.exports = {
     const staticPaths = ['/', '/2017/japan', '/100'];
 
     const customPaths = {
-      '/404.html': { page: '_redirect' },
+      '/404.html': { page: '/_redirect' },
     };
 
     const logPaths = await getLogPaths();
