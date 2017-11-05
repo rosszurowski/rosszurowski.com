@@ -128,11 +128,7 @@ const PostLayout = ({ children, title, publishedAt }: Props) => (
         padding: 0.15em 0.25em;
       }
 
-      .post :global(p + p),
-      .post :global(p + ul),
-      .post :global(p + ol),
-      .post :global(ul + p),
-      .post :global(ol + p) {
+      .post :global(* + *:not(div)) {
         margin-top: 1.5rem;
       }
     `}</style>

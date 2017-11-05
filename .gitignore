@@ -11,3 +11,6 @@ flow-typed/
 .next/
 dist/
 static/css/index.css
+
+# Ignore design files
+documents/
