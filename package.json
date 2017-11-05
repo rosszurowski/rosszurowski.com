@@ -7,7 +7,7 @@
     "build": "NODE_ENV=production next build && next export -o dist",
     "postbuild": "yarn build:dat",
     "build:css": "mkdir -p static/css/ && node css.js > static/css/index.css",
-    "build:dat": "cp dat.json dist/dat.json && mkdir -p dist/.well-known && touch dist/.well-known/dat && echo $(node -p 'require(\"./dat.json\").url') > dist/.well-known/dat && echo \"TTL=0\" >> dist/.well-known/dat",
+    "build:dat": "mkdir -p dist/.well-known && touch dist/.well-known/dat && echo $(node -p 'require(\"./dat.json\").url') > dist/.well-known/dat && echo \"TTL=0\" >> dist/.well-known/dat",
     "start": "next"
   },
   "dependencies": {
