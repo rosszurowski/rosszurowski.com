@@ -94,7 +94,15 @@ const PostLayout = ({ children, title, publishedAt }: Props) => (
       }
 
       .post :global(blockquote) {
-        border-left: 2px #ccc solid;
+        border-left: 2px #e2e2e2 solid;
+      }
+
+      .post :global(hr) {
+        border: 0;
+        padding-top: 2rem;
+        margin-bottom: 3.5rem;
+        border-bottom: 2px solid #e2e2e2;
+        max-width: 50px;
       }
 
       .post :global(ul) {
