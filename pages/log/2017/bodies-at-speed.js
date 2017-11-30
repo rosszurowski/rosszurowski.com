@@ -18,7 +18,7 @@ Moving faster _inherently_ creates more risk. Even when the risks are well-contr
 
 Greater velocity equals greater consequences when things go wrong. There's no getting around that, no matter how many safeguards you implement.
 
-It’s always interesting to see innovative approaches to age old problems. But, in my head, complex solutions never seem quite as [appropriate](https://en.wikipedia.org/wiki/Appropriate_technology) as simpler ones, such as walking, biking, and more dense urban spaces.
+It’s always interesting to see innovative approaches to age old problems. But, in my head, complex solutions never seem [quite as appropriate](https://en.wikipedia.org/wiki/Appropriate_technology) as ways to use simpler ones, like walking, biking, and creating more dense urban spaces.
 `;
 
 const post = {
