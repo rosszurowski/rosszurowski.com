@@ -4,13 +4,13 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import Page from 'components/layouts/page';
+import PageLayout from 'components/layouts/page';
 import CVPanel from 'components/homepage-cv-panel';
 
 import ZigZag from 'components/icons/zig-zag';
 
 export default () => (
-  <Page>
+  <PageLayout>
     <main className="ff-sans fs-18 lh-1d7 x-s xa-stretch">
       <div className="x-1 x-auto p-relative pa-3 pa-5-s z-1">
         <div className="mw-540">
@@ -124,5 +124,5 @@ export default () => (
         display: block;
       }
     `}</style>
-  </Page>
+  </PageLayout>
 );

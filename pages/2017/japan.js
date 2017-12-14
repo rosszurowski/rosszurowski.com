@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import Page from 'components/layouts/page';
+import PageLayout from 'components/layouts/page';
 import GlobalStyles from 'components/japan/global-styles';
 
 import Paragraph from 'components/japan/paragraph';
@@ -18,7 +18,7 @@ import EndNotes from 'components/japan/end-notes';
 import utils from 'lib/utils';
 
 const JapanTripPage = () => (
-  <Page title="Japan Trip" description="A few photos from a trip to Japan in May 2017." imagePreviewUrl={utils.getAssetUrl('2017/japan/og-image.jpg')}>
+  <PageLayout title="Japan Trip" description="A few photos from a trip to Japan in May 2017." imagePreviewUrl={utils.getAssetUrl('2017/japan/og-image.jpg')}>
     <GlobalStyles />
 
     <main className="center mw8 w-90">
@@ -865,7 +865,7 @@ const JapanTripPage = () => (
         </p>
       </div>
     </EndNotes>
-  </Page>
+  </PageLayout>
 );
 
 export default JapanTripPage;

@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import Page from 'components/layouts/page';
+import PageLayout from 'components/layouts/page';
 import Post from 'components/100/post';
 
 import posts from 'content/100.json';
@@ -15,7 +15,7 @@ export default () => {
   const orderedPosts = posts.slice().reverse();
 
   return (
-    <Page title={title} description={description}>
+    <PageLayout title={title} description={description}>
       <header className="ta-center mh-auto mw-900">
         <div className="x xa-center xj-spaceBetween">
           <div>
@@ -54,6 +54,6 @@ export default () => {
           background-size: 100%;
         }
       `}</style>
-    </Page>
+    </PageLayout>
   );
 };
