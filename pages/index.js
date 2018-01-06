@@ -84,7 +84,7 @@ export default () => (
           </div>
         </div>
       </div>
-      <div className="d-none d-block-s pa-4 pa-5-s z-2 moz-hide" style={{ writingMode: 'vertical-lr' }}>
+      <div className="d-none d-block-s pa-4 pa-5-s z-2 moz-hideBlock-s" style={{ writingMode: 'vertical-lr' }}>
         <aside className="x xj-spaceBetween pt-4 h-100p o-50p fs-13">
           <div className="ls-1">{`43°58'13"N — 114°55'28"W`}</div>
           <div className="ml-auto">Last updated August 26, 2017</div>
@@ -117,11 +117,13 @@ export default () => (
       }
 
       /* Firefox doesn't support writing-mode with flexbox, so lets disable this for now */
-      .moz-hide {
-        display: none;
-      }
-      .moz-hide:not(*:root) {
-        display: block;
+      @media only screen and (min-width: 479px) {
+        .moz-hideBlock-s {
+          display: none;
+        }
+        .moz-hideBlock-s:not(*:root) {
+          display: block;
+        }
       }
     `}</style>
   </PageLayout>
