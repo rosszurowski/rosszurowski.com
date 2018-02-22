@@ -1,7 +1,9 @@
 import Document, { Main, NextScript } from 'next/document';
 import flush from 'styled-jsx/server';
 
-import 'object.assign/polyfill';
+import polyfill from 'object.assign/polyfill';
+
+polyfill();
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
