@@ -49,7 +49,7 @@ export default () => (
               Working at{' '}
               <a href="https://watsi.org/" target="_blank" rel="noopener noreferrer">
                 Watsi
-              </a>, designing software for healthcare providers and low-income populations around the world.
+              </a>, designing healthcare software to benefit low-income populations around the world.
             </p>
           </div>
           <div className="mb-4">
@@ -64,16 +64,22 @@ export default () => (
             <p>
               <Link href="/100">
                 <a>100 Days</a>
-              </Link>, <a href="https://dogsofperu.tumblr.com">Dogs of Peru</a>, <a href="https://broken-idioms.com">Broken Idioms</a>.
+              </Link>, <a href="https://broken-idioms.com">Broken Idioms</a>.
             </p>
           </div>
           <div className="mb-5">
             <h4 className="mb-3 c-pink">Recent interests</h4>
             <p>
-              Tools for writing and understanding (code, words, ideas), the{' '}
+              Rice noodles,{' '}
+              <a href="https://smallseasons.guide" target="_blank" rel="noopener noreferrer">
+                alternate calendars
+              </a>,{' '}
+              <a href="https://www.are.na/ross-zurowski/language-thought" target="_blank" rel="noopener noreferrer">
+                language and thought
+              </a>,{' '}
               <Link href="/log/2017/toward-a-distributed-web">
-                <a>future of the web</a>
-              </Link>, sunlight on concrete, keeping plants alive, dad jokes, rice noodles, making lists.
+                <a>the future of the web</a>
+              </Link>, and making ice cream.
             </p>
           </div>
           <div className="fs-13 o-50p">
@@ -103,11 +109,13 @@ export default () => (
         position: relative;
       }
 
+      ::selection {
+        background: rgba(255, 182, 182, 0.3);
+      }
+
       main p a {
-        display: inline-block;
-        line-height: 1.4;
         color: inherit;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
         text-decoration: none;
         transition: opacity 200ms ease;
       }
