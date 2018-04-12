@@ -85,7 +85,7 @@ export default () => (
           </div>
           <div className="fs-13 o-50p">
             <p>
-              This website is published on the distributed web via <a href="https://datproject.org">Dat</a>. You can access it with <a href="https://beakerbrowser.com/">Beaker Browser</a>. Source code
+              This website is also <a href="dat://27d79fdff45aa7ece9d563c4aa4542890766da5103347aa4d126a616f75ca79c/">available via Dat</a> through <a href="https://beakerbrowser.com/">Beaker Browser</a>. Source code
               and past versions of this site are available on <a href="https://github.com/rosszurowski/rosszurowski.com">Github</a>.
             </p>
           </div>
