@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 import PageLayout from 'components/layouts/page';
 import CVPanel from 'components/homepage-cv-panel';
+import HeatDistortion from 'components/homepage-heat-distortion';
 
 import ZigZag from 'components/icons/zig-zag';
 
@@ -96,6 +97,7 @@ export default () => (
           <div className="ml-auto">Last updated August 26, 2017</div>
         </aside>
       </div>
+      <HeatDistortion />
     </main>
     <style jsx global>{`
       html,
