@@ -1,44 +1,48 @@
 {
   "name": "rosszurowski",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "yarn build:css",
-    "build": "NODE_ENV=production next build && next export -o dist",
-    "postbuild": "yarn build:dat",
-    "build:css": "mkdir -p static/css/ && node css.js > static/css/index.css",
-    "build:dat": "mkdir -p dist/.well-known && touch dist/.well-known/dat && echo $(node -p 'require(\"./dat.json\").url') > dist/.well-known/dat && echo \"TTL=0\" >> dist/.well-known/dat",
-    "start": "next"
-  },
-  "dependencies": {
-    "canvas-fit": "^1.5.0",
-    "ganalytics": "^2.0.1",
-    "lazysizes": "^4.0.0-rc1",
-    "markdown-in-js": "^1.1.3",
-    "next": "^5.1.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "scrollmonitor": "^1.2.3",
-    "tinytime": "^0.2.6"
-  },
-  "devDependencies": {
-    "@rosszurowski/vanilla": "^1.3.2",
-    "babel-plugin-inline-import": "^2.0.6",
-    "babel-plugin-module-resolver": "^2.7.1",
-    "babel-preset-flow": "^6.23.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "csso": "^3.2.0",
-    "flow-bin": "^0.56.0",
-    "fs.realpath": "^1.0.0",
-    "hibiscss": "^0.0.8",
-    "locate-path": "^2.0.0",
-    "prettier": "1.7.4",
-    "recursive-readdir": "^2.2.1"
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "build:css": "bin/build-css > src/assets/css/utilities.css",
+    "format": "prettier --write 'src/**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "prettier": {
     "jsxBracketSameLine": true,
-    "printWidth": 200,
+    "semi": true,
     "singleQuote": true,
     "trailingComma": "all"
-  }
+  },
+  "dependencies": {
+    "@rosszurowski/vanilla": "^1.3.2",
+    "emotion": "^9.1.2",
+    "emotion-server": "^9.1.2",
+    "gatsby": "^2.0.0-beta.69",
+    "gatsby-image": "^2.0.0-beta.7",
+    "gatsby-plugin-catch-links": "^2.0.2-beta.7",
+    "gatsby-plugin-emotion": "^2.0.0-beta.3",
+    "gatsby-plugin-feed": "^2.0.0-beta.4",
+    "gatsby-plugin-netlify": "^2.0.0-beta.5",
+    "gatsby-plugin-react-helmet": "^3.0.0-beta.4",
+    "gatsby-plugin-sharp": "^2.0.0-beta.7",
+    "gatsby-remark-images": "^2.0.1-beta.9",
+    "gatsby-remark-smartypants": "^2.0.0-beta.3",
+    "gatsby-source-filesystem": "^2.0.1-beta.10",
+    "gatsby-transformer-remark": "^2.1.1-beta.5",
+    "gatsby-transformer-sharp": "^2.1.1-beta.6",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-emotion": "^9.1.2",
+    "react-helmet": "^5.2.0",
+    "react-responsive-canvas": "^1.0.1",
+    "tinytime": "^0.2.6"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.78.0",
+    "prettier": "^1.14.0",
+    "slug": "^0.9.1"
+  },
+  "license": "MIT"
 }
