@@ -125,7 +125,7 @@ export default class HomePage extends Component {
                 />
                 <CVPanel
                   name="Facebook"
-                  href="http://facebook.design/"
+                  href="https://facebook.design/"
                   period="2014"
                 />
               </div>
