@@ -1,41 +1,40 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
-import { css, cx } from 'react-emotion';
+import styled from 'react-emotion';
 
 import Layout from '../components/layout';
 import Header from '../components/header';
 import HeatDistortion from '../components/heat-distortion';
 import CVPanel from '../components/home-cv-panel';
 
-const styles = {
-  container: css`
-    & p a,
-    & ul a {
-      color: inherit;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-      text-decoration: none;
-      transition: opacity 200ms ease;
-    }
+const StyledContainer = styled.div`
+  & p a,
+  & ul a {
+    color: inherit;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    transition: opacity 200ms ease;
+  }
 
-    & p a:hover,
-    & ul a:hover {
-      opacity: 0.8;
-    }
-  `,
-  metadata: css`
-    writing-mode: vertical-lr;
+  & p a:hover,
+  & ul a:hover {
+    opacity: 0.8;
+  }
+`;
 
-    /* Firefox doesn't support writing-mode with flexbox, so lets disable this for now */
-    @media only screen and (min-width: 479px) {
-      & {
-        display: none;
-      }
-      &:not(*:root) {
-        display: block;
-      }
+const StyledAside = styled.aside`
+  writing-mode: vertical-lr;
+
+  /* Firefox doesn't support writing-mode with flexbox, so lets disable this for now */
+  @media only screen and (min-width: 479px) {
+    & {
+      display: none;
     }
-  `,
-};
+    &:not(*:root) {
+      display: block;
+    }
+  }
+`;
 
 const LinkDivider = () => (
   <span
@@ -51,7 +50,7 @@ export default class HomePage extends Component {
 
     return (
       <Layout dark>
-        <div className={cx(styles.container, 'x-s xa-stretch')}>
+        <StyledContainer className="x-s xa-stretch">
           <div className="x-1 x-auto p-relative pa-3 pa-5-s z-1">
             <div className="mw-540">
               <Header />
@@ -176,15 +175,14 @@ export default class HomePage extends Component {
               </footer>
             </div>
           </div>
-          <aside
-            className={cx(styles.metadata, 'd-none d-block-s pa-4 pa-5-s z-2')}>
+          <StyledAside className="d-none d-block-s pa-4 pa-5-s z-2">
             <div className="x xj-spaceBetween pt-4 h-100p o-50p fs-13">
               <div className="ls-1">{data.site.siteMetadata.gps}</div>
               <div className="ml-auto">Last updated August 26, 2017</div>
             </div>
-          </aside>
+          </StyledAside>
           <HeatDistortion />
-        </div>
+        </StyledContainer>
       </Layout>
     );
   }

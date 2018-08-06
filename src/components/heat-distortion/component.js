@@ -2,24 +2,15 @@
 
 import React, { Component } from 'react';
 import Canvas from 'react-responsive-canvas';
-import { css } from 'react-emotion';
+import styled from 'react-emotion';
 import HeatDistortionProgram from './program';
 
-const className = css`
+const StyledContainer = styled.div`
   position: relative;
   height: 100%;
 
   & canvas {
     transition: opacity 1200ms ease;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
   }
 `;
 
@@ -57,13 +48,13 @@ export default class HeatDistortion extends Component<Props, State> {
 
   render() {
     return (
-      <div className={className} ref={this.containerRef}>
+      <StyledContainer innerRef={this.containerRef}>
         <Canvas
           className={this.state.hasRendered ? 'o-100p' : 'o-0p'}
           canvasRef={el => (this.canvasRef = el)}
           onResize={this.handleResize}
         />
-      </div>
+      </StyledContainer>
     );
   }
 }

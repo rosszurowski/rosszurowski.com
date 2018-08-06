@@ -1,8 +1,8 @@
 import React from 'react';
-import { css } from 'react-emotion';
+import styled from 'react-emotion';
 import theme from '../lib/theme';
 
-const className = css`
+const StyledPostContent = styled.div`
   font-size: ${theme.fontSize[18]};
   line-height: 1.6;
 
@@ -83,7 +83,7 @@ const className = css`
 `;
 
 const PostContent = ({ html }) => (
-  <div className={className} dangerouslySetInnerHTML={{ __html: html }} />
+  <StyledPostContent dangerouslySetInnerHTML={{ __html: html }} />
 );
 
 export default PostContent;
