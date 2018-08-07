@@ -3,5 +3,5 @@
   "title": "rosszurowski.com",
   "description": "",
   "fallback_page": "404.html",
-  "web_root": "/dist"
+  "web_root": "/public"
 }

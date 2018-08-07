@@ -1,16 +1,16 @@
 # Ignore npm/yarn scraps
 node_modules/
 npm-debug.log
+yarn.lock
 yarn-debug.log
 yarn-error.log
 
-# Ignore flow scraps
-flow-typed/
-
-# Ignore build artifacts
-.next/
-dist/
-static/css/index.css
+# Ignore Gatsby scraps
+.cache
 
 # Ignore design files
-documents/
+/documents
+
+# Ignore built files
+build/
+public/
