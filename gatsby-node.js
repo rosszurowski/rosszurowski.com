@@ -26,8 +26,6 @@ exports.onCreateNode = ({ actions, getNode, node }) => {
 };
 
 exports.createPages = async ({ actions, graphql }) => {
-  actions.createRedirect({ fromPath: '/log', toPath: '/' });
-
   const template = resolve('src/views/post.js');
   const result = await graphql(`
     {
