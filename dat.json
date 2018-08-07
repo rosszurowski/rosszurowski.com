@@ -1,7 +1,8 @@
 {
-  "url": "dat://27d79fdff45aa7ece9d563c4aa4542890766da5103347aa4d126a616f75ca79c/",
+  "url":
+    "dat://27d79fdff45aa7ece9d563c4aa4542890766da5103347aa4d126a616f75ca79c/",
   "title": "rosszurowski.com",
   "description": "",
   "fallback_page": "404.html",
-  "web_root": "/dist"
+  "web_root": "/public"
 }
