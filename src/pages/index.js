@@ -132,7 +132,7 @@ export default class HomePage extends Component {
               <div className="mb-4">
                 <h4 className="mb-3 c-pink">Recent projects</h4>
                 <p>
-                  <a href="/100">100 Days</a>,{' '}
+                  <a href="https://100-2017.rosszurowski.com">100 Days</a>,{' '}
                   <a href="https://broken-idioms.com">Broken Idioms</a>.
                 </p>
               </div>
