@@ -8,6 +8,9 @@ yarn-error.log
 # Ignore Gatsby scraps
 .cache
 
+# Ignore design files
+/documents
+
 # Ignore built files
 build/
 public/
