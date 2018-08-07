@@ -5,3 +5,4 @@ flow-typed
 .cache
 documents
 *.log
+yarn.lock
