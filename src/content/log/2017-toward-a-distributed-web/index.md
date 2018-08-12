@@ -4,6 +4,8 @@ slug: toward-a-distributed-web
 date: 2017-10-10
 ---
 
+![](./awh-snap.png)
+
 Last week I discovered that [ffffound](https://ffffound.com) shut down.
 
 I didn’t visit it often, but when I did, I was amazed by the variety of stuff on there. The site was an archive full of architectural photography, abstract art scans, and all kinds of other images. Seeing it gone made me a little sad.
@@ -48,10 +50,10 @@ The platform web has become a marketplace. The only way to survive is to get as 
 
 And when one person or organization hosts all the code and all the data, the power dynamic changes.
 
-* Facebook owns the server, so only they can see the code that decides what news to show you. To everyone else, its a black box
-* Google owns the servers holding people’s search history, making it easy to surveil without the knowledge or consent of the people putting that data there
-* Twitter owns the server, so Twitter gets paid to show you ads
-* The easy scalability of computation makes it possible for huge monopolies to form, resulting in more billionaire individuals than ever before in history.
+- Facebook owns the server, so only they can see the code that decides what news to show you. To everyone else, its a black box
+- Google owns the servers holding people’s search history, making it easy to surveil without the knowledge or consent of the people putting that data there
+- Twitter owns the server, so Twitter gets paid to show you ads
+- The easy scalability of computation makes it possible for huge monopolies to form, resulting in more billionaire individuals than ever before in history.
 
 The assumptions of HTTP, expanded to a global scale, enable the centralization information, money, and power in an unprecedented way.
 
@@ -71,16 +73,16 @@ If the internet we’re moving towards today is the “corporate web”, distrib
 
 What may seem like a simple change — a shift in how digital files move about — can have huge impact when applied at scale:
 
-* How does a company make ad money if they can’t control what gets shown to people?
-* How do governments track and surveil people if the information was scattered across millions of computers, rather than neatly compiled by one organization in one place?
-* How do you monopolize (attention, data, etc) when the only way to grow is with the help of others?
+- How does a company make ad money if they can’t control what gets shown to people?
+- How do governments track and surveil people if the information was scattered across millions of computers, rather than neatly compiled by one organization in one place?
+- How do you monopolize (attention, data, etc) when the only way to grow is with the help of others?
 
 Distributed web protocols no longer give easy solutions to those challenges. The decisions behind decentralization make forming communities easy and forming companies hard.
 
 All the alternatives I listed above are still in their early stages. There’s tons of challenges around usability, financing, and public interest/adoption. But for all the challenges, there’s some amazing opportunities too:
 
-* What if a “like” wasn’t a gesture that told companies what ads to serve you, but instead [helped creators host their work](https://twitter.com/taravancil/status/906585296648765440)?
-* What if [the users of a platform could own and invest in its future](https://www.thewire.co.uk/in-writing/interviews/robert-barry-talks-to-mat-dryhurst-about-soundcloud), rather than VC firms looking to make a profit?
+- What if a “like” wasn’t a gesture that told companies what ads to serve you, but instead [helped creators host their work](https://twitter.com/taravancil/status/906585296648765440)?
+- What if [the users of a platform could own and invest in its future](https://www.thewire.co.uk/in-writing/interviews/robert-barry-talks-to-mat-dryhurst-about-soundcloud), rather than VC firms looking to make a profit?
 
 Anyways, the big point here is that we don’t need to continue to live out the consequences of technical decisions made 40+ years ago.
 
@@ -88,7 +90,7 @@ We have a responsibility as citizens of the web to challenge the politics embedd
 
 ### Further Reading
 
-* [What is the P2P Web?](https://pfrazee.github.io/blog/what-is-the-p2p-web)
-* [Beaker Browser](https://beakerbrowser.com/)
-* [So you want to decentralize your website](https://macwright.org/2017/07/20/decentralize-your-website.html)
-* [Distributed Now](https://www.jon-kyle.com/entries/2017-08-01-distributed-now)
+- [What is the P2P Web?](https://pfrazee.github.io/blog/what-is-the-p2p-web)
+- [Beaker Browser](https://beakerbrowser.com/)
+- [So you want to decentralize your website](https://macwright.org/2017/07/20/decentralize-your-website.html)
+- [Distributed Now](https://www.jon-kyle.com/entries/2017-08-01-distributed-now)
