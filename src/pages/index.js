@@ -178,7 +178,9 @@ export default class HomePage extends Component {
           <StyledAside className="d-none d-block-s pa-4 pa-5-s z-2">
             <div className="x xj-spaceBetween pt-4 h-100p o-50p fs-13">
               <div className="ls-1">{data.site.siteMetadata.gps}</div>
-              <div className="ml-auto">Last updated August 26, 2017</div>
+              <div className="ml-auto">
+                Last updated {data.site.siteMetadata.buildDate}
+              </div>
             </div>
           </StyledAside>
           <HeatDistortion />
@@ -192,6 +194,7 @@ export const query = graphql`
   query {
     site {
       siteMetadata {
+        buildDate(formatString: "MMMM D, YYYY")
         datUrl
         gps
       }
