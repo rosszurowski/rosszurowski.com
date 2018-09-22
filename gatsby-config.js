@@ -6,7 +6,7 @@ module.exports = {
     buildDate: new Date(),
     datUrl:
       'dat://27d79fdff45aa7ece9d563c4aa4542890766da5103347aa4d126a616f75ca79c',
-    gps: `43°58'13"N — 114°55'28"W`,
+    gps: `43°58'14"N — 79°14'39"W`,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
