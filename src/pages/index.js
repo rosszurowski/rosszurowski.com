@@ -94,16 +94,16 @@ export default class HomePage extends Component {
               <div className="mb-5">
                 <p>Designer and developer from Toronto.</p>
                 <p className="mt-3">
-                  Working at{' '}
+                  Most recently at{' '}
                   <a
                     href="https://watsi.org/"
                     target="_blank"
                     rel="noopener noreferrer">
                     Watsi
                   </a>
-                  , designing healthcare software to benefit{' '}
-                  <span className="ws-noWrap">low-income</span> populations
-                  around the world.
+                  , designing healthcare software to{' '}
+                  <span className="ws-noWrap">benefit low</span>
+                  -income populations around the world.
                 </p>
               </div>
               <div className="mb-4">
@@ -111,7 +111,7 @@ export default class HomePage extends Component {
                 <CVPanel
                   name="Watsi"
                   href="https://watsi.org/"
-                  period="2016 – Present"
+                  period="2016 – 2018"
                 />
                 <CVPanel
                   name="Format"
@@ -139,14 +139,13 @@ export default class HomePage extends Component {
               <div className="mb-5">
                 <h4 className="mb-3 c-pink">Recent interests</h4>
                 <p>
-                  Rice noodles,{' '}
                   <a
                     href="https://smallseasons.guide"
                     target="_blank"
                     rel="noopener noreferrer">
-                    alternate calendars
+                    Alternate calendars
                   </a>
-                  ,{' '}
+                  , "the feed", <span className="ws-noWrap">日本語</span>,{' '}
                   <a
                     href="https://www.are.na/ross-zurowski/language-thought"
                     target="_blank"
@@ -155,7 +154,7 @@ export default class HomePage extends Component {
                   </a>
                   ,{' '}
                   <a href="/log/2017/toward-a-distributed-web">
-                    the future of the web
+                    decentralized publishing
                   </a>
                   , and making ice cream.
                 </p>
