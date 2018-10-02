@@ -9,6 +9,7 @@ module.exports = {
     gps: `43°58'14"N — 79°14'39"W`,
   },
   plugins: [
+    'gatsby-plugin-flow',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-emotion',
