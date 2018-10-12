@@ -18,9 +18,10 @@ const StyledPostContent = styled.div`
   }
 
   & blockquote {
-    padding-left: ${theme.spacing[3]}px;
+    padding-left: 1.125em;
     margin-top: ${theme.spacing[4]}px;
     border-left: 2px #e2e2e2 solid;
+    color: rgb(119, 119, 125);
   }
 
   & h1,

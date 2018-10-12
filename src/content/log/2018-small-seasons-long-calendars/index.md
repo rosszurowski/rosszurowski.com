@@ -46,8 +46,8 @@ It's not limited to journaling. Think about scheduling: you open up iCal and you
 In contrast, James Fisher's [long calendar idea](https://jameshfisher.com/2017/06/06/long-calendar) sounds really compelling:
 
 > How long will you be in your current house? How do you plan out your thirties? When will you move to Spain, as you’ve always imagined you would? When might you have your first child, and what job would you like to aim for by then? […]
-> These life questions require a different kind of calendar. These questions operate on a different timescale, where the month is probably the most granular unit of time you might want. These questions work on a personal human epoch - “I am 29”, not “it is 2017”. […]
-> Let’s call such a thing a “long calendar”. What might it be like? The long calendar has a definite beginning: your birth. It has, at some fuzzy date in the future, your death.
+>
+> These life questions require a different kind of calendar. These questions operate on a different timescale, where the month is probably the most granular unit of time you might want. These questions work on a personal human epoch — “I am 29”, not “it is 2017.”
 
 Similarly, [Peter Bïlak's 100-year calendar](https://www.typotheque.com/posters/the_100-year_calendar) is an interesting instantiation of these ideas, itself raising new questions. How could calendars afford modes of thinking beyond our own lifespans?
 
