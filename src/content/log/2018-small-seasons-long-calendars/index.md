@@ -1,56 +1,66 @@
 ---
 title: On Small Seasons and Long Calendars
 slug: small-seasons-long-calendars
-date: 2018-05-15
+date: 2018-03-15
+tags: seasons, time, calendars
 ---
 
 Recently, I felt an odd longing for seasons.
 
-San Francisco is a city of eternal mild weather. Trees never lose their leaves, and temperatures rarely ever fall outside the 14-24°C range. Even in the one foggy season ("summer"), it's always pleasant enough for visitors to comment.
+San Francisco is a city of eternal mild weather. Trees never lose their leaves, and temperatures are consistently in the "sweater" range, save for a few days in early fall.
 
-I was recently back home in Toronto, when winter was in full force. Walking through the wind tunnel that is the downtown core, my face was blasted by frigid winds. It was terrible. But to be honest, I kinda miss it.
+I was recently back home in Toronto, when winter was in full force. Walking through the wind tunnel that is the downtown core, my face was blasted by frigid air. It was terrible.
 
-When the weather is that shitty, there's a small sense of camaraderie amongst everyone who's outside that day. It presents itself in little ways: doors held, small talk made. Maybe that's the pleasantness that Americans describe Canadians with? If nothing else, the natural world's desperate attempt to make our lives miserable brings us a bit closer together.
+Weather like that makes you acutely aware of time. How much longer do I need to walk down this street? Why is it dark so soon in the day? When will it get warm again?
 
-This experience reminded me of the pleasantness of winter: early morning drives to the GO Station past fields blanketed with snow. Waking up to a car covered with ice, while I'd sit inside and listen to the radio, wondering if I wouldn't be on time for my bus. Or romping through snowed-in farmers fields, taking portraits of friends for school. Which then led my mind to summer nights in Altona, humid temperatures and toy synth jam sessions. Maybe a late-night David Lynch movie too.
+Being back reminded me of specific times in that kind of weather. Early morning drives to the GO Station past fields blanketed with snow. Waking up to a car covered with ice, waiting for it to defrost while I'd sit inside and listen to the radio. Or romping through snowed-in farmers fields, taking portraits of friends for school.
 
-Living in a season-less city changes my relationship with time. Between work, some travel, and a few personal projects, weeks pass by in an instant. I've been here for two years, but it's only felt like a couple months.
+The terrible temperatures also pressure you to make better use of the warmer months. My mind wandered to summer nights in Altona, humid temperatures and toy synth jam sessions, musty basements and _Mulholland Drive_.
 
-I think what I miss was less the times I associate with those seasons, but more how the seasons demarcated the time. They act as a natural way of chunking out memories and experiences.
+Living in a seasonless city has changed how I think about time. Between work, some travel, and a few personal projects, weeks pass by in an instant. I've been here for almost three years, but it's only felt like a couple months.
+
+Without the seasons, you lose a natural demarcation between periods of life.
+Seasons are a natural means of chunking out memories and experiences.
 
 ---
 
-Over the past few months, I've been thinking a bit about memory, journaling, and thinking tools. In this time, I've grown an interest in calendars. 
+Over the past few months, I've been thinking a bit about memory and journaling. In this time, I've grown an interest in calendars. 
 
-Calendars are one of humanity's oldest and most important thinking tools. The calendar, much like writing, enables a greater kind of coordination and control as a society. You can know when to expect certain weather, coordinate community events, make deadlines.
+Calendars are one of humanity's oldest and most important thinking tools. The calendar, like written language, enables a greater degree of coordination and control as a society. You can plan, know when to expect certain weather, coordinate community events, make deadlines.
 
 There's no shortage of writing on the impact of our mechanization of time, but McLuhan's is particularly concise:
 
 > The clock dragged man out of the world of seasonal rhythms and recurrence, as effectively as the alphabet had released him from the magical resonance of the spoken word and the tribal trap. This dual translation of the individual out of the grip of Nature and out of the clutch of the tribe was not without its own penalties.
 
-Like most [forms of language](https://www.are.na/ross-zurowski/language-thought), ways we think about our time have disproportionate effects on how we live our lives.
+Like most [forms of language](https://www.are.na/ross-zurowski/language-thought), ways we think about and divide our time have disproportionate effects on how we live our lives.
 
-We see this in business all the time. My roommates come home from work at larger tech companies, frustrated and feeling like they can't make meaningful progress because their work is constrained to the current financial quarter. The cadence is too short to bring any holistic change.
+We see this in business all the time. My roommates come home from work at larger tech companies frustrated, feeling like they can't make meaningful progress because their work is constrained to the current fiscal quarter. The cadence for projects is too short to bring any holistic change.
 
-The inverse happens every New Year's Eve. People set resolutions that are achievable within a year, but as the days pass, it's easy to lose yourself in how quickly they go by. Goals set on too long of a timeframe become nebulous or intangible, disconnected from everyday experience.
+The inverse happens every New Year's Eve. People set resolutions that are achievable within a year, but as the days pass, it's easy to lose yourself in how quickly they go by. "The days are long but the years are short." Goals set on too long of a timeframe become nebulous or intangible, disconnected from everyday experience.
 
-Both of these point to, in part, a failure of our tools and representations for conceptualizing time. If we conceive of a year as 12 months, we'll set goals or plan events based on how much time is in the year. Like Sam Altman says, "the days are long but the decades are short."
+Both of these experiences point to, in part, a failure of how we conceptualize and represent time.
 
+The rigidity of standardized calendars[^1] works great for accounting, communication, and coordination, but fails at more personal functions, such as journaling, chunking out work, or cycles of interest and curiosity. The calendars we use aren't suited to the task at hand.
 
+Especially in a day with such powerful means to create new representations and language with computers, why have we not developed more personal calendaring practices?
 
-While much of the value of calendars comes from their standardization (how frustrating is it for the Ethiopian populations to convert between Gregorian and Julian systems), I think their rigidity has resulted in mis-fit over time with our changing contexts. There's merit to making unique calendars for unique purposes. We need more calendars for different purposes. Personal computers, personal calendars.
+---
 
-A friend of mine has a creative way of journaling. He takes photos from moments in his life and groups them into "phases." Each "phase" is roughly two weeks long, and consists not only of two weeks worth of events, but ideas, screenshots, interests, frustrations, etc. It's a great way to remember things. In conversations, a topic or feeling will come up, only for him to say, "oh man, that was _so_ phase 37." By chunking his life out into two-week phases it becomes easier to grasp, both in language and in memory.
+A friend of mine has a creative way of journaling. He documents events, ideas, screenshots, interests, and conversations, grouping them into "phases." Each "phase" is roughly two weeks long, and consists of a mishmash of different media. It's a great way to remember things. In conversations, a topic or feeling will come up, only for him to say, "oh man, that was _so_ phase 37." By chunking his life out into two-week phases it becomes easier to grasp, both in language and in memory.
 
-Contrast that with most people's calendaring experience. You open up iCal and you get a view of the next 7 days.
+Contrast that with a more standard journaling experience: writing words on a daily basis. At the end of a month, you look back on a sea of text, unfiltered and uncategorized, with so much written down that it's hard to distinguish anything meaningful from it.
 
-How do these kinds of calendars accommodate what we want to do today? How can we design representations of time that are suited for human living? What are the implications of the time-measurement tools we make?
+It's not limited to journaling. Think about scheduling: you open up iCal and you get a view of the next 7 days. You're encouraged to think about the next 168 hours of your life in chunks of 30 minute events. You can page through time endlessly forwards or endlessly backwards — no start or end, like a weird hellish nightmare. Short of a [manager or a business owner](http://www.paulgraham.com/makersschedule.html), is there anyone who actually functions that way?
 
-In light of these questions, James Fisher's [long calendar idea](https://jameshfisher.com/2017/06/06/long-calendar) becomes really compelling. If we want to think about the length of our life
+In contrast, James Fisher's [long calendar idea](https://jameshfisher.com/2017/06/06/long-calendar) sounds really compelling:
+
+>  How long will you be in your current house? How do you plan out your thirties? When will you move to Spain, as you’ve always imagined you would? When might you have your first child, and what job would you like to aim for by then? […]
+>  These life questions require a different kind of calendar. These questions operate on a different timescale, where the month is probably the most granular unit of time you might want. These questions work on a personal human epoch - “I am 29”, not “it is 2017”. […]
+>  Let’s call such a thing a “long calendar”. What might it be like? The long calendar has a definite beginning: your birth. It has, at some fuzzy date in the future, your death.
+
+Similarly, [Peter Bïlak's 100-year calendar](https://www.typotheque.com/posters/the_100-year_calendar) is an interesting instantiation of these ideas, itself raising new questions. How could calendars afford modes of thinking beyond our own lifespans?
 
 What does a community calendar look like?
-
-[include bits about Taylorism and Fordism]
 
 ---
 
@@ -58,12 +68,14 @@ In Kenya Hara's book _White_, he dedicates a brief section to talk about _sekki_
 
 Where spring is our "large" season, lasting roughly from March to June, the sekki calendar breaks it down into six small seasons: _start of spring_, _rain waters_, _the going-out of the worms_, _vernal equinox_, _clear and bright_, and _rain for harvests_. Both describe the same period of time, but one does so with a precision that feels much more human.
 
-Like "phases" I find two weeks being an appropriate amount of time to use as a calendar. Using sekki matches my own ebb and flow of interest, attention, and general mental headspace. I find myself increasingly using sekki as a calendar.
+Like my friend's "phases," two weeks feels like an appropriate amount of time to use as a calendar. Using sekki matches my own ebb and flow of interest, attention, and general mental headspace. These days, I increasingly find myself using sekki as a calendar.
 
-These mini-seasons can remind us how time is passing and how life moves on. Long calendars can keep sight into
+There's merit to critical thought put to new models and abstractions for breaking time down in different, more human ways.
 
-Perhaps there's merit to new models and abstractions for breaking time down in different, more human ways.
+
 Seasons are the world reminding us that time keeps passing and that life is moving on. And I think part of living life more meaningfully is thinking about the time that passes in better ways.
+
+How might new forms of language affect the way we think and live as a society?
 
 **Further reading**
 
@@ -71,3 +83,6 @@ Seasons are the world reminding us that time keeps passing and that life is movi
 - [Maker Time, Manager Time](http://www.paulgraham.com/makersschedule.html)
 - [Timefulness](https://press.princeton.edu/titles/13234.html)
 - [Glimpses of a Mass Extinction in Modern-Day Western New York](https://www.newyorker.com/science/elements/glimpses-of-a-mass-extinction-in-modern-day-western-new-york)
+- [Austin Kleon's notes on seasons](https://austinkleon.com/tag/seasons/), including [Seasonal Time](https://austinkleon.com/2017/10/02/seasonal-time/)
+
+[1]: I am by no means doubting the value of a standardized calendar. Having recently experienced the fun of working with the Ethiopian calendar, I am all for alignment to standards for communication and coordination between people.
