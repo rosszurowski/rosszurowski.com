@@ -18,16 +18,16 @@ const StyledPostContent = styled.div`
   }
 
   & blockquote {
-    padding-left: ${theme.spacing[3]};
-    margin-top: ${theme.spacing[4]};
+    padding-left: ${theme.spacing[3]}px;
+    margin-top: ${theme.spacing[4]}px;
     border-left: 2px #e2e2e2 solid;
   }
 
   & h1,
   & h2,
   & h3 {
-    margin-top: ${theme.spacing[5]};
-    margin-bottom: ${theme.spacing[4]};
+    margin-top: ${theme.spacing[5]}px;
+    margin-bottom: ${theme.spacing[4]}px;
     font-size: ${theme.fontSize[22]};
     font-weight: ${theme.fontWeight.bold};
   }
@@ -42,7 +42,7 @@ const StyledPostContent = styled.div`
 
   & ul {
     list-style: none;
-    margin-top: ${theme.spacing[4]};
+    margin-top: ${theme.spacing[4]}px;
     padding-left: 1.25em;
     text-indent: -1.25em;
   }
