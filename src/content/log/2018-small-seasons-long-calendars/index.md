@@ -9,22 +9,13 @@ Recently, I felt an odd longing for seasons.
 
 San Francisco is a city of eternal mild weather. Trees never lose their leaves, and temperatures are consistently in the "sweater" range, save for a few days in early fall.
 
-I was recently back home in Toronto, when winter was in full force. Walking through the wind tunnel that is the downtown core, my face was blasted by frigid air. It was terrible.
+I was recently back home in Toronto, when winter was in full force. Walking through the wind tunnel that is the downtown core, my face was blasted by frigid air. It was terrible. But… I miss it.
 
-Weather like that makes you acutely aware of time. How much longer do I need to walk down this street? Why is it dark so soon in the day? When will it get warm again?
-
-Being back reminded me of specific times in that kind of weather. Early morning drives to the GO Station past fields blanketed with snow. Waking up to a car covered with ice, waiting for it to defrost while I'd sit inside and listen to the radio. Or romping through snowed-in farmers fields, taking portraits of friends for school.
-
-The terrible temperatures also pressure you to make better use of the warmer months. My mind wandered to summer nights in Altona, humid temperatures and toy synth jam sessions, musty basements and _Mulholland Drive_.
-
-Living in a seasonless city has changed how I think about time. Between work, some travel, and a few personal projects, weeks pass by in an instant. I've been here for almost three years, but it's only felt like a couple months.
-
-Without the seasons, you lose a natural demarcation between periods of life.
-Seasons are a natural means of chunking out memories and experiences.
+Living in a seasonless city has changed how I think about time. Between work, travel, and a few personal projects, weeks pass by in an instant. I've been here for almost three years, but it's only felt like a couple months.
 
 ---
 
-Over the past few months, I've been thinking a bit about memory and journaling. In this time, I've grown an interest in calendars. 
+Over the past few months, I've been thinking a bit about memory and journaling. In this time, I've grown an interest in calendars.
 
 Calendars are one of humanity's oldest and most important thinking tools. The calendar, like written language, enables a greater degree of coordination and control as a society. You can plan, know when to expect certain weather, coordinate community events, make deadlines.
 
@@ -32,7 +23,7 @@ There's no shortage of writing on the impact of our mechanization of time, but M
 
 > The clock dragged man out of the world of seasonal rhythms and recurrence, as effectively as the alphabet had released him from the magical resonance of the spoken word and the tribal trap. This dual translation of the individual out of the grip of Nature and out of the clutch of the tribe was not without its own penalties.
 
-Like most [forms of language](https://www.are.na/ross-zurowski/language-thought), ways we think about and divide our time have disproportionate effects on how we live our lives.
+And calendars, like most forms of language, strongly influence ways we think about and divide our time have disproportionate effects on how we live our lives.
 
 We see this in business all the time. My roommates come home from work at larger tech companies frustrated, feeling like they can't make meaningful progress because their work is constrained to the current fiscal quarter. The cadence for projects is too short to bring any holistic change.
 
@@ -46,17 +37,17 @@ Especially in a day with such powerful means to create new representations and l
 
 ---
 
-A friend of mine has a creative way of journaling. He documents events, ideas, screenshots, interests, and conversations, grouping them into "phases." Each "phase" is roughly two weeks long, and consists of a mishmash of different media. It's a great way to remember things. In conversations, a topic or feeling will come up, only for him to say, "oh man, that was _so_ phase 37." By chunking his life out into two-week phases it becomes easier to grasp, both in language and in memory.
+A friend of mine has a creative way of journaling. He takes moments from his life, documenting them via a mishmash of different media, and groups them into discrete "phases." Each "phase" is roughly two weeks long, give or take, and is a collection of words, events, ideas, screenshots, and interests. It's a great way to remember things. In conversations, a topic or feeling will come up, only for him to say, "oh man, that was _so_ phase 37." By chunking his life out into two-week phases it becomes easier to grasp, both in language and in memory.
 
-Contrast that with a more standard journaling experience: writing words on a daily basis. At the end of a month, you look back on a sea of text, unfiltered and uncategorized, with so much written down that it's hard to distinguish anything meaningful from it.
+Contrast that with a more standard journaling experience: writing words on a daily basis. At the end of a year, you look back on a sea of thousands of words, unfiltered and uncategorized. So much is written down that it's hard to extract anything meaningful from it, short of jumping around to specific moments. The frequency of making is too short, but the frequency of review is too long.
 
-It's not limited to journaling. Think about scheduling: you open up iCal and you get a view of the next 7 days. You're encouraged to think about the next 168 hours of your life in chunks of 30 minute events. You can page through time endlessly forwards or endlessly backwards — no start or end, like a weird hellish nightmare. Short of a [manager or a business owner](http://www.paulgraham.com/makersschedule.html), is there anyone who actually functions that way?
+It's not limited to journaling. Think about scheduling: you open up iCal and you get a view of the next 7 days. You can block out the next 168 hours of your life in chunks of 30 minute events. You can page through time endlessly forwards or endlessly backwards — no start or end. Short of a [manager or a business owner](http://www.paulgraham.com/makersschedule.html), is there anyone who actually thinks that way?
 
 In contrast, James Fisher's [long calendar idea](https://jameshfisher.com/2017/06/06/long-calendar) sounds really compelling:
 
->  How long will you be in your current house? How do you plan out your thirties? When will you move to Spain, as you’ve always imagined you would? When might you have your first child, and what job would you like to aim for by then? […]
->  These life questions require a different kind of calendar. These questions operate on a different timescale, where the month is probably the most granular unit of time you might want. These questions work on a personal human epoch - “I am 29”, not “it is 2017”. […]
->  Let’s call such a thing a “long calendar”. What might it be like? The long calendar has a definite beginning: your birth. It has, at some fuzzy date in the future, your death.
+> How long will you be in your current house? How do you plan out your thirties? When will you move to Spain, as you’ve always imagined you would? When might you have your first child, and what job would you like to aim for by then? […]
+> These life questions require a different kind of calendar. These questions operate on a different timescale, where the month is probably the most granular unit of time you might want. These questions work on a personal human epoch - “I am 29”, not “it is 2017”. […]
+> Let’s call such a thing a “long calendar”. What might it be like? The long calendar has a definite beginning: your birth. It has, at some fuzzy date in the future, your death.
 
 Similarly, [Peter Bïlak's 100-year calendar](https://www.typotheque.com/posters/the_100-year_calendar) is an interesting instantiation of these ideas, itself raising new questions. How could calendars afford modes of thinking beyond our own lifespans?
 
@@ -71,7 +62,6 @@ Where spring is our "large" season, lasting roughly from March to June, the sekk
 Like my friend's "phases," two weeks feels like an appropriate amount of time to use as a calendar. Using sekki matches my own ebb and flow of interest, attention, and general mental headspace. These days, I increasingly find myself using sekki as a calendar.
 
 There's merit to critical thought put to new models and abstractions for breaking time down in different, more human ways.
-
 
 Seasons are the world reminding us that time keeps passing and that life is moving on. And I think part of living life more meaningfully is thinking about the time that passes in better ways.
 
