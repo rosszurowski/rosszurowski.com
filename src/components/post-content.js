@@ -6,6 +6,10 @@ const StyledPostContent = styled.div`
   font-size: ${theme.fontSize[18]};
   line-height: 1.6;
 
+  & > * + *:not(div):not(li):not(h1):not(h2):not(h3) {
+    margin-top: 1.5rem;
+  }
+
   & a {
     color: ${theme.colors.purple};
     padding-bottom: 2px;
@@ -28,7 +32,7 @@ const StyledPostContent = styled.div`
   & h2,
   & h3 {
     margin-top: ${theme.spacing[5]}px;
-    margin-bottom: ${theme.spacing[4]}px;
+    margin-bottom: ${theme.spacing[3]}px;
     font-size: ${theme.fontSize[22]};
     font-weight: ${theme.fontWeight.bold};
   }
@@ -41,11 +45,23 @@ const StyledPostContent = styled.div`
     max-width: 50px;
   }
 
-  & ul {
-    list-style: none;
+  & ul,
+  & ol {
     margin-top: ${theme.spacing[4]}px;
     padding-left: 1.25em;
+  }
+
+  & ul {
+    list-style: none;
     text-indent: -1.25em;
+  }
+
+  & li {
+    line-height: 1.75;
+  }
+
+  & li + li {
+    margin-top: 0.75em;
   }
 
   & ul li {
@@ -78,8 +94,27 @@ const StyledPostContent = styled.div`
     padding: 0.15em 0.25em;
   }
 
-  & * + *:not(div) {
-    margin-top: 1.5rem;
+  & .footnotes hr {
+    margin: 1rem 0 3rem;
+  }
+
+  & .footnotes li {
+    font-size: 0.875rem;
+  }
+
+  & .footnotes li p {
+    display: inline;
+  }
+
+  & sup {
+    font-size: 0.75rem;
+  }
+
+  & a.footnote-ref,
+  & a.footnote-backref {
+    color: ${theme.colors.purple};
+    border-bottom: none;
+    padding: 0;
   }
 `;
 
