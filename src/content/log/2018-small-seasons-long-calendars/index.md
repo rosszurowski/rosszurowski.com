@@ -76,7 +76,7 @@ On one hand, it's nice to have a calendar so explicitly based on the surrounding
 
 But it also better matches my own ebb and flow of interest, attention, and general mental headspace. Two weeks of deep focus on something is a healthy amount before I want to move on to a different aspect, or a new project all together.
 
-### And Beyond
+---
 
 Sekki, phases, and the long calendar are just a few examples of more human and purposeful calendaring systems. Heck, even [a seasonal vegetable chart](https://cuesa.org/eat-seasonally/charts/vegetables) for an area is an unexpectedly useful time-keeping tool. Why shouldn't your calendar help you decide when to make a minestrone soup, oxtail stew, or a pico de gallo?
 

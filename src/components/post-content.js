@@ -95,7 +95,7 @@ const StyledPostContent = styled.div`
   }
 
   & .footnotes hr {
-    margin: 1rem 0 3rem;
+    margin: 2rem auto 3.5rem;
   }
 
   & .footnotes li {
@@ -108,11 +108,12 @@ const StyledPostContent = styled.div`
 
   & sup {
     font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0 0.25em;
   }
 
   & a.footnote-ref,
   & a.footnote-backref {
-    color: ${theme.colors.purple};
     border-bottom: none;
     padding: 0;
   }
