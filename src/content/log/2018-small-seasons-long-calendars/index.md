@@ -7,21 +7,17 @@ tags: seasons, time, calendars
 
 Recently, I felt an odd longing for seasons.
 
-San Francisco has only two seasons: pleasant and foggy. Trees keep their leaves year-round, and temperatures are consistently in the sweater range. It's a city of eternal mild weather.
+San Francisco has only two: pleasant and foggy. Trees keep their leaves year-round, and temperatures are consistently in the sweater range. It's a city of eternal mild weather.
 
-This past Christmas I went back to Toronto when winter was in full force. My phone told me it was -30°C. The downtown core was like a wind tunnel, blasting my face with high-speed frigid air. _Why does anyone put up with this?_ I thought. But here I am, five months later, sitting in the California sun, longing for some shittier weather.
+This past Christmas I went back to Toronto when winter was in full force. My phone told me it was -30°C. The downtown core was like a wind tunnel, blasting my face with high-speed frigid air. _Why does anyone put up with this?_ I thought. But here I am, five months later, sitting in the California sun, longing for some crappier weather.
 
 It's not the Canadian winters that I miss, so much as the natural division of time that seasons bring to the year.
 
-Living in a seasonless city makes time move at a scary pace like how, as a kid, summer vacation would end before you know it. Between work, travel, and a few personal projects, weeks pass by in an instant. I've been here for almost three years, but it's only felt like a couple months.
+Living in a season-less city makes time move at a scary pace, like how as a kid, summer vacation would end before you know it. Between work, travel, and a few personal projects, weeks pass by in an instant. I've been here for two years, but it's only felt like a couple months.
 
 ### The Language of Calendars
 
-Recently I’ve been thinking a bit about memory, journaling, and calendars.
-
-Calendars, even informal ones, are one of humanity’s oldest thinking tools. From agricultural days, it was important to know when in the year to plough, to seed, to harvest and when to let fields lie fallow. Even as socities grew, it became important to have standards for time, so you can know when to expect certain weather, demarcate religious days, or even just meaningfully talk about the future.
-
-A day itself is easy enough to define, but it ended up taking
+Calendars, even informal ones, are one of humanity’s most important thinking tools. From agricultural days it was important to know when in the year to plough, to seed, to harvest and when to let fields lie fallow. Even as societies urbanized, it became important to have standards for time, so you can know when to expect certain weather, demarcate religious days, or even just meaningfully talk about the future.
 
 There’s no shortage of writing about the impact of our mechanization of time, but McLuhan is particularly concise:
 
@@ -29,39 +25,44 @@ There’s no shortage of writing about the impact of our mechanization of time, 
 
 Much like written language, the development of a standard calendar enabled a greater degree of coordination and control as a society. And also like written language, calendars have introduced metaphors and patterns of thought which affect how we live. The week, the month, the year, sure. But also the financial quarter, the nine-to-five, the holiday.
 
-We use this language to guide our lives and work. But these divisions of time can often feel quite arbitrary.
+We use this language to guide our lives and work.
 
 For instance, my roommates come home from work at larger companies often frustrated with their projects, feeling like they can't make meaningful progress because their work is constrained to the current quarter. The short cadence encourages building products that quickly cater to metrics, rather than bring about more meaningful, holistic change. The chunks of time are too small, too constraining.
 
 The inverse happens every New Year's Eve. People set resolutions that are achievable within a year, but as the days pass, it's easy to lose yourself in how quickly they go by. The cadence for reflection and review is often too long, and the goals become disconnected from everyday experience, nebulous and intangible.
 
+Both of these experiences point to, in part, a failure of how we conceptualize and represent time. The divisions of time we live in often feel quite arbitrary.
+
 Standardized calendars are no doubt great for accounting, communication, and coordination[^1] but they fail at more personal functions like journaling, deep work, or maintaining cycles of interest and curiosity.
 
 ### "Phases"
 
-A friend of mine has a delightful method of journaling.
+A friend of mine has a unique method of journaling.
 
 He documents moments from his life via a mishmash of words, events, ideas, and screenshots, and groups them into discrete _phases_ in iPhoto. Each phase is roughly two weeks long — but it's defined by his living situation and activities, not the days of the month. A week-long bike trip across Southern Europe might be one phase, but two months of heads-down focus on school work could be another.
 
 It's a great way to remember things. In conversations, a topic or feeling will come up, only for him to say, "oh man, that was _so_ phase 37." By chunking his life out into phases it becomes easier to grasp, both in language and in memory.
 
-Contrast that with a more standard journaling experience: writing a few hundred words every few days. At the end of a year, you look back on a sea of sentences, unfiltered and uncategorized. So much is written that it's hard to extract anything meaningful from it without jumping around to specific moments.
+Contrast that with a more standard journaling experience: writing a few hundred words every few days. At the end of a month or a year, you look back on a sea of sentences, unfiltered and uncategorized. So much is written that it's hard to extract anything meaningful from it without jumping around to specific days.
 
-By eschewing standard dates for these changing (but still discrete!) periods of his life,
+By eschewing standard dates for self-defined ones, my friend has inadvertently created a personal, more useful, unit of time: the phase.
 
 ### Thinking in Decades
 
-It's not limited to journaling. Think of another function of calendars: planning.
+Consider another function of calendars: planning.
 
-You open up Google Calendar and you get a view of the next 7 days. You can block out the next 168 hours of your life in chunks of 30 minute events. But unless your life is a long series of [back-to-back 30 minute meetings](http://www.paulgraham.com/makersschedule.html) with others, does this interface make sense? Do most people actually live that way?
+You open up Google Calendar and you get a view of the next 7 days. You can block out the next 168 hours of your life in chunks of 30 minute events.
+
+![](./sad-calendar.png)
+
+But unless your life is a long series of [back-to-back 30 minute meetings](http://www.paulgraham.com/makersschedule.html) with others, does this interface make sense? Do most people actually live that way?
 
 In contrast, James Fisher's [long calendar idea](https://jameshfisher.com/2017/06/06/long-calendar) sounds really compelling:
 
-> How long will you be in your current house? How do you plan out your thirties? When will you move to Spain, as you’ve always imagined you would? When might you have your first child, and what job would you like to aim for by then? […]
->
+> How long will you be in your current house? How do you plan out your thirties? When will you move to Spain, as you’ve always imagined you would? When might you have your first child, and what job would you like to aim for by then? […] <br /><br />
 > These life questions require a different kind of calendar. They operate on a different timescale, where the month is probably the most granular unit of time you might want. These questions work on a personal human epoch — “I am 29”, not “it is 2017.”
 
-How might seeing your whole life, laid out on a single calendar affect how you live and plan?
+How might seeing your whole life, laid out on a single surface affect how you live and plan?
 
 ### Small Seasons
 
@@ -87,13 +88,13 @@ You can imagine some bigger questions along the same train of thought:
 
 Perhaps there's merit to new models and abstractions for breaking time down in different, more human ways. I'm personally interested in more conversation and links about this.[^3]
 
-Especially in an era with such powerful means to represent time, finding novel and meaningful ways of breaking it down seems quite fruitful. After all, the language we use is a clue to describe the way we think — and what's more important to think about than how time passes?
+Especially in an era with such powerful means to represent time, finding novel and meaningful ways of breaking it down seems quite fruitful.
 
 ### Further reading
 
 - [Small Seasons](https://smallseasons.guide/)
-- [A Line Moving Across A Window Once Every Year](https://a-line-moving-across-a-window-once-every-year.com/)
 - [In Search of Personalized Time](http://i-s-o-p-t.com/)
+- [A Line Moving Across A Window Once Every Year](https://a-line-moving-across-a-window-once-every-year.com/)
 - [Austin Kleon's notes on seasons](https://austinkleon.com/tag/seasons/), including [Seasonal Time](https://austinkleon.com/2017/10/02/seasonal-time/)
 
 [^1]:
@@ -106,4 +107,4 @@ Especially in an era with such powerful means to represent time, finding novel a
 
 [^3]:
 
-  If you are too, drop some hot links in this [Alternative Calendars](https://www.are.na/ross-zurowski/alternative-calendars) Are.na channel. I'd love to see more.
+  If you are too, drop some hot links in this [Alternate Calendars](https://www.are.na/ross-zurowski/alternate-calendars) Are.na channel. I'd love to see more.

@@ -140,7 +140,7 @@ export default class HomePage extends Component {
                 <h4 className="mb-3 c-pink">Recent interests</h4>
                 <p>
                   <a
-                    href="https://smallseasons.guide"
+                    href="/log/2018/small-seasons-long-calendars"
                     target="_blank"
                     rel="noopener noreferrer">
                     Alternate calendars
