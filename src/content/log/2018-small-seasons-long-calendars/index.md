@@ -11,29 +11,33 @@ San Francisco has only two: pleasant and foggy. Trees keep their leaves year-rou
 
 This past December I went back to Toronto when winter was in full force. My phone told me it was -30°C. The downtown core was like a wind tunnel, blasting my face with high-speed frigid air. _Why does anyone put up with this?_ I thought. But here I am, five months later, sitting in the California sun, longing for some crappier weather.
 
-It's not the Canadian winters that I miss, so much as the natural division of time that seasons bring to the year.
+It's not the Canadian winters that I miss so much as the way seasons naturally divide the year.
 
 Living in a season-less city makes time move at a scary pace, like how as a kid, summer vacation would end before you know it. Between work, travel, and a few personal projects, weeks pass by in an instant. I've been here for two years, but it's only felt like a couple months.
 
-### The Language of Calendars
+---
 
-Calendars, even informal ones, are one of humanity’s oldest thinking tools. From agricultural days it was important to know when in the year to plough, to seed, to harvest and when to let fields lie fallow. Even as societies urbanized, it became important to have standards for time, so you can know when to expect certain weather, demarcate religious days, or even just meaningfully talk about the future.
+Calendars have a long history. From agricultural days it was important to know when in the year to plough, to seed, to harvest and when to let fields lie fallow.
 
-There’s no shortage of writing on the impact of our mechanization of time, but McLuhan is particularly concise:
+Every culture developed their own local calendars to track the time, often sharing the definition of day (an easy one), but varying from one region to the next in concepts like weeks, months, and years. 
 
-> The clock [or calendar, in our case] dragged man out of the world of seasonal rhythms and recurrence, as effectively as the alphabet had released him from the magical resonance of the spoken word and the tribal trap. This dual translation of the individual out of the grip of Nature and out of the clutch of the tribe was not without its own penalties.
+As societies urbanized, these measurements were standardized. Over time weeks and months were defined and consolidated into either a moon-phase-based _lunisolar calendar_, or a sun-path based _solar calendar_ (the latter being the origin for our Gregorian calendar). Standardizing the weeks and months was important: by having a shared language for time, you can talk with the town over about if winter is coming early this year, when the next holy day is, or even just speak meaningfully about the future.
 
-Much like written language, the development of a standard calendar enabled a greater degree of coordination and control as a society. And also like written language, calendars have introduced metaphors and patterns of thought which affect how we live. The week, the month, the year, sure. But also the financial quarter, the nine-to-five, the holiday.
+There’s no shortage of writing on our mechanization of time, but McLuhan is particularly concise:
 
-We use this language to guide our lives and work.
+> The clock [or calendar, in our case] dragged man out of the world of seasonal rhythms and recurrence, as effectively as the alphabet had released him from the magical resonance of the spoken word and the tribal trap.
 
-For instance, my roommates come home from jobs at larger companies often frustrated with their projects, feeling like they can't make meaningful progress because their work is constrained to the current financial quarter. The short cadence encourages building products that quickly cater to metrics, rather than building towards about more meaningful, holistic change. The chunks of time are too small, too constraining.
+Like written language, the development of a standard calendar enabled stronger coordination and control for countries and societies. And _also_ like written language, standard calendars introduced shared metaphors and patterns of thought. The week, the month, the year, sure. But also the financial quarter, the nine-to-five, the holiday.
+
+This language shapes how we think about time and hence how we think about our lives and work.
+
+For instance, my roommates work at larger companies, and have projects which are constrained to the current financial quarter. They often come home frustrated, feeling like they can't make meaningful progress because of the short cadence. It encourages decisions that quickly cater to metrics, rather than working towards about more meaningful, holistic changes. The chunks of time are too small, too constraining.
 
 The inverse happens every New Year's Eve. People set resolutions that are achievable within a year, but as the days pass, lose themselves in how quickly they go by. The cadence for reflection and review is often too long, and the goals become disconnected from everyday experience, nebulous and intangible.
 
-Both of these experiences point to, in part, a failure of how we conceptualize and represent time. The ways we divide our time often feel quite … arbitrary.
+Both of these experiences point to, in part, a failure of how we conceptualize and represent time. Using years and quarters to divide time often feels quite … arbitrary.
 
-Standardized calendars are no doubt great for accounting, communication, and coordination[^1] but they fail at more personal functions like journaling, doing deep work, or maintaining cycles of interest and curiosity.
+Standardized calendars are no doubt great for accounting, communication, and coordination[^1] but they fail at more personal functions like doing deep work, or maintaining cycles of interest and curiosity.
 
 ### "Phases"
 
@@ -45,7 +49,7 @@ It's a great way to remember things. In conversations, a topic or feeling will c
 
 Contrast that with a more standard journaling experience: writing a couple hundred words every few days. At the end of a month or a year, you look back on a sea of sentences, unfiltered and uncategorized. So much is written that it's hard to extract anything meaningful from it without jumping around to specific days.
 
-By eschewing a standard period for a self-defined one, my friend has inadvertently created a personal, more useful, unit of time.
+By eschewing a standard period for a self-defined one, my friend has inadvertently created a personal unit of time.
 
 ### Thinking in Decades
 
@@ -70,7 +74,7 @@ In Kenya Hara's book _White_, he briefly talks about _sekki_, small seasons used
 
 Where spring is our "large" season, lasting roughly from March to June, the sekki calendar breaks it down into six small seasons: _start of spring_, _rain waters_, _the going-out of the worms_, _vernal equinox_, _clear and bright_, and _rain for harvests_.[^2] Both describe a similar period of time, but one does so with a precision that feels much more human.
 
-These days, I increasingly find myself using sekki as a calendar for my own phases.
+These days, I increasingly find myself using sekki as a calendar.
 
 On one hand, it's nice to have a calendar so explicitly based on the surrounding environment; you’re encouraged to look up and notice what's different today, that the crickets are no longer chirping and that time has gone by.
 
@@ -86,9 +90,9 @@ You can imagine some bigger questions along the same train of thought:
 - What does a communal calendar look like? How can it afford community action and a sense of collective identity?
 - How can calendars encourage thinking beyond our own lifespans? (Peter Bïlak's [100-year calendar](https://www.typotheque.com/posters/the_100-year_calendar) is an interesting example of this)
 
-Perhaps there's merit to new models and abstractions for chunking out time. I'm personally interested in more conversation and links about this.[^3] Especially in an era with such powerful means to represent time, finding novel and more meaningful timescales seems quite fruitful.
+I'm interested in more conversation and links about this.[^3] It seems like there's merit to finding more personal ways of chunking out time. Especially in an era with such powerful means to represent time, finding novel and more meaningful timescales seems like fertile ground for exploration.
 
-If nothing else, I'd love to notice the seasons passing a little more often.
+But, if nothing else, I'm happier just to notice the time passing a little more often.
 
 ### Further reading
 
@@ -99,7 +103,7 @@ If nothing else, I'd love to notice the seasons passing a little more often.
 
 [^1]:
 
-  The value of standard calendars is not lost on me. Having recently experienced the joys of programming around [the Ethiopian calendar](https://en.wikipedia.org/wiki/Ethiopian_calendar), I'm _enthusiastically_ in support of alignment to conventions when working with others.
+  Having recently experienced the joys of programming around [the Ethiopian calendar](https://en.wikipedia.org/wiki/Ethiopian_calendar), I'm _enthusiastically_ in support of alignment to conventions when working with others.
 
 [^2]:
 
