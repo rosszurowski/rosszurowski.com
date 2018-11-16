@@ -17,9 +17,14 @@ Living in a season-less city makes time move at a scary pace, like how as a kid,
 
 ---
 
+<figure>
+<img alt="" src="./almanac.jpg" />
+<figcaption>A farmer consulting the local almanac. From the <a href="https://www.loc.gov/resource/cai.2a14081/">US Library of Congress</a>.</figcaption>
+</figure>
+
 Calendars have a long history. From agricultural days it was important to know when in the year to plough, to seed, to harvest and when to let fields lie fallow.
 
-Every culture developed their own local calendars to track the time, often sharing the definition of day (an easy one), but varying from one region to the next in concepts like weeks, months, and years. 
+Every culture developed their own local calendars to track the time, often sharing the definition of day (an easy one), but varying from one region to the next in concepts like weeks, months, and years.
 
 As societies urbanized, these measurements were standardized. Over time weeks and months were defined and consolidated into either a moon-phase-based _lunisolar calendar_, or a sun-path based _solar calendar_ (the latter being the origin for our Gregorian calendar). Standardizing the weeks and months was important: by having a shared language for time, you can talk with the town over about if winter is coming early this year, when the next holy day is, or even just speak meaningfully about the future.
 

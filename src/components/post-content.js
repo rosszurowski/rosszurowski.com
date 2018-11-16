@@ -81,17 +81,20 @@ const StyledPostContent = styled.div`
     border-radius: 2px;
   }
 
-  & code {
-    background: ${theme.colors.lightGray};
-  }
-
   & pre {
     padding: 0.75em;
     overflow-x: scroll;
   }
 
   & code {
+    background: ${theme.colors.lightGray};
     padding: 0.15em 0.25em;
+  }
+
+  & figcaption {
+    margin-top: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
   }
 
   & .footnotes hr {
