@@ -6,6 +6,10 @@ const StyledPostContent = styled.div`
   font-size: ${theme.fontSize[18]};
   line-height: 1.6;
 
+  & > * + *:not(div):not(li):not(h1):not(h2):not(h3) {
+    margin-top: 1.5rem;
+  }
+
   & a {
     color: ${theme.colors.purple};
     padding-bottom: 2px;
@@ -18,16 +22,17 @@ const StyledPostContent = styled.div`
   }
 
   & blockquote {
-    padding-left: ${theme.spacing[3]};
-    margin-top: ${theme.spacing[4]};
+    padding-left: 1.125em;
+    margin-top: ${theme.spacing[4]}px;
     border-left: 2px #e2e2e2 solid;
+    color: rgb(119, 119, 125);
   }
 
   & h1,
   & h2,
   & h3 {
-    margin-top: ${theme.spacing[5]};
-    margin-bottom: ${theme.spacing[4]};
+    margin-top: ${theme.spacing[5]}px;
+    margin-bottom: ${theme.spacing[3]}px;
     font-size: ${theme.fontSize[22]};
     font-weight: ${theme.fontWeight.bold};
   }
@@ -40,11 +45,23 @@ const StyledPostContent = styled.div`
     max-width: 50px;
   }
 
+  & ul,
+  & ol {
+    margin-top: ${theme.spacing[4]}px;
+    padding-left: 1.25em;
+  }
+
   & ul {
     list-style: none;
-    margin-top: ${theme.spacing[4]};
-    padding-left: 1.25em;
     text-indent: -1.25em;
+  }
+
+  & li {
+    line-height: 1.75;
+  }
+
+  & li + li {
+    margin-top: 0.75em;
   }
 
   & ul li {
@@ -64,21 +81,44 @@ const StyledPostContent = styled.div`
     border-radius: 2px;
   }
 
-  & code {
-    background: ${theme.colors.lightGray};
-  }
-
   & pre {
     padding: 0.75em;
     overflow-x: scroll;
   }
 
   & code {
+    background: ${theme.colors.lightGray};
     padding: 0.15em 0.25em;
   }
 
-  & * + *:not(div) {
-    margin-top: 1.5rem;
+  & figcaption {
+    margin-top: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  & .footnotes hr {
+    margin: 2rem auto 3.5rem;
+  }
+
+  & .footnotes li {
+    font-size: 0.875rem;
+  }
+
+  & .footnotes li p {
+    display: inline;
+  }
+
+  & sup {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0 0.25em;
+  }
+
+  & a.footnote-ref,
+  & a.footnote-backref {
+    border-bottom: none;
+    padding: 0;
   }
 `;
 

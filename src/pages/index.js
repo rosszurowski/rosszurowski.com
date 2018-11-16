@@ -139,10 +139,7 @@ export default class HomePage extends Component {
               <div className="mb-5">
                 <h4 className="mb-3 c-pink">Recent interests</h4>
                 <p>
-                  <a
-                    href="https://smallseasons.guide"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                  <a href="/log/2018/small-seasons-long-calendars">
                     Alternate calendars
                   </a>
                   , "the feed", <span className="ws-noWrap">日本語</span>,{' '}
