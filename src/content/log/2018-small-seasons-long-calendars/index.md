@@ -26,7 +26,7 @@ Calendars have a long history. From agricultural days it was important to know w
 
 Every culture developed their own local calendars to track the time, often sharing the definition of day (an easy one), but varying from one region to the next in concepts like weeks, months, and years.
 
-As societies urbanized, these measurements were standardized. Over time weeks and months were defined and consolidated into either a moon-phase-based _lunisolar calendar_, or a sun-path based _solar calendar_ (the latter being the origin for our Gregorian calendar). Standardizing the weeks and months was important: by having a shared language for time, you can talk with the town over about if winter is coming early this year, when the next holy day is, or even just speak meaningfully about the future.
+As societies urbanized, these measurements were standardized. Over time weeks and months were defined and consolidated into either a moon-phase-based _lunisolar calendar_, or a sun-path based _solar calendar_ (the latter being the origin for the Gregorian calendar we use today). Standardizing weeks and months was important: by having a shared language for time, you can now talk with the town over about if winter is coming early this year, or when the next holy day is, or even just speak meaningfully about the future.
 
 There’s no shortage of writing on our mechanization of time, but McLuhan is particularly concise:
 
