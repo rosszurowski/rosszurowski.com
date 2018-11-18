@@ -53,12 +53,12 @@ const Layout = ({ children, data, dark }: Props) => (
             <link rel="shortcut icon" href={favicon} />
 
             <meta property="og:type" content="website" />
-            <meta property="og:image" content="/img/social-image.png" />
+            <meta property="og:image" content="/img/social.png" />
             <meta property="og:site_name" content={metadata.title} />
 
             <meta name="twitter:description" content={metadata.description} />
             <meta name="twitter:card" content="summary" />
-            <meta name="twitter:image" content="/img/social-image.png" />
+            <meta name="twitter:image" content="/img/social.png" />
             <meta name="twitter:creator" content="@rosszurowski" />
           </Head>
           <main>{children}</main>
