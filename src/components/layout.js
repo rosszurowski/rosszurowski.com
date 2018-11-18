@@ -5,7 +5,6 @@ import Head from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import { cx } from 'react-emotion';
 import favicon from '../assets/favicon.png';
-import ogImage from '../assets/og-image.png';
 
 import '@rosszurowski/vanilla/lib/vanilla.css';
 import '../assets/css/base.css';
@@ -54,13 +53,12 @@ const Layout = ({ children, data, dark }: Props) => (
             <link rel="shortcut icon" href={favicon} />
 
             <meta property="og:type" content="website" />
-            <meta property="og:image" content={ogImage} />
+            <meta property="og:image" content="/img/social-image.png" />
             <meta property="og:site_name" content={metadata.title} />
 
-            <meta name="twitter:title" content={metadata.title} />
             <meta name="twitter:description" content={metadata.description} />
             <meta name="twitter:card" content="summary" />
-            <meta name="twitter:image" content={ogImage} />
+            <meta name="twitter:image" content="/img/social-image.png" />
             <meta name="twitter:creator" content="@rosszurowski" />
           </Head>
           <main>{children}</main>
