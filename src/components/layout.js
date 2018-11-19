@@ -37,6 +37,8 @@ const Layout = ({ children, data, dark }: Props) => (
       const { site } = data;
       const { siteMetadata: metadata } = site;
 
+      const socialImageUrl = `${metadata.url}/img/social.png`;
+
       return (
         <Fragment>
           <Head
@@ -52,13 +54,11 @@ const Layout = ({ children, data, dark }: Props) => (
             <meta name="description" content={metadata.description} />
             <link rel="shortcut icon" href={favicon} />
 
-            <meta property="og:type" content="website" />
-            <meta property="og:image" content="/img/social.png" />
+            <meta property="og:image" content={socialImageUrl} />
             <meta property="og:site_name" content={metadata.title} />
-
             <meta name="twitter:description" content={metadata.description} />
             <meta name="twitter:card" content="summary" />
-            <meta name="twitter:image" content="/img/social.png" />
+            <meta name="twitter:image" content={socialImageUrl} />
             <meta name="twitter:creator" content="@rosszurowski" />
           </Head>
           <main>{children}</main>
