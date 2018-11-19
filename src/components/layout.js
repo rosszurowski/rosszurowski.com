@@ -54,8 +54,11 @@ const Layout = ({ children, data, dark }: Props) => (
             <meta name="description" content={metadata.description} />
             <link rel="shortcut icon" href={favicon} />
 
+            <meta property="og:title" content={metadata.title} />
+            <meta property="og:type" content="website" />
             <meta property="og:image" content={socialImageUrl} />
             <meta property="og:site_name" content={metadata.title} />
+
             <meta name="twitter:description" content={metadata.description} />
             <meta name="twitter:card" content="summary" />
             <meta name="twitter:image" content={socialImageUrl} />

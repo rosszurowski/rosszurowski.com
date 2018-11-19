@@ -46,6 +46,8 @@ export default class PostPage extends Component {
               name="description"
               content={post.frontmatter.description || post.excerpt}
             />
+            <meta property="og:type" content="article" />
+            <meta property="og:title" content={post.frontmatter.title} />
           </Head>
           <Header />
           <article className="x-m fs-18">
