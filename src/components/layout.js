@@ -15,7 +15,12 @@ type Props = {
   dark?: boolean,
   data: {
     site: {
-      siteMetadata: { title: string, titleTemplate: string, url: string },
+      siteMetadata: {
+        description: string,
+        title: string,
+        titleTemplate: string,
+        url: string,
+      },
     },
   },
 };
@@ -26,6 +31,7 @@ const Layout = ({ children, data, dark }: Props) => (
       query {
         site {
           siteMetadata {
+            description
             title
             titleTemplate
             url

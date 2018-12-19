@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Ross Zurowski',
     titleTemplate: '%s – Ross Zurowski',
+    description: 'Designer and developer from Toronto.',
     url: 'https://rosszurowski.com',
     buildDate: new Date(),
     datUrl:
