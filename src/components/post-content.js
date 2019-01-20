@@ -74,6 +74,10 @@ const StyledPostContent = styled.div`
     margin-right: 0.75em;
   }
 
+  & strong {
+    font-weight: 500;
+  }
+
   & code,
   & pre {
     font-family: ${theme.fontFamily.mono};
