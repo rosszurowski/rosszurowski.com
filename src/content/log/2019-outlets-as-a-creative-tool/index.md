@@ -1,10 +1,142 @@
 ---
-title: Outlets as a Creative Tool
+title: A question, a river, a bowl
 date: 2019-01-20
 draft: true
 ---
 
 ![Bowls](./cover.jpg)
+
+I want to talk about _outlets_. People use the term as an easy expression which conjures up an image of the mother of young children, frustrated with their antics ("she just needs an outlet for her energy!").
+
+I'd like to repurpose the term. I've found outlets to be a helpful metaphor for understanding my own life and work. In fact, I've begun to think of them as a fundamental principle behind a healthy and curious life. I'll try to describe the concept in detail here.
+
+
+---
+
+<!--
+
+* Nature of an outlet
+    * A place/venue to put creative output. A destination.
+        * A job, a project, a club, a company. All these are outlets. 
+        * Journal or a notebook, an object that asks to be filled
+        * A class or a lecture is a powerful outlet to summarize what you've learned and revisit it in ways that you can share with others
+    * The word comes from an opening for a river, letting water out into a larger body. Water has long been a metaphor for creativity, from the days of the muses [fact check], so the expression seems fitting. Water needs somewhere to flow to, otherwise it sits still and grows stagnant.
+    * Closely tied with publishing, but not necessarily. More about having a distinct space, reader, destination.
+    * Outlets have three important qualities
+        * They draw out the work
+        * They focus the work
+        * They shape the work
+    * Draw the work out: Outlets aren't just a destination. In many ways, they're also a starting place.
+        * "People are making work so they need a place to put things" becomes "I have a place to put things, so I'm going to make work to fill it"
+        * If someone asks you to teach a class on a subject you're an expert at, all of a sudden you have a space to fill, and a reason to reflect on it
+        * It's like how a good question can draw an interesting conversation out of a group of strangers
+        * It draws the work out
+        * Instagram account example
+    * Shape the work: Sometimes I hear people use another word when talking about outlets: "opportunity"
+        * I learned a few years back, opportunity comes from the root word for "_pore_", the same root for the pores in your skin. It's an opening.
+        * Opportunity, pore, an opening, an outlet is like that.
+        * Like a bowl, it asks to be filled
+        * It also shapes what's inside of it
+        * It shapes the work
+        * What works on Instagram is what gets posted on Instagram. The medium/outlet impacts the production.
+        * Contrast with Flickr or 500px or Tumblr
+    * Focus the work:
+        * In high school, friends got interested in lucid dreaming, dreaming while you're aware of it
+        * Barring some forms of malaria medication, it's hard to achieve the state, but one of the most reliable techniques is a dream journal (explain a dream journal)
+        * By writing about dreams, you tell your brain "hey man, this is important" and it begins to pick up on that.
+        * You get better at remembering, at noticing.
+        * The same is true for photographers.
+        * Having an outlet _focuses_ the world around you. vague snippets turn into story ideas; odd situations in your work transform into a part of a syllabus. Outlets focus everyday life into something concrete.
+    * Meta-work:
+        * If the outlet shapes the quantity and qualities of the work, then designing the right one is important.
+            * Toyota and designing the process of making things
+            * Elon Musk, designing the factory is the work
+        * Reflecting on what kinds of outlets we have can change the kind of work we do.
+    * Other more subtle outlets
+        * Daily projects (365, UI a day, poetry a day)
+        * Friends, communities are emotional outlets
+        * Close-knit communities need (at least) three forms of outlets
+* The craft of outlets 
+    * Loss of outlets over time; gaining of outlets over time.
+        * Me losing my outlets for type design and visual design after graduating from design school.
+    * When you want to do a certain kind of work, you step outside imagined boundaries to create your own outlet
+        * Me learning to code to build the websites I'd design
+        * Matt Damon writing his own script to act in for _Good Will Hunting_
+    * The most prolific creative folks always construct their own outlets
+        * Frank Chimero writing a blog, which turned into a series of essays, which turned into a book
+        * Bobby Giangeruso starting all sorts of companies to practice his product skills
+        * ___ making a magazine to have a place to put their photography
+        * Donald Glover and his music, acting, and writing, then tying the outlets together. Must have some career-spanning satisfaction to tie several long-running projects together like that.
+    * It's easy to hop onto existing outlets; there's value in making your own (convenience ← → freedom tradeoff)
+    * Lessons on designing outlets
+        * I'm hardly an expert; practices like management, user research, architecture are whole disciplines dedicated to designing effective outlets
+        * A few thoughts
+            * Be conscious of how many outlets you can handle. I like to lean towards having enough time to be generous with each, but some people can't work unless they have 3 things on the go.
+            * Name your outlets. Don't get caught up in it, but a name can sometimes imbue a vague idea with enough cohesiveness to become a distinct venue.
+                * A musician (eg. Com Truise) playing around with sounds, then picking a name to tie them together into a cohesive piece.
+            * Keep them focused. Especially when you're just starting. Like a prompt or a framework, a vague outlet is an unhelpful one. They can always grow over time if needed.
+            * Be committed to your outlets. Those who pick something and do it are a lot further along than those who sit wondering where to begin.
+    * Meta-note: designing outlets for others
+        * Making a community to scratch their own itch
+        * Starting a company to work with friends
+        * "the most meaningful human activities often boils down to providing…"
+    * Alongside others like process and form, outlets are a core principle for thinking about an engaged, curious life.
+    * Keep it flowing
+
+-->
+
+### The nature of an outlet
+
+An outlet is a venue for creative output.
+
+Creativity has long had associations with water and rivers, so the metaphor seems fitting. Water needs somewhere to flow to, otherwise it sits still and grows stagnant.
+
+A consideration for the environment around the work, not just the work itself.
+
+A better image would be that of a plant, whose roots draw up water from the soil below. We are the soil, and our outlets are the plants.
+
+An outlet isn't just an empty place on a shelf that might need to be filled, but actively draws work out of you.
+
+An Instagram account is a common example. People have been casually snapping photos ever since the [fact check!] first cheap commercial films became available in the 1950s. But the "outlet" for these photos was usually the family photo album. In this way, the camera would come out at special occasions: birthdays, holidays, family vacations. The family photo album shaped the subject of photography (family!) and who did the photographing (parents! tourists!).
+
+Now, with Instagram as an outlet, millions of people who would otherwise be uninterested in photography are actively engaged in the culture around it. More photos are taken now than ever before in history. By having an Instagram account, the photography is literally _drawn out of you_ like a plant pulling water up through its roots.
+
+
+Outlets, as with any form of media, have their own affordances. Our containers influence how often we fill them, and what we fill them with.
+
+Returning to the Instagram example, not only are more photos taken, but more photos of a certain type are taken.
+
+but having a singular venue for their photos refine the kinds of photos they take, optimizing their photos for the small screens of phones.[^1]
+
+Each outlet over time can gain a character. Flickr was chock full of HDR and landscape images, 500px came to supersede that.
+
+
+
+
+This sounds innocuous, but having a place to put things is important. Having a place to put creative work gives you a _reason_ to make creative work.
+
+
+Want to make more of a certain kind of work? Make a dedicated space to publish it! People who have a place to publish photos will take more photos than those who don't. People who have a place to publish writing will write more.
+
+In that way, an outlet is a lot like a question or a prompt.
+
+What would otherwise be an inactive space becomes an active one.
+
+An open invitation or opportunity to make something.
+
+I heard once that the word opportunity comes from the word "pore", meaning an opening. Like a pore in your skin or a port in a harbour.
+
+
+
+If someone asked you to prepare a lesson for a class on a topic you know, you'd quickly find
+
+Creating an effective place for creative work to realize itself is almost more work than the work itself.
+
+A blog is an easy example. I'm always amazed at how much friends of mine know, but without a place to put it, it often stays locked up inside their head. A blog is like an open tap — all the ideas floating around in your head finally have a place to land on their own. Not tied into other projects, but in their own right.
+
+
+The destination of the work _inspires_ and _shapes_ what you make. That's why it's more than just a destination. When used intentionally, it can actually be a creative tool.
+
 
 > _What is it that makes a bowl useful?_<br />
 > A bowl can carry things, and we can eat or drink out of it.<br />
@@ -15,41 +147,25 @@ draft: true
 > _So we like a bowl because of what is not there?<br />Because the middle of a bowl is not bowl?_<br />
 > Yes. We like a bowl because of what is not there.
 
-An _outlet_ is a creative tool I often think about.
+In a sense, an outlet is like an unanswered question
 
-People commonly use the term, but as a quick expression rather than as a substantial concept. I've yet to hear this mental model be articulated, so let me try to do a little exegesis below.
 
-### What is it?
 
-An outlet is a venue for creative output. It's a place to put things you make. 
+It's an opening or kind of [framework](https://shapeofdesignbook.com/chapters/03-improvisation-and-limitations/) that draws something out of a space.
 
-This sounds innocuous, but having a place to put things is important. Having a place to put creative work gives you a _reason_ to make creative work.
 
-People who have a venue to publish photos will tend to take more photos. People who have a place to publish writing will tend to finish more pieces of writing. People who have friends to cook for will cook more meals.
+I often feel this when meeting someone new. The conversation starts with an awkward exchange of pleasantries and self-information. Sometimes it ends there. But all it takes is one good question to spark a conversation that you can both be deeply engaged in.
 
-If someone asked you to prepare a lesson for a class on a topic you know, you'd quickly find
-
-Creating an effective place for creative work to realize itself is almost more work than the work itself.
-
-A blog is an easy example. I'm always amazed at how much friends of mine know, but without a place to put it, it often stays locked up inside their head. A blog is like an open tap — all the ideas floating around in your head finally have a place to land on their own. Not tied into other projects, but in their own right.
-
-A common example of such an outlet is an Instagram account. People have been casually snapping photos ever since the [fact check!] first cheap commercial films became available in the 1950s. But the "outlet" for these photos was often a family photo album. In this way, the camera would come out at special occasions: birthdays, holidays, family vacations. The family photo album shaped the subject of photography (family!) and who did the photographing (parents! tourists!).
-
-Now, with Instagram as an outlet, millions of people who would otherwise be uninterested in photography are actively engaged in the culture around it. Not only do they take [more photos than ever before](#), but having a singular venue for their photos refine the kinds of photos they take, optimizing their photos for the small screens of phones.[^1]
-
-By having an Instagram account, the photography is drawn out of you.
-
-The destination of the work _inspires_ and _shapes_ what you make. That's why it's more than just a destination. When used intentionally, it can actually be a creative tool.
-
-In a sense, an outlet is like an unanswered question. It's an opening or kind of [framework](https://shapeofdesignbook.com/chapters/03-improvisation-and-limitations/) that draws something out of a space.
+Just as there's an art to asking a good question, there's an art to crafting good outlets.
 
 The same way a good question makes a space for conversations and ideas from a group of people, an outlet makes a space for certain kind of work.
 
 Outlets are a loose idea and take many forms. They can be described as a destination, but they aren't always a spatial one (as much as virtual spaces can be considered spatial). Outlets can also be:
 
+* **Spatial**. [Habit fields](https://alistapart.com/article/habit-fields) are a more casual example.
+* **Physical**. An object that 
 * **Social**. Having a child to care for is a venue to practice cooking, teaching, singing, playing.
 * **Temporal**. A weekly jam session with friends is the formative outlet for many bands. Doing a weekly lecture is an outlet to summarize and distill ideas into distinct lessons.
-* **Physical**. 
 
 Under these set of restrictions you can imagine a whole range of outlets:
 
@@ -62,14 +178,22 @@ Under these set of restrictions you can imagine a whole range of outlets:
 
 In a sense, the best way to get better at a certain kind of work seems to be to craft your own outlet for it.
 
-People who produce the most interesting work are often the product of the diversity of their outlets. After all, making exposes you to the [adjacent possibles](https://www.practicallyefficient.com/2010/09/28/the-adjacent-possible.html) in any field, so choosing your outlets determines the futures you're working towards.
+People who produce the most interesting work are often the product of the diversity of their outlets.
 
-While _outlets_ is a making-centric way of thinking, people will often defer to more financially oriented ones. A job is an exchange (services for money) or an opportunity. Thinking of a job as an outlet raises different questions: what kind of thing do I want to bring into the world from myself?
 
-### Origins of Outlets
+
+After all, making exposes you to the [adjacent possibles](https://www.practicallyefficient.com/2010/09/28/the-adjacent-possible.html) in any field, so choosing your outlets determines the futures you're working towards.
+
+
+![A test](./river-g.jpg)
+
+### Where outlets come from
 
 > We lose that life which remains unarticulated.<br />
 > — Lewis Hyde, _The Gift_
+
+> If you bring forth what is inside of you, what you bring forth will save you. If you don’t bring forth what is inside of you, what you bring forth can destroy you.
+> — Anne Lamott, _Bird by Bird_
 
 For most people, I'd guess that many outlets in our life are made by others:
 
@@ -89,7 +213,7 @@ Perhaps because outlets are a certain kind of framework. An outlet is a context 
 
 But especially in our first twenty years of life, so many outlets are given to us that it's easy to forget there's a craft to making our own.
 
-### Designing an Outlet
+### Making outlets for others
 
 If it's true that having the effective outlets is as important as the work itself, it's worth some time to examine the craft of producing good ones. 
 
@@ -104,7 +228,7 @@ As my friends and I of mine look to create our own outlets of various shapes and
 As vague as the term "outlet" can be, it feels important to articulate. Because when you articulate the idea, you can begin to study them. Are they good ones? Bad ones? Are they given to us? Or are there some still missing that we need to make for ourselves?
 
 [^1]: \*cleverly steers away from oft-written commentary on how Instagram is influencing contemporary photographic culture\*
-[^2]: A prompt shares many qualities to an outlet; both prompts and outlets are forms of frameworks. But a prompt is more of a concept or limitation than a destination.
+[^2]: Prompts and outlets share many qualities, but a prompt is more of a conceptual framework rather than a destination.
 
 <!--
 
@@ -158,6 +282,7 @@ As vague as the term "outlet" can be, it feels important to articulate. Because 
     * it's not that the well has dried up, it's that it evaporates if it stays stagnant
     * flowing water is a age-old metaphor for creative work
     * see [lewis hyde quote](https://www.are.na/block/1579817)
+    * see [iA writer post on math with words](https://ia.net/writer/blog/math-with-words)
 
 > … to put it another way, by Whitman's assumptions, we lose that life which remains unarticulated. This is why the family prizes the child with the mouthpiece (sometimes—not all families want to live!), or why a nation prizes its poets (sometimes).
 > — Lewis Hyde, _The Gift_
@@ -166,13 +291,9 @@ As vague as the term "outlet" can be, it feels important to articulate. Because 
 
 > If you bring forth what is inside of you, what you bring forth will save you. If you don’t bring forth what is inside of you, what you bring forth can destroy you. — Bird by Bird
 
-> [some quote about not hiding anything, because if you give it all away you'll fill back up even more]
+> It is easier to enhance creativity by changing conditions in the environment than by trying to make people think more creatively.
 
-* why are outlets so important?
-* an effective community needs a few different outlets:
-    * consumes together (eg. eats)
-    * makes together (eg. cooks, makes art)
-    * labours together
+> [some quote about not hiding anything, because if you give it all away you'll fill back up even more]
 
 * something like a book requires creating the outlet at the same time as the work itself → even the idea of "I'm making a book" can become an outlet, but before it's in that phase, it's nebulous, purposeless or formless
 
@@ -199,8 +320,23 @@ As vague as the term "outlet" can be, it feels important to articulate. Because 
     * is a prompt an outlet?
         * prompts and outlets are both frameworks, but a prompt is different than an outlet.
 
+> The most important point I want to make is that the true problem, the true difficulty, and where the greatest potential lies is building the machine that makes the machine. In other words, building the factory … like a product — Elon Musk
+
+
+* Outlets aren't limited only to work.
+    * Communities need effective outlets. In talking with my friend Michelle, we theorized that the most closely-knit communities have (at minimum) three kinds of outlets:
+        * (a) a venue to consume together (eat food, watch movies, go to an event, play board games)
+        * (b) a venue to make things together (art, food, experiences)
+        * (c) a venue to labour together (school, cooperatives)
+
+Infrastructure / Support Systems / Community
+* "the most meaningful human activity boils down to providing a support structure for one another", https://mobile.twitter.com/edouerd/status/943151812147892224
+* "E.g. The design of the iPhone can only be partially credited to Jonny Ive & team. A significant portion of the design is manifested in Apple’s culture, the constraints of electronics, battery size/duration & the fundamental properties of the various constituent materials that make up the phone, including glass and aluminium, alongside the amortized costs of design, and per unit costs of manufacturing and shipping, and the systems in place to build, maintain & monitor those supply chains." https://www.are.na/block/1574115
+* In the world of software, this is why everything is able to be outsourced and marketed. Software for sending emails ()? Software for making surveys (type form)? Software for making surveys specifically towards your users (https://bridge.design/)? Software for making email contact forms (formspree)? Because it's an improvement of the environment.
 
 
 Does the world need another blog? No. But do _I_ need a blog, to capture and document the outpouring of ideas and feelings I experience daily? I guess.
+
+While _outlets_ is a making-centric way of thinking, people will often defer to more financially oriented ones. A job is an exchange (services for money) or an opportunity. Thinking of a job as an outlet raises different questions: what kind of thing do I want to bring into the world from myself?
 
 -->
