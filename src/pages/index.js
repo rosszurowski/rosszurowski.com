@@ -132,6 +132,7 @@ export default class HomePage extends Component {
               <div className="mb-4">
                 <h4 className="mb-3 c-pink">Recent writing</h4>
                 <p>
+                  <a href="/log/2019/a-river-a-question-a-bowl">A river, a question, a bowl</a><br/>
                   <a href="/log/2018/small-seasons-long-calendars">Small Seasons, Long Calendars</a><br/>
                   <a href="/log/2017/bodies-at-speed">Bodies at Speed</a><br/>
                   <a href="/log/2017/toward-a-distributed-web">Toward a Distributed Web</a>

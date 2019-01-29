@@ -4,60 +4,93 @@ date: 2019-01-20
 draft: true
 ---
 
-![Bowls designed by ____](./cover.jpg)
+![Bowls designed by Kirstie van Noort see <https://www.kirstievannoort.com/portfolio/colored-bowls>](./cover.jpg)
 
-I want to talk about _outlets_, and their use as a creative tool.
+I want to talk about _outlets_, and their utility as a creative tool.
 
-The term is often used as an easy expression, conjuring up an image of a mother frustrated by her children's antics ("she just needs an outlet for her energy!"). I'd like to repurpose the it. I've found outlets to be a helpful metaphor for understanding what makes up a healthy and curious life, for mothers and children alike. I'll try to describe the concept in detail here.
+The term is often used as an easy expression, conjuring up an image of a mother frustrated by her children's antics ("she just needs an outlet for her energy!"). I'd like to repurpose it. I've found outlets to be a helpful metaphor for understanding what makes up a healthy and curious life, for mothers and children alike. I'll try to describe the concept in detail here.
 
 ---
 
-An outlet is **a pre-defined venue for effort**.[^creativity]
+In ecological terms, an outlet is an opening for a river, letting water out into a larger body. An exit, a vent.
 
-It's a home for intentional work. A job, a project, a club, a company; all of these are outlets. But outlets aren't necessarily a socially constructed space, they can also be an object like a journal or a notebook.
+Running water has long been a symbol for life and creativity so the metaphor seems fitting. A river that doesn't flow grows stagnant, so having an outlet is important to sustaining the life around it.
 
-The word outlet comes from an opening for a river, letting water out into a larger body. From the days of the muses and creation myths, water has long been a metaphor for creativity, so the expression seems fitting.
+An outlet is a **destination for effort**.[^1]
 
-Outlets are closely tied to the idea of publishing, but it doesn't mean all outlets are public. A journal is a good example of an outlet that stays private. The important quality of an outlet is that it's a destination that's different than the space where something is created, regardless of where that  destination is.
+If we're lucky enough to have them, jobs and projects are good examples of outlets. Each day we sit down and give ourselves to the work of designing for our clients, stocking the shelves at the store, or building tools for others. At their best, jobs and projects challenge us in the work we do and, despite coming home tired, there's a sense of joy in the exertion. 
 
-Outlets have three notable properties that make them so important: they *draw work out of you*, they *shape that work*, and *they focus the world* around the work.
+But outlets take other forms too:
 
-![A test](./river-g.jpg)
+* A physical object like **a journal or a notebook** is an outlet. Its very presence asks to be filled with notes and memories. The act of buying a journal (or a journaling app) can often be the beginning of a long-lived journaling practice.
+* Even social spaces like **a friendship or club or community** are outlets, being tended to instead by hangouts, shared meals, and gifts rather than time at a desk. The form which the effort takes is different, but the fact that it's a destination is the same.
 
-### A Question
+Our lives are full of various outlets, and the ones we choose to pour into determine the kind of work we do, and where we head.
 
-> If you bring forth what is inside of you, what you bring forth will save you. If you don’t bring forth what is inside of you, what you bring forth can destroy you.
-> — Anne Lamott, _Bird by Bird_
+When speaking of what I'd call an outlet, friends will often use the word "opportunity." An old friend finally started his own branding studio and is making all kinds of opportunities for himself. Another friend recently told me about her opportunity to design a tattoo for a famous ballet dancer.
 
-Growing up, my siblings and I travelled around with our dad a lot. We'd go for road trips across Western Canada and the Northern United States. We'd drive through the Canadian prairies for long stretches and visit our grandparents in Calgary. We'd head south across the border to see parks like Devil's Peak or Yellowstone, and make our way back into Canada through the Rocky Mountains. I loved those trips.
+I heard once that the root for the word "opportunity" comes from "pore", meaning "an opening", like the pores in your skin.
 
-As we travelled around we'd make pit stops in gas stations, park offices, and the like. And more often than not, my dad would spark up a conversation with the park ranger or hotel attendant.
+In many ways outlets too are like an open space. Not only these open spaces draw something out from us, but they also have their own influence on what we fill them with.
 
-Even now, there's many friends he keeps in touch with sparked from a conversations while travelling.
+---
 
-As I got older, I realized two things: (a) most people don't befriend every willing person they come across, let alone keep in touch with them. My dad is a special person. And (b) it's actually really hard to do. I figured it was something about his "I-grew-up-hunting-gophers-and-now-I'm-a-mining-engineer" eagerness that led to those approachable situations, but I now recognize that a lot of it comes down to making a conversational space.
+![](./river-b.jpg)
 
-In learning about the craft of user research and watching professional researchers do interviews or (eeek) having to conduct them myself, I noticed the same thing. 
+In learning about  and watching professional researchers do interviews or (eeek) having to conduct them myself, I've learned that there's an art to asking a good question.
 
-There's an art to asking a good question. A bad question leaves things flat. Surface-level chit-chat about how business has been recently, or where they store the files. People who would rather be somewhere else. But a good question is like a fire to crowd around, it draws people in and invites them to say something. "Why do you think your boss hasn't adopted the new format yet?" Bam! A whole essay is coming your way.
+A bad question evokes a one-word response, or worse, leaves an audience feeling confused or misunderstood. Even with the most interesting people, bad questions lead to surface-level responses, idle conversation, and people who would rather be somewhere else. But a good question is something else. It's like a fire to crowd around, drawing people in and inviting them to say something. You'd never realize the amount of expertise every single person has until you've watched a well-conducted user interview. "Why do you think your boss hasn't adopted the new format yet?" Bam! A whole essay is coming your way. It's incredible.
 
-A good question is a destination, a space to fill. It asks people to fill it with their knowledge and experience.
+A good question is a destination, a space to fill. It asks people to fill it with their knowledge and experience. People have been casually snapping photos ever since the early 1900s with the advent of the $1 Kodak Brownie camera and the first cheap commercial films. As is common in the early days of any media, people weren't quite sure what to do with it. The possibilities were endless: what would they take photos of? Who would the photos be for? The years passed and people explored the possibilities of cameras and photography, and what it might mean. For many people, the photos they took ended up in the family photo album. By the 1950s it was estimated that 55% of all photos ever taken were of babies. The camera would come out at special occasions: birthdays, holidays, family vacations. People began photographing _for_ the family album.
 
-So the idea that an outlet is just a destination, a place to put effort, might sound innocuous. But having a place to put things is important. Finding a place to put effort gives you a _reason_ to provide the effort.
+Now, consider Instagram, a common outlet for photography these days.
 
-People who have a place to publish writing tend to write more than those who don't. People who have a place to publish photos will take more photos than those who don't. Everyone might not have a book in them, but at the very least everyone has an essay or a poem. There's an infinite abundance to speak about, to paint about, to sing about. But having a place to direct those efforts is a _reason_ for the efforts in the first place. 
 
-An Instagram account is a common example. People have been casually snapping photos ever since the early 1900s with the advent of the $1 Kodak Brownie camera and the first cheap commercial films. But the "outlet" for these photos was usually the family photo album. By the 1950s it was estimated that 55% of all photos that were even taken were of babies. In this way, the camera would come out at special occasions: birthdays, holidays, family vacations.
+People who have a place to publish their work will do more work. People who have a tumblr or instagram will take and publish more photos than those who don't. People with a blog will write more than those who don't.
 
-Now, with Instagram as an outlet, millions of people who would otherwise be uninterested in photography are actively engaged in the culture around it. 150 million photos are taken each year, more than ever before in history. By having an Instagram account, the photography is literally _drawn out of you_ like a plant pulling water up through its roots.
+So the idea that an outlet is just a destination, a place to put effort, might sound innocuous. But having a place to put things is important, because a place to put things gives you a _reason_ to make those things. Like a plant pulling water up through its roots, an outlet draws the work out of you.
 
-I had an image of prolific writers and artists as people who, in some Platonic sense, were simply "creative." Inspired by some internal vision of what the world needed, they'd write essays, draw pictures, paint paintings. They'd produce more and more of these things until there was enough for a book or a gallery exhibition.
+Of course, outlets don't do the work for you. You still need to sit down and put in the effort. But outlets can be the difference between sitting silently in a room unsure of what to do, and engaging with the world around you.
 
-While, in some senses, I suppose that's true, my view has shifted. There's an inversion of the thinking: "people have work to share, so they make a place to put it" more often than not, is actually "I have a place to put work, I'm going to make work to fill it."
+Everyone [might not have a book in them](https://theoutline.com/post/5541/unconventional-wisdom-you-should-not-write-a-book?zd=1&zi=cfzuoizr), but at the very least everyone has an essay or a poem. There's an infinite abundance to speak about, to paint about, to sing about. But having a place to direct those efforts is a _reason_ for the efforts in the first place. 
 
-Outlets aren't just a destination. In many ways, they're also a starting place.
+So outlets aren't just a destination. In many ways, they're also a starting place.
 
-### A Bowl
+<!--
+Growing up, I had an image of prolific writers and artists as people who, in some Platonic sense, were simply "creative." Inspired by some internal vision of what the world needed, they'd write essays, draw pictures, paint paintings. They'd produce more and more of these things until there was enough for a book or an exhibition. I probably read too much of _The Fountainhead_.
+
+While, in some senses, I suppose that's true, my view has shifted. There's an inversion of my thinking: "People have work to share, so they make a place to put it." More often than not, I find it's actually "I have a place to put things, I'm going to make work to fill it."
+-->
+
+---
+
+In high school, several of my friends got interested in lucid dreaming, the practice of dreaming while you're aware of it. Inspired by the film, _[The Waking Life](https://letterboxd.com/film/waking-life/)_, they'd experiment with all sorts of ways to achieve a waking dream. 
+
+One of them, having lived in Africa for a few years when he was younger knew that the easiest way to have a waking dream was _mefloquine_, a malaria medication. However, with mefloquine being replaced by drugs without side-effects (and as students with no plans to go to any sub-tropical country), getting a prescription wasn't going to happen.
+
+Barring medication, the next best thing was keeping a dream journal.
+
+To lucid dream you need to be able to recognize that you're in a dream while it's happening. You have to notice where you are. Normally your brain forgets dreams within a few minutes of waking up. And I suppose after a lifetime of ignoring dreams, your brain gets good at forgetting about them.
+
+To counter-act our tendency to forget, lucid dreamers keep a dream journal where each morning they write down what they dreamt about last night. It starts out difficult. You struggle to recall basic details like where you were, or how many dreams you had. But over time it gets easier and easier.
+
+It's a practice of nudging your brain saying, "hey you, brain, this is important stuff, don't forget it." And your brain picks up on that.
+
+I love this idea because it seems true for so many things.
+
+As a graphic designer, so much of design school felt like the same process. Assignment after assignment helping you to say, "hey, eyes, look out for the odd blobs of whitespace in this poster/typeface/book layout. It's important stuff, don't pass over it." Much of the practice of photography is the same. "hey, eyes, watch out for the color and angle and intensity of light." Like the dream journal, it starts out hard and you miss a lot. This is why the first step of any art is learning to see.
+
+I imagine the same is true for cooking. Until you've tried making a meal for yourself, you won't notice the effort or skill that goes into it. Or singing. The [criticism of one who actually knows what it takes](https://www.youtube.com/watch?v=bVRydgArqUs) goes much further than an outsider, since they know what to look for.
+
+Learning to see, noticing, this is another important quality of outlets. They **focus the world around you**. Snippets of conversation turn into a story idea; light falling on bedsheets becomes a photograph; odd situations in your work life turn into a syllabus. Having an outlet focuses everyday life into discrete forms, and asks you to live more curiously or more reflectively.
+
+Think of a hobby you've been doing for many years. Maybe it's knitting or cooking. Now, imagine someone asked you to teach a class about it.  All of a sudden you have a space to fill, a reason to reflect on your experiences, and a pedagogy to develop.
+
+In a sense, the best way to get better at a certain kind of work seems to be to craft your own outlet for it. After all, making exposes you to the [adjacent possibles](https://www.practicallyefficient.com/2010/09/28/the-adjacent-possible.html) in any field, so choosing your outlets determines the futures you're working towards.
+
+People who produce the most interesting work are often the product of the diversity of their outlets.
+
+---
 
 > _What is it that makes a bowl useful?_<br />
 > A bowl can carry things, and we can eat or drink out of it.<br />
@@ -68,60 +101,28 @@ Outlets aren't just a destination. In many ways, they're also a starting place.
 > _So we like a bowl because of what is not there?<br />Because the middle of a bowl is not bowl?_<br />
 > Yes. We like a bowl because of what is not there.
 
-When speaking of what I'd call an outlet, friends will often use the word "opportunity." A friend who's a tattoo artist will talk about the opportunity she got to design a tattoo for a famous ballet dancer. An old friend finally started his own branding studio and is making all kinds of opportunities for himself.
+Like how every bowl has a shape, over time, each outlet over time gains a sort-of character.
 
-I heard once that the root for the word "opportunity" comes from a Latin word "pore", meaning "an opening", like the pores in your skin. Not only do open spaces draw something out from us, but they also have their own influence on what we fill them with. We like a bowl because of what is not there.
+Returning to the Instagram example, not only are more photos taken, but more photos of a certain type are taken. The small screens photos are viewed on, and the low-resolution cameras the service started with has tended towards a kind of photography known for simple shapes and compositions. Big blocks of color, large areas of shadow, colourful… ice cream. Instagram as an outlet has its own affordances, and has feedback mechanisms in place which favour a certain kind of photo.
 
-Returning to the Instagram example, not only are more photos taken, but more photos of a certain type are taken. The small screens photos are viewed on, and the low-resolution cameras the service started with has tended towards a kind of photography known for simple shapes and compositions. Big blocks of color, large areas of shadow, colourful… ice cream. Instagram as an outlet has it's own affordances, and has feedback mechanisms in place which favour a certain kind of photo.
-
-Each outlet over time gains a sort-of character. Continuing with photography, Flickr was chock full of HDR and landscape images, 500px came to supersede that.
+Other photo communities too have a different character. Flickr was chock full of people documenting old books and artifacts, 500px tended towards HDR shots and landscapes.
 
 Even a blog you might start will begin to take on a certain voice & tone that shapes what comes afterwards. A friend you always talk about work with becomes _the_ friend you talk about work with.
 
 The outlet gains an identity.
 
-YouTube is another platform with it's own affordances. Small thumbnails, short titles, and tired humans all come together to form a culture of microscopic video advertisement involving shocked faces, dramatic words, and all-caps titles.
-
-![Picture of YouTube thumbnail culture](#)
-
-Media has specific affordances, but communities do too. Your job likely comes with a specific title and role. If you're the 
-
 The destination of the work _inspires_ and _shapes_ what you make. That's why outlets are more than just a destination, but are themselves a kind of creative tool. The choice of outlets we have in our lives informs the kind of work we produce.
 
-### A Journal
+---
 
-In high school, several of my friends got interested in lucid dreaming, the practice of dreaming while you're aware of it. Inspired by the film, _The Waking Life_, they'd experiment with all sorts of ways to achieve a lucid dream state. 
+Just as there's an art to asking a good question or making a good bowl, there's an art to crafting good outlets.
 
-One of them, having lived in Africa for a few years when he was younger knew that the easiest way to have a waking dream was _mefloquine_, a malaria medication. However, with mefloquine being replaced by drugs without side-effects (and as students with no plans to go to any sub-tropical country), getting a prescription wasn't going to happen.
+With all these qualities, I wonder if choosing and creating good outlets is as much part of the work as sitting down itself. It's a difficult future-facing question.
 
-Barring medication, the next best thing was keeping a dream journal.
+For most people, I'd guess that most of the outlets in our life are made by others:
 
-To lucid dream you need to be able to recognize that you're in a dream while it's happening. You have to notice where you are. Normally your brain forgets dreams within a few minutes of waking up. And I suppose after a lifetime of ignoring dreams, your brain gets good at forgetting about them.=
-
-To counter-act our tendency to forget, lucid dreamers keep a dream journal where each morning they write down what they dreamt about last night. It starts out difficult. You struggle to recall basic details like where you were, or how many dreams you had. But over time it gets easier and easier.
-
-It's a practice of nudging your brain saying, "hey you, brain, this is important stuff, don't forget it." And your brain picks up on that.
-
-I love this idea because it seems true for so many things.
-
-As a graphic designer, so much of design school felt like the same process. Assignment after assignment helping you to say, "hey, eyes, look out for the odd blobs of whitespace in this poster/typeface/book layout. It's important stuff, don't pass over it." Much of the practice of photography is the same. "hey, eyes, notice where the color and angle and intensity of the light." It always starts out hard, which is why the first step of any art is learning to see.
-
-This is the third important quality of outlets, that they **focus the world around you**. Light falling on bedsheets becomes a photograph; snippets of conversation turn into story ideas; odd situations in your work life turn into a syllabus. Having an outlet focuses everyday life into a discrete output.
-
-Imagine a hobby you've been doing for many years. Now, imagine someone asked you to teach a class about it. All of a sudden you have a space to fill, a reason to reflect on your experiences, and a pedagogy to develop.
-
-In a sense, the best way to get better at a certain kind of work seems to be to craft your own outlet for it. After all, making exposes you to the [adjacent possibles](https://www.practicallyefficient.com/2010/09/28/the-adjacent-possible.html) in any field, so choosing your outlets determines the futures you're working towards.
-
-People who produce the most interesting work are often the product of the diversity of their outlets.
-
-All this said, I wonder if creating a good venue for work is as much part of the work as sitting down itself. And just as there's an art to asking a good question or making a good bowl, there's an art to crafting good outlets.
-
-### Designing Outlets
-
-For most people, I'd guess that many outlets in our life are made by others:
-
-* A literature club at school that publishes a magazine gives you an outlet to explore printing techniques, page design methods, .
-* A project at work gives you an outlet to practice
+* A literature club at school that publishes a magazine gives you an outlet to explore printing techniques or page design methods.
+* A project at work gives you an outlet to practice calligraphy.
 * A friend starting a business who needs branding work done.
 
 When those outlets disappear (for whatever reason), it leaves a gap in what we make.
@@ -134,9 +135,9 @@ Of course, I'm not limited by my current work. Nothing stops me from sitting dow
 
 Especially in our first twenty years of life, so many outlets are given to us that it's easy to forget there's a craft to making our own.
 
-While it's easy to open an Instagram account or YouTube channel, it takes skill to know where and when an outlet is needed, and how to frame it in productive ways.
+---
 
-In talking with my friend Michelle about creative communities, we came to the conclusion that any healthy community needs for itself at least three distinct outlets:
+Good outlets are part of a healthy life. Just like you need to exert yourself with exercise to stay fit, you need creative outlets to stay curious. In talking with my friend Michelle about healthy communities, we came to the conclusion that close-knit communities needs for themselves at least three distinct outlets:
 
 * **An outlet to make together**, food, art, events.
 * **An outlet to consume together**, watching movies, eating food.
@@ -144,9 +145,7 @@ In talking with my friend Michelle about creative communities, we came to the co
 
 As vague as the term "outlet" can be, it feels important to articulate.  Are they good ones? Bad ones? Are they given to us? Or are there some still missing that we need to make for ourselves?
 
-[^creativity]: People often think in terms of "creative work," which I think is a dangerous concept with a lot of baggage. I subscribe to the idea that “art is anything that’s better than it needs to be,” so a destination for "effort" seems appropriately less constraining than one for "creative work" one in my mind.
-[^1]: \*cleverly steers away from oft-written commentary on how Instagram is influencing contemporary photographic culture\*
-[^2]: Prompts and outlets share many qualities, but a prompt is more of a conceptual framework rather than a destination.
+[^1]: People often think of outlets in terms of "creative work." But creativity is a concept with a lot of baggage and mixed meanings. I subscribe to the idea that “art is anything that’s better than it needs to be,” so a destination for above-and-beyond "effort" seems appropriately less constraining than one for "creative work" one in my mind.
 
 <!--
 
@@ -267,6 +266,7 @@ As vague as the term "outlet" can be, it feels important to articulate.  Are the
 * how to design good outlets?
     * public/visible
     * limited in scope
+    * pick one and try trusting it for a while
 * "i have nothing to say" — no, you just don't have an outlet for all the things you might say — upon reflection, there's always something to say (whether or not it's worth saying is another question)
     * it's not that the well has dried up, it's that it evaporates if it stays stagnant
     * flowing water is a age-old metaphor for creative work
@@ -334,5 +334,12 @@ While _outlets_ is a making-centric way of thinking, people will often defer to 
 * **A company** is an outlet. In starting a company, people gain a widely available venue to iterate on a product, set of services, brand, and so on. Companies often draw an unanticipated set of skills out of people, like accounting and people management. [this might deserve it's own section]
 * **A meeting** is often an outlet. Once at [Watsi](https://watsi.org) in advance of big project we were starting, we had a  ["pre-mortem"](https://en.wikipedia.org/wiki/Pre-mortem) to collect ideas of how the project might fail and think of how we could prevent them. In creating a space for people to ask that question of themselves,
 * **A sketchbook or journal**. A sketchbook is an outlet. The purpose of its form is to be a dumping ground for ideas and drawings. A journal acts the same way — simply having the space to write about your day can be the starting point to recording and reflecting on it.
+
+Outlets are closely tied to the idea of publishing, but it doesn't mean all outlets are public. A journal is a good example of an outlet that stays private. The important quality of an outlet is that it's a destination that's different than the space where something is created, regardless of where that  destination is.
+
+Water has long been a symbol of creativity, so the expression seems fitting.
+
+In the biblical creation myth, before there was anything, there "the spirit hovering over the waters." Light, darkness, land, and sky all came from an oceanic setting. Iroquois stories tell of a giant turtle coming up from the depths of our watery planet to form the land we now live on.
+
 
 -->
