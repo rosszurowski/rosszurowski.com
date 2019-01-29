@@ -35,7 +35,7 @@ In many ways outlets too are like an open space. Not only these open spaces draw
 
 ---
 
-![](./river-b.jpg)
+![](./river.jpg)
 
 In learning about  and watching professional researchers do interviews or (eeek) having to conduct them myself, I've learned that there's an art to asking a good question.
 
