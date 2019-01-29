@@ -1,5 +1,5 @@
 ---
-title: Towards a Distributed Web
+title: Toward a Distributed Web
 slug: toward-a-distributed-web
 date: 2017-10-10
 ---

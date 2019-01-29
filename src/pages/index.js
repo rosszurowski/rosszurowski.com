@@ -130,19 +130,20 @@ export default class HomePage extends Component {
                 />
               </div>
               <div className="mb-4">
-                <h4 className="mb-3 c-pink">Recent projects</h4>
+                <h4 className="mb-3 c-pink">Recent writing</h4>
                 <p>
-                  <a href="https://100-2017.rosszurowski.com">100 Days</a>,{' '}
-                  <a href="https://broken-idioms.com">Broken Idioms</a>.
+                  <a href="/log/2018/small-seasons-long-calendars">Small Seasons, Long Calendars</a><br/>
+                  <a href="/log/2017/bodies-at-speed">Bodies at Speed</a><br/>
+                  <a href="/log/2017/toward-a-distributed-web">Toward a Distributed Web</a>
                 </p>
               </div>
               <div className="mb-5">
                 <h4 className="mb-3 c-pink">Recent interests</h4>
                 <p>
-                  <a href="/log/2018/small-seasons-long-calendars">
-                    Alternate calendars
+                  <a href="https://broken-idioms.com">
+                    Broken idioms
                   </a>
-                  , "the feed", <span className="ws-noWrap">日本語</span>,{' '}
+                  , <span className="ws-noWrap">日本語</span>,{' '}
                   <a
                     href="https://www.are.na/ross-zurowski/language-thought"
                     target="_blank"
@@ -153,7 +154,7 @@ export default class HomePage extends Component {
                   <a href="/log/2017/toward-a-distributed-web">
                     decentralized publishing
                   </a>
-                  , and making ice cream.
+                  , RSS, and making ice cream.
                 </p>
               </div>
               <footer className="fs-13 o-75p">
