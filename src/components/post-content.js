@@ -86,12 +86,12 @@ const StyledPostContent = styled.div`
   }
 
   & pre {
-    padding: 0.75em;
+    background: ${theme.colors.lightGray};
+    padding: 1em;
     overflow-x: scroll;
   }
 
-  & code {
-    background: ${theme.colors.lightGray};
+  & :not(pre) > code {
     padding: 0.15em 0.25em;
   }
 
