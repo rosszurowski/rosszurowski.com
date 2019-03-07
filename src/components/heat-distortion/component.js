@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import Canvas from 'react-responsive-canvas';
 import styled from 'react-emotion';
+import debounce from 'lodash.debounce';
 import HeatDistortionProgram from './program';
 
 const StyledContainer = styled.div`
@@ -15,14 +16,13 @@ const StyledContainer = styled.div`
 `;
 
 type Props = {
-  html: string,
 };
 
 type State = {
   hasRendered: boolean,
 };
 
-export default class HeatDistortion extends Component<Props, State> {
+export default class HeatDistortionCanvas extends Component<Props, State> {
   state = {
     hasRendered: false,
   };
@@ -32,7 +32,7 @@ export default class HeatDistortion extends Component<Props, State> {
   program: HeatDistortionProgram;
 
   componentDidMount() {
-    this.program = new HeatDistortionProgram(this.canvasRef, this.props.html);
+    this.program = new HeatDistortionProgram(this.canvasRef);
     this.program.start(() => {
       this.setState({ hasRendered: true });
     });
@@ -42,9 +42,9 @@ export default class HeatDistortion extends Component<Props, State> {
     this.program.destroy();
   }
 
-  handleResize = () => {
+  handleResize = debounce(() => {
     this.program.handleResize();
-  };
+  }, 200);
 
   render() {
     return (

@@ -161,10 +161,8 @@ export default class HeatDistortionProgram {
   uniforms = null;
   tickId: AnimationFrameID;
   frame = 0;
-  html: string;
 
-  constructor(canvas: HTMLCanvasElement, html: string) {
-    this.html = html;
+  constructor(canvas: HTMLCanvasElement) {
     this.$canvas = canvas;
     this.gl = getContext(canvas);
     this.gl.viewport(0, 0, canvas.width, canvas.height);
@@ -172,7 +170,7 @@ export default class HeatDistortionProgram {
 
   start(done: () => void) {
     requestAnimationFrame(() => {
-      getSVGImage(this.html, this.$canvas.width, this.$canvas.height).then(
+      getSVGImage(this.$canvas.width, this.$canvas.height).then(
         image => {
           const scene = initScene(this.gl, image);
           this.program = scene.program;
@@ -182,7 +180,9 @@ export default class HeatDistortionProgram {
           this._tick();
           done();
         },
-      );
+      ).catch(() => {
+        console.error('Failed to load heat distortion image');
+      });
     });
   }
 
@@ -204,11 +204,15 @@ export default class HeatDistortionProgram {
 
   handleResize() {
     const { width, height } = this.$canvas;
-    const { gl, html, buffers, uniforms } = this;
+    const { gl, buffers, uniforms } = this;
+
+    if (!buffers || !uniforms) {
+      return;
+    }
 
     gl.bindBuffer(gl.ARRAY_BUFFER, buffers.position);
     setRectangle(gl, 0, 0, width, height);
-    getSVGImage(html, width, height).then(image => {
+    getSVGImage(width, height).then(image => {
       createTexture(gl, image);
     });
     gl.uniform2f(uniforms.resolution, width, height);
