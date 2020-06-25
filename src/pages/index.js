@@ -94,20 +94,24 @@ export default class HomePage extends Component {
               <div className="mb-5">
                 <p>Designer and developer from Toronto.</p>
                 <p className="mt-3">
-                  Most recently at{' '}
+                  Currently at{' '}
                   <a
-                    href="https://watsi.org/"
+                    href="https://tailscale.com/"
                     target="_blank"
                     rel="noopener noreferrer">
-                    Watsi
+                    Tailscale
                   </a>
-                  , designing healthcare software to{' '}
-                  <span className="ws-noWrap">benefit low</span>
-                  -income populations around the world.
+                  , building network infrastructure towards a simpler, more
+                  secure, more human kind of internet.
                 </p>
               </div>
               <div className="mb-4">
                 <h4 className="mb-3 c-pink">CV</h4>
+                <CVPanel
+                  name="Tailscale"
+                  href="https://tailscale.com/"
+                  period="2019 – Present"
+                />
                 <CVPanel
                   name="Watsi"
                   href="https://watsi.org/"
