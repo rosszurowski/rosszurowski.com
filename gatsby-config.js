@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-goatcounter`,
       options: {
-        code: 'rosszurowski';
+        code: 'rosszurowski',
       },
     },
   ],
