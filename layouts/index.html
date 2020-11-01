@@ -1,0 +1,96 @@
+{{ define "htmlClass" }}bg-black{{ end }} {{ define "container" }}
+<main
+  class="page-home relative"
+  data-barba="container"
+  data-barba-namespace="home"
+>
+  <div class="relative flex items-stretch z-10 text-white">
+    <div class="p-4 sm:p-16">
+      <section style="max-width: 540px">
+        <header class="mb-20 sm:mb-32">
+          <a href="/"> {{ partial "squiggle.html" . }} </a>
+        </header>
+        <div class="mb-12">
+          <h1>Ross Zurowski</h1>
+          <ul class="text-xs opacity-75 flex space-x-2">
+            {{ with .Site.Params.email }}
+            <li><a href="mailto:{{ . }}">Email</a></li>
+            {{ end }} {{ with .Site.Params.social.github }}
+            <li>
+              <a href="https://github.com/{{ . }}" target="_blank">Github</a>
+            </li>
+            {{ end }} {{ with .Site.Params.social.arena }}
+            <li><a href="https://are.na/{{ . }}" target="_blank">Are.na</a></li>
+            {{ end }}
+          </ul>
+        </div>
+        <div class="mb-12">
+          {{ .Content }}
+        </div>
+        <div class="mb-6">
+          <h4 class="text-pink mb-3">CV</h4>
+          <ul>
+            {{ range .Params.roles }}
+            <li class="flex relative">
+              <span class="inline-block mr-4" style="width: 140px">{{ .period }}</span>
+              <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">
+                <span class="inline-block" style="width: 120px"
+                  >{{ .name }}</span
+                ><!--
+                --><span
+                  class="relative inline-block select-none"
+                  style="top: 1px; transform: rotate(-46deg)"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M.216 11.359v2.819h18.401L10.24 22.87l2.114 1.918 11.276-11.941L12.314.788l-2.153 1.88 8.339 8.691z"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        <div class="mb-6">
+          <h4 class="text-pink mb-3">Recent projects</h4>
+          <p>{{ .Params.recentProjects | .Page.RenderString }}</p>
+        </div>
+        <div class="mb-12">
+          <h4 class="text-pink mb-3">Recent interests</h4>
+          <p>{{ .Params.recentInterests | .Page.RenderString }}</p>
+        </div>
+        <footer class="text-xs opacity-75">
+          <p>
+            Last updated {{ .GitInfo.CommitDate.Format "Jan 2, 2006" }}. Past
+            versions of this site are available
+            <a href="https://github.com/rosszurowski/rosszurowski.com/releases"
+              >on Github</a
+            >.
+          </p>
+        </footer>
+      </div>
+    </div>
+  </div>
+  <div
+    class="pointer-events-none select-none absolute top-0 right-0 bottom-0 z-0"
+    style="left: 30%"
+  >
+    <div class="relative h-full">
+      <canvas
+        class="opacity-0 js-heatDistortion"
+        width="500"
+        height="800"
+        style="transition: opacity 500ms ease"
+      ></canvas>
+    </div>
+  </div>
+</main>
+{{ end }}

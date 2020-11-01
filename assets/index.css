@@ -1,0 +1,196 @@
+@import "tailwindcss/base";
+
+html {
+  color: #242424;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 112.5%;
+  line-height: 1.7;
+  letter-spacing: -0.035px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a:active {
+  /* hide dotted borders on Firefox without removing focus guides */
+  outline: none;
+}
+
+.hover\:fade,
+.page-home a[href] {
+  transition: opacity 200ms ease;
+}
+
+.hover\:fade:hover,
+.page-home a[href]:hover {
+  opacity: 0.7;
+}
+
+.page-home p a {
+  color: inherit;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+}
+
+.Markdown {
+  line-height: 1.6;
+}
+
+.Markdown > *:not(h1):not(h2):not(h3) + *:not(div):not(li):not(h1):not(h2):not(h3) {
+  margin-top: 1.5rem;
+}
+
+.Markdown a {
+  color: theme("colors.purple");
+  border-bottom: 1px solid theme("colors.purpleVeryFaded");
+  transition: border-bottom-color 200ms ease;
+}
+
+.Markdown a:hover {
+  border-bottom: 1px solid theme("colors.purpleFaded");
+}
+
+.Markdown blockquote {
+  padding-left: 1.125em;
+  margin-top: theme("spacing.4");
+  border-left: 2px #e2e2e2 solid;
+  color: rgb(119, 119, 125);
+}
+
+.Markdown h1,
+.Markdown h2,
+.Markdown h3 {
+  margin-top: theme("spacing.8");
+  margin-bottom: theme("spacing.3");
+  font-size: 22px;
+  font-weight: theme("fontWeight.semibold");
+}
+
+.Markdown hr {
+  border: 0;
+  padding-top: 2rem;
+  margin: 2rem auto 3.5rem;
+  border-bottom: 2px solid #e2e2e2;
+  max-width: 6rem;
+}
+
+.Markdown ul,
+.Markdown ol {
+  margin-top: theme("spacing.4");
+  padding-left: 1.25em;
+}
+
+.Markdown ul {
+  list-style: none;
+  text-indent: -1.25em;
+}
+
+.Markdown li {
+  line-height: 1.75;
+}
+
+.Markdown li + li {
+  margin-top: 0.75em;
+}
+
+.Markdown ul li {
+  margin-top: 0.15em;
+  margin-bottom: 0.15em;
+}
+
+.Markdown ul li:before {
+  content: "•";
+  margin-right: 0.75em;
+}
+
+.Markdown code,
+.Markdown pre {
+  font-family: theme("fontFamily.mono");
+  font-size: 15px;
+  border-radius: 2px;
+}
+
+.Markdown pre {
+  padding: 0.75em;
+  overflow-x: scroll;
+}
+
+.Markdown code {
+  background: theme("colors.lightGray");
+  padding: 0.15em 0.25em;
+}
+
+.Markdown figure img {
+  color: theme("colors.gray");
+}
+
+.Markdown figcaption {
+  margin-top: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.Markdown .footnotes {
+  font-size: theme("fontSize.sm");
+}
+
+.Markdown .footnotes li {
+  font-size: 0.875rem;
+  line-height: theme("lineHeight.normal");
+}
+
+.Markdown .footnotes li p {
+  display: inline;
+}
+
+.Markdown sup {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0 0.25em;
+}
+
+.Markdown a.footnote-ref,
+.Markdown a.footnote-backref {
+  border-bottom: none;
+  padding: 0;
+}
+
+.Markdown .footnotes ol {
+  list-style: decimal;
+}
+
+/**
+ * page transitions
+ */
+
+.barba-once-active {
+  transition: opacity 250ms ease;
+}
+
+.barba-once {
+  opacity: 0;
+}
+
+.barba-once-to {
+  opacity: 1;
+}
+
+.barba-leave-active,
+.barba-enter-active {
+  transition: opacity 250ms ease;
+}
+
+.barba-leave,
+.barba-enter-to {
+  opacity: 1;
+}
+
+.barba-enter,
+.barba-leave-to {
+  opacity: 0;
+}
+
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";

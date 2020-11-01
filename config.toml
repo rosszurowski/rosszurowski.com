@@ -1,0 +1,22 @@
+baseURL = "https://rosszurowski.com/"
+title = "Ross Zurowski"
+languageCode = "en-us"
+
+# render controls
+disableFastRender = true
+disableHugoGeneratorInject = true
+disableKinds = ["taxonomy", "taxonomyTerm"]
+enableGitInfo = true
+
+[params]
+description = "Designer and developer from Toronto."
+author = "Ross Zurowski"
+email = "ross@rosszurowski.com"
+social = { twitter = "rosszurowski", github = "rosszurowski", arena = "ross-zurowski" }
+socialImageURL = "/images/social.png"
+
+# list of sections to include in the main RSS feed
+rssSections = ["log"]
+
+[permalinks]
+log = "/log/:year/:slug"

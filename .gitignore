@@ -4,12 +4,12 @@ npm-debug.log
 yarn-debug.log
 yarn-error.log
 
-# Ignore Gatsby scraps
-.cache
-
-# Ignore design files
+# Ignore planning files
 /documents
 
-# Ignore built files
-build/
-public/
+# Ignore build files
+/public
+/resources
+
+# Ignore sensitive files
+.env
