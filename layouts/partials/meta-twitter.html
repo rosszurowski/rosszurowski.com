@@ -1,0 +1,12 @@
+  <meta name="twitter:title" content="{{ .Title }}">
+  <meta name="twitter:description" content="{{ .Description | default .Params.summary | default .Summary }}">
+{{ with .Site.Params.social.twitter }}
+  <meta name="twitter:site" content="@{{ . }}">
+  <meta name="twitter:creator" content="@{{ . }}">
+{{- end }} {{ with .Params.images }}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:src" content="{{ index . 0 }}">
+{{ else }}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:src" content="{{ .Site.Params.socialImageURL }}">
+{{ end -}}

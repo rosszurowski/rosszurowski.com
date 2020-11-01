@@ -1,0 +1,26 @@
+{{ define "container" }}
+<main data-barba="container" data-barba-namespace="post">
+  <div class="p-4 sm:p-10 md:p-16">
+    <header class="mb-20 sm:mb-32 md:mb-40">
+      <a href="/"> {{ partial "squiggle.html" . }} </a>
+    </header>
+    <article class="lg:flex">
+      <header class="flex flex-1 flex-col justify-between mb-10 lg:mb-0 mr-0 lg:mr-24" style="max-width: 13rem;">
+        <div>
+          <h1 class="text-purple leading-normal mb-1">{{ replaceRE "\\s+(\\S*)$" "&nbsp;$1" .Title | safeHTML }}</h1>
+          <time class="opacity-50" datetime="{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}">
+            {{ .PublishDate.Format "Jan 2, 2006" }}
+          </time>
+        </div>
+        <div class="hidden lg:block">
+          {{ partial "log/back-home.html" . }}
+        </div>
+      </header>
+      <div class="Markdown max-w-xl">{{ .Content }}</div>
+    </article>
+    <footer class="py-12 -ml-4 text-center lg:hidden max-w-xl">
+      {{ partial "log/back-home.html" . }}
+    </footer>
+  </div>
+</main>
+{{ end }}

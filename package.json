@@ -1,51 +1,24 @@
 {
-  "name": "rosszurowski",
-  "version": "1.1.0",
+  "name": "rosszurowski.com",
+  "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "build:css": "bin/build-css > src/assets/css/utilities.css",
-    "format": "prettier --write 'src/**/*.{js,md}'",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "prettier": {
-    "jsxBracketSameLine": true,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "all"
-  },
+  "author": "Ross Zurowski <ross@rosszurowski.com>",
   "dependencies": {
-    "@rosszurowski/vanilla": "^1.3.2",
-    "emotion": "^9.1.2",
-    "emotion-server": "^9.1.2",
-    "gatsby": "^2.0.45",
-    "gatsby-image": "^2.0.13",
-    "gatsby-plugin-catch-links": "^2.0.3",
-    "gatsby-plugin-emotion": "^2.0.5",
-    "gatsby-plugin-feed": "^2.0.6",
-    "gatsby-plugin-goatcounter": "^0.3.1",
-    "gatsby-plugin-netlify": "^2.0.0",
-    "gatsby-plugin-react-helmet": "^3.0.0",
-    "gatsby-plugin-sharp": "^2.0.5",
-    "gatsby-remark-images": "^2.0.3",
-    "gatsby-remark-smartypants": "^2.0.5",
-    "gatsby-source-filesystem": "^2.0.1",
-    "gatsby-transformer-remark": "^2.1.5",
-    "gatsby-transformer-sharp": "^2.1.3",
-    "lodash.debounce": "^4.0.8",
-    "react": "^16.6.1",
-    "react-dom": "^16.6.1",
-    "react-emotion": "^9.1.2",
-    "react-helmet": "^5.2.0",
-    "react-responsive-canvas": "^1.0.1",
-    "tinytime": "^0.2.6"
+    "@barba/core": "^2.9.7",
+    "@barba/css": "^2.1.15",
+    "@barba/prefetch": "^2.1.10",
+    "nightlight": "^1.0.2"
   },
   "devDependencies": {
-    "flow-bin": "^0.78.0",
-    "gatsby-plugin-flow": "^1.0.2",
-    "prettier": "^1.14.0",
-    "slug": "^0.9.1"
+    "@rosszurowski/vanilla": "^1.3.4",
+    "@types/node": "^14.11.8",
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8.1.1",
+    "postcss-cli": "^8.1.0",
+    "postcss-import": "^12.0.1",
+    "prettier": "^2.1.2",
+    "tailwindcss": "^1.8.12",
+    "typescript": "^4.0.3"
   },
   "license": "MIT"
 }
