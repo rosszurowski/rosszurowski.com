@@ -72,6 +72,51 @@ barba.init({
   ],
 });
 
+type CountVars = {
+  path?: string; // Page path (without domain) or event name.
+  referrer?: string; // Where the user came from; can be an URL (https://example.com) or any string (June Newsletter). Default is to use the Referer header.
+  title?: string; // Human-readable title. Default is document.title.
+  event?: boolean; // Treat the path as an event, rather than a URL. Boolean.
+};
+
+declare global {
+  interface Window {
+    goatcounter: {
+      no_onload: boolean; // Don’t do anything on page load. If you want to call count() manually.
+      allow_local?: boolean; // Allow requests from local addresses (localhost, 192.168.0.0, etc.) for testing the integration locally.
+      count?: (count_vars: CountVars) => void;
+      referrer?: string;
+      get_query?: (parameter: string) => string;
+    };
+  }
+}
+
+barba.hooks.enter(onVisit);
+
+function onVisit() {
+  if (!window.goatcounter) {
+    return;
+  }
+  const path = cleanPath();
+  const referrer =
+    window.goatcounter.get_query?.("ref") ||
+    window.goatcounter.get_query?.("utm_source") ||
+    document.referrer;
+
+  window.goatcounter.count({ path, referrer });
+}
+
+function cleanPath() {
+  const l = document.location;
+  const p = l.pathname;
+  const s = l.search
+    .substring(1)
+    .split("&")
+    .filter((x) => !/^(utm_.*=|ref=)/.test(x))
+    .join("&");
+  return p + (s.length ? "?" + s : "") + l.hash;
+}
+
 history.scrollRestoration = "manual";
 
 let scrollPosY = 0;
