@@ -25,9 +25,9 @@
   {{- $opts := dict "targetPath" "bundle.js" "minify" true }}
   {{- $built := resources.Get "index.ts" | js.Build $opts | resources.Fingerprint "sha256" }}
   <script type="text/javascript" src="{{ $built.RelPermalink }}" integrity="{{ $built.Data.Integrity }}" defer></script>
+  <script async defer data-domain="rosszurowski.com" src="https://plausible.io/js/plausible.js"></script>
 </head>
 <body class="{{- block "bodyClass" . -}}{{- end -}}" data-barba="wrapper">
   {{- block "container" . }}{{- end }}
-  <script data-goatcounter="https://rosszurowski.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
