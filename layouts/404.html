@@ -1,11 +1,17 @@
 {{ define "head" }}
-  <meta http-equiv="refresh" content="2;url={{ .Site.BaseURL }}">
+  <meta http-equiv="refresh" content="2;url={{ .Site.BaseURL }}" />
 {{ end }}
 
 {{ define "container" }}
 <main data-barba="container" data-barba-namespace="not-found">
   <div class="p-4 sm:p-16">
-    <svg class="mb-4" viewbox="0 0 24 24" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      class="mb-4"
+      viewbox="0 0 24 24"
+      width="32"
+      height="32"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <g fill="currentColor" fill-rule="evenodd">
         <path d="m1.5 1.5h7.5v1.5h-7.5z" />
         <path d="m4.5 9h1.5v1.5h-1.5z" />
@@ -37,9 +43,10 @@
         <path d="m10.5 1.5h6v1.5h-6z" />
       </g>
     </svg>
-    <p>
-      Page not found. Redirecting you <a href="/">back home</a>...
-    </p>
+    <p>Page not found. Redirecting you <a href="/">back home</a>...</p>
   </div>
 </main>
+<script>
+  plausible("404", { props: { path: document.location.pathname } });
+</script>
 {{ end }}
