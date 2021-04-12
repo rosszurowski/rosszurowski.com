@@ -11,7 +11,7 @@ recentProjects = """
 Sites for [Hannah Lee](https://hannahlee.ca) & [Brian Sholis](https://sholis.com), collecting [broken idioms](https://broken-idioms.com/).
 """
 recentInterests = """
-[Alternate calendars](/log/2018/small-seasons-long-calendars), "the feed", 日本語, [language and thought](https://www.are.na/ross-zurowski/language-thought), [decentralized publishing](/log/2017/toward-a-distributed-web), and making ice cream.
+[Alternate calendars](/log/2018/small-seasons-long-calendars/), "the feed", 日本語, [language and thought](https://www.are.na/ross-zurowski/language-thought), [decentralized publishing](/log/2017/toward-a-distributed-web/), and making ice cream.
 """
 +++
 
