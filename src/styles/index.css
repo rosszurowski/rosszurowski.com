@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply font-sans text-lg leading-[1.7] tracking-[-0.035px] text-gray-800;
+    @apply antialiased;
+    @apply scroll-p-12;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+@layer components {
+  .link-underline {
+    @apply border-b border-gray-800/20 text-inherit;
+  }
+
+  .page-home {
+    @apply text-white;
+  }
+  .page-home a[href] {
+    @apply transition-opacity;
+  }
+  .page-home a[href]:hover {
+    @apply opacity-70;
+  }
+  .page-home p a {
+    @apply link-underline border-white/40;
+  }
+
+  .markdown {
+    @apply leading-[1.6];
+  }
+
+  .markdown
+    > *:not(h1):not(h2):not(h3)
+    + *:not(div):not(li):not(h1):not(h2):not(h3) {
+    @apply mt-6;
+  }
+
+  .markdown a {
+    @apply border-b border-purpleVeryFaded text-purple transition-colors hover:border-purpleFaded;
+  }
+
+  .markdown blockquote {
+    @apply mt-4 pl-5;
+    border-left: 2px #e2e2e2 solid;
+    color: rgb(119, 119, 125);
+  }
+
+  .markdown h1,
+  .markdown h2,
+  .markdown h3 {
+    @apply mt-8 mb-3 text-[1.222rem] font-semibold;
+  }
+
+  .markdown hr {
+    @apply mx-auto mt-8 mb-14 border-0 border-b-2 pt-8;
+    border-bottom: 2px solid #e2e2e2;
+    max-width: 6rem;
+  }
+
+  .markdown ul,
+  .markdown ol {
+    @apply mt-4 pl-5;
+  }
+
+  .markdown ul {
+    @apply list-none -indent-5;
+  }
+
+  .markdown li {
+    @apply leading-loose;
+  }
+
+  .markdown li + li {
+    @apply mt-3;
+  }
+
+  .markdown ul li {
+    @apply my-0.5;
+  }
+
+  .markdown ul li:before {
+    @apply mr-3;
+    content: "•";
+  }
+
+  .markdown code,
+  .markdown pre {
+    @apply rounded-md font-mono text-[15px];
+  }
+
+  .markdown pre {
+    @apply overflow-x-auto p-3;
+  }
+
+  .markdown code {
+    @apply bg-gray-100 py-[0.15em] px-[0.25em];
+  }
+
+  .markdown figure img {
+    @apply text-gray-500;
+  }
+
+  .markdown figcaption {
+    @apply mt-2 text-sm text-gray-600;
+  }
+
+  .markdown .footnotes {
+    @apply mt-12 max-w-lg text-sm;
+  }
+
+  .markdown .footnotes li {
+    @apply text-sm leading-normal;
+  }
+
+  .markdown .footnotes li p {
+    @apply inline;
+  }
+
+  .markdown sup a {
+    @apply border-b-0 px-0.5 text-xs font-medium hover:border-b-0;
+  }
+
+  .markdown a.data-footnote-ref,
+  .markdown a.data-footnote-backref {
+    @apply relative top-0.5 border-b-0 p-0 font-[sans] text-inherit opacity-50 hover:opacity-25;
+  }
+
+  .markdown .footnotes ol {
+    @apply list-decimal;
+  }
+}
+
+@layer utilities {
+}

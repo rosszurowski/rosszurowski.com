@@ -1,9 +1,8 @@
 [build]
-  command = "make"
-  publish = "public"
+  command = "next build"
+  publish = ".next"
 
 [build.environment]
-  HUGO_VERSION = "0.77.0"
-  NODE_VERSION = "14.2.0"
-  YARN_VERSION = "1.22.4"
+  NODE_VERSION = "16.13.1"
+  YARN_VERSION = "1.22.19"
   YARN_FLAGS = "--pure-lockfile"
