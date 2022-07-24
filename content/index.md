@@ -13,7 +13,7 @@ roles:
     href: https://palantir.com
     period: 2015
   - name: Facebook
-    href: https://facebook.design
+    href: https://design.facebook.com
     period: 2014
 intro: |
   Designer and developer from Toronto.
