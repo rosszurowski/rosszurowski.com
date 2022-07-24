@@ -1,7 +1,0 @@
-/assets/metrics.js https://plausible.io/js/plausible.js 200
-/api/event https://plausible.io/api/event 202
-/log          /                                    302
-/2017/japan   https://japan-2017.rosszurowski.com  302
-/100          https://100-2017.rosszurowski.com    302
-/reading/*    https://rosszurowski-clippings.netlify.com/reading/:splat 200
-/* /404.html 404
