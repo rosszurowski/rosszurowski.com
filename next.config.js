@@ -22,6 +22,5 @@ const config = {
 }
 
 module.exports = withPlausibleProxy({
-  scriptName: "metrics.js",
-  subdirectory: "assets",
+  scriptName: "metrics",
 })(withContentlayer(config))
