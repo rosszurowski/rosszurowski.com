@@ -14,6 +14,7 @@ yarn-error.log
 
 # Ignore build steps
 public/log
+public/index.xml
 
 # Ignore sensitive files
 .env

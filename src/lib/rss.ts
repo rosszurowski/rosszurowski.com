@@ -15,7 +15,7 @@ export default async function generateRSSFeeds() {
     title: siteDatum.title,
     description: "Recent blog posts by Ross Zurowski",
     items: allBlogPosts,
-    path: path.join(outputPath, "log/index.xml"),
+    path: path.join(outputPath, "index.xml"),
     titleField: (doc) => doc.title,
     dateField: (doc) => doc.date,
     urlField: (doc) => {

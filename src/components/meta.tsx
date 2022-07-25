@@ -58,6 +58,7 @@ export default function Meta(props: Props) {
         content={formattedImageUrl}
       />
 
+      <link rel="alternate" type="application/rss+xml" href="/index.xml" />
       <link rel="canonical" key="canonical" href={formattedUrl} />
       <link
         rel="shortcut icon"
