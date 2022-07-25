@@ -22,9 +22,7 @@ export default function HomePage(props: Props) {
         <ul className="flex space-x-2 text-xs opacity-75">
           {siteDatum.socialLinks.map((link) => (
             <li key={link.href}>
-              <a href={link.href} target="_blank" rel="noreferrer noopener">
-                {link.title}
-              </a>
+              <ExternalLink href={link.href} title={link.title} />
             </li>
           ))}
         </ul>
