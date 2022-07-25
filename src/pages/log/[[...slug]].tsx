@@ -17,7 +17,7 @@ type Props = {
 }
 
 export default function LogPage(props: Props) {
-  const { post, otherPosts } = props
+  const { post } = props
 
   return (
     <StandardLayout>
@@ -45,13 +45,6 @@ export default function LogPage(props: Props) {
         />
         <footer className="-ml-4 max-w-xl py-12 text-center lg:hidden">
           <BackHome />
-          {otherPosts.map((p) => (
-            <div key={p._id}>
-              <Link href={p.url}>
-                <a>{p.title}</a>
-              </Link>
-            </div>
-          ))}
         </footer>
       </article>
     </StandardLayout>
@@ -96,16 +89,17 @@ export const getStaticProps: GetStaticProps = (ctx) => {
     }
   }
 
-  const otherPosts: PostPreview[] = allBlogPosts
-    .filter((p) => p._id !== post._id)
-    .slice(0, 5)
-    .map((p) => ({
-      _id: p._id,
-      title: p.title,
-      date: p.date,
-      formattedDate: p.formattedDate,
-      url: p.url,
-    }))
+  const otherPosts: PostPreview[] = []
+  // allBlogPosts
+  //   .filter((p) => p._id !== post._id)
+  //   .slice(0, 5)
+  //   .map((p) => ({
+  //     _id: p._id,
+  //     title: p.title,
+  //     date: p.date,
+  //     formattedDate: p.formattedDate,
+  //     url: p.url,
+  //   }))
 
   return {
     props: {
