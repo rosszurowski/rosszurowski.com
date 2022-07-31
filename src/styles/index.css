@@ -44,6 +44,10 @@
     @apply border-b border-purpleVeryFaded text-purple transition-colors hover:border-purpleFaded;
   }
 
+  .markdown strong {
+    @apply font-semibold;
+  }
+
   .markdown blockquote {
     @apply mt-4 pl-5;
     border-left: 2px #e2e2e2 solid;
@@ -71,16 +75,8 @@
     @apply list-none -indent-5;
   }
 
-  .markdown li {
-    @apply leading-loose;
-  }
-
-  .markdown li + li {
-    @apply mt-3;
-  }
-
   .markdown ul li {
-    @apply my-0.5;
+    @apply my-1;
   }
 
   .markdown ul li:before {
