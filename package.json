@@ -25,7 +25,7 @@
     "next-plausible": "^3.2.0",
     "postcss": "^8.4.14",
     "prettier": "^2.7.1",
-    "prettier-plugin-tailwindcss": "^0.1.12",
+    "prettier-plugin-tailwindcss": "^0.1.13",
     "rehype-external-links": "^2.0.0",
     "rehype-figure": "^1.0.1",
     "remark-gfm": "^3.0.1",
