@@ -1,21 +1,15 @@
-import fs from "fs/promises"
 import { parseISO } from "date-fns"
 import { Feed } from "feed"
 import { allBlogPosts, siteDatum } from "contentlayer/generated"
-import path from "path"
-
-const outputPath = "public"
 
 /**
- * generateRSSFeeds writes a collection of RSS feeds to the filesystem.
+ * generateBlogFeed returns a feed object for generating an RSS feed
+ * of blog posts.
  */
-export default async function generateRSSFeeds() {
-  await generateFeed({
-    url: siteDatum.url,
-    title: siteDatum.title,
+export function generateBlogFeed() {
+  return generateFeed({
     description: "Recent blog posts by Ross Zurowski",
     items: allBlogPosts,
-    path: path.join(outputPath, "index.xml"),
     titleField: (doc) => doc.title,
     dateField: (doc) => doc.date,
     urlField: (doc) => {
@@ -27,11 +21,10 @@ export default async function generateRSSFeeds() {
 }
 
 type FeedOptions<T> = {
-  title: string
+  title?: string
   description: string
-  url: string
+  url?: string
   items: T[]
-  path: string
   titleField: (doc: T) => string
   dateField: (doc: T) => string
   urlField: (doc: T) => string
@@ -39,7 +32,7 @@ type FeedOptions<T> = {
   filterFn?: (doc: T) => boolean
 }
 
-async function generateFeed<T>(options: FeedOptions<T>) {
+function generateFeed<T>(options: FeedOptions<T>) {
   const { dateField, urlField, titleField, contentField } = options
   const year = new Date().getFullYear()
 
@@ -47,9 +40,9 @@ async function generateFeed<T>(options: FeedOptions<T>) {
   const items = options.items.slice().sort((a, b) => toTime(b) - toTime(a))
 
   const feed = new Feed({
-    id: options.url,
-    link: options.url,
-    title: options.title,
+    id: options.url || siteDatum.url,
+    link: options.url || siteDatum.url,
+    title: options.title || siteDatum.title,
     description: options.description,
     generator: "rosszurowski/v1",
     copyright: `© ${year} Ross Zurowski`,
@@ -71,6 +64,5 @@ async function generateFeed<T>(options: FeedOptions<T>) {
     })
   })
 
-  await fs.mkdir(path.dirname(options.path), { recursive: true })
-  await fs.writeFile(options.path, feed.rss2())
+  return feed
 }

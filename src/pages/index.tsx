@@ -5,7 +5,6 @@ import { format } from "date-fns"
 import { ReactNode } from "react"
 import HomeLayout from "src/components/home-layout"
 import Icon from "src/components/icon"
-import generateRSSFeeds from "src/lib/rss"
 import copyStaticAssets from "src/lib/assets"
 
 type Props = {
@@ -103,7 +102,6 @@ function ExternalLink(props: { title: string; href: string }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  await generateRSSFeeds()
   await copyStaticAssets()
 
   return {

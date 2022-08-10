@@ -19,6 +19,12 @@ const config = {
       },
     ]
   },
+  async rewrites() {
+    return [
+      { source: "/index.xml", destination: "/api/rss" },
+      { source: "/log/index.xml", destination: "/api/rss" },
+    ]
+  },
 }
 
 module.exports = withPlausibleProxy({
