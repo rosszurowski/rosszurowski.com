@@ -15,12 +15,13 @@ lint: node_modules
 .PHONY: lint
 
 format: node_modules
+	@./node_modules/.bin/eslint --fix 'src/**/*.{js,jsx,ts,tsx}'
 	@./node_modules/.bin/prettier --write 'src/**/*.{js,jsx,ts,tsx}'
 .PHONY: format
 
 node_modules: yarn.lock
 	@yarn install --frozen-lockfile --network-timeout=10000
-	@yarn check --verify-tree --integrity
+	@yarn check --verify-tree --integrity --silent
 
 help: ## Show this help
 	@echo "\nSpecify a command. The choices are:\n"
