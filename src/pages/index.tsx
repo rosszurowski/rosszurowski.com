@@ -1,4 +1,4 @@
-import { homeDatum, siteDatum } from "contentlayer/generated"
+import { siteDatum } from "contentlayer/generated"
 import type { GetStaticProps } from "next"
 import Link from "next/link"
 import { format } from "date-fns"
