@@ -15,7 +15,7 @@ export default function HomePage(props: Props) {
   const { buildDate } = props
 
   return (
-    <HomeLayout className="page-home">
+    <HomeLayout>
       <div className="mb-12">
         <h1 className="mb-1">Ross Zurowski</h1>
         <ul className="flex space-x-2 text-xs opacity-75">
@@ -26,14 +26,19 @@ export default function HomePage(props: Props) {
           ))}
         </ul>
       </div>
-      <div
-        className="mb-12"
-        dangerouslySetInnerHTML={{ __html: homeDatum.intro.html }}
-      />
+      <div className="mb-12">
+        <p>Designer and developer from Toronto.</p>
+        <p>
+          Currently at{" "}
+          <ExternalLink title="Tailscale" href="https://tailscale.com" />,
+          building network infrastructure for a simpler, more secure, more human
+          kind of internet.
+        </p>
+      </div>
       <div className="mb-6">
         <h4 className="mb-3 text-pink">CV</h4>
         <ul>
-          {homeDatum.roles.map((role) => (
+          {roles.map((role) => (
             <li className="relative flex" key={role.name}>
               <span className="mr-4 inline-block w-36">{role.period}</span>
               <a href={role.href} target="_blank" rel="noopener noreferrer">
@@ -58,20 +63,15 @@ export default function HomePage(props: Props) {
         <Link href="/log/2018/small-seasons-long-calendars">
           <a>Alternate calendars</a>
         </Link>
-        , “the feed”, 日本語,{" "}
-        <ExternalLink
-          title="language and thought"
-          href="https://www.are.na/ross-zurowski/language-thought"
-        />
-        ,{" "}
+        , 日本語, 한국어,{" "}
         <Link href="/log/2017/toward-a-distributed-web/">
           <a>decentralized publishing</a>
         </Link>
-        , and making ice cream.
+        , SQLite, gifts, debt, and larb.
       </Section>
       <footer className="text-xs opacity-75">
         <p>
-          Last updated {buildDate}. Past versions of this site are available{" "}
+          Last updated {buildDate}. Past versions available{" "}
           <ExternalLink
             title="on GitHub"
             href="https://github.com/rosszurowski/rosszurowski.com/releases"
@@ -82,6 +82,18 @@ export default function HomePage(props: Props) {
     </HomeLayout>
   )
 }
+
+const roles = [
+  {
+    name: "Tailscale",
+    href: "https://tailscale.com",
+    period: "2019 – Present",
+  },
+  { name: "Watsi", href: "https://watsi.org", period: "2016 – 2018" },
+  { name: "Format", href: "https://format.org", period: "2013 – 2016" },
+  { name: "Palantir", href: "https://palantir.com", period: "2015" },
+  { name: "Facebook", href: "https://design.facebook.com", period: "2014" },
+]
 
 function Section(props: { title: string; children: ReactNode }) {
   const { title, children } = props

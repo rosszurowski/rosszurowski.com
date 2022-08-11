@@ -16,7 +16,7 @@ export default function HomeLayout(props: Props) {
   return (
     <div
       className={cx(
-        "relative z-10 flex items-stretch overflow-x-hidden",
+        "page-home relative z-10 flex items-stretch overflow-x-hidden",
         className
       )}
     >

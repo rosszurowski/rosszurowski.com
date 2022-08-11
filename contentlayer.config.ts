@@ -129,34 +129,9 @@ const Role = defineNestedType(() => ({
   },
 }))
 
-const HomeData = defineDocumentType(() => ({
-  name: "HomeData",
-  filePathPattern: "index.md",
-  isSingleton: true,
-  fields: {
-    intro: {
-      type: "markdown",
-      required: true,
-    },
-    recentProjects: {
-      type: "markdown",
-      required: true,
-    },
-    recentInterests: {
-      type: "markdown",
-      required: true,
-    },
-    roles: {
-      type: "list",
-      of: Role,
-      required: true,
-    },
-  },
-}))
-
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [BlogPost, SiteData, HomeData],
+  documentTypes: [BlogPost, SiteData],
   markdown: (builder) => {
     builder
       .use(remarkFrontmatter)
