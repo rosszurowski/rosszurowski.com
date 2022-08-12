@@ -20,8 +20,7 @@ format: node_modules ## Format code to a standard style
 .PHONY: format
 
 node_modules: yarn.lock
-	@yarn install --frozen-lockfile --network-timeout=10000
-	@yarn check --verify-tree --integrity --silent
+	@yarn install --frozen-lockfile --check-files --network-timeout=10000
 
 help: ## Show this help
 	@echo "\nSpecify a command. The choices are:\n"
