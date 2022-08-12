@@ -14,7 +14,7 @@ lint: node_modules
 	@./node_modules/.bin/next lint
 .PHONY: lint
 
-format: node_modules
+format: node_modules ## Format code to a standard style
 	@./node_modules/.bin/eslint --fix 'src/**/*.{js,jsx,ts,tsx}'
 	@./node_modules/.bin/prettier --write 'src/**/*.{js,jsx,ts,tsx}'
 .PHONY: format
@@ -29,4 +29,4 @@ help: ## Show this help
 	@echo ""
 .PHONY: help
 
-.DEFAULT_GOAL := build
+.DEFAULT_GOAL := help
