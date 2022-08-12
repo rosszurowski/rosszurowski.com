@@ -23,7 +23,7 @@ More and more, the web feels like a playground for businesses than [the informat
 ### Early Days
 
 <figure>
-  <img src="/log/2017/toward-a-distributed-web/first-web-server.jpg" alt="The first web server, at CERN in Geneva" />
+  <img src="/log/2017/toward-a-distributed-web/first-web-server.jpg" alt="The first web server, at CERN in Geneva" width="2048" height="1536" />
   <figcaption>
     <p>Tim Berners-Lee’s NeXT workstation (<a href="https://commons.wikimedia.org/wiki/File:First_Web_Server.jpg">source</a>)</p>
   </figcaption>
@@ -34,7 +34,7 @@ The computer pictured above is the world’s first web server. Built to share do
 On its casing is a sticky note warning: “This machine is a server. DO NOT POWER IT DOWN!” Makes sense. If the server is down, nobody can read the files on it.
 
 <figure>
-  <img src="/log/2017/toward-a-distributed-web/structure-http.png" alt="A diagram showing many nodes 'following' a central server." />
+  <img src="/log/2017/toward-a-distributed-web/structure-http.png" alt="A diagram showing many nodes 'following' a central server." width="1280" height="683" />
 </figure>
 
 This little sticky note is a clue to a fundamental concept behind HTTP: it's a request-response protocol. A "client" makes a request, and the "server" sends a response. One computer has a file, and many others ask for it. One server, many clients.
@@ -44,7 +44,7 @@ This little sticky note is a clue to a fundamental concept behind HTTP: it's a r
 The web has grown a lot since its early days. Instead of sticky notes on computers, internet infrastructure looks a little more like this:
 
 <figure>
-  <img src="/log/2017/toward-a-distributed-web/google-data-center.jpg" alt="Aisles and aisles of servers, lights blinking in the dark." />
+  <img src="/log/2017/toward-a-distributed-web/google-data-center.jpg" alt="Aisles and aisles of servers, lights blinking in the dark." width="2000" height="1333" />
   <figcaption>
     <p>Google Data Center in Finland (<a href="https://www.google.com/about/datacenters/gallery/#/tech">source</a>)</p>
   </figcaption>
@@ -78,7 +78,7 @@ For all that negativity, there’s tons of exciting work these days to find alte
 One exciting area is _distributed web technologies_, protocols vying to replace HTTP as the way we pass information across networks. There’s a few projects trying to fill this space. Some bigger ones: [IPFS](https://ipfs.io), [Zeronet](https://zeronet.io/), and [Dat](http://datproject.org/).
 
 <figure>
-  <img src="/log/2017/toward-a-distributed-web/structure-bittorrent.png" alt="An alternative structure diagram, where each node is connected to other nodes." />
+  <img src="/log/2017/toward-a-distributed-web/structure-bittorrent.png" alt="An alternative structure diagram, where each node is connected to other nodes." width="1280" height="683" />
 </figure>
 
 Many of these alternatives share a resemblance with BitTorrent: one person starts to host something, and everybody re-hosts it as they view it. The distance between server and client collapses. No one person owns the servers. Instead, everyone is both a server and a client.
