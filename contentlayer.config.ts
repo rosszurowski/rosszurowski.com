@@ -8,6 +8,10 @@ import excerpt from "excerpt-html"
 import smartypants from "remark-smartypants"
 import gfm from "remark-gfm"
 import externalLinks from "rehype-external-links"
+import autolinkHeadings from "rehype-autolink-headings"
+import slugHeadings from "rehype-slug"
+import highlight from "rehype-pretty-code"
+import { h } from "hastscript"
 
 const formatDate = (date: string, formatString: string): string =>
   format(parseISO(date), formatString)
@@ -66,6 +70,34 @@ export const BlogPost = defineDocumentType(() => ({
   },
 }))
 
+const Snippet = defineDocumentType(() => ({
+  name: "Snippet",
+  filePathPattern: "snippets/**/*.md",
+  fields: {
+    title: {
+      type: "string",
+      description: "The title of the snippet",
+      required: true,
+    },
+    slug: {
+      type: "string",
+      description: "The URL segment of the post",
+      required: true,
+    },
+    date: {
+      type: "date",
+      description: "The date the post was published",
+      required: true,
+    },
+  },
+  computedFields: {
+    url: {
+      type: "string",
+      resolve: (doc) => `/snippets/${doc.slug}`,
+    },
+  },
+}))
+
 const SocialLink = defineNestedType(() => ({
   name: "SocialLink",
   fields: {
@@ -112,11 +144,19 @@ const SiteData = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [BlogPost, SiteData],
+  documentTypes: [BlogPost, Snippet, SiteData],
   mdx: {
     remarkPlugins: [gfm, smartypants],
     rehypePlugins: [
+      [highlight, { theme: "css-variables" }],
       [externalLinks, { rel: ["nofollow", "noreferrer"], target: "_blank" }],
+      slugHeadings,
+      [
+        autolinkHeadings,
+        {
+          content: () => [h("span", { ariaHidden: "true" }, "Link")],
+        },
+      ],
     ],
   },
   date: {
