@@ -115,9 +115,8 @@ export const getStaticPaths: GetStaticPaths = () => {
   const paths: { params: Record<string, any> }[] = []
 
   allBlogPosts.forEach((post) => {
-    // Add blog /log/:slug and /log/:year/:slug
+    // Add blog /log/:year/:slug
     paths.push({ params: { slug: [post.year, post.slug] } })
-    paths.push({ params: { slug: [post.slug] } })
   })
 
   return {
