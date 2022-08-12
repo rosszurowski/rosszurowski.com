@@ -111,24 +111,6 @@ const SiteData = defineDocumentType(() => ({
   },
 }))
 
-const Role = defineNestedType(() => ({
-  name: "Role",
-  fields: {
-    name: {
-      type: "string",
-      required: true,
-    },
-    href: {
-      type: "string",
-      required: true,
-    },
-    period: {
-      type: "string",
-      required: true,
-    },
-  },
-}))
-
 export default makeSource({
   contentDirPath: "content",
   documentTypes: [BlogPost, SiteData],

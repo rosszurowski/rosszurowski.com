@@ -5,7 +5,7 @@ export type WebGLTexture2DSource =
 export type WebGLUniformType = "1f" | "2f" | "3f"
 
 export function getContext(canvas: HTMLCanvasElement): WebGLRenderingContext {
-  let gl: WebGLRenderingContext | null = canvas.getContext("webgl")
+  const gl: WebGLRenderingContext | null = canvas.getContext("webgl")
   if (!gl) {
     throw new Error(`Could not get WebGL context`)
   }

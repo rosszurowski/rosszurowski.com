@@ -159,27 +159,14 @@ const draw = (gl: WebGLRenderingContext) => {
 
 type Renderer = (width: number, height: number) => Promise<HTMLImageElement>
 
-function debounce(
-  func: Function,
-  wait: number,
-  immediate?: boolean
-): () => void {
-  let timeout: number | null = null
-  return function () {
-    // @ts-ignore
-    let context: any = this
-    let args = arguments
-    var later = function () {
-      timeout = null
-      if (!immediate) func.apply(context, args)
+function debounce<F extends (...params: any[]) => void>(fn: F, delay: number) {
+  let timeoutID: number | null = null
+  return function (this: any, ...args: any[]) {
+    if (timeoutID) {
+      clearTimeout(timeoutID)
     }
-    var callNow = immediate && !timeout
-    if (timeout) {
-      window.clearTimeout(timeout)
-    }
-    timeout = window.setTimeout(later, wait)
-    if (callNow) func.apply(context, args)
-  }
+    timeoutID = window.setTimeout(() => fn.apply(this, args), delay)
+  } as F
 }
 
 /**
@@ -196,7 +183,7 @@ export default class HeatDistortionProgram {
   uniforms: Record<string, WebGLUniformLocation> = {}
   tickId: number | null = null
   frame = 0
-  isSetup: boolean = false
+  isSetup = false
   resizeCanvas: () => void
   resizeProgram: () => void
 

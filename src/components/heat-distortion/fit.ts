@@ -1,8 +1,6 @@
-const scratch = new Float32Array(2)
-
 export default function fit(
   canvas: HTMLCanvasElement,
-  parent?: ((arr: Float32Array) => Float32Array) | HTMLElement,
+  parent?: HTMLElement,
   scale?: number
 ) {
   const isSVG = canvas.nodeName.toUpperCase() === "SVG"
@@ -18,18 +16,15 @@ export default function fit(
 
   function resize() {
     const p = resize.parent || canvas.parentElement
+    let width: number, height: number
 
-    if (typeof p === "function") {
-      var dims = p(scratch) || scratch
-      var width = dims[0]
-      var height = dims[1]
-    } else if (p && p !== document.body) {
-      var psize = getSize(p)
-      var width = psize[0] | 0
-      var height = psize[1] | 0
+    if (p && p !== document.body) {
+      const psize = getSize(p)
+      width = psize[0] | 0
+      height = psize[1] | 0
     } else {
-      var width = window.innerWidth
-      var height = window.innerHeight
+      width = window.innerWidth
+      height = window.innerHeight
     }
 
     if (isSVG) {
@@ -62,13 +57,13 @@ function getSize(element: Element): [number, number] {
     document.body.appendChild(element)
   }
 
-  var bounds = element.getBoundingClientRect()
-  var styles = getComputedStyle(element)
-  var height =
+  const bounds = element.getBoundingClientRect()
+  const styles = getComputedStyle(element)
+  const height =
     (bounds.height | 0) +
     parse(styles.getPropertyValue("margin-top")) +
     parse(styles.getPropertyValue("margin-bottom"))
-  var width =
+  const width =
     (bounds.width | 0) +
     parse(styles.getPropertyValue("margin-left")) +
     parse(styles.getPropertyValue("margin-right"))

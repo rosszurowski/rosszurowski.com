@@ -1,12 +1,8 @@
 import { NextApiHandler } from "next"
 import { generateBlogFeed } from "src/lib/rss"
 
-const feeds = {
-  blog: generateBlogFeed,
-}
-
 const handler: NextApiHandler = async (req, res) => {
-  const feed = await generateBlogFeed()
+  const feed = generateBlogFeed()
   res.status(200)
   res.setHeader("Content-Type", "text/xml")
   res.setHeader(
