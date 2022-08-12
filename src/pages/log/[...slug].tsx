@@ -71,7 +71,10 @@ function BackHome() {
 
 export const getStaticProps: GetStaticProps = (ctx) => {
   const slugParam = ctx.params?.["slug"]
-  const [year, slug] = Array.isArray(slugParam) ? slugParam : ["", slugParam]
+  const [year, maybeSlug] = Array.isArray(slugParam)
+    ? slugParam
+    : ["", slugParam]
+  const slug = maybeSlug || year
   const post = allBlogPosts.find((post) => post.slug === slug)
 
   if (!post) {
@@ -84,22 +87,12 @@ export const getStaticProps: GetStaticProps = (ctx) => {
     return {
       redirect: {
         destination: post.url,
-        permanent: false,
+        permanent: true,
       },
     }
   }
 
   const otherPosts: PostPreview[] = []
-  // allBlogPosts
-  //   .filter((p) => p._id !== post._id)
-  //   .slice(0, 5)
-  //   .map((p) => ({
-  //     _id: p._id,
-  //     title: p.title,
-  //     date: p.date,
-  //     formattedDate: p.formattedDate,
-  //     url: p.url,
-  //   }))
 
   return {
     props: {
@@ -119,9 +112,13 @@ export const getStaticPaths: GetStaticPaths = () => {
     }
   }
 
-  const paths = allBlogPosts.map((post) => ({
-    params: { slug: [post.year, post.slug] },
-  }))
+  const paths: { params: Record<string, any> }[] = []
+
+  allBlogPosts.forEach((post) => {
+    // Add blog /log/:slug and /log/:year/:slug
+    paths.push({ params: { slug: [post.year, post.slug] } })
+    paths.push({ params: { slug: [post.slug] } })
+  })
 
   return {
     paths,
