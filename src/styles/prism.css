@@ -1,0 +1,134 @@
+/* Tokens */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--prism-comment);
+  font-style: var(--prism-comment-style);
+}
+
+.token.namespace {
+  color: var(--prism-namespace);
+}
+
+.token.interpolation {
+  color: var(--prism-interpolation);
+}
+
+.token.string {
+  color: var(--prism-string);
+}
+
+.token.punctuation {
+  color: var(--prism-punctuation);
+}
+
+.token.operator {
+  color: var(--prism-operator);
+}
+
+.token.keyword.module,
+.token.keyword.control-flow {
+  color: var(--prism-keyword-control);
+}
+
+.token.url,
+.token.symbol,
+.token.inserted {
+  color: var(--prism-symbol);
+}
+
+.token.constant {
+  color: var(--prism-constant);
+}
+
+.token.string.url {
+  text-decoration: var(--prism-url-decoration);
+}
+
+.token.boolean,
+.language-json .token.boolean {
+  color: var(--prism-boolean);
+}
+
+.token.number,
+.language-json .token.number {
+  color: var(--prism-number);
+}
+
+.token.variable {
+  color: var(--prism-variable);
+}
+
+.token.keyword {
+  color: var(--prism-keyword);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.selector {
+  color: var(--prism-selector);
+}
+
+.token.function {
+  color: var(--prism-function);
+}
+
+.token.deleted {
+  color: var(--prism-deleted);
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.class-name {
+  color: var(--prism-class);
+}
+
+.token.tag,
+.token.builtin {
+  color: var(--prism-builtin);
+}
+
+.token.attr-name,
+.token.property,
+.token.entity {
+  color: var(--prism-property);
+}
+
+.language-json .token.property {
+  color: var(--prism-json-property);
+}
+
+.token.regex {
+  color: var(--prism-regex);
+}
+
+.token.decorator,
+.token.annotation {
+  color: var(--prism-decorator);
+}
+
+/* overrides color-values for the Line Numbers plugin
+   * http://prismjs.com/plugins/line-numbers/
+   */
+.line-numbers .line-numbers-rows {
+  border-right-color: var(--prism-line-number);
+}
+
+.line-numbers-rows > span:before {
+  color: var(--prism-line-number-gutter);
+}
+
+/* overrides color-values for the Line Highlight plugin
+   * http://prismjs.com/plugins/line-highlight/
+   */
+.line-highlight {
+  background: var(--prism-line-highlight-background);
+}

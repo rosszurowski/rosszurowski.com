@@ -1,0 +1,323 @@
+---
+title: Makefiles for web work
+slug: makefiles
+date: 2022-08-12
+---
+
+Make is a build tool that's been around since 1976 (!). It was originally designed for C programs: installing dependencies, running tests, compiling binaries, maybe even publishing them. And doing it fast, and only when prerequisite files changed.
+
+These days, web projects involve many of the same steps: installing node_modules, running linters and tests, compiling files with esbuild or Rollup, publishing to npm, managing dev servers.
+
+The default choice for automating these tasks is often npm/yarn scripts. More complex setups can end up with Gulp/Grunt, or even full-blown Docker builds. But I find Make often fills many of the same needs, better.
+
+Its age and simplicity means it gets a lot of things right:
+
+- **It's on every**. Most systems come pre-installed with Make. There's rarely any extra steps to get it working.
+- **It's fast**. People [routinely point out](https://twitter.com/jarredsumner/status/1557694790359085057?s=20&t=R7w-EaxCLuhMhVVaFg_M1g) that npm/yarn scripts are [shockingly slow to run](https://gist.github.com/rosszurowski/1b7971ab2eaf150c5039f3f7ef5e76a0). Make runs commands in milliseconds, which is nice, because [fast software is good software](https://craigmod.com/essays/fast_software/).
+- **It's simple**. You write a Makefile and add targets and commands and run them with `make <name>`. While Makefiles can get crazy, the basics take just a few minutes to learn.
+- **It's compatible with anything**. Since Make just works off shell scripts, it doesn't require commitment to any one language. You can use it for Go projects, PHP projects, Node projects, or mix and match what you need. You can stitch together npm/yarn scripts, shell scripts, and Makefiles together in whatever way makes sense for you.
+
+Other articles cover the basics of how to write a Makefile, so I'll leave syntax aside and focus on some techniques that I use with it.
+
+### A consistent interface to project scripts
+
+Make works best as a language-agnostic task runner for every project. Even if the language or framework being used is totally different Makefiles let you use consistent commands and a consistent interface.
+
+If you only edit a project every once in a while, it's easy to forget what commands you need for a working build, or what packages were part of running a
+dev server.
+
+On a Next.js project, you want:
+
+```shell
+yarn install
+yarn next dev -p 4001
+```
+
+On a [Kirby](https://getkirby.com) project you want a mix of:
+
+```shell
+yarn install
+php -S localhost:9000 index.php
+tailwindcss -i src/index.css -o build/index.css --watch
+esbuild src/*.ts --bundle --outdir=build --minify --sourcemap
+```
+
+Using Make, I can abstract all this a way and set up a single command to install dependencies and build and watch assets.
+
+```shell
+make dev
+```
+
+Doesn't matter whether it's Go or Node or PHP or esbuild or Rollup under the hood, it's all the same: `make dev`.
+
+Some common commands I'll add to most projects:
+
+- `make dev` starts a development server with live reloading of changes.
+- `make build` builds a production-ready binary or set of assets
+- `make deploy` tags a release for CI to build, or rsyncs files to a server
+- `make format` formats all code to a standard style, usually [prettier](https://prettier.io/) or [gofmt](https://go.dev/blog/gofmt)
+- `make lint` runs code quality checks, like [eslint](https://eslint.org/) or [golanglint-ci](https://golangci-lint.run/)
+- `make test` runs a full set of test suites. Sometimes I'll include `lint` scripts in here so there's a single command to run in CI
+- `make clean` removes all build artifacts and downloaded dependencies
+- `make help` lists all the commands in a Makefile (read on for details)
+
+This "one interface" approach has the added benefit of it being easier for teammates to get started too. One command, and you can dig into the Makefile if you care about how the engine works.
+
+### Scripts, not files
+
+```makefile
+task:
+	@echo "Hello, world!"
+.PHONY: task
+```
+
+### Default variables
+
+Using `?=` you can set default variables that are easy to override outside of Make. This makes it easy to configure a local dev setup in tools that only take command-line args.
+
+```makefile
+PORT ?= 8000
+
+dev: yarn.lock
+	@php -S localhost:$(PORT) index.php
+.PHONY: dev
+```
+
+Now you can customize the port (while falling back to a default value) like so:
+
+```shell
+$ PORT=2000 make dev
+PHP 8.2.1 Development Server (http://localhost:2000) started
+```
+
+### Auto-installing node_modules
+
+When working with teammates unfamiliar with Node, I'll sometimes help troubleshoot errors like this:
+
+```shell
+$ yarn start
+$ run-p start:*
+/bin/sh: run-p: command not found
+error Command failed with exit code 127.
+```
+
+This error means they tried running `yarn start` without first running `yarn install`. But it's not terribly clear that's how to resolve the error unless you know what you're looking for.
+
+If you're working on a project all the time (or conversely: very rarely working on it), it's nice to express all the dependency relationships in advance. That way, you never need to think about it again.
+
+Make gives us easy tools for expressing dependencies between tasks that need to run. For example, if we create a task to build node_modules when yarn.lock changes, we can leverage that in all the other scripts.
+
+Take a Makefile like this:
+
+```makefile
+dev: node_modules
+	@./node_modules/.bin/next dev --port=3050
+.PHONY: dev
+
+node_modules: yarn.lock
+	@yarn install --frozen-lockfile --check-files --network-timeout=10000
+```
+
+Now, running `make dev` will install node_modules, then run the dev command.
+
+Alternatively, with a little magic `touch` (thanks to [this post](https://stackoverflow.com/a/44249374)), you can make it so that `npm install` or `yarn install` only runs when dependencies change. In that case, you want to flip it around like this:
+
+```makefile
+dev: yarn.lock
+	@./node_modules/.bin/next dev
+.PHONY: dev
+
+yarn.lock: node_modules package.json
+	@yarn install --frozen-lockfile --check-files --network-timeout=10000
+	@touch -mr $(shell ls -Atd $? | head -1) $@
+
+node_modules:
+	@mkdir -p $@
+```
+
+### Referencing node_modules binaries
+
+In Makefiles for Node projects, you'll often want to reference node_modules binaries. While you can write out `./node_modules/.bin/<name>`, it's easy to forget, and accidentally rely on a globally installed version if you have one:
+
+```makefile
+# This prettier references a global install, which might break
+# on teammates computers or different versions requirements.
+format: yarn.lock
+	@prettier --write 'src/**/*.{js,jsx,ts,tsx}'
+.PHONY: format
+```
+
+An easy way around that is to re-write the `$PATH` inside the Makefile to include the `node_modules/.bin` directory. Throw this line at the top of your Makefile:
+
+```makefile
+export PATH := ./node_modules/.bin:$(PATH)
+```
+
+With that included, and binaries will first check for local installs before trying global instances:
+
+```makefile
+export PATH := ./node_modules/.bin:$(PATH)
+
+# The local prettier install now comes first.
+format: yarn.lock
+	@prettier --write 'src/**/*.{js,jsx,ts,tsx}'
+.PHONY: format
+```
+
+### Hermetic setups
+
+Building on [the auto-installing node_modules approach](#auto-installing-node_modules), you can get fancy with dependencies to download local versions of your toolchain, and build your way to a hermetic dev environment, where everyone runs the same version.
+
+This snippet reads yarn and node versions from files called `yarn.rev` and `node.rev`, downloads local copies into the `tool`, and uses those instances for all your scripts.
+
+```makefile
+export CACHE_PATH := .cache
+export PATH := ./tool:./node_modules/.bin:$(PATH)
+
+dev: yarn.lock ## Run a local development server
+	@next dev
+.PHONY: dev
+
+clean: ## Clean all build artifacts
+	@rm -rf ./tool
+	@rm -rf ./cache
+	@rm -rf ./node_modules
+.PHONY: clean
+
+yarn.lock: node_modules package.json
+	@yarn install --frozen-lockfile --check-files --network-timeout=10000
+	@touch -mr $(shell ls -Atd $? | head -1) $@
+
+node_modules:
+	@mkdir -p $@
+
+# Reads a version number from a file called `node.rev`
+tool/node: node.rev
+	@mkdir -p tool
+	@mkdir -p $(CACHE_PATH)/node
+	@$(eval OS=$(shell uname -s | tr A-Z a-z))
+	@$(eval ARCH=$(shell uname -m | sed -e "s/x86_64/x64/" | sed -e "s/aarch64/arm64/"))
+	@read -r REV <$< && \
+		cd $(CACHE_PATH)/node && \
+		curl -L -o node.tar.gz https://nodejs.org/dist/v$$REV/node-v$$REV-$(OS)-$(ARCH).tar.gz && \
+		tar --strip-components=1 -xzf node.tar.gz
+	@echo "#!/bin/sh" > $@
+	@echo 'exec /usr/bin/env PATH="$(CACHE_PATH)/node:$$PATH" "$(CACHE_PATH)/node/bin/node" "$$@"' >> $@
+	@chmod +x $@
+
+# Reads a version number from a file called `yarn.rev`
+tool/yarn: yarn.rev
+	@mkdir -p tool
+	@mkdir -p $(CACHE_PATH)/yarn
+	@read -r REV <$< && \
+		cd $(CACHE_PATH)/yarn && \
+		curl -L -o yarn.tar.gz https://github.com/yarnpkg/yarn/releases/download/v$$REV/yarn-v$$REV.tar.gz && \
+		tar --strip-components=1 -xzf yarn.tar.gz
+	@echo "#!/bin/sh" > $@
+	@echo 'exec /usr/bin/env PATH="$(CACHE_PATH)/yarn:$$PATH" "$(CACHE_PATH)/yarn/bin/yarn" "$$@"' >> $@
+	@chmod +x $@
+```
+
+Not only does this mean you never need to manually install Node/yarn versions, it also helps avoid "works on my machine" errors and subtle version mismatches without the slowness of a tool like Docker.
+
+### Self-documentation
+
+Makefiles can grow to contain lots of commands over time. One trick I've seen is to use this `make help` script to document important scripts:
+
+```makefile
+help: ## Show this help
+	@echo "\nSpecify a command. The choices are:\n"
+	@grep -E '^[0-9a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[0;36m%-12s\033[m %s\n", $$1, $$2}'
+	@echo ""
+.PHONY: help
+
+.DEFAULT_GOAL := help
+```
+
+Using this, you can document commands with a `## comment` at the end of a line. For example:
+
+```makefile
+dev: yarn.lock ## Start a local development server
+	@next dev
+.PHONY: dev
+
+format: yarn.lock ## Format all source files
+	@prettier --write 'src/**/*.{ts,tsx}'
+.PHONY: format
+```
+
+Running `make` or `make help` will list all the commands with the `## comment`. Use this to call out important commands for yourself or your teammates.
+
+```
+$ make help
+
+Specify a command. The choices are:
+
+  dev          Start a local development server
+  format       Format all source files
+  clean        Clean all built files
+  help         Show this help
+```
+
+### Multiple dev servers
+
+Frequently, I'll want multiple long-running process while I'm working on a project. For example, a recent website project has:
+
+- A `php -S` dev server
+- A `tailwindcss --watch` process
+- An `esbuild --watch` process
+
+One downside to Make's shell scripting origins is that it's hard to run parallel tasks. There _are_ technically a few ways you could get parallel servers running — shell background jobs with `command &`, GNU's `parallel` command, or recursive uses of Make and the `-j` flag.
+
+But it all gets a little fiddly for my taste:
+
+- For some, if one subprocess fails (eg. a syntax error stops the Tailwind dev server), the others keep on going. You'll lose your live-updating changes without noticing until later.
+- For others, you need to install separate binary tools to make it work.
+- For others, your dev steps get separated from your build steps, which is annoying because they most often change in tandem. It's nice to have them all live together.
+
+Thankfully, Make doesn't care: we can just pop into more suitable tools. In these cases, I usually just rely on a custom Go script in Go projects, or [npm-run-all](https://www.npmjs.com/package/npm-run-all) for Node projects.
+
+```shell
+yarn add --dev npm-run-all
+```
+
+Add scripts to your package.json:
+
+```json
+{
+  "scripts": {
+    "dev": "run-p dev:*",
+    "dev:php": "php -S localhost:$PORT index.php",
+    "dev:js": "esbuild src/*.ts --bundle --outdir=assets/ --watch",
+    "dev:css": "tailwindcss -i src/index.css -o assets/index.css --watch"
+  }
+}
+```
+
+Then in your Makefile:
+
+```makefile
+dev:
+	@yarn --silent dev
+.PHONY: dev
+```
+
+You still get the nice Make interface, but proper parallel dev servers behind the scenes.
+
+### When to avoid Make
+
+While Make is a great tool for many projects, it's not perfect and not always the right thing to reach for.
+
+A few cases where you should avoid it:
+
+**If you're working with Windows-based developers.** Makefiles usually rely on a lot of UNIX tools and conventions, like `ENV=val` environment variables, or `awk`, `sed`, and `grep`. It's possible to make cross-platform compatible Makefiles, but it may be better to use a tool that abstracts away platform differences.
+
+**If you're trying to completely automate everything.** While Make gives you tools to manage trees of dependencies and variables and build targets, it can get unwieldly pretty fast. You'll need to muck with file mtimes, fight against caching systems, weird shell quoting rules and `$(wildcard)` parsing. In my experience, Make shines as a task runner with a few extra features. Be careful if you try to do much more than that.
+
+**If you already have a setup you're happy with**. For simple projects, npm/yarn scripts can be enough. Don't change if what you have is working. That said, if you're getting a little frustrated with how long they get, or cramming things into `pre:` and `post:` scripts is getting hard to parse, give Make a try.
+
+### Reference Makefiles
+
+- The [stripe-cli](https://github.com/stripe/stripe-cli/blob/master/Makefile) has some great snippets, including a `// TODO:` comment finder, a Git tag generator, and a trick to add local tools to the Makefile's `$PATH`.
+- This [Tailscale docker desktop extension](https://github.com/tailscale/docker-extension/blob/main/Makefile) shows using a Makefile to make a nicer dev experience. Rather than manually building containers, installing them, and configuring dev server options, I composed them into some commands that made working on the project a lot easier.
+- This [Kirby CMS Makefile](https://gist.github.com/rosszurowski/24bdc2cce3bd440e6210c9c7d7164745) which has commands to update a vendored dependency, sync content with a remote server, and deploy via rsync to a PHP server.

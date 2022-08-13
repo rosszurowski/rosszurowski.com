@@ -10,8 +10,7 @@ import gfm from "remark-gfm"
 import externalLinks from "rehype-external-links"
 import autolinkHeadings from "rehype-autolink-headings"
 import slugHeadings from "rehype-slug"
-import highlight from "rehype-pretty-code"
-import { h } from "hastscript"
+import highlight from "rehype-prism-plus"
 
 const formatDate = (date: string, formatString: string): string =>
   format(parseISO(date), formatString)
@@ -72,7 +71,8 @@ export const BlogPost = defineDocumentType(() => ({
 
 const Snippet = defineDocumentType(() => ({
   name: "Snippet",
-  filePathPattern: "snippets/**/*.md",
+  filePathPattern: "snippets/**/*.mdx",
+  contentType: "mdx",
   fields: {
     title: {
       type: "string",
@@ -148,13 +148,19 @@ export default makeSource({
   mdx: {
     remarkPlugins: [gfm, smartypants],
     rehypePlugins: [
-      [highlight, { theme: "css-variables" }],
+      highlight,
       [externalLinks, { rel: ["nofollow", "noreferrer"], target: "_blank" }],
       slugHeadings,
       [
         autolinkHeadings,
         {
-          content: () => [h("span", { ariaHidden: "true" }, "Link")],
+          properties: {
+            className: "anchor",
+            ariaHidden: true,
+          },
+          content() {
+            return []
+          },
         },
       ],
     ],

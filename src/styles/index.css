@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "./prism.css";
 
 @layer base {
   html {
@@ -12,17 +13,50 @@
   }
 
   :root {
-    --shiki-color-text: #343434;
-    --shiki-color-background: #333333;
-    --shiki-token-constant: #660000;
-    --shiki-token-string: #770000;
-    --shiki-token-comment: #727272;
-    --shiki-token-keyword: #727272;
-    --shiki-token-parameter: #aa0000;
-    --shiki-token-function: #bb0000;
-    --shiki-token-string-expression: #cc0000;
-    --shiki-token-punctuation: #dd0000;
-    --shiki-token-link: #ee0000;
+    --prism-comment: #727272;
+    --prism-string: #338855;
+    --prism-literal: #4f4f4f;
+    --prism-keyword: #727272;
+    --prism-function: #4f4f4f;
+    --prism-deleted: #333333;
+    --prism-class: #333333;
+    --prism-builtin: #727272;
+    --prism-property: #333333;
+    --prism-namespace: #4f4f4f;
+    --prism-punctuation: #ababab;
+    --prism-decorator: var(--prism-class);
+    --prism-operator: var(--prism-punctuation);
+    --prism-number: var(--prism-literal);
+    --prism-boolean: var(--prism-literal);
+    --prism-variable: var(--prism-literal);
+    --prism-constant: var(--prism-literal);
+    --prism-symbol: var(--prism-literal);
+    --prism-interpolation: var(--prism-literal);
+    --prism-selector: var(--prism-keyword);
+    --prism-keyword-control: var(--prism-keyword);
+    --prism-regex: var(--prism-string);
+    --prism-json-property: var(--prism-property);
+    --prism-inline-background: var(--prism-background);
+
+    /* --prism-foreground: #393a34;
+    --prism-background: #fbfbfb;
+    --prism-comment: #a0ada0;
+    --prism-string: #b56959;
+    --prism-literal: #2f8a89;
+    --prism-number: #296aa3;
+    --prism-keyword: #1c6b48;
+    --prism-function: #6c7834;
+    --prism-boolean: #1c6b48;
+    --prism-constant: #a65e2b;
+    --prism-deleted: #a14f55;
+    --prism-class: #2993a3;
+    --prism-builtin: #ab5959;
+    --prism-property: #b58451;
+    --prism-namespace: #b05a78;
+    --prism-punctuation: #8e8f8b;
+    --prism-decorator: #bd8f8f;
+    --prism-regex: #ab5e3f;
+    --prism-json-property: #698c96; */
   }
 }
 
@@ -45,13 +79,11 @@
   }
 
   .markdown {
-    @apply leading-[1.6];
+    @apply leading-normal;
   }
 
-  .markdown
-    > *:not(h1):not(h2):not(h3)
-    + *:not(div):not(li):not(h1):not(h2):not(h3) {
-    @apply mt-6;
+  .markdown > *:not(h1):not(h2):not(h3) + *:not(li):not(h1):not(h2):not(h3) {
+    @apply mt-5;
   }
 
   .markdown a {
@@ -71,7 +103,22 @@
   .markdown h1,
   .markdown h2,
   .markdown h3 {
-    @apply mt-8 mb-3 text-[1.222rem] font-semibold;
+    @apply relative mt-8 mb-3 text-[1.222rem] font-semibold;
+  }
+
+  .markdown .anchor {
+    @apply absolute top-0 -left-8 px-3;
+    @apply border-b-0 text-stone-400 no-underline;
+    @apply opacity-0 transition-opacity;
+  }
+
+  .markdown :hover > .anchor {
+    @apply opacity-100;
+  }
+
+  .markdown .anchor::before {
+    content: "#";
+    @apply font-normal;
   }
 
   .markdown hr {
@@ -108,7 +155,7 @@
     tab-size: 3;
   }
 
-  .markdown :not(pre) code {
+  .markdown :not(pre) > code {
     @apply bg-gray-100 py-[0.15em] px-[0.35em];
   }
 

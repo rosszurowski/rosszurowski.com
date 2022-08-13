@@ -1,5 +1,7 @@
 import { allSnippets, Snippet } from "contentlayer/generated"
 import { GetStaticPaths, GetStaticProps } from "next"
+import { useLiveReload } from "next-contentlayer/hooks"
+import Markdown from "src/components/markdown"
 import StandardLayout from "src/components/standard-layout"
 
 type Props = {
@@ -7,16 +9,17 @@ type Props = {
 }
 
 export default function SnippetPage(props: Props) {
+  const { snippet } = props
+
+  useLiveReload()
+
   return (
     <StandardLayout>
       <header className="mb-4">
-        <h1 className="text-2xl font-semibold">{props.snippet.title}</h1>
+        <h1 className="text-2xl font-semibold">{snippet.title}</h1>
       </header>
-      <article>
-        <div
-          className="markdown max-w-2xl"
-          dangerouslySetInnerHTML={{ __html: props.snippet.body.html }}
-        />
+      <article className="markdown max-w-2xl">
+        <Markdown code={snippet.body.code} />
       </article>
     </StandardLayout>
   )
