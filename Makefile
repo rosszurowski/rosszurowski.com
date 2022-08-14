@@ -1,26 +1,39 @@
-PORT ?= 4000
+PATH  := $(PWD)/node_modules/.bin:$(PATH)
+SHELL := env PATH=$(PATH) /bin/sh
 
-dev: node_modules ## Run a local dev server
-	@PORT=$(PORT) ./node_modules/.bin/next dev
+PORT  ?= 4000
+
+dev: yarn.lock ## Run a local dev server
+	@PORT=$(PORT) next dev
 .PHONY: dev
 
-build: node_modules .next ## Build site for production
+build: yarn.lock .next ## Build site for production
 .PHONY: build
 
-.next: node_modules next.config.js src public
-	@./node_modules/.bin/next build
-
-lint: node_modules
-	@./node_modules/.bin/next lint
+lint: yarn.lock ## Lint files for code quality
+	@next lint
 .PHONY: lint
 
-format: node_modules ## Format code to a standard style
-	@./node_modules/.bin/eslint --fix 'src/**/*.{js,jsx,ts,tsx}'
-	@./node_modules/.bin/prettier --write 'src/**/*.{js,jsx,ts,tsx}'
+format: yarn.lock ## Format code to a standard style
+	@eslint --fix 'src/**/*.{js,jsx,ts,tsx}'
+	@prettier --write 'src/**/*.{js,jsx,ts,tsx}'
 .PHONY: format
 
-node_modules: yarn.lock
+clean: ## Clear all caches
+	@trash node_modules
+	@trash .next
+	@trash .contentlayer
+.PHONY: clean
+
+.next: yarn.lock next.config.js src public
+	@next build
+
+yarn.lock: node_modules package.json
 	@yarn install --frozen-lockfile --check-files --network-timeout=10000
+	@touch -mr $(shell ls -Atd $? | head -1) $@
+
+node_modules:
+	@mkdir -p $@
 
 help: ## Show this help
 	@echo "\nSpecify a command. The choices are:\n"
