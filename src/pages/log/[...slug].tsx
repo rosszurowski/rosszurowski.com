@@ -1,9 +1,11 @@
 import { GetStaticPaths, GetStaticProps } from "next"
 import Link from "next/link"
 import { allBlogPosts, BlogPost } from "contentlayer/generated"
+import { useLiveReload } from "next-contentlayer/hooks"
 import StandardLayout from "src/components/standard-layout"
 import Icon from "src/components/icon"
 import Meta from "src/components/meta"
+import Markdown from "src/components/markdown"
 import { widont } from "src/lib/html"
 
 type PostPreview = Pick<
@@ -18,6 +20,7 @@ type Props = {
 
 export default function LogPage(props: Props) {
   const { post } = props
+  useLiveReload()
 
   return (
     <StandardLayout>
@@ -39,10 +42,9 @@ export default function LogPage(props: Props) {
             <BackHome />
           </div>
         </header>
-        <div
-          className="markdown max-w-xl xl:max-w-2xl"
-          dangerouslySetInnerHTML={{ __html: post.body.html }}
-        />
+        <div className="markdown max-w-xl xl:max-w-2xl">
+          <Markdown code={post.body.code} />
+        </div>
         <footer className="-ml-4 max-w-xl py-12 text-center lg:hidden">
           <BackHome />
         </footer>
