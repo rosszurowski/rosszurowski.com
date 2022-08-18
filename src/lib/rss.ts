@@ -1,6 +1,7 @@
 import { parseISO } from "date-fns"
 import { Feed } from "feed"
 import { allBlogPosts, siteDatum } from "contentlayer/generated"
+import { mdxToHtml } from "src/lib/mdx"
 
 /**
  * generateBlogFeed returns a feed object for generating an RSS feed
@@ -16,7 +17,7 @@ export function generateBlogFeed() {
       const url = new URL(doc.url, siteDatum.url)
       return url.toString()
     },
-    contentField: (doc) => doc.body.html,
+    contentField: (doc) => mdxToHtml(doc.body.code),
   })
 }
 

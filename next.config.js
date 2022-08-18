@@ -5,6 +5,11 @@ const { withPlausibleProxy } = require("next-plausible")
 const config = {
   reactStrictMode: true,
   poweredByHeader: false,
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
   async redirects() {
     return [
       {

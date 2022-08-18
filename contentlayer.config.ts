@@ -5,10 +5,6 @@ import {
 } from "contentlayer/source-files"
 import { parseISO, format } from "date-fns"
 import excerpt from "excerpt-html"
-import rehypeStringify from "rehype-stringify"
-import remarkFrontmatter from "remark-frontmatter"
-import remarkParse from "remark-parse"
-import remark2rehype from "remark-rehype"
 import smartypants from "remark-smartypants"
 import gfm from "remark-gfm"
 import externalLinks from "rehype-external-links"
@@ -18,7 +14,8 @@ const formatDate = (date: string, formatString: string): string =>
 
 export const BlogPost = defineDocumentType(() => ({
   name: "BlogPost",
-  filePathPattern: "log/**/*.md",
+  filePathPattern: "log/**/*.mdx",
+  contentType: "mdx",
   fields: {
     title: {
       type: "string",
@@ -56,9 +53,11 @@ export const BlogPost = defineDocumentType(() => ({
     excerpt: {
       type: "string",
       resolve: (post) =>
-        excerpt(post.summary || post.body.html, {
-          pruneLength: 200,
-        }),
+        post.summary
+          ? excerpt(post.summary, {
+              pruneLength: 200,
+            })
+          : post.summary,
     },
     formattedDate: {
       type: "string",
@@ -114,15 +113,11 @@ const SiteData = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: "content",
   documentTypes: [BlogPost, SiteData],
-  markdown: (builder) => {
-    builder
-      .use(remarkFrontmatter)
-      .use(remarkParse)
-      .use(gfm)
-      .use(smartypants)
-      .use(remark2rehype, { allowDangerousHtml: true })
-      .use(externalLinks, { rel: ["nofollow", "noreferrer"], target: "_blank" })
-      .use(rehypeStringify, { allowDangerousHtml: true })
+  mdx: {
+    remarkPlugins: [gfm, smartypants],
+    rehypePlugins: [
+      [externalLinks, { rel: ["nofollow", "noreferrer"], target: "_blank" }],
+    ],
   },
   date: {
     timezone: "America/New_York",
