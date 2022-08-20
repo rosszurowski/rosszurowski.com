@@ -6,7 +6,12 @@ const { withPlausibleProxy } = require("next-plausible")
 const config = {
   reactStrictMode: true,
   poweredByHeader: false,
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
   experimental: {
+    legacyBrowsers: false,
+    browsersListForSwc: true,
     images: {
       allowFutureImage: true,
     },
