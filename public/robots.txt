@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://rosszurowski.com/sitemap.xml
