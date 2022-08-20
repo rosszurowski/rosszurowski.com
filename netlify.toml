@@ -1,8 +1,0 @@
-[build]
-  command = "next build"
-  publish = ".next"
-
-[build.environment]
-  NODE_VERSION = "16.13.1"
-  YARN_VERSION = "1.22.19"
-  YARN_FLAGS = "--pure-lockfile"
