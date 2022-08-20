@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { withContentlayer } = require("next-contentlayer")
 const { withPlausibleProxy } = require("next-plausible")
 
@@ -28,6 +29,7 @@ const config = {
     return [
       { source: "/index.xml", destination: "/api/rss" },
       { source: "/log/index.xml", destination: "/api/rss" },
+      { source: "/sitemap.xml", destination: "/api/sitemap" },
     ]
   },
 }
