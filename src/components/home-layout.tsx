@@ -1,7 +1,8 @@
 import { ReactNode, Suspense } from "react"
+import dynamic from "next/dynamic"
 import cx from "clsx"
 import Squiggle from "src/components/squiggle"
-import dynamic from "next/dynamic"
+import ErrorBoundary from "src/components/error-boundary"
 
 const LazyVisual = dynamic(() => import("src/components/heat-distortion"))
 
@@ -33,7 +34,9 @@ export default function HomeLayout(props: Props) {
       </div>
       <Suspense>
         <div className="pointer-events-none absolute top-0 right-0 bottom-0 h-full w-2/3 select-none">
-          <LazyVisual />
+          <ErrorBoundary fallback={null}>
+            <LazyVisual />
+          </ErrorBoundary>
         </div>
       </Suspense>
     </div>
