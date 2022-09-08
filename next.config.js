@@ -9,12 +9,10 @@ const config = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  swcMinify: true,
   experimental: {
     legacyBrowsers: false,
     browsersListForSwc: true,
-    images: {
-      allowFutureImage: true,
-    },
   },
   async redirects() {
     return [

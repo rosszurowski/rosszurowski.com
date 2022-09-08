@@ -1,4 +1,5 @@
 import { ComponentPropsWithoutRef, Suspense } from "react"
+import cx from "clsx"
 import { useMDXComponent } from "next-contentlayer/hooks"
 import Img from "next/future/image"
 
@@ -40,13 +41,18 @@ type ImageProps = {
  *
  */
 function Image(props: ImageProps) {
-  const { children, caption: rawCaption, ...rest } = props
+  const { children, className, caption: rawCaption, ...rest } = props
   const caption = rawCaption || children
 
   return (
     <figure>
       {/* eslint-disable-next-line jsx-a11y/alt-text */}
-      <Img {...rest} sizes="(min-width: 48em) 50vw, 100vw" quality={80} />
+      <Img
+        {...rest}
+        className={cx("bg-stone-200", className)}
+        sizes="(min-width: 48em) 50vw, 100vw"
+        quality={80}
+      />
       {caption && <figcaption>{caption}</figcaption>}
     </figure>
   )
