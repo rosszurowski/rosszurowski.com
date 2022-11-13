@@ -26,8 +26,8 @@ export default function NotFoundPage() {
       <Icon name="dead-folder" className="mb-4" width={32} height={32} />
       <p>
         Page not found. Redirecting you{" "}
-        <Link href="/">
-          <a className="link-underline">back home</a>
+        <Link href="/" className="link-underline">
+          back home
         </Link>
         &hellip;
       </p>

@@ -61,11 +61,11 @@ export default function HomePage(props: Props) {
       </Section>
       <Section title="Recent interests">
         <Link href="/log/2018/small-seasons-long-calendars">
-          <a>Alternate calendars</a>
+          Alternate calendars
         </Link>
         , 日本語, 한국어,{" "}
         <Link href="/log/2017/toward-a-distributed-web/">
-          <a>decentralized publishing</a>
+          decentralized publishing
         </Link>
         , SQLite, gifts, debt, and larb.
       </Section>
