@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef, Suspense } from "react"
 import cx from "clsx"
 import { useMDXComponent } from "next-contentlayer/hooks"
-import Img from "next/future/image"
+import Img from "next/image"
 
 type Props = {
   code: string

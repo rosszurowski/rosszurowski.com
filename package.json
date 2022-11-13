@@ -5,9 +5,9 @@
   "author": "Ross Zurowski <ross@rosszurowski.com>",
   "dependencies": {
     "clsx": "^1.2.1",
-    "next": "^12.3.0",
-    "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "next": "^13.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "17.0.35",
@@ -16,7 +16,7 @@
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
     "autoprefixer": "^10.4.7",
-    "contentlayer": "^0.2.6",
+    "contentlayer": "^0.2.9",
     "date-fns": "^2.29.1",
     "eslint": "8.20.0",
     "eslint-config-next": "12.2.3",
@@ -24,7 +24,7 @@
     "excerpt-html": "^1.2.2",
     "feed": "^4.2.2",
     "globby": "^13.1.2",
-    "next-contentlayer": "^0.2.6",
+    "next-contentlayer": "^0.2.9",
     "next-plausible": "^3.2.0",
     "postcss": "^8.4.14",
     "prettier": "^2.7.1",
