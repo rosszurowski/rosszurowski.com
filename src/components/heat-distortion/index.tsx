@@ -1,3 +1,5 @@
+"use client"
+
 import cx from "clsx"
 import { useEffect, useRef, useState } from "react"
 import HeatDistortionProgram from "./heat-distortion"

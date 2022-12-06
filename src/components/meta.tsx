@@ -1,53 +1,44 @@
-import Head from "next/head"
-import { siteDatum } from "contentlayer/generated"
-import { useRouter } from "next/router"
+import { siteData } from "src/lib/content"
 
 type Props = {
   title?: string
   description?: string
-  type?: "article"
-  url?: string
+  type?: "article" | "site"
   imageUrl?: string
   updated?: string
 }
 
-const domain = "rosszurowski.com"
-
-/**
- * Meta is a component that wraps standard page `meta` tags for SEO purposes.
- */
-export default function Meta(props: Props) {
-  const { title, description, type, imageUrl, updated } = props
-  const router = useRouter()
-
+export default function MetaTags({
+  title,
+  description,
+  type,
+  imageUrl,
+  updated,
+}: Props) {
   const formattedTitle = title
-    ? siteDatum.title === title
-      ? siteDatum.title
-      : `${title} – ${siteDatum.title}`
-    : siteDatum.title
-  const formattedDescription = description || siteDatum.description
+    ? siteData.title === title
+      ? siteData.title
+      : `${title} – ${siteData.title}`
+    : siteData.title
+  const formattedDescription = description || siteData.description
   const formattedType = type || "site"
-  const formattedImageUrl = canonicalUrl(domain, imageUrl || "og-image.png")
-  const formattedUrl = canonicalUrl(domain, router.asPath)
+  const formattedImageUrl = canonicalUrl(
+    siteData.url,
+    imageUrl || "og-image.png"
+  )
 
   return (
-    <Head>
-      <title key="title">{formattedTitle}</title>
-      <meta name="author" key="author" content={siteDatum.title} />
-      <meta name="description" key="desc" content={formattedDescription} />
+    <>
+      <title>{formattedTitle}</title>
+      <meta name="author" content={siteData.title} />
+      <meta name="description" content={formattedDescription} />
 
-      <meta property="og:title" key="ogt" content={formattedTitle} />
-      <meta
-        property="og:description"
-        key="ogd"
-        content={formattedDescription}
-      />
-      <meta property="og:site_name" key="ogsn" content={siteDatum.title} />
-      <meta property="og:type" key="ogty" content={formattedType} />
-      {imageUrl && <meta property="og:image" key="ogi" content={imageUrl} />}
-      {updated && (
-        <meta property="og:updated_time" key="ogut" content={updated} />
-      )}
+      <meta property="og:title" content={formattedTitle} />
+      <meta property="og:description" content={formattedDescription} />
+      <meta property="og:site_name" content={siteData.title} />
+      <meta property="og:type" content={formattedType} />
+      {imageUrl && <meta property="og:image" content={imageUrl} />}
+      {updated && <meta property="og:updated_time" content={updated} />}
 
       <meta name="twitter:site" key="twts" content="@rosszurowski" />
       <meta name="twitter:creator" key="twtcrt" content="@rosszurowski" />
@@ -59,14 +50,13 @@ export default function Meta(props: Props) {
       />
 
       <link rel="alternate" type="application/rss+xml" href="/index.xml" />
-      <link rel="canonical" key="canonical" href={formattedUrl} />
       <link
         rel="shortcut icon"
         key="favicon"
         href="/favicon.svg"
         type="image/svg"
       />
-    </Head>
+    </>
   )
 }
 

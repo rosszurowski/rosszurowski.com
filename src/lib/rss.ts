@@ -1,6 +1,7 @@
 import { parseISO } from "date-fns"
 import { Feed } from "feed"
-import { allBlogPosts, siteDatum } from "contentlayer/generated"
+import { allBlogPosts } from "contentlayer/generated"
+import { siteData } from "./content"
 import { mdxToHtml } from "src/lib/mdx"
 
 /**
@@ -14,7 +15,7 @@ export function generateBlogFeed() {
     titleField: (doc) => doc.title,
     dateField: (doc) => doc.date,
     urlField: (doc) => {
-      const url = new URL(doc.url, siteDatum.url)
+      const url = new URL(doc.url, siteData.url)
       return url.toString()
     },
     contentField: (doc) => mdxToHtml(doc.body.code),
@@ -41,9 +42,9 @@ function generateFeed<T>(options: FeedOptions<T>) {
   const items = options.items.slice().sort((a, b) => toTime(b) - toTime(a))
 
   const feed = new Feed({
-    id: options.url || siteDatum.url,
-    link: options.url || siteDatum.url,
-    title: options.title || siteDatum.title,
+    id: options.url || siteData.url,
+    link: options.url || siteData.url,
+    title: options.title || siteData.title,
     description: options.description,
     generator: "rosszurowski/v1",
     copyright: `© ${year} Ross Zurowski`,
