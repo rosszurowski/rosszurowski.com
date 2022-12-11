@@ -1,3 +1,5 @@
+"use client"
+
 import React, { Component, ErrorInfo, isValidElement } from "react"
 
 type Props = {

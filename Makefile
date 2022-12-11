@@ -25,7 +25,7 @@ clean: ## Clear all caches
 	@trash .contentlayer
 .PHONY: clean
 
-.next: yarn.lock next.config.js src public
+.next: yarn.lock next.config.js $(shell fd -g '**/*.{ts,tsx}' .) public
 	@next build
 
 yarn.lock: node_modules package.json

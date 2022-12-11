@@ -1,3 +1,5 @@
+"use client"
+
 import { ComponentPropsWithoutRef, Suspense } from "react"
 import cx from "clsx"
 import { useMDXComponent } from "next-contentlayer/hooks"

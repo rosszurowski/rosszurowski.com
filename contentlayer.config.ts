@@ -1,8 +1,4 @@
-import {
-  defineDocumentType,
-  defineNestedType,
-  makeSource,
-} from "contentlayer/source-files"
+import { defineDocumentType, makeSource } from "contentlayer/source-files"
 import { parseISO, format } from "date-fns"
 import excerpt from "excerpt-html"
 import smartypants from "remark-smartypants"
@@ -66,53 +62,9 @@ export const BlogPost = defineDocumentType(() => ({
   },
 }))
 
-const SocialLink = defineNestedType(() => ({
-  name: "SocialLink",
-  fields: {
-    title: {
-      type: "string",
-      required: true,
-    },
-    href: {
-      type: "string",
-      required: true,
-    },
-  },
-}))
-
-const SiteData = defineDocumentType(() => ({
-  name: "SiteData",
-  filePathPattern: "site.json",
-  isSingleton: true,
-  contentType: "data",
-  fields: {
-    title: {
-      type: "string",
-      required: true,
-    },
-    description: {
-      type: "string",
-      required: true,
-    },
-    email: {
-      type: "string",
-      required: true,
-    },
-    url: {
-      type: "string",
-      required: true,
-    },
-    socialLinks: {
-      type: "list",
-      of: SocialLink,
-      required: true,
-    },
-  },
-}))
-
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [BlogPost, SiteData],
+  documentTypes: [BlogPost],
   mdx: {
     remarkPlugins: [gfm, smartypants],
     rehypePlugins: [
