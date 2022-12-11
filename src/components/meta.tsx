@@ -32,6 +32,7 @@ export default function MetaTags({
       <title>{formattedTitle}</title>
       <meta name="author" content={siteData.title} />
       <meta name="description" content={formattedDescription} />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
 
       <meta property="og:title" content={formattedTitle} />
       <meta property="og:description" content={formattedDescription} />
