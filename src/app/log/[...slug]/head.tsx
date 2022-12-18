@@ -12,6 +12,11 @@ export default function Head({ params }: { params: { slug: string[] } }) {
   }
 
   return (
-    <MetaTags title={post.title} description={post.excerpt} type="article" />
+    <MetaTags
+      title={post.title}
+      description={post.excerpt}
+      type="article"
+      url={`/log/${year}/${slug}`}
+    />
   )
 }

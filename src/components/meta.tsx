@@ -6,6 +6,11 @@ type Props = {
   type?: "article" | "site"
   imageUrl?: string
   updated?: string
+  /**
+   * url is the page's URL path, eg. "/log/2018/my-post". It's combined with
+   * the site's domain to form a canonical URL to add in the meta tags.
+   */
+  url?: string
 }
 
 export default function MetaTags({
@@ -14,6 +19,7 @@ export default function MetaTags({
   type,
   imageUrl,
   updated,
+  url,
 }: Props) {
   const formattedTitle = title
     ? siteData.title === title
@@ -26,6 +32,7 @@ export default function MetaTags({
     siteData.url,
     imageUrl || "og-image.png"
   )
+  const formattedPageUrl = url ? canonicalUrl(siteData.url, url) : undefined
 
   return (
     <>
@@ -41,22 +48,16 @@ export default function MetaTags({
       {imageUrl && <meta property="og:image" content={imageUrl} />}
       {updated && <meta property="og:updated_time" content={updated} />}
 
-      <meta name="twitter:site" key="twts" content="@rosszurowski" />
-      <meta name="twitter:creator" key="twtcrt" content="@rosszurowski" />
-      <meta name="twitter:card" key="twtcrd" content="summary_large_image" />
-      <meta
-        name="twitter:image:src"
-        key="twitter:image"
-        content={formattedImageUrl}
-      />
+      <meta name="twitter:site" content="@rosszurowski" />
+      <meta name="twitter:creator" content="@rosszurowski" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:image:src" content={formattedImageUrl} />
 
       <link rel="alternate" type="application/rss+xml" href="/index.xml" />
-      <link
-        rel="shortcut icon"
-        key="favicon"
-        href="/favicon.svg"
-        type="image/svg"
-      />
+      <link rel="shortcut icon" href="/favicon.svg" type="image/svg" />
+      {formattedPageUrl && (
+        <link rel="canonical" key="canonical" href={formattedPageUrl} />
+      )}
     </>
   )
 }
@@ -66,7 +67,8 @@ export default function MetaTags({
  * It trims any query parameters and removes the trailing slash.
  */
 function canonicalUrl(domain: string, path: string) {
-  const u = new URL(path, `https://${domain}`)
+  const u = new URL(path, domain)
+  u.protocol = "https"
   u.hash = ""
   u.search = ""
   u.pathname = u.pathname
