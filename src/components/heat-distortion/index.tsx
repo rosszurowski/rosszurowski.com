@@ -2,7 +2,7 @@
 
 import cx from "clsx"
 import { useEffect, useRef, useState } from "react"
-import HeatDistortionProgram from "./heat-distortion"
+import HeatDistortionProgram from "./program"
 
 const svg = `
   <g fill="#f79e98">

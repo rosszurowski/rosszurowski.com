@@ -5,8 +5,10 @@ import ErrorBoundary from "src/components/error-boundary"
 import Icon from "src/components/icon"
 import Squiggle from "src/components/squiggle"
 import { siteData } from "src/lib/content"
-import HomeVisual from "src/components/heat-distortion"
 import copyStaticAssets from "src/lib/assets"
+import dynamic from "next/dynamic"
+
+const LazyVisual = dynamic(() => import("src/components/heat-distortion"))
 
 const roles = [
   {
@@ -105,7 +107,7 @@ export default async function HomePage() {
       <Suspense>
         <div className="pointer-events-none absolute top-0 right-0 bottom-0 h-full w-2/3 select-none">
           <ErrorBoundary fallback={null}>
-            <HomeVisual />
+            <LazyVisual />
           </ErrorBoundary>
         </div>
       </Suspense>
