@@ -4,6 +4,8 @@ import excerpt from "excerpt-html"
 import smartypants from "remark-smartypants"
 import gfm from "remark-gfm"
 import externalLinks from "rehype-external-links"
+import rehypeSlugHeadings from "rehype-slug"
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
 
 const formatDate = (date: string, formatString: string): string =>
   format(parseISO(date), formatString)
@@ -69,6 +71,19 @@ export default makeSource({
     remarkPlugins: [gfm, smartypants],
     rehypePlugins: [
       [externalLinks, { rel: ["nofollow", "noreferrer"], target: "_blank" }],
+      rehypeSlugHeadings,
+      [
+        rehypeAutolinkHeadings,
+        {
+          properties: {
+            className: "anchor",
+            ariaHidden: true,
+          },
+          content() {
+            return []
+          },
+        },
+      ],
     ],
   },
   date: {
