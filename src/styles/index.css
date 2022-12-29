@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply font-sans text-lg leading-[1.7] tracking-[-0.035px] text-gray-800;
+    @apply font-sans text-lg leading-[1.6] tracking-[-0.035px] text-gray-800;
     @apply antialiased;
     @apply scroll-p-12;
     -ms-text-size-adjust: 100%;
@@ -31,7 +31,7 @@
   }
 
   .markdown {
-    @apply leading-[1.6];
+    @apply leading-normal;
   }
 
   .markdown
@@ -49,9 +49,7 @@
   }
 
   .markdown blockquote {
-    @apply mt-4 pl-5;
-    border-left: 2px #e2e2e2 solid;
-    color: rgb(119, 119, 125);
+    @apply mt-4 border-l-2 border-gray-200 pl-5 text-gray-500;
   }
 
   .markdown h1,
@@ -61,9 +59,7 @@
   }
 
   .markdown hr {
-    @apply mx-auto mt-8 mb-14 border-0 border-b-2 pt-8;
-    border-bottom: 2px solid #e2e2e2;
-    max-width: 6rem;
+    @apply mx-auto mt-8 mb-14 max-w-[6rem] border-0 border-b-2 border-gray-200 pt-8;
   }
 
   .markdown .anchor {
@@ -87,12 +83,7 @@
   }
 
   .markdown ul li {
-    @apply my-1;
-  }
-
-  .markdown ul li:before {
-    @apply mr-3;
-    content: "•";
+    @apply my-1 before:mr-3 before:content-["•"];
   }
 
   .markdown code,
@@ -121,7 +112,7 @@
   }
 
   .markdown .footnotes li {
-    @apply text-sm leading-normal;
+    @apply text-sm;
   }
 
   .markdown .footnotes li p {
@@ -134,7 +125,7 @@
 
   .markdown a.data-footnote-ref,
   .markdown a.data-footnote-backref {
-    @apply relative top-0.5 border-b-0 p-0 font-[sans] text-inherit opacity-50 hover:opacity-25;
+    @apply relative top-0.5 border-b-0 p-0 font-[Arial] text-inherit opacity-50 hover:opacity-25;
   }
 
   .markdown .footnotes ol {
