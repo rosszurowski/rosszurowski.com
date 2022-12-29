@@ -57,13 +57,24 @@
   .markdown h1,
   .markdown h2,
   .markdown h3 {
-    @apply mt-8 mb-3 text-[1.222rem] font-semibold;
+    @apply relative mt-8 mb-3 text-[1.222rem] font-semibold;
   }
 
   .markdown hr {
     @apply mx-auto mt-8 mb-14 border-0 border-b-2 pt-8;
     border-bottom: 2px solid #e2e2e2;
     max-width: 6rem;
+  }
+
+  .markdown .anchor {
+    @apply absolute top-0 -left-8 px-3;
+    @apply border-b-0 text-stone-400 no-underline;
+    @apply opacity-0 transition-opacity;
+    @apply before:font-normal before:content-["#"];
+  }
+
+  .markdown :hover > .anchor {
+    @apply opacity-100;
   }
 
   .markdown ul,
