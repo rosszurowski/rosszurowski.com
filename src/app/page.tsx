@@ -1,12 +1,13 @@
-import { format } from "date-fns"
 import Link from "next/link"
-import { Suspense } from "react"
+import dynamic from "next/dynamic"
+import { Fragment, Suspense } from "react"
+import { format } from "date-fns"
+import { allBlogPosts } from "contentlayer/generated"
 import ErrorBoundary from "src/components/error-boundary"
 import Icon from "src/components/icon"
 import Squiggle from "src/components/squiggle"
 import { siteData } from "src/lib/content"
 import copyStaticAssets from "src/lib/assets"
-import dynamic from "next/dynamic"
 
 const LazyVisual = dynamic(() => import("src/components/heat-distortion"))
 
@@ -83,18 +84,15 @@ export default async function HomePage() {
             .
           </Section>
           <Section title="Recent writing">
-            <Link href="/log/2022/makefiles">Makefiles for Web Work</Link>{" "}
-            (2022)
-            <br />
-            <Link href="/log/2018/small-seasons-long-calendars">
-              On Small Seasons and Long Calendars
-            </Link>{" "}
-            (2018)
-            <br />
-            <Link href="/log/2017/toward-a-distributed-web">
-              Towards a Distributed Web
-            </Link>{" "}
-            (2017)
+            {allBlogPosts
+              .sort((a, b) => b.date.localeCompare(a.date))
+              .map((post, i, arr) => (
+                <Fragment key={post.slug}>
+                  <Link href={post.url}>{post.title}</Link>
+                  <span className="pl-2 opacity-50">{post.year}</span>
+                  {i !== arr.length - 1 && <br />}
+                </Fragment>
+              ))}
           </Section>
           <Section title="Recent interests">
             Book clubs, 日本語, 한국어, SQLite, gifts, debt, and larb.
