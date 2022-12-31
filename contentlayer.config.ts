@@ -6,6 +6,9 @@ import gfm from "remark-gfm"
 import externalLinks from "rehype-external-links"
 import rehypeSlugHeadings from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import rehypePrettyCode, {
+  Options as PrettyCodeOptions,
+} from "rehype-pretty-code"
 
 const formatDate = (date: string, formatString: string): string =>
   format(parseISO(date), formatString)
@@ -64,12 +67,30 @@ export const BlogPost = defineDocumentType(() => ({
   },
 }))
 
+const prettyCodeOptions: Partial<PrettyCodeOptions> = {
+  theme: "css-variables",
+  onVisitLine(node) {
+    // Prevent lines from collapsing in `display: grid` mode, and
+    // allow empty lines to be copy/pasted
+    if (node.children.length === 0) {
+      node.children = [{ type: "text", value: " " }]
+    }
+  },
+  onVisitHighlightedLine(node) {
+    node.properties.className.push("highlighted-line")
+  },
+  onVisitHighlightedWord(node) {
+    node.properties.className = ["highlighted-word"]
+  },
+}
+
 export default makeSource({
   contentDirPath: "content",
   documentTypes: [BlogPost],
   mdx: {
     remarkPlugins: [gfm, smartypants],
     rehypePlugins: [
+      [rehypePrettyCode, prettyCodeOptions],
       [externalLinks, { rel: ["nofollow", "noreferrer"], target: "_blank" }],
       rehypeSlugHeadings,
       [

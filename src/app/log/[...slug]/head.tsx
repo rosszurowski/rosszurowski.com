@@ -16,6 +16,7 @@ export default function Head({ params }: { params: { slug: string[] } }) {
       title={post.title}
       description={post.excerpt}
       type="article"
+      imageUrl={`/api/og?title=${encodeURIComponent(post.title)}`}
       url={`/log/${year}/${slug}`}
     />
   )

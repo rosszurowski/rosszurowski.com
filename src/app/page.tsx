@@ -82,15 +82,22 @@ export default async function HomePage() {
             />
             .
           </Section>
-          <Section title="Recent interests">
+          <Section title="Recent writing">
+            <Link href="/log/2022/makefiles">Makefiles for Web Work</Link>{" "}
+            (2022)
+            <br />
             <Link href="/log/2018/small-seasons-long-calendars">
-              Alternate calendars
-            </Link>
-            , 日本語, 한국어,{" "}
+              On Small Seasons and Long Calendars
+            </Link>{" "}
+            (2018)
+            <br />
             <Link href="/log/2017/toward-a-distributed-web">
-              decentralized publishing
-            </Link>
-            , SQLite, gifts, debt, and larb.
+              Towards a Distributed Web
+            </Link>{" "}
+            (2017)
+          </Section>
+          <Section title="Recent interests">
+            Book clubs, 日本語, 한국어, SQLite, gifts, debt, and larb.
           </Section>
           <footer className="text-xs opacity-75">
             <p>

@@ -4,12 +4,14 @@
 
 @layer base {
   html {
-    @apply font-sans text-lg leading-[1.6] tracking-[-0.035px] text-gray-800;
+    @apply font-sans text-base leading-[1.6] tracking-[-0.035px] text-gray-800 md:text-lg;
     @apply antialiased;
     @apply scroll-p-12;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
   }
+
+  @import "./syntax.css";
 }
 
 @layer components {
@@ -34,10 +36,12 @@
     @apply leading-normal;
   }
 
+  .markdown > *:not(h1):not(h2):not(h3) + *:not(li):not(h1):not(h2):not(h3),
   .markdown
+    > blockquote
     > *:not(h1):not(h2):not(h3)
-    + *:not(div):not(li):not(h1):not(h2):not(h3) {
-    @apply mt-6;
+    + *:not(li):not(h1):not(h2):not(h3) {
+    @apply mt-5;
   }
 
   .markdown a {
@@ -49,13 +53,13 @@
   }
 
   .markdown blockquote {
-    @apply mt-4 border-l-2 border-gray-200 pl-5 text-gray-500;
+    @apply !my-8 px-6 text-gray-600;
   }
 
   .markdown h1,
   .markdown h2,
   .markdown h3 {
-    @apply relative mt-8 mb-3 text-[1.222rem] font-semibold;
+    @apply relative mt-8 mb-3 text-[1.222rem] font-semibold leading-tight;
   }
 
   .markdown hr {
@@ -86,17 +90,39 @@
     @apply my-1 before:mr-3 before:content-["•"];
   }
 
-  .markdown code,
-  .markdown pre {
-    @apply rounded-md font-mono text-[15px];
+  .markdown pre,
+  .markdown :not(pre) > code,
+  .markdown div[data-rehype-pretty-code-fragment] {
+    @apply rounded-md font-mono text-[0.83rem];
+  }
+
+  .markdown pre,
+  .markdown :not(pre) > code,
+  .markdown div[data-rehype-pretty-code-fragment] {
+    @apply bg-gray-100;
+  }
+
+  .markdown div[data-rehype-pretty-code-fragment] code {
+    @apply grid;
   }
 
   .markdown pre {
-    @apply overflow-x-auto p-3;
+    @apply overflow-x-auto py-4;
   }
 
-  .markdown code {
-    @apply bg-gray-100 py-[0.15em] px-[0.25em];
+  .markdown :not(pre) > code {
+    @apply py-[0.15em] px-[0.35em];
+  }
+
+  .markdown [data-rehype-pretty-code-title] {
+    @apply -mb-1 select-none px-4 pt-3 font-sans text-xs opacity-50;
+  }
+
+  .markdown > pre,
+  .markdown > blockquote > pre,
+  .markdown [data-rehype-pretty-code-fragment] .line {
+    @apply px-4;
+    tab-size: 3;
   }
 
   .markdown figure img {
@@ -108,15 +134,26 @@
   }
 
   .markdown .footnotes {
-    @apply mt-12 max-w-lg text-sm;
+    @apply mt-12 text-sm;
+  }
+
+  .markdown .footnotes ol {
+    @apply list-none p-0;
+    counter-reset: footnote-ol;
   }
 
   .markdown .footnotes li {
-    @apply text-sm;
+    @apply mt-2 text-sm;
   }
 
-  .markdown .footnotes li p {
-    @apply inline;
+  .markdown .footnotes li::before {
+    @apply absolute left-0 w-3 select-none items-center justify-end text-right opacity-50;
+    counter-increment: footnote-ol;
+    content: counter(footnote-ol);
+  }
+
+  .markdown .footnotes li {
+    @apply relative pl-6;
   }
 
   .markdown sup a {
@@ -126,10 +163,6 @@
   .markdown a.data-footnote-ref,
   .markdown a.data-footnote-backref {
     @apply relative top-0.5 border-b-0 p-0 font-[Arial] text-inherit opacity-50 hover:opacity-25;
-  }
-
-  .markdown .footnotes ol {
-    @apply list-decimal;
   }
 }
 
