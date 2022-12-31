@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply font-sans text-base leading-[1.6] tracking-[-0.035px] text-gray-800 md:text-lg;
+    @apply font-sans leading-normal tracking-[-0.035px] text-gray-800 md:text-lg md:leading-[1.6];
     @apply antialiased;
     @apply scroll-p-12;
     -ms-text-size-adjust: 100%;
