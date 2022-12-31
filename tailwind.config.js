@@ -25,6 +25,9 @@ module.exports = {
         purpleVeryFaded: "rgba(146, 110, 232, 0.35)",
         pink: "#ffb7b3",
       },
+      fontFamily: {
+        mono: "Menlo,monospaced",
+      },
     },
   },
   plugins: [],

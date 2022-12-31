@@ -45,7 +45,9 @@ export default function MetaTags({
       <meta property="og:description" content={formattedDescription} />
       <meta property="og:site_name" content={siteData.title} />
       <meta property="og:type" content={formattedType} />
-      {imageUrl && <meta property="og:image" content={imageUrl} />}
+      {formattedImageUrl && (
+        <meta property="og:image" content={formattedImageUrl} />
+      )}
       {updated && <meta property="og:updated_time" content={updated} />}
 
       <meta name="twitter:site" content="@rosszurowski" />
@@ -70,7 +72,6 @@ function canonicalUrl(domain: string, path: string) {
   const u = new URL(path, domain)
   u.protocol = "https"
   u.hash = ""
-  u.search = ""
   u.pathname = u.pathname
   return u.toString().replace(/\/$/, "")
 }
