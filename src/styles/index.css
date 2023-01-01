@@ -38,7 +38,14 @@
     > blockquote
     > *:not(h1):not(h2):not(h3)
     + *:not(li):not(h1):not(h2):not(h3) {
-    @apply mt-5;
+    @apply mt-4;
+  }
+
+  .markdown
+    > .note
+    > *:not(h1):not(h2):not(h3)
+    + *:not(li):not(h1):not(h2):not(h3) {
+    @apply mt-2;
   }
 
   .markdown a {

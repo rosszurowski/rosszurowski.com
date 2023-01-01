@@ -1,6 +1,6 @@
 "use client"
 
-import { ComponentPropsWithoutRef, Suspense } from "react"
+import { ComponentPropsWithoutRef, ReactNode, Suspense } from "react"
 import cx from "clsx"
 import { useMDXComponent } from "next-contentlayer/hooks"
 import Img from "next/image"
@@ -11,6 +11,7 @@ type Props = {
 
 const components = {
   Image,
+  Note,
 }
 
 /**
@@ -57,5 +58,13 @@ function Image(props: ImageProps) {
       />
       {caption && <figcaption>{caption}</figcaption>}
     </figure>
+  )
+}
+
+function Note({ children }: { children?: ReactNode }) {
+  return (
+    <div className="note rounded-lg bg-stone-50 px-2 py-2 text-sm md:py-4 md:px-4">
+      {children}
+    </div>
   )
 }
