@@ -1,10 +1,22 @@
 import { MDXContent } from "@content-collections/mdx/react"
+import dynamic from "next/dynamic"
 import NextImage from "next/image"
 import { ReactNode } from "react"
+
+const GoodFitVisualization = dynamic(
+  () => import("src/components/content/good-fit-visualization")
+)
 
 const components = {
   Image,
   Note,
+  /**
+   * The following components are specific to a single post. Unfortunately,
+   * we need to add theme here because of some bugs in Contentlayer/mdx-bundler:
+   * - https://github.com/contentlayerdev/contentlayer/issues/334
+   * - https://github.com/contentlayerdev/contentlayer/issues/309
+   */
+  GoodFitVisualization,
 }
 
 /**

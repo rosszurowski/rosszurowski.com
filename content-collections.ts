@@ -132,6 +132,7 @@ async function mdxToHtml(mdxSource: string) {
           ]),
         Note: (props) =>
           createElement("div", { className: "note" }, props.children),
+        GoodFitVisualization: () => null,
       },
     },
     null

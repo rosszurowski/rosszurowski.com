@@ -1,0 +1,166 @@
+---
+title: On Good Fit
+slug: good-fit
+summary: Lessons from Christopher Alexander's book, _Notes on the Synthesis of Form_.
+date: 2023-01-15
+---
+
+A lot has been written about the nature of design. Even more about what consitutes "good" design. From [individual reflections](https://shapeofdesignbook.com/chapters/00-introduction/) on the craft, to [reified principles](https://ghostly.com/products/vitsoe-dieter-rams-10-principles-for-good-design-poster), leading us to question, what even is design?
+
+The question gets navel-gazey pretty quickly.
+
+For that reason, Christopher Alexander's approach to thinking about design that he lays out in _Notes on the Synthesis of Form_ stands out to me.
+
+{/* Image of book cover? */}
+
+Alexander presents a model of thinking about design in almost algebraic terms. He doesn't take stances on aesthetics or function, but instead provides some wider frameworks for evaluating the qualities of a designed thing.
+
+One of his best ideas is the notion of _fit_; good fit, bad fit, and how to evaluate it.
+
+### Defining "fit"
+
+According to Alexander, you can think of any designed object as a response to a specific context:
+
+- A spoon is a response to a desire to consume liquid foods
+- A kettle is a response to the need to boil water in the kitchen
+- A website for an art gallery is a response to their audience's online attention, questions, and desire for info before they go out in the world.
+
+For any designed object (be it a spoon, kettle, or website) its success is based on how well its form is suited to its context. You've likely felt the when using a well-designed kitchen tool or piece of software. It's the _ah, it just does what I want it to in the way that I want it to_ feeling. We can say an object is "well-designed" when it has "good fit" with the context it's used in.
+
+The tricky piece here is defining a context. Contexts are made up of innummerable factors. Some are straightforward and shared across most uses of the object:
+
+- How well does the spoon hold liquids?
+- How easily does the spoon fit in one's hands? (related: whose hands?)
+- How easily does the spoon fit in one's mouth? (related: whose mouth?)
+
+For a spoon to be well-designed, it needs good answers to each of these questions. A spoon which does not hold liquids well is certainly not a good spoon. One that holds liquids but doesn't fit in a mouth might be better suited as a ladle than as a spoon. A spoon that fits in a baby's mouth is not necessarily good for an adult. As the context of use changes, so too should the form.
+
+Looking more broadly, we can also think of other factors that play into the context that go beyond the spoon's function or ergonomics:
+
+- How easy is it to manufacture?
+- How cheaply can it be produced?
+- How long does it last before it degrades?
+- Can the material safely be put in one's mouth?
+- Will the spoon melt if exposed to high temperatures?
+
+These factors, and many others that haven't been listed, all work together to create a larger picture of "good fit."
+
+<Image
+  src="/log/2023/good-fit/factors-of-fit.svg"
+  width={900}
+  height={480}
+  alt="A tree diagram of how different factors can be grouped and organized. At the top is 'kettle', under which you have 'function', under which you have 'production', 'safety', and 'use', and so on."
+>
+  Diagram recreated from _Notes on the Synthesis of Form_.
+</Image>
+
+It's worth noting that the mapping of these factors can extend to the infinitely specific:
+
+- How well does the spoon fit into this specific narrow cupboard?
+- Todo: Example
+- Todo: Example
+
+Part of the work of design is drawing generalizations from contexts, without losing the inherent detail of each context. The classic example of this kind of failure of generalization being [assuming designing a helmet that fits Eurasian heads will also fit East Asian heads](#).
+
+### Relationships between factors of "fit"
+
+After introducing fit and these factors, Alexander goes on to talk about the relationships between these factors. He describes how they come together to form a more complicated network of what constitutes "good fit."
+
+It's obvious, but important, that improving one factor of fit can have a negative impact on another. For example, when designing a spoon, you may choose a cheaper plastic to keep costs low. However, that simple plastic may be toxic, or break down quickly, or be hard to injection mold. The material choice creates a negative relationship between cost of manufacturing and the safety and longevity of the spoon. Achieving fit in one area can result in misfit in the other.
+
+In graphic design, the classic example is in layouts: your colleague suggests moving a piece of text from the bottom of a poster to the top. However, that one shift means the text is now too close to another piece of text, potentially resulting in a confusing reading. Or, it may result in a poor flow of the eye across the page, demanding that other objects must also be moved.
+
+One move results in shuffling the whole arrangement around the page until you find something that fits.
+
+<Image
+  src="/log/2023/good-fit/networks-of-factors.svg"
+  width={900}
+  height={480}
+  alt="A network diagram showing four factors—performance, simplicity, jointing, and economy—connected in different relationships. Some relationships are positive, and others are negative."
+/>
+
+Unfortunately, these networks of fit and misfit can have very real consequences at very large scales. This is why _Victor Papanek_ wrote "there are professions more dangerous that industrial design, but only very few of them."
+
+Eventually, we settle on a point of equilibrium; one where the important criteria are met and others fall on a sliding scale of success.
+
+### Visualizing fit
+
+Armed with this mental model, Alexander proposes a thought experiment to better understand the impact of relationships of fit:
+
+> Imagine a system of a hundred lights.
+>
+> Each light can be in one of two possible states. In one state the light is on. The lights are so constructed that any light which is on always has a 50-50 chance of going off in the next second.
+>
+> In the other state the light is off. Connections between lights are constructed so that any light which is off has a 50-50 chance of going on again in the next second, provided at least one of the lights it is connected to is on.
+>
+> If the lights it is directly connected to are off, for the time being it has no chance of going on again, and stays off. If the lights are ever all off simultaneously, then they will all stay off for good, since when no light is on, none of the lights has any chance of being reactivated. This is a state of equilibrium. Sooner or later the system of lights will reach it.
+
+This was immensely difficult for me to read the first time. We can distill the experiment down to a few key points:
+
+1. Lights have two states: on or off
+1. Lights are connected to other lights
+1. Every `n` seconds, a light will have 50–50 chance of changing state, from on to off, or off to on
+1. Any light which is connected only to "off" lights has no chance of turning on
+
+Each light represents one factor in a design: whether or not the spoon fits well in the average mouth, if the material is safe or not, etc, etc. And the state of each light represents its "fit."
+
+A light that is off has achieved good fit with that factor. A light that is on, hasn't yet. The changing of the lights represents attempts to solve that misfit—shuffling the layout of a poster, or changing the material your spoon is made with. The state of equilibrium, when all lights are off, represents perfect fit or adaptation to the context.
+
+Now, wait a sec… lights, connections, networks? This sounds like a job for a [force-directed graph](https://github.com/d3/d3-force).
+
+Here's what this experiment would look like. I've flipped the off and on states
+so it's easier to follow:
+
+<GoodFitVisualization variant="basic" />
+
+Fun!
+
+### Achieving good fit
+
+Now, this is fine-and-dandy. We see some lights flickering around. But! There's more to be gleaned from this experiment. If you played around with the number of connections, you would notice patterns.
+
+Systems with few connections resolve themselves almost immediately:
+
+<GoodFitVisualization variant="few-connections" />
+
+On the other hand, arrangements that are highly interconnected stay in motion for quite some time.
+
+<GoodFitVisualization variant="many-connections" />
+
+In an ideal world, we would work on design problems that look like the system with few connections. A world where the size of a spoon doesn't affect its cost, or its shape doesn't affect the complexity of manufacturing.
+
+And indeed, every once in a while, new technologies are developed that remove these complicated relationships — like how digital printing made it (roughly) as cost-efficient to print with many colors as with one, or how it made it cheap to print less than a few thousand units.
+
+But quite often we still deal with thorny problems. How can we better manage with the complexity of problems that inherently have more related factors?
+
+Consider this diagram:
+
+<GoodFitVisualization variant="groups" />
+
+This diagram shows the same number of connections, but rather than one big cluster, it's broken into several smaller groups. The interesting thing here is that the system resolves itself as quickly as the low-connection diagram.
+
+In software design, this principle is known as ["loose coupling"](https://en.wikipedia.org/wiki/Loose_coupling), and people go through great efforts to achieve it. Loosely coupled systems are usually easy to change and adapt over time.
+
+By isolating complicated relationships into small "sub-systems" or "sub-problems", it becomes much easier to acheive a sense of good fit. As long as the subsystems are _actually_ independent (and don't just seem like they are), we can iterate towards good solutions at a quicker pace. We can tackle complex problems in one sub-system without affecting work done in others.
+
+I've experienced this in small ways designing screens for mobile applications. I'd spend days trying to refine all the information and actions which need to live on one page. I'd try different visual arrangements or interactions to not overload people with detail but still keep important things accessible. Then, someone would suggest just putting some of the information on an entirely separate screen altogether. Zing! It works. By isolating out the key concepts, it not only made both pages easier to manage and design in isolation, but also opened up the possibility to use one of those pages in other contexts.
+
+When you correctly isolate unrelated pieces… TODO.
+
+Similarly, splitting highly related areas into separate groups often causes a lot of pain.
+
+An easy example in software design is adopting a "microservices" architecture, {/* what does this mean? */} often as a way to get around the organizational problem of needing to coordinate with different groups.
+
+However, you can quickly find that the different services aren't as distinct as you originally thought. The value on monolithic systems is that by refusing to subdivide things, you avoid the issues with making the wrong divisions.
+You need to reach into the other pieces to access important data
+
+### Where to go from here?
+
+I find this mental model useful for thinking about design work in general. Design can be thought of in algebraic terms, but is necessarily informed by human insights because of the context-specificity.
+
+Some lessons that follow from this way of thinking:
+
+- Defining principles helps break through networks of fit/misfit issues, by choosing what factors to prioritize. Principles that aren't specific to particular factors or trade-offs aren't very useful.
+- Scope problems down to specific contexts and sub-systems makes it a lot easier to find good fit. This is why it's easy to have a "finished" CLI tool but much much harder to have a "finished" web app.
+
+I'd highly encourage you to read _Notes on the Synthesis of Form_, and Alexander's work more generally. It's great.
