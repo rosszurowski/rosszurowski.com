@@ -63,7 +63,7 @@ export default async function HomePage() {
                   <a href={role.href} target="_blank" rel="noopener noreferrer">
                     <span className="inline-block w-32">{role.name}</span>
                     <span className="relative inline-block -rotate-45 select-none">
-                      <Icon name="arrow-right" width={14} height={14} />
+                      <Icon name="arrow-right" size={14} />
                     </span>
                   </a>
                 </li>

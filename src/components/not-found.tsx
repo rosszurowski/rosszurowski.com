@@ -8,7 +8,7 @@ export default function NotFound() {
     <>
       <PlausibleEvent eventName="404" />
       <RedirectAfter seconds={4} to="/" />
-      <Icon name="dead-folder" className="mb-4" width={32} height={32} />
+      <Icon name="dead-folder" className="mb-4" size={32} />
       <p>
         Page not found. Redirecting you{" "}
         <Link href="/" className="link-underline">

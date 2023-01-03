@@ -57,12 +57,7 @@ function BackHome() {
   return (
     <Link href="/" className="opacity-50 hover:opacity-75">
       <span className="mr-2 inline-block">
-        <Icon
-          name="arrow-right"
-          width={12}
-          height={12}
-          className="-scale-x-100"
-        />
+        <Icon name="arrow-right" size={12} className="-scale-x-100" />
       </span>
       Back home
     </Link>

@@ -4,6 +4,11 @@ import { ComponentPropsWithoutRef, ReactNode, Suspense } from "react"
 import cx from "clsx"
 import { useMDXComponent } from "next-contentlayer/hooks"
 import Img from "next/image"
+import dynamic from "next/dynamic"
+
+const GoodFitVisualization = dynamic(
+  () => import("src/components/content/good-fit-visualization")
+)
 
 type Props = {
   code: string
@@ -12,6 +17,13 @@ type Props = {
 const components = {
   Image,
   Note,
+  /**
+   * The following components are specific to a single post. Unfortunately,
+   * we need to add theme here because of some bugs in Contentlayer/mdx-bundler:
+   * - https://github.com/contentlayerdev/contentlayer/issues/334
+   * - https://github.com/contentlayerdev/contentlayer/issues/309
+   */
+  GoodFitVisualization,
 }
 
 /**
