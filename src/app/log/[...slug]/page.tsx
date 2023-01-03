@@ -4,9 +4,14 @@ import { notFound, redirect } from "next/navigation"
 import Icon from "src/components/icon"
 import Markdown from "src/components/markdown"
 import StandardLayout from "src/components/standard-layout"
+import copyStaticAssets from "src/lib/assets"
 import { widont } from "src/lib/html"
 
-export default function BlogPage({ params }: { params: { slug: string[] } }) {
+export default async function BlogPage({
+  params,
+}: {
+  params: { slug: string[] }
+}) {
   const [year, maybeSlug] = params.slug
   const slug = maybeSlug || year
   const post = allBlogPosts.find((post) => post.slug === slug)
@@ -16,6 +21,7 @@ export default function BlogPage({ params }: { params: { slug: string[] } }) {
   if (year !== post.year) {
     return redirect(post.url)
   }
+  await copyStaticAssets(post)
 
   return (
     <StandardLayout>

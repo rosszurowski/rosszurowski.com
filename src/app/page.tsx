@@ -7,7 +7,6 @@ import ErrorBoundary from "src/components/error-boundary"
 import Icon from "src/components/icon"
 import Squiggle from "src/components/squiggle"
 import { siteData } from "src/lib/content"
-import copyStaticAssets from "src/lib/assets"
 
 const LazyVisual = dynamic(() => import("src/components/heat-distortion"))
 
@@ -25,7 +24,6 @@ const roles = [
 
 export default async function HomePage() {
   const buildDate = format(new Date(), "MMM d, yyyy")
-  await copyStaticAssets()
 
   return (
     <div className="page-home relative z-10 flex items-stretch overflow-x-hidden">
