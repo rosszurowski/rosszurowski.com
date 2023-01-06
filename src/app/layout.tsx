@@ -1,5 +1,5 @@
 import PlausibleProvider from "next-plausible"
-import "../styles/index.css"
+import "src/styles/index.css"
 
 type Props = {
   children: React.ReactNode
