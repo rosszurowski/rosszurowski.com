@@ -3,18 +3,18 @@ SHELL := env PATH=$(PATH) /bin/sh
 
 PORT  ?= 4000
 
-dev: yarn.lock ## Run a local dev server
+dev: pnpm-lock.yaml ## Run a local dev server
 	@PORT=$(PORT) next dev
 .PHONY: dev
 
-build: yarn.lock .next ## Build site for production
+build: pnpm-lock.yaml .next ## Build site for production
 .PHONY: build
 
-lint: yarn.lock ## Lint files for code quality
+lint: pnpm-lock.yaml ## Lint files for code quality
 	@next lint
 .PHONY: lint
 
-format: yarn.lock ## Format code to a standard style
+format: pnpm-lock.yaml ## Format code to a standard style
 	@eslint --fix 'src/**/*.{js,jsx,ts,tsx}'
 	@prettier --write 'src/**/*.{js,jsx,ts,tsx}'
 .PHONY: format
@@ -25,11 +25,11 @@ clean: ## Clear all caches
 	@trash .contentlayer
 .PHONY: clean
 
-.next: yarn.lock next.config.js $(shell fd -g '**/*.{ts,tsx}' .) public
+.next: pnpm-lock.yaml next.config.js $(shell fd -g '**/*.{ts,tsx}' .) public
 	@next build
 
-yarn.lock: node_modules package.json
-	@yarn install --frozen-lockfile --check-files --network-timeout=10000
+pnpm-lock.yaml: node_modules package.json
+	@pnpm install --frozen-lockfile
 	@touch -mr $(shell ls -Atd $? | head -1) $@
 
 node_modules:
