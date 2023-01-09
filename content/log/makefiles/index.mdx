@@ -348,6 +348,8 @@ node_modules: package.json
 
 You still get the nice, `make dev` interface and dependency tracking, but proper parallel dev server handling behind-the-scenes.
 
+_Update_ — I've since published [tandem](https://github.com/rosszurowski/tandem), which tries to solve this problem with an easy Makefile-specific installation step.
+
 ### Hermetic environments
 
 Building on [the auto-installing node_modules technique](#auto-installing-node_modules): you can get fancy with dependencies to download local versions of your _entire_ toolchain. This way everyone runs the same version of everything, without the slowness of using Docker.
