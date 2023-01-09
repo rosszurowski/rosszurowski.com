@@ -54,6 +54,7 @@ Other articles cover the basics of how to write a Makefile in great depth,[^2] s
 - [Referencing node_modules](#referencing-node_modules-binaries)
 - [Auto-installing node_modules](#auto-installing-node_modules)
 - [Skipping re-runs of slow tasks](#skipping-re-runs-of-slow-tasks)
+- [Using environment variables](#using-environment-variables)
 - [Configuring tasks with default variables](#configuring-tasks-with-default-variables)
 - [Self-documenting Makefiles](#self-documenting-makefiles)
 - [Parallel dev servers](#parallel-dev-servers)
@@ -217,6 +218,32 @@ You can add different file extensions by adding more instances of `-o -name "*.<
 ```makefile title="Makefile"
 .next: node_modules next.config.js $(shell find src -type f -name "*.ts" -o -name "*.tsx" -o -name "*.css")
 	@./node_modules/.bin/next build
+```
+
+### Using environment variables
+
+To use env variables you've defined in a local file, like a `.env`, you can
+use the following block at the top of your Makefile:
+
+```makefile
+include .env
+export
+```
+
+I find this makes it easy to store secret token for one-off tasks like API calls or just avoiding installing a dotenv dependency into my projects:
+
+```shell title=".env"
+SSH_USER="user"
+SSH_HOST="example.com"
+SSH_DIR="public_html"
+```
+
+```makefile title="Makefile"
+include .env
+export
+
+content:  ## Sync content from the server to the local environment.
+	@rsync -avz --delete "$(SSH_USER)@$(SSH_HOST):$(SSH_DIR)/content/" content/
 ```
 
 ### Configuring tasks with default variables
