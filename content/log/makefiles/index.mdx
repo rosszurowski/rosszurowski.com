@@ -319,18 +319,14 @@ I'll often want to run multiple long-lived processes while working on a project.
 Unfortunately, like npm/yarn scripts, `make` doesn't have meaningful tools for running long-lived parallel tasks. There _are_ technically a few ways you could get parallel servers running, but each technique gets a little fiddly for my tastes:
 
 - Using `make -j3 <a> <b> <c>` doesn't treat processes as a group. So if one subprocess fails (eg. a syntax error stops the Tailwind `--watch` process), the others keep on going. You lose your live-updating changes without noticing until things are broken.
-- Shell background jobs with `<command> &` suffers the same process group issue, plus can sometimes leave processes hanging around after you Ctrl+C out.
-- External binaries like GNU's `parallel` command, or [overmind](https://github.com/DarthSim/overmind) work, but they require separate installation steps. You can automate this, but it's not ideal.
+- Shell background jobs with `<command> &` suffer the same process group issue, plus can sometimes leave processes hanging around after you Ctrl+C out.
+- External binaries like GNU's `parallel` command, or `foreman` work, but they need separate installation steps.
 
-Thankfully, `make` doesn't care: we can just pop into language-specific tools that are suitable for the job.
-
-In Go projects, I'll use a custom Go script. In Node projects, I'll just install the [concurrently](https://www.npmjs.com/package/concurrently) npm package:
+Thankfully, `make` doesn't care: we can just pop into language-specific tools that are suitable for the job. In Go projects, I'll use a custom Go script. In Node projects, I'll use the [concurrently](https://www.npmjs.com/package/concurrently) npm package:
 
 ```
 yarn add --dev concurrently
 ```
-
-Then use it from your Makefile. Passing the full `./node_modules/.bin` path before your npm-based tools, and use the `-k` flag to kill all processes when one fails:
 
 ```makefile title="Makefile"
 PORT ?= 9000
@@ -346,9 +342,31 @@ node_modules: package.json
 	@yarn install
 ```
 
-You still get the nice, `make dev` interface and dependency tracking, but proper parallel dev server handling behind-the-scenes.
+You still get the nice `make dev` interface and dependency tracking, but proper parallel dev server handling behind-the-scenes.
 
-_Update_ — I've since published [tandem](https://github.com/rosszurowski/tandem), which tries to solve this problem with an easy Makefile-specific installation step.
+**Update:** as of recently, I've been using [tandem](https://github.com/rosszurowski/tandem), a tool I built for running multiple commands as a process group. You pass it multiple commands and it runs them in parallel, shutting down the whole group if one fails.
+
+It's designed to be easily embedded in Makefiles with a one-line installation script. Add `.cache` to your `.gitignore` file, and use the following block:
+
+```makefile title="Makefile"
+PORT ?= 9000
+
+dev: .cache/tandem node_modules
+	@.cache/tandem \
+		'php -S localhost:$PORT index.php' \
+		'esbuild src/*.ts --bundle --outdir=assets/ --watch' \
+		'tailwindcss -i src/index.css -o assets/index.css --watch'
+.PHONY: dev
+
+.cache/tandem:
+	@mkdir -p $$(dirname $@)
+	@curl -fsSL https://raw.githubusercontent.com/rosszurowski/tandem/main/install.sh | bash -s -- --dest="$$(dirname $@)"
+
+node_modules: package.json
+	@yarn install
+```
+
+The first time you run `make dev`, it'll download and cache it for future uses.
 
 ### Hermetic environments
 
