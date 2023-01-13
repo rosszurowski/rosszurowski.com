@@ -20,12 +20,12 @@ format: pnpm-lock.yaml ## Format code to a standard style
 .PHONY: format
 
 clean: ## Clear all caches
-	@trash node_modules
-	@trash .next
-	@trash .contentlayer
+	@rf -rf ./node_modules
+	@rm -rf ./.next
+	@rm -rf ./.contentlayer
 .PHONY: clean
 
-.next: pnpm-lock.yaml next.config.js $(shell fd -g '**/*.{ts,tsx}' .) public
+.next: pnpm-lock.yaml next.config.js $(shell fd -g '**/*.{ts,tsx,css}' .) public
 	@next build
 
 pnpm-lock.yaml: node_modules package.json
