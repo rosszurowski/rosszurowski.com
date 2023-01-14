@@ -7,8 +7,10 @@ dev: bun.lock ## Run a local dev server
 	@PORT=$(PORT) next dev --turbo
 .PHONY: dev
 
-build: bun.lock ## Build site for production
-	@next build
+start: bun.lock .next ## Run a local production server
+	@PORT=$(PORT) next start
+
+build: bun.lock .next ## Build site for production
 .PHONY: build
 
 lint: bun.lock ## Lint files for code quality
