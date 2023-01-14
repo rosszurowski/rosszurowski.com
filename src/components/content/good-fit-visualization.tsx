@@ -15,6 +15,7 @@ import {
   ForceX,
   ForceY,
 } from "d3"
+import { constrain, randomItem } from "./utils"
 import Icon from "../icon"
 
 /**
@@ -423,20 +424,4 @@ function findCandidate<T>(
     i++
   }
   return undefined
-}
-
-function constrain(
-  val: number,
-  min: number,
-  max: number = Number.POSITIVE_INFINITY
-) {
-  return Math.min(Math.max(val, min), max)
-}
-
-function randomItem<T>(arr: T[]): T {
-  return arr[randomNumber(0, arr.length - 1)]
-}
-
-function randomNumber(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min + 1) + min)
 }

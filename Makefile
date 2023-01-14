@@ -7,6 +7,9 @@ dev: pnpm-lock.yaml ## Run a local dev server
 	@PORT=$(PORT) next dev
 .PHONY: dev
 
+start: pnpm-lock.yaml .next ## Run a local production server
+	@PORT=$(PORT) next start
+
 build: pnpm-lock.yaml .next ## Build site for production
 .PHONY: build
 

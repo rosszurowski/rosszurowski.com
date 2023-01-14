@@ -9,6 +9,9 @@ import dynamic from "next/dynamic"
 const GoodFitVisualization = dynamic(
   () => import("src/components/content/good-fit-visualization")
 )
+const GoodFitRadial = dynamic(
+  () => import("src/components/content/good-fit-radial")
+)
 
 type Props = {
   code: string
@@ -19,11 +22,12 @@ const components = {
   Note,
   /**
    * The following components are specific to a single post. Unfortunately,
-   * we need to add theme here because of some bugs in Contentlayer/mdx-bundler:
+   * we need to add them here because of some bugs in Contentlayer/mdx-bundler:
    * - https://github.com/contentlayerdev/contentlayer/issues/334
    * - https://github.com/contentlayerdev/contentlayer/issues/309
    */
   GoodFitVisualization,
+  GoodFitRadial,
 }
 
 /**

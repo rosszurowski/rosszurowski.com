@@ -86,6 +86,26 @@
     @apply mt-4 pl-5;
   }
 
+  .markdown ol {
+    @apply list-none p-0;
+    counter-reset: ol;
+  }
+
+  .markdown ol li {
+    @apply relative pl-6;
+  }
+
+  .markdown ol li + li {
+    @apply mt-1;
+  }
+
+  .markdown ol li::before {
+    @apply absolute left-0 w-3 opacity-50 select-none;
+    counter-increment: ol;
+    content: counter(ol);
+    font-feature-settings: "tnum" 1;
+  }
+
   .markdown ul {
     @apply list-none -indent-5;
   }
