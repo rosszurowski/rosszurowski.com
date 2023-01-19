@@ -42,6 +42,16 @@ const icons = {
       <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
     </g>
   ),
+  play: (
+    <g
+      fill="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+    </g>
+  ),
   "dead-folder": (
     <g fill="currentColor" fillRule="evenodd">
       <path d="m1.5 1.5h7.5v1.5h-7.5z" />

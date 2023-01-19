@@ -28,6 +28,10 @@ module.exports = {
       fontFamily: {
         mono: "Menlo,monospaced",
       },
+      transitionProperty: {
+        "color-transform": "color, transform",
+        "color-opacity-transform": "color, opacity, transform",
+      },
     },
   },
   plugins: [],
