@@ -1,5 +1,7 @@
+export type IconName = keyof typeof icons
+
 type Props = {
-  name: keyof typeof icons
+  name: IconName
   className?: string
   size?: number | string
 }
@@ -50,6 +52,11 @@ const icons = {
       strokeLinejoin="round"
     >
       <polygon points="5 3 19 12 5 21 5 3"></polygon>
+    </g>
+  ),
+  pause: (
+    <g fill="currentColor" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5.83333 3C5.3731 3 5 3.44772 5 4V20C5 20.5523 5.3731 21 5.83333 21H9.16667C9.6269 21 10 20.5523 10 20V4C10 3.44772 9.6269 3 9.16667 3H5.83333ZM14.8333 3C14.3731 3 14 3.44772 14 4V20C14 20.5523 14.3731 21 14.8333 21H18.1667C18.6269 21 19 20.5523 19 20V4C19 3.44772 18.6269 3 18.1667 3H14.8333Z" />
     </g>
   ),
   "dead-folder": (

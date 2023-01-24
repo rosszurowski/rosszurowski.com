@@ -19,7 +19,7 @@ import {
 } from "d3"
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { useInView } from "src/components/hooks"
-import Icon from "src/components/icon"
+import Icon, { IconName } from "src/components/icon"
 import { constrain, randomItem } from "./utils"
 
 /**
@@ -35,29 +35,21 @@ export default function GoodFitVisualization({
   tickMs?: number
   caption?: string
 }) {
-  const { ref, tickRef, play, restart, state } = useForceSimulation(
+  const { ref, tickRef, play, pause, restart, state } = useForceSimulation(
     variant,
     tickMs
   )
+  const [action, icon, label] =
+    state === "initial" || state === "paused"
+      ? ([play, "play", "Play"] as const)
+      : state === "playing"
+      ? ([pause, "pause", "Pause"] as const)
+      : ([restart, "cycle", "Restart"] as const)
 
   return (
     <figure>
       <div className="relative rounded-lg bg-stone-100">
-        <button
-          className={clsx(
-            labelClass,
-            labelRightClass,
-            "flex items-center px-3 hover:bg-stone-600/5 hover:text-stone-700 active:scale-[98%]"
-          )}
-          onClick={state === "paused" ? play : restart}
-        >
-          <Icon
-            className="mr-1.5 inline-block opacity-75"
-            name={state === "paused" ? "play" : "cycle"}
-            size="0.9em"
-          />
-          {state === "paused" ? "Play" : "Restart"}
-        </button>
+        <ActionButton onClick={action} label={label} icon={icon} />
         <div className={clsx(labelClass, labelLeftClass, "px-2")}>
           <span>
             Iterations <span ref={tickRef}>0</span>
@@ -67,6 +59,34 @@ export default function GoodFitVisualization({
       </div>
       {caption && <figcaption>{caption}</figcaption>}
     </figure>
+  )
+}
+
+function ActionButton({
+  onClick,
+  label,
+  icon,
+}: {
+  label: string
+  icon: IconName
+  onClick: () => void
+}) {
+  return (
+    <button
+      className={clsx(
+        labelClass,
+        labelRightClass,
+        "flex items-center px-3 hover:bg-stone-600/5 hover:text-stone-700 active:scale-[98%]"
+      )}
+      onClick={onClick}
+    >
+      <Icon
+        className="inline-block opacity-75 mr-1.5"
+        name={icon}
+        size="0.9em"
+      />
+      {label}
+    </button>
   )
 }
 
@@ -124,7 +144,7 @@ const variants = {
   groups: {
     nodes: 30,
     groups: 3,
-    intragroupLinks: 10,
+    intragroupLinks: 9,
     intergroupLinks: 2,
   },
 }
@@ -133,7 +153,9 @@ function useForceSimulation(variant: keyof typeof variants, tickMs: number) {
   const ref = useRef<SVGSVGElement>(null)
   const tickRef = useRef<HTMLSpanElement>(null)
   const simulation = useRef<ReturnType<typeof createSimulation> | null>(null)
-  const [state, setState] = useState<"paused" | "playing" | "stopped">("paused")
+  const [state, setState] = useState<
+    "initial" | "paused" | "playing" | "stopped"
+  >("initial")
   const [n, setN] = useState(0) // used to trigger a restart
   const [results, setResults] = useState<number[]>([])
   const inView = useInView(ref)
@@ -341,7 +363,10 @@ function createSimulation(el: SVGSVGElement) {
       .attr("x2", (d) => d.target.x)
       // @ts-expect-error
       .attr("y2", (d) => d.target.y)
-    node.attr("r", radius).attr("cx", (d) => d.x).attr("cy", (d) => d.y)
+    node
+      .attr("r", radius)
+      .attr("cx", (d) => d.x)
+      .attr("cy", (d) => d.y)
   }
 
   function play() {
