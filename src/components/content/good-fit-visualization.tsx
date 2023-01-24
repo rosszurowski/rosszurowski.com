@@ -202,7 +202,7 @@ function createSimulation(el: SVGSVGElement) {
   // The maximum width of the visualization in the window. Used for resizing
   // the links between nodes as the browser shrinks.
   const maxWidth = 750
-  const radius = 7
+  let radius = 7
   let tickCount = 0
 
   const simulation = forceSimulation<NodeData, LinkData>()
@@ -244,6 +244,7 @@ function createSimulation(el: SVGSVGElement) {
     x.x(width / 2)
     y.y(height / 2)
     link.distance((d) => (width / maxWidth) * d.distance)
+    radius = constrain(7 * (width / maxWidth), 5, 7)
     simulation.alpha(1.0).restart()
   }
 
@@ -258,7 +259,6 @@ function createSimulation(el: SVGSVGElement) {
     node = node
       .data(data.nodes, (d) => d.id)
       .join("circle")
-      .attr("r", radius)
       .attr("fill", (d) => (d.active ? "black" : "#b2b2b2"))
       .call(addDrag(simulation))
 
@@ -339,7 +339,7 @@ function createSimulation(el: SVGSVGElement) {
       .attr("x2", (d) => d.target.x)
       // @ts-expect-error
       .attr("y2", (d) => d.target.y)
-    node.attr("cx", (d) => d.x).attr("cy", (d) => d.y)
+    node.attr("r", radius).attr("cx", (d) => d.x).attr("cy", (d) => d.y)
   }
 
   function play() {
