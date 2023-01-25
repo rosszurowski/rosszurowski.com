@@ -166,7 +166,7 @@
 
   .markdown a.data-footnote-ref,
   .markdown a.data-footnote-backref {
-    @apply relative top-0.5 border-b-0 p-0 font-[Arial] text-inherit opacity-50 hover:opacity-25;
+    @apply relative -left-1 border-b-0 leading-none px-1 font-mono text-inherit text-base opacity-50 hover:opacity-25 transition-colors;
   }
 }
 
