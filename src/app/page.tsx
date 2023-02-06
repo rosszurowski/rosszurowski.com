@@ -55,7 +55,7 @@ export default async function HomePage() {
             </p>
           </div>
           <div className="mb-6">
-            <h4 className="mb-3 text-pink">CV</h4>
+            <h2 className="mb-3 text-pink">CV</h2>
             <ul>
               {roles.map((role) => (
                 <li className="relative flex" key={role.name}>
@@ -122,7 +122,7 @@ function Section(props: { title: string; children: React.ReactNode }) {
   const { title, children } = props
   return (
     <div className="mb-6">
-      <h4 className="mb-3 text-pink">{title}</h4>
+      <h2 className="mb-3 text-pink">{title}</h2>
       <p>{children}</p>
     </div>
   )

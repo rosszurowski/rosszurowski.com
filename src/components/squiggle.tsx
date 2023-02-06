@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Squiggle() {
   return (
-    <Link href="/">
+    <Link href="/" aria-label="Go to homepage">
       <svg
         viewBox="0 0 34 10"
         xmlns="http://www.w3.org/2000/svg"
