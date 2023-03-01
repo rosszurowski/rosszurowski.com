@@ -22,3 +22,22 @@ export const siteData = {
     },
   ],
 }
+
+export function generateSocialImageURL({ title }: { title: string }) {
+  return canonicalUrl(
+    siteData.url,
+    `/api/og?title=${encodeURIComponent(title)}`
+  )
+}
+
+/**
+ * canonicalUrl returns an absolute URL to a resource given a path and domain.
+ * It trims any query parameters and removes the trailing slash.
+ */
+export function canonicalUrl(domain: string, path: string) {
+  const u = new URL(path, domain)
+  u.protocol = "https"
+  u.hash = ""
+  u.pathname = u.pathname
+  return u.toString().replace(/\/$/, "")
+}

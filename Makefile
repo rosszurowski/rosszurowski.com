@@ -7,7 +7,8 @@ dev: pnpm-lock.yaml ## Run a local dev server
 	@PORT=$(PORT) next dev
 .PHONY: dev
 
-build: pnpm-lock.yaml .next ## Build site for production
+build: pnpm-lock.yaml ## Build site for production
+	@next build
 .PHONY: build
 
 lint: pnpm-lock.yaml ## Lint files for code quality

@@ -1,20 +1,20 @@
 import { allBlogPosts } from "contentlayer/generated"
+import { Metadata } from "next"
 import Link from "next/link"
 import { notFound, redirect } from "next/navigation"
 import Icon from "src/components/icon"
 import Markdown from "src/components/markdown"
 import StandardLayout from "src/components/standard-layout"
 import copyStaticAssets from "src/lib/assets"
+import { canonicalUrl, generateSocialImageURL, siteData } from "src/lib/content"
 import { widont } from "src/lib/html"
 
-export default async function BlogPage({
-  params,
-}: {
+type PageProps = {
   params: { slug: string[] }
-}) {
-  const [year, maybeSlug] = params.slug
-  const slug = maybeSlug || year
-  const post = allBlogPosts.find((post) => post.slug === slug)
+}
+
+export default async function BlogPage({ params }: PageProps) {
+  const { post, year } = await getData(params.slug)
   if (!post) {
     return notFound()
   }
@@ -69,8 +69,50 @@ function BackHome() {
   )
 }
 
+async function getData(slugParam: string[]) {
+  const [year, maybeSlug] = slugParam
+  const slug = maybeSlug || year
+  const post = allBlogPosts.find((post) => post.slug === slug)
+  return { post, year }
+}
+
 export async function generateStaticParams() {
   return allBlogPosts.map((post) => ({
     slug: [post.year, post.slug],
   }))
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { post } = await getData(params.slug)
+  if (!post) {
+    return {}
+  }
+
+  const title = post.title
+  const description = post.excerpt
+  const canonical = canonicalUrl(siteData.url, post.url)
+  const images = generateSocialImageURL({ title: post.title })
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      siteName: siteData.title,
+      type: "article",
+      images,
+    },
+    twitter: {
+      title,
+      description,
+      card: "summary_large_image",
+      images,
+    },
+    alternates: {
+      canonical,
+    },
+  }
 }

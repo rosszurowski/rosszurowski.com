@@ -7,10 +7,10 @@ export const config = {
 
 // Make sure the font exists in the specified path:
 const interSemibold = fetch(
-  new URL("../../assets/Inter-SemiBold.ttf", import.meta.url)
+  new URL("../../../assets/Inter-SemiBold.ttf", import.meta.url)
 ).then((res) => res.arrayBuffer())
 
-export default async function handler(req: NextRequest) {
+export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url)
 
