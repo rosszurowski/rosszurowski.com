@@ -6,7 +6,7 @@ import Icon from "src/components/icon"
 import Markdown from "src/components/markdown"
 import StandardLayout from "src/components/standard-layout"
 import copyStaticAssets from "src/lib/assets"
-import { canonicalUrl, generateSocialImageURL, siteData } from "src/lib/content"
+import { generateSocialImageURL, siteData } from "src/lib/content"
 import { widont } from "src/lib/html"
 
 type PageProps = {
@@ -92,7 +92,7 @@ export async function generateMetadata({
 
   const title = post.title
   const description = post.excerpt
-  const canonical = canonicalUrl(siteData.url, post.url)
+  const canonical = post.url
   const images = generateSocialImageURL({ title: post.title })
 
   return {

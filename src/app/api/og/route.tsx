@@ -1,5 +1,4 @@
-import { ImageResponse } from "@vercel/og"
-import { NextRequest } from "next/server"
+import { NextRequest, ImageResponse } from "next/server"
 
 export const config = {
   runtime: "edge",
@@ -7,7 +6,7 @@ export const config = {
 
 // Make sure the font exists in the specified path:
 const interSemibold = fetch(
-  new URL("../../../assets/Inter-SemiBold.ttf", import.meta.url)
+  new URL("src/assets/Inter-SemiBold.ttf", import.meta.url)
 ).then((res) => res.arrayBuffer())
 
 export async function GET(req: NextRequest) {
