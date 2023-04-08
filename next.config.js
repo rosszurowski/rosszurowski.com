@@ -31,7 +31,6 @@ const config = {
     return [
       { source: "/index.xml", destination: "/api/rss" },
       { source: "/log/index.xml", destination: "/api/rss" },
-      { source: "/sitemap.xml", destination: "/api/sitemap" },
     ]
   },
 }

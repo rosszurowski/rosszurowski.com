@@ -24,10 +24,7 @@ export const siteData = {
 }
 
 export function generateSocialImageURL({ title }: { title: string }) {
-  return canonicalUrl(
-    siteData.url,
-    `/api/og?title=${encodeURIComponent(title)}`
-  )
+  return `/api/og?title=${encodeURIComponent(title)}`
 }
 
 /**
