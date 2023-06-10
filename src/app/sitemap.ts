@@ -1,24 +1,16 @@
 import { allBlogPosts } from "contentlayer/generated"
+import { MetadataRoute } from "next"
+import { siteData } from "src/lib/content"
 
-/**
- * sitemap returns an array of objects that can be used to generate
- * a sitemap.xml file.
- */
-export default function sitemap() {
-  const lastBuild = formatDate(new Date().toISOString())
+export default function sitemap(): MetadataRoute.Sitemap {
+  const entries = [{ url: siteData.url, lastModified: new Date() }]
 
-  const posts = allBlogPosts.map((post) => ({
-    url: formatUrl(post.url),
-    lastModified: formatDate(post.date),
-  }))
+  allBlogPosts.forEach((post) => {
+    entries.push({
+      url: new URL(post.url, siteData.url).toString(),
+      lastModified: new Date(post.date),
+    })
+  })
 
-  const routes = [""].map((route) => ({
-    url: formatUrl(route),
-    lastModified: lastBuild,
-  }))
-
-  return [...routes, ...posts]
+  return entries
 }
-
-const formatUrl = (path: string) => `https://rosszurowski.com${path}`
-const formatDate = (date: string) => date.split("T")[0]

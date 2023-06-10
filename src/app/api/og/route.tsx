@@ -1,8 +1,6 @@
-import { NextRequest, ImageResponse } from "next/server"
+import { ImageResponse, NextRequest } from "next/server"
 
-export const config = {
-  runtime: "edge",
-}
+export const runtime = "edge"
 
 // Make sure the font exists in the specified path:
 const interSemibold = fetch(
