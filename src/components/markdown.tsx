@@ -1,13 +1,7 @@
-"use client"
-
-import { ComponentPropsWithoutRef, ReactNode, Suspense } from "react"
+import { ComponentPropsWithoutRef, ReactNode } from "react"
 import cx from "clsx"
-import { useMDXComponent } from "next-contentlayer/hooks"
+import { getMDXComponent } from "next-contentlayer/hooks"
 import Img from "next/image"
-
-type Props = {
-  code: string
-}
 
 const components = {
   Image,
@@ -17,14 +11,9 @@ const components = {
 /**
  * Markdown renders MDX content into components.
  */
-export default function Markdown(props: Props) {
-  const MDXContent = useMDXComponent(props.code)
-
-  return (
-    <Suspense>
-      <MDXContent components={components} />
-    </Suspense>
-  )
+export default function Markdown({ code }: { code: string }) {
+  const MDXContent = getMDXComponent(code)
+  return <MDXContent components={components} />
 }
 
 type ImageProps = {
