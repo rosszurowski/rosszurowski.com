@@ -1,7 +1,7 @@
-import { ComponentPropsWithoutRef, ReactNode } from "react"
 import cx from "clsx"
 import { getMDXComponent } from "next-contentlayer/hooks"
 import Img from "next/image"
+import { ComponentPropsWithoutRef, ReactNode } from "react"
 
 const components = {
   Image,

@@ -31,6 +31,7 @@
     "next-plausible": "^3.7.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.3",
+    "prettier-plugin-organize-imports": "^3.2.2",
     "prettier-plugin-tailwindcss": "^0.2.1",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-external-links": "^2.0.1",
@@ -66,6 +67,12 @@
   },
   "prettier": {
     "semi": false,
-    "tabWidth": 2
+    "tabWidth": 2,
+    "plugins": [
+      "prettier-plugin-organize-imports",
+      "prettier-plugin-tailwindcss"
+    ],
+    "organizeImportsSkipDestructiveCodeActions": true,
+    "pluginSearchDirs": false
   }
 }

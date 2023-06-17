@@ -1,7 +1,7 @@
-import { globby } from "globby"
-import fs from "fs/promises"
-import path from "path"
 import { BlogPost } from "contentlayer/generated"
+import fs from "fs/promises"
+import { globby } from "globby"
+import path from "path"
 
 const contentFolder = "content"
 const assets = "*.{jpg,jpeg,png,gif,svg}"

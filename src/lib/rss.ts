@@ -1,8 +1,8 @@
+import { allBlogPosts } from "contentlayer/generated"
 import { parseISO } from "date-fns"
 import { Feed } from "feed"
-import { allBlogPosts } from "contentlayer/generated"
-import { siteData } from "./content"
 import { mdxToHtml } from "src/lib/mdx"
+import { siteData } from "./content"
 
 /**
  * generateBlogFeed returns a feed object for generating an RSS feed
