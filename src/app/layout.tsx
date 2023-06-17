@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import PlausibleProvider from "next-plausible"
 import { siteData } from "src/lib/content"
 import "src/styles/index.css"
+import Providers from "./providers"
 
 type Props = {
   children: React.ReactNode
@@ -11,7 +12,9 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <PlausibleProvider domain="rosszurowski.com" />
-      <body>{children}</body>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }
