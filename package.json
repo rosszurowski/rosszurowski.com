@@ -20,7 +20,6 @@
     "@typescript-eslint/parser": "^5.48.0",
     "autoprefixer": "^10.4.13",
     "contentlayer": "^0.3.3",
-    "date-fns": "^2.29.3",
     "eslint": "8.31.0",
     "eslint-config-next": "^13.2.0",
     "eslint-config-prettier": "^8.6.0",

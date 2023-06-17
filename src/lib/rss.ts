@@ -1,5 +1,4 @@
 import { allBlogPosts } from "contentlayer/generated"
-import { parseISO } from "date-fns"
 import { Feed } from "feed"
 import { mdxToHtml } from "src/lib/mdx"
 import { siteData } from "./content"
@@ -38,7 +37,7 @@ function generateFeed<T>(options: FeedOptions<T>) {
   const { dateField, urlField, titleField, contentField } = options
   const year = new Date().getFullYear()
 
-  const toTime = (doc: T) => parseISO(dateField(doc)).getTime()
+  const toTime = (doc: T) => new Date(dateField(doc)).getTime()
   const items = options.items.slice().sort((a, b) => toTime(b) - toTime(a))
 
   const feed = new Feed({
@@ -53,7 +52,7 @@ function generateFeed<T>(options: FeedOptions<T>) {
 
   items.forEach((doc) => {
     const url = urlField(doc)
-    const date = parseISO(dateField(doc))
+    const date = new Date(dateField(doc))
     const title = titleField(doc)
     const content = contentField(doc)
 
