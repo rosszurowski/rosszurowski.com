@@ -2,12 +2,12 @@ import { allBlogPosts } from "contentlayer/generated"
 import { Metadata } from "next"
 import Link from "next/link"
 import { notFound, redirect } from "next/navigation"
+import { Balancer } from "react-wrap-balancer"
 import Icon from "src/components/icon"
 import Markdown from "src/components/markdown"
 import StandardLayout from "src/components/standard-layout"
 import copyStaticAssets from "src/lib/assets"
 import { generateSocialImageURL, siteData } from "src/lib/content"
-import { widont } from "src/lib/html"
 
 type PageProps = {
   params: { slug: string[] }
@@ -28,12 +28,9 @@ export default async function BlogPage({ params }: PageProps) {
       <article className="lg:flex">
         <header className="mb-10 mr-0 flex max-w-[13rem] flex-1 flex-col justify-between lg:mb-0 lg:mr-24">
           <div>
-            <h1
-              className="mb-1 leading-normal text-purple"
-              dangerouslySetInnerHTML={{
-                __html: widont(post.title),
-              }}
-            />
+            <h1 className="mb-1 leading-normal text-purple">
+              <Balancer>{post.title}</Balancer>
+            </h1>
             <time className="opacity-50" dateTime={post.date}>
               {post.formattedDate}
             </time>
