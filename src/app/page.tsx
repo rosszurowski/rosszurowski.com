@@ -1,5 +1,4 @@
 import { allBlogPosts } from "contentlayer/generated"
-import { format } from "date-fns"
 import dynamic from "next/dynamic"
 import Link from "next/link"
 import { Fragment, Suspense } from "react"
@@ -7,6 +6,7 @@ import ErrorBoundary from "src/components/error-boundary"
 import Icon from "src/components/icon"
 import Squiggle from "src/components/squiggle"
 import { siteData } from "src/lib/content"
+import { formatDateFull } from "src/lib/format"
 
 const LazyVisual = dynamic(() => import("src/components/heat-distortion"))
 
@@ -23,7 +23,7 @@ const roles = [
 ]
 
 export default async function HomePage() {
-  const buildDate = format(new Date(), "MMM d, yyyy")
+  const buildDate = formatDateFull(new Date())
 
   return (
     <div className="page-home relative z-10 flex items-stretch overflow-x-hidden">

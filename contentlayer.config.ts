@@ -1,17 +1,19 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files"
-import { parseISO, format } from "date-fns"
 import excerpt from "excerpt-html"
-import smartypants from "remark-smartypants"
-import gfm from "remark-gfm"
-import externalLinks from "rehype-external-links"
-import rehypeSlugHeadings from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import externalLinks from "rehype-external-links"
 import rehypePrettyCode, {
   Options as PrettyCodeOptions,
 } from "rehype-pretty-code"
+import rehypeSlugHeadings from "rehype-slug"
+import gfm from "remark-gfm"
+import smartypants from "remark-smartypants"
 
-const formatDate = (date: string, formatString: string): string =>
-  format(parseISO(date), formatString)
+function formatYear(date: string) {
+  return Intl.DateTimeFormat("en-US", { year: "numeric" }).format(
+    new Date(date)
+  )
+}
 
 export const BlogPost = defineDocumentType(() => ({
   name: "BlogPost",
@@ -45,11 +47,11 @@ export const BlogPost = defineDocumentType(() => ({
   computedFields: {
     url: {
       type: "string",
-      resolve: (post) => `/log/${formatDate(post.date, "yyyy")}/${post.slug}`,
+      resolve: (post) => `/log/${formatYear(post.date)}/${post.slug}`,
     },
     year: {
       type: "string",
-      resolve: (post) => formatDate(post.date, "yyyy"),
+      resolve: (post) => formatYear(post.date),
     },
     excerpt: {
       type: "string",
@@ -59,10 +61,6 @@ export const BlogPost = defineDocumentType(() => ({
               pruneLength: 200,
             })
           : post.summary,
-    },
-    formattedDate: {
-      type: "string",
-      resolve: (post) => formatDate(post.date, "MMM d, yyyy"),
     },
   },
 }))

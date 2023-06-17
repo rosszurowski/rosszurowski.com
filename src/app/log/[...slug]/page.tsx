@@ -8,6 +8,7 @@ import Markdown from "src/components/markdown"
 import StandardLayout from "src/components/standard-layout"
 import copyStaticAssets from "src/lib/assets"
 import { generateSocialImageURL, siteData } from "src/lib/content"
+import { formatDateFull } from "src/lib/format"
 
 type PageProps = {
   params: { slug: string[] }
@@ -32,7 +33,7 @@ export default async function BlogPage({ params }: PageProps) {
               <Balancer>{post.title}</Balancer>
             </h1>
             <time className="opacity-50" dateTime={post.date}>
-              {post.formattedDate}
+              {formatDateFull(post.date)}
             </time>
           </div>
           <div className="hidden lg:block">
