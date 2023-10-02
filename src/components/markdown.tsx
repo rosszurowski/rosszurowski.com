@@ -52,7 +52,7 @@ function Image(props: ImageProps) {
 
 function Note({ children }: { children?: ReactNode }) {
   return (
-    <div className="note rounded-lg bg-stone-50 px-2 py-2 text-sm md:py-4 md:px-4">
+    <div className="note rounded-lg bg-stone-50 px-2 py-2 text-sm md:px-4 md:py-4">
       {children}
     </div>
   )

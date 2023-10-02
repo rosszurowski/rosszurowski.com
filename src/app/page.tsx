@@ -108,7 +108,7 @@ export default async function HomePage() {
         </section>
       </div>
       <Suspense>
-        <div className="pointer-events-none absolute top-0 right-0 bottom-0 h-full w-2/3 select-none">
+        <div className="pointer-events-none absolute bottom-0 right-0 top-0 h-full w-2/3 select-none">
           <ErrorBoundary fallback={null}>
             <LazyVisual />
           </ErrorBoundary>
