@@ -1,5 +1,9 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files"
 import excerpt from "excerpt-html"
+import { bundleMDX } from "mdx-bundler"
+import { getMDXComponent } from "next-contentlayer/hooks"
+import { createElement, ReactElement } from "react"
+import { renderToStaticMarkup } from "react-dom/server"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import externalLinks from "rehype-external-links"
 import rehypePrettyCode, {
@@ -13,6 +17,38 @@ function formatYear(date: string) {
   return Intl.DateTimeFormat("en-US", { year: "numeric" }).format(
     new Date(date)
   )
+}
+
+/**
+ * mdxToHtml converts MDX code to HTML by server-rendering the React code. It
+ * must provide replacements for any custom components used in the Markdown
+ * component.
+ */
+async function mdxToHtml(mdxSource: string) {
+  const { code } = await bundleMDX({ source: mdxSource })
+  const MDXLayout = getMDXComponent(code)
+  const element = MDXLayout({
+    components: {
+      Image: (props) =>
+        createElement("figure", {}, [
+          createElement("img", {
+            src: props.src,
+            alt: props.alt,
+            width: props.width,
+            height: props.height,
+          }),
+          props.caption &&
+            createElement(
+              "figcaption",
+              {},
+              createElement("p", {}, props.caption)
+            ),
+        ]),
+      Note: (props) =>
+        createElement("div", { className: "note" }, props.children),
+    },
+  })!
+  return renderToStaticMarkup(element as ReactElement)
 }
 
 export const BlogPost = defineDocumentType(() => ({
@@ -52,6 +88,10 @@ export const BlogPost = defineDocumentType(() => ({
     year: {
       type: "string",
       resolve: (post) => formatYear(post.date),
+    },
+    html: {
+      type: "string",
+      resolve: (doc) => mdxToHtml(doc.body.raw),
     },
     excerpt: {
       type: "string",
