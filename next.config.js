@@ -9,10 +9,6 @@ const config = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
-  experimental: {
-    appDir: true,
-    legacyBrowsers: false,
-  },
   async redirects() {
     return [
       {
