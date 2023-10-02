@@ -1,13 +1,12 @@
 import { allBlogPosts } from "contentlayer/generated"
 import { Feed } from "feed"
-import { mdxToHtml } from "src/lib/mdx"
 import { siteData } from "./content"
 
 /**
  * generateBlogFeed returns a feed object for generating an RSS feed
  * of blog posts.
  */
-export function generateBlogFeed() {
+export async function generateBlogFeed() {
   return generateFeed({
     description: "Recent blog posts by Ross Zurowski",
     items: allBlogPosts,
@@ -17,7 +16,7 @@ export function generateBlogFeed() {
       const url = new URL(doc.url, siteData.url)
       return url.toString()
     },
-    contentField: (doc) => mdxToHtml(doc.body.code),
+    contentField: (doc) => doc.html,
   })
 }
 
@@ -33,7 +32,7 @@ type FeedOptions<T> = {
   filterFn?: (doc: T) => boolean
 }
 
-function generateFeed<T>(options: FeedOptions<T>) {
+async function generateFeed<T>(options: FeedOptions<T>) {
   const { dateField, urlField, titleField, contentField } = options
   const year = new Date().getFullYear()
 
@@ -50,7 +49,7 @@ function generateFeed<T>(options: FeedOptions<T>) {
     updated: new Date(),
   })
 
-  items.forEach((doc) => {
+  for (const doc of items) {
     const url = urlField(doc)
     const date = new Date(dateField(doc))
     const title = titleField(doc)
@@ -63,7 +62,7 @@ function generateFeed<T>(options: FeedOptions<T>) {
       title,
       content,
     })
-  })
+  }
 
   return feed
 }
