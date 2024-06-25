@@ -50,8 +50,8 @@ export default async function HomePage() {
             <p>
               Currently at{" "}
               <ExternalLink title="Tailscale" href="https://tailscale.com" />,
-              building network infrastructure for a simpler, more secure, more
-              human kind of internet.
+              building network infrastructure to make secure, private networks
+              easy.
             </p>
           </div>
           <div className="mb-6">
@@ -71,15 +71,12 @@ export default async function HomePage() {
             </ul>
           </div>
           <Section title="Recent projects">
-            Sites for{" "}
-            <ExternalLink title="Hannah Lee" href="https://hannahlee.ca" /> &{" "}
-            <ExternalLink title="Brian  Sholis" href="https://sholis.com" />,
-            collecting{" "}
-            <ExternalLink
-              title="broken idioms"
-              href="https://broken-idioms.com/"
-            />
-            .
+            <ExternalLink title="Valise" href="https://valise.works" />,{" "}
+            <ExternalLink title="html.green" href="https://html.green" />, plus
+            sites for{" "}
+            <ExternalLink title="Towards" href="https://towards.info" />,{" "}
+            <ExternalLink title="Hannah" href="https://hannahlee.ca" />, and{" "}
+            <ExternalLink title="Brian" href="https://sholis.com" />.
           </Section>
           <Section title="Recent writing">
             {allBlogPosts
@@ -93,7 +90,7 @@ export default async function HomePage() {
               ))}
           </Section>
           <Section title="Recent interests">
-            Book clubs, 日本語, 한국어, SQLite, gifts, debt, and larb.
+            Camping, 日本語, 한국어, SQLite, and smashed potatoes.
           </Section>
           <footer className="text-xs opacity-75">
             <p>
