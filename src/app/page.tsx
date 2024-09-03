@@ -14,7 +14,7 @@ const roles = [
   {
     name: "Tailscale",
     href: "https://tailscale.com",
-    period: "2019 – Present",
+    period: "2019 – 2024",
   },
   { name: "Watsi", href: "https://watsi.org", period: "2016 – 2018" },
   { name: "Format", href: "https://format.org", period: "2013 – 2016" },
@@ -48,10 +48,10 @@ export default async function HomePage() {
           <div className="mb-12">
             <p>Designer and developer from Toronto.</p>
             <p>
-              Currently at{" "}
-              <ExternalLink title="Tailscale" href="https://tailscale.com" />,
-              building network infrastructure to make secure, private networks
-              easy.
+              Currently taking a few months off to work on{" "}
+              <ExternalLink title="Valise" href="https://valise.works" />.
+              Previously working on peer-to-peer networking at{" "}
+              <ExternalLink title="Tailscale" href="https://tailscale.com" />.
             </p>
           </div>
           <div className="mb-6">
