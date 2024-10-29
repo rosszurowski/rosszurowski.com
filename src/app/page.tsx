@@ -45,12 +45,12 @@ export default async function HomePage() {
               ))}
             </ul>
           </div>
-          <div className="mb-12">
+          <div className="text-balance mb-12">
             <p>Designer and developer from Toronto.</p>
             <p>
-              Currently taking a few months off to work on{" "}
+              Currently freelancing and working on{" "}
               <ExternalLink title="Valise" href="https://valise.works" />.
-              Previously working on peer-to-peer networking at{" "}
+              Previously building peer-to-peer networking tools at{" "}
               <ExternalLink title="Tailscale" href="https://tailscale.com" />.
             </p>
           </div>

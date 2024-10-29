@@ -63,15 +63,15 @@
   .markdown h1,
   .markdown h2,
   .markdown h3 {
-    @apply relative mt-8 mb-3 text-[1.222rem] font-semibold leading-tight;
+    @apply relative mb-3 mt-8 text-[1.222rem] font-semibold leading-tight;
   }
 
   .markdown hr {
-    @apply mx-auto mt-8 mb-14 max-w-[6rem] border-0 border-b-2 border-gray-200 pt-8;
+    @apply mx-auto mb-14 mt-8 max-w-[6rem] border-0 border-b-2 border-gray-200 pt-8;
   }
 
   .markdown .anchor {
-    @apply absolute top-0 -left-8 px-3;
+    @apply absolute -left-8 top-0 px-3;
     @apply border-b-0 text-stone-400 no-underline;
     @apply opacity-0 transition-opacity;
     @apply before:font-normal before:content-["#"];
@@ -115,7 +115,7 @@
   }
 
   .markdown :not(pre) > code {
-    @apply py-[0.15em] px-[0.35em];
+    @apply px-[0.35em] py-[0.15em];
   }
 
   .markdown [data-rehype-pretty-code-title] {
@@ -166,9 +166,12 @@
 
   .markdown a.data-footnote-ref,
   .markdown a.data-footnote-backref {
-    @apply relative -left-1 border-b-0 leading-none px-1 font-mono text-inherit text-base opacity-50 hover:opacity-25 transition-colors;
+    @apply relative -left-1 border-b-0 px-1 font-mono text-base leading-none text-inherit opacity-50 transition-colors hover:opacity-25;
   }
 }
 
 @layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
