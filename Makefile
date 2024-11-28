@@ -4,7 +4,7 @@ SHELL := env PATH=$(PATH) /bin/sh
 PORT  ?= 4000
 
 dev: bun.lockb ## Run a local dev server
-	@PORT=$(PORT) next dev
+	@PORT=$(PORT) next dev --turbo
 .PHONY: dev
 
 build: bun.lockb ## Build site for production
@@ -21,9 +21,9 @@ format: bun.lockb ## Format code to a standard style
 .PHONY: format
 
 clean: ## Clear all caches
-	@rf -rf ./node_modules
-	@rm -rf ./.next
-	@rm -rf ./.contentlayer
+	@trash ./node_modules
+	@trash ./.next
+	@trash ./.content-collections
 .PHONY: clean
 
 .next: bun.lockb next.config.js $(shell fd -g '**/*.{ts,tsx,css}' .) public

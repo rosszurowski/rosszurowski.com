@@ -1,4 +1,4 @@
-import { allBlogPosts } from "contentlayer/generated"
+import { allBlogPosts } from "content-collections"
 import dynamic from "next/dynamic"
 import Link from "next/link"
 import { Fragment, Suspense } from "react"

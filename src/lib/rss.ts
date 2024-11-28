@@ -1,4 +1,4 @@
-import { allBlogPosts } from "contentlayer/generated"
+import { allBlogPosts } from "content-collections"
 import { Feed } from "feed"
 import { siteData } from "./content"
 

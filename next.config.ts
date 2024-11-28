@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { withContentlayer } = require("next-contentlayer")
-const { withPlausibleProxy } = require("next-plausible")
+import type { NextConfig } from "next"
 
-/** @type {import('next').NextConfig} */
-const config = {
+import { withContentCollections } from "@content-collections/next"
+import { withPlausibleProxy } from "next-plausible"
+
+const config: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
@@ -11,6 +11,7 @@ const config = {
   },
   async redirects() {
     return [
+      { source: "/log", destination: "/", permanent: false },
       {
         source: "/100",
         destination: "https://100-2017.rosszurowski.com",
@@ -31,6 +32,6 @@ const config = {
   },
 }
 
-module.exports = withPlausibleProxy({
+export default withPlausibleProxy({
   scriptName: "metrics",
-})(withContentlayer(config))
+})(withContentCollections(config))

@@ -1,21 +1,19 @@
-import { allBlogPosts } from "contentlayer/generated"
+import { allBlogPosts } from "content-collections"
 import { Metadata } from "next"
 import Link from "next/link"
 import { notFound, redirect } from "next/navigation"
-import { Balancer } from "react-wrap-balancer"
+import { BlogPageProps, getData } from "src/app/log/[year]/[slug]/data"
 import Icon from "src/components/icon"
 import Markdown from "src/components/markdown"
 import StandardLayout from "src/components/standard-layout"
 import copyStaticAssets from "src/lib/assets"
-import { generateSocialImageURL, siteData } from "src/lib/content"
+import { siteData } from "src/lib/content"
 import { formatDateFull } from "src/lib/format"
 
-type PageProps = {
-  params: { slug: string[] }
-}
+export const dynamic = "force-static"
 
-export default async function BlogPage({ params }: PageProps) {
-  const { post, year } = await getData(params.slug)
+export default async function BlogPage({ params }: BlogPageProps) {
+  const { post, year } = await getData(await params)
   if (!post) {
     return notFound()
   }
@@ -29,8 +27,8 @@ export default async function BlogPage({ params }: PageProps) {
       <article className="lg:flex">
         <header className="mb-10 mr-0 flex max-w-[13rem] flex-1 flex-col justify-between lg:mb-0 lg:mr-24">
           <div>
-            <h1 className="mb-1 leading-normal text-purple">
-              <Balancer>{post.title}</Balancer>
+            <h1 className="text-balance mb-1 leading-normal text-purple">
+              {post.title}
             </h1>
             <time className="opacity-50" dateTime={post.date}>
               {formatDateFull(post.date)}
@@ -41,7 +39,7 @@ export default async function BlogPage({ params }: PageProps) {
           </div>
         </header>
         <div className="markdown max-w-xl xl:max-w-2xl">
-          <Markdown code={post.body.code} />
+          <Markdown code={post.mdx} />
         </div>
         <footer className="-ml-4 max-w-xl py-12 text-center lg:hidden">
           <BackHome />
@@ -67,23 +65,17 @@ function BackHome() {
   )
 }
 
-async function getData(slugParam: string[]) {
-  const [year, maybeSlug] = slugParam
-  const slug = maybeSlug || year
-  const post = allBlogPosts.find((post) => post.slug === slug)
-  return { post, year }
-}
-
 export async function generateStaticParams() {
   return allBlogPosts.map((post) => ({
-    slug: [post.year, post.slug],
+    year: post.year,
+    slug: post.slug,
   }))
 }
 
 export async function generateMetadata({
   params,
-}: PageProps): Promise<Metadata> {
-  const { post } = await getData(params.slug)
+}: BlogPageProps): Promise<Metadata> {
+  const { post } = await getData(await params)
   if (!post) {
     return {}
   }
@@ -91,7 +83,6 @@ export async function generateMetadata({
   const title = post.title
   const description = post.excerpt
   const canonical = post.url
-  const images = generateSocialImageURL({ title: post.title })
 
   return {
     title,
@@ -101,13 +92,11 @@ export async function generateMetadata({
       description,
       siteName: siteData.title,
       type: "article",
-      images,
     },
     twitter: {
       title,
       description,
       card: "summary_large_image",
-      images,
     },
     alternates: {
       canonical,
