@@ -13,8 +13,8 @@ export const siteData = {
       href: "https://github.com/rosszurowski",
     },
     {
-      title: "Twitter",
-      href: "https://twitter.com/rosszurowski",
+      title: "Bluesky",
+      href: "https://bsky.app/profile/rosszurowski.com",
     },
     {
       title: "Are.na",
