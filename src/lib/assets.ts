@@ -1,7 +1,7 @@
-import { BlogPost } from "contentlayer/generated"
-import fs from "fs/promises"
+import { BlogPost } from "content-collections"
 import { globby } from "globby"
-import path from "path"
+import fs from "node:fs/promises"
+import path from "node:path"
 
 const contentFolder = "content"
 const assets = "*.{jpg,jpeg,png,gif,svg}"
@@ -13,7 +13,7 @@ const assets = "*.{jpg,jpeg,png,gif,svg}"
  * https://github.com/contentlayerdev/contentlayer/issues/11
  */
 export default async function copyStaticAssets(post: BlogPost) {
-  const glob = path.posix.join(contentFolder, post._raw.sourceFileDir, assets)
+  const glob = path.posix.join(contentFolder, post._meta.directory, assets)
   const files = await globby(glob)
   for (const file of files) {
     const basename = path.basename(file)
@@ -27,9 +27,9 @@ export default async function copyStaticAssets(post: BlogPost) {
 
     // Fetch the stats for both the source and destination files. If the
     // destination file is newer than the source file, we can skip copying.
-    const ostat = await fs.stat(file)
-    const nstat = await fs.stat(outputPath).catch(() => null)
-    if (nstat && ostat.mtime <= nstat.mtime) {
+    const srcStat = await fs.stat(file)
+    const dstStat = await fs.stat(outputPath).catch(() => null)
+    if (dstStat && srcStat.mtime <= dstStat.mtime) {
       continue
     }
 

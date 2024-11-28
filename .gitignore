@@ -10,7 +10,9 @@ yarn-error.log
 # Ignore build files
 .next
 .contentlayer
+.content-collections
 .vercel
+.vscode
 
 # Ignore build steps
 public/log

@@ -1,5 +1,7 @@
 import { generateBlogFeed } from "src/lib/rss"
 
+export const dynamic = "force-static"
+
 export const GET = async () => {
   const feed = await generateBlogFeed()
   return new Response(feed.rss2(), {

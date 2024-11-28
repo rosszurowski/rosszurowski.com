@@ -1,4 +1,4 @@
-import { allBlogPosts } from "contentlayer/generated"
+import { allBlogPosts } from "content-collections"
 import { MetadataRoute } from "next"
 import { siteData } from "src/lib/content"
 
