@@ -5,9 +5,9 @@
   "author": "Ross Zurowski <ross@rosszurowski.com>",
   "dependencies": {
     "clsx": "^1.2.1",
-    "next": "^15.0.3",
-    "react": "^19.0.0-rc.1",
-    "react-dom": "^19.0.0-rc.1",
+    "next": "^15.3.5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "shiki": "^1.24.0"
   },
   "devDependencies": {

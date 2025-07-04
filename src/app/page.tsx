@@ -12,6 +12,10 @@ const LazyVisual = dynamic(() => import("src/components/heat-distortion"))
 
 const roles = [
   {
+    name: "Freelance",
+    period: "2024 – Now",
+  },
+  {
     name: "Tailscale",
     href: "https://tailscale.com",
     period: "2019 – 2024",
@@ -45,7 +49,7 @@ export default async function HomePage() {
               ))}
             </ul>
           </div>
-          <div className="text-balance mb-12">
+          <div className="mb-12 text-balance">
             <p>Designer and developer from Toronto.</p>
             <p>
               Currently freelancing and working on{" "}
@@ -60,12 +64,22 @@ export default async function HomePage() {
               {roles.map((role) => (
                 <li className="relative flex" key={role.name}>
                   <span className="mr-4 inline-block w-36">{role.period}</span>
-                  <a href={role.href} target="_blank" rel="noopener noreferrer">
+                  {role.href ? (
+                    <a
+                      href={role.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="inline-block w-32">{role.name}</span>
+                      {role.href && (
+                        <span className="relative inline-block -rotate-45 select-none">
+                          <Icon name="arrow-right" width={14} height={14} />
+                        </span>
+                      )}
+                    </a>
+                  ) : (
                     <span className="inline-block w-32">{role.name}</span>
-                    <span className="relative inline-block -rotate-45 select-none">
-                      <Icon name="arrow-right" width={14} height={14} />
-                    </span>
-                  </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -90,7 +104,7 @@ export default async function HomePage() {
               ))}
           </Section>
           <Section title="Recent interests">
-            Camping, 日本語, 한국어, SQLite, and smashed potatoes.
+            日本語, 한국어, D&D, intellectual community, and smashed potatoes.
           </Section>
           <footer className="text-xs opacity-75">
             <p>
