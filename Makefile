@@ -3,19 +3,19 @@ SHELL := env PATH=$(PATH) /bin/sh
 
 PORT  ?= 4000
 
-dev: bun.lockb ## Run a local dev server
+dev: bun.lock ## Run a local dev server
 	@PORT=$(PORT) next dev --turbo
 .PHONY: dev
 
-build: bun.lockb ## Build site for production
+build: bun.lock ## Build site for production
 	@next build
 .PHONY: build
 
-lint: bun.lockb ## Lint files for code quality
+lint: bun.lock ## Lint files for code quality
 	@next lint
 .PHONY: lint
 
-format: bun.lockb ## Format code to a standard style
+format: bun.lock ## Format code to a standard style
 	@eslint --fix 'src/**/*.{js,jsx,ts,tsx}'
 	@prettier --write 'src/**/*.{js,jsx,ts,tsx}'
 .PHONY: format
@@ -26,10 +26,10 @@ clean: ## Clear all caches
 	@trash ./.content-collections
 .PHONY: clean
 
-.next: bun.lockb next.config.js $(shell fd -g '**/*.{ts,tsx,css}' .) public
+.next: bun.lock next.config.js $(shell fd -g '**/*.{ts,tsx,css}' .) public
 	@next build
 
-bun.lockb: node_modules package.json
+bun.lock: node_modules package.json
 	@bun install --frozen-lockfile
 	@touch -mr $(shell ls -Atd $? | head -1) $@
 
