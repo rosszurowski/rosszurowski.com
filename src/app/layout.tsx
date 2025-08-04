@@ -11,9 +11,10 @@ type Props = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <PlausibleProvider domain="rosszurowski.com" />
       <body>
+      <PlausibleProvider domain="rosszurowski.com">
         <Providers>{children}</Providers>
+        </PlausibleProvider>
       </body>
     </html>
   )

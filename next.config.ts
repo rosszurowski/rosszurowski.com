@@ -4,7 +4,6 @@ import { withContentCollections } from "@content-collections/next"
 import { withPlausibleProxy } from "next-plausible"
 
 const config: NextConfig = {
-  reactStrictMode: true,
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
@@ -24,13 +23,8 @@ const config: NextConfig = {
       },
     ]
   },
-  async rewrites() {
-    return [
-      { source: "/index.xml", destination: "/api/rss" },
-      { source: "/log/index.xml", destination: "/api/rss" },
-    ]
-  },
 }
+
 
 export default withPlausibleProxy({
   scriptName: "metrics",
