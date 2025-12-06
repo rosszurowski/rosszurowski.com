@@ -13,16 +13,18 @@ import rehypeSlug from "rehype-slug"
 import remarkGfm from "remark-gfm"
 import remarkSmartypants from "remark-smartypants"
 import { createCssVariablesTheme } from "shiki/core"
+import z from "zod"
 
 const blogPosts = defineCollection({
   name: "blogPosts",
   directory: "content/",
   include: "log/**/*.mdx",
-  schema: (z) => ({
+  schema: z.object({
     title: z.string(),
     slug: z.string(),
     summary: z.string().optional(),
-    date: z.string().date(),
+    date: z.iso.date(),
+    content: z.string(),
     tags: z.string().array().optional(),
   }),
   transform: async (doc, context) => {

@@ -25,7 +25,7 @@ const config: NextConfig = {
   },
 }
 
-
 export default withPlausibleProxy({
   scriptName: "metrics",
+  // @ts-expect-error
 })(withContentCollections(config))
