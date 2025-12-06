@@ -12,8 +12,12 @@ const LazyVisual = dynamic(() => import("src/components/heat-distortion"))
 
 const roles = [
   {
+    name: "Oblique",
+    period: "2025 – Now",
+  },
+  {
     name: "Freelance",
-    period: "2024 – Now",
+    period: "2024 – 2025",
   },
   {
     name: "Tailscale",
@@ -52,9 +56,9 @@ export default async function HomePage() {
           <div className="mb-12 text-balance">
             <p>Designer and developer from Toronto.</p>
             <p>
-              Currently freelancing and working on{" "}
+              Working on Oblique and{" "}
               <ExternalLink title="Valise" href="https://valise.works" />.
-              Previously building peer-to-peer networking tools at{" "}
+              Before that, I worked on peer-to-peer networking tools at{" "}
               <ExternalLink title="Tailscale" href="https://tailscale.com" />.
             </p>
           </div>
@@ -63,7 +67,7 @@ export default async function HomePage() {
             <ul>
               {roles.map((role) => (
                 <li className="relative flex" key={role.name}>
-                  <span className="mr-4 inline-block w-36">{role.period}</span>
+                  <span className="mr-4 inline-block w-36 tabular-nums">{role.period}</span>
                   {role.href ? (
                     <a
                       href={role.href}
@@ -104,7 +108,7 @@ export default async function HomePage() {
               ))}
           </Section>
           <Section title="Recent interests">
-            日本語, 한국어, D&D, intellectual community, and smashed potatoes.
+            Sync engines, D&D, the history of Toronto & the Great Lakes Region, intellectual community, and smashed potatoes.
           </Section>
           <footer className="text-xs opacity-75">
             <p>
