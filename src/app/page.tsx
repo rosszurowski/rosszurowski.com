@@ -26,8 +26,6 @@ const roles = [
   },
   { name: "Watsi", href: "https://watsi.org", period: "2016 – 2018" },
   { name: "Format", href: "https://format.com", period: "2013 – 2016" },
-  { name: "Palantir", href: "https://palantir.com", period: "2015" },
-  { name: "Facebook", href: "https://design.facebook.com", period: "2014" },
 ]
 
 export default async function HomePage() {
