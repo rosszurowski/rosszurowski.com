@@ -65,7 +65,9 @@ export default async function HomePage() {
             <ul>
               {roles.map((role) => (
                 <li className="relative flex" key={role.name}>
-                  <span className="mr-4 inline-block w-36 tabular-nums">{role.period}</span>
+                  <span className="mr-4 inline-block w-36 tabular-nums">
+                    {role.period}
+                  </span>
                   {role.href ? (
                     <a
                       href={role.href}
@@ -106,7 +108,8 @@ export default async function HomePage() {
               ))}
           </Section>
           <Section title="Recent interests">
-            Sync engines, D&D, the history of Toronto & the Great Lakes Region, intellectual community, and smashed potatoes.
+            Sync engines, D&D, the history of Toronto & the Great Lakes Region,
+            intellectual community, and smashed potatoes.
           </Section>
           <footer className="text-xs opacity-75">
             <p>
@@ -143,7 +146,7 @@ function Section(props: { title: string; children: React.ReactNode }) {
 
 function ExternalLink(props: { title: string; href: string }) {
   return (
-    <a href={props.href} target="_blank" rel="noopener noreferrer">
+    <a href={props.href} target="_blank">
       {props.title}
     </a>
   )
