@@ -77,7 +77,7 @@ type Scene = {
 
 const initScene = (
   gl: WebGLRenderingContext,
-  textureSource: WebGLTexture2DSource
+  textureSource: WebGLTexture2DSource,
 ): Scene => {
   const width = gl.canvas.width
   const height = gl.canvas.height
@@ -112,7 +112,7 @@ const initScene = (
     new Float32Array([
       0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0,
     ]),
-    gl.STATIC_DRAW
+    gl.STATIC_DRAW,
   )
 
   createTexture(gl, textureSource)
@@ -198,7 +198,7 @@ export default class HeatDistortionProgram {
     this.resizeCanvas = fit(
       canvas,
       canvas.parentElement,
-      window.devicePixelRatio
+      window.devicePixelRatio,
     )
     this.resizeProgram = debounce(this.resize.bind(this), 50)
     window.addEventListener("resize", this.resizeCanvas, false)

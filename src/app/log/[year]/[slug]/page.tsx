@@ -27,7 +27,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
       <article className="lg:flex">
         <header className="mb-10 mr-0 flex max-w-[13rem] flex-1 flex-col justify-between lg:mb-0 lg:mr-24">
           <div>
-            <h1 className="text-balance mb-1 leading-normal text-purple">
+            <h1 className="mb-1 text-balance leading-normal text-purple">
               {post.title}
             </h1>
             <time className="opacity-50" dateTime={post.date}>

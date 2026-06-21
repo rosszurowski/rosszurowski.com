@@ -1,7 +1,7 @@
 type ImageGetter = (
   svg: string,
   width: number,
-  height: number
+  height: number,
 ) => Promise<HTMLImageElement>
 
 const getImage: ImageGetter = (() => {
@@ -12,7 +12,7 @@ const getImage: ImageGetter = (() => {
   return (
     svg: string,
     width: number,
-    height: number
+    height: number,
   ): Promise<HTMLImageElement> =>
     new Promise((resolve, reject) => {
       const normalizedWidth = width / window.devicePixelRatio

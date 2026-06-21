@@ -12,12 +12,12 @@ build: bun.lock ## Build site for production
 .PHONY: build
 
 lint: bun.lock ## Lint files for code quality
-	@next lint
+	@oxlint
 .PHONY: lint
 
 format: bun.lock ## Format code to a standard style
-	@eslint --fix 'src/**/*.{js,jsx,ts,tsx}'
-	@prettier --write 'src/**/*.{js,jsx,ts,tsx}'
+	@oxlint --fix
+	@oxfmt
 .PHONY: format
 
 clean: ## Clear all caches

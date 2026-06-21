@@ -12,8 +12,8 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body>
-      <PlausibleProvider domain="rosszurowski.com">
-        <Providers>{children}</Providers>
+        <PlausibleProvider domain="rosszurowski.com">
+          <Providers>{children}</Providers>
         </PlausibleProvider>
       </body>
     </html>

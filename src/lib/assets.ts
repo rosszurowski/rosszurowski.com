@@ -1,7 +1,7 @@
-import { BlogPost } from "content-collections"
-import { globby } from "globby"
 import fs from "node:fs/promises"
 import path from "node:path"
+import { BlogPost } from "content-collections"
+import { globby } from "globby"
 
 const contentFolder = "content"
 const assets = "*.{jpg,jpeg,png,gif,svg}"
@@ -22,7 +22,7 @@ export default async function copyStaticAssets(post: BlogPost) {
       "log",
       post.year,
       post.slug,
-      basename
+      basename,
     )
 
     // Fetch the stats for both the source and destination files. If the
