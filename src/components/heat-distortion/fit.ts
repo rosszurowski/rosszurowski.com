@@ -1,7 +1,7 @@
 export default function fit(
   canvas: HTMLCanvasElement,
   parent?: HTMLElement,
-  scale?: number
+  scale?: number,
 ) {
   const isSVG = canvas.nodeName.toUpperCase() === "SVG"
 

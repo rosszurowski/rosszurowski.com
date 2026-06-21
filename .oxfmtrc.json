@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 80,
+  "semi": false,
+  "tabWidth": 2,
+  "sortImports": {
+    "newlinesBetween": false
+  },
+  "sortTailwindcss": true,
+  "ignorePatterns": ["next-env.d.ts", "content/**"]
+}

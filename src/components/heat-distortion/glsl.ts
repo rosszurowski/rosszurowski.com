@@ -15,7 +15,7 @@ export function getContext(canvas: HTMLCanvasElement): WebGLRenderingContext {
 export function createShader(
   gl: WebGLRenderingContext,
   source: string,
-  type: number
+  type: number,
 ): WebGLShader {
   const shader = gl.createShader(type)
   if (shader === null) {
@@ -36,7 +36,7 @@ export function createShader(
 export function createProgram(
   gl: WebGLRenderingContext,
   fragmentShader: WebGLShader,
-  vertexShader: WebGLShader
+  vertexShader: WebGLShader,
 ): WebGLProgram {
   const program = gl.createProgram()
   if (program === null) {
@@ -60,7 +60,7 @@ export function createProgram(
 export function createTexture(
   gl: WebGLRenderingContext,
   source: WebGLTexture2DSource,
-  textureWrap?: number
+  textureWrap?: number,
 ): WebGLTexture {
   const wrap =
     textureWrap === undefined || textureWrap === null
@@ -84,7 +84,7 @@ export function createTexture(
 
 export function updateTexture(
   gl: WebGLRenderingContext,
-  source: WebGLTexture2DSource
+  source: WebGLTexture2DSource,
 ) {
   gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, source)
 }
@@ -106,7 +106,7 @@ export function setRectangle(
   x: number,
   y: number,
   width: number,
-  height: number
+  height: number,
 ) {
   const x1 = x
   const x2 = x + width
@@ -116,6 +116,6 @@ export function setRectangle(
   gl.bufferData(
     gl.ARRAY_BUFFER,
     new Float32Array([x1, y1, x2, y1, x1, y2, x1, y2, x2, y1, x2, y2]),
-    gl.STATIC_DRAW
+    gl.STATIC_DRAW,
   )
 }

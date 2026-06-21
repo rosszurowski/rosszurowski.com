@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "react", "nextjs", "import", "jsx-a11y"],
+  "categories": {
+    "correctness": "error"
+  },
+  "rules": {
+    "eslint/no-unused-vars": "error",
+    "typescript/no-explicit-any": "off",
+    "typescript/ban-ts-comment": "off"
+  },
+  "ignorePatterns": [".next", ".content-collections", "node_modules"]
+}

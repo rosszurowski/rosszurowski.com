@@ -31,6 +31,6 @@ export function canonicalUrl(domain: string, path: string) {
   const u = new URL(path, domain)
   u.protocol = "https"
   u.hash = ""
-  u.pathname = u.pathname
+  u.search = ""
   return u.toString().replace(/\/$/, "")
 }

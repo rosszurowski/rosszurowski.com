@@ -74,7 +74,7 @@ export default defineConfig({
 
 function formatYear(date: string) {
   return Intl.DateTimeFormat("en-US", { year: "numeric" }).format(
-    new Date(date)
+    new Date(date),
   )
 }
 
@@ -127,14 +127,14 @@ async function mdxToHtml(mdxSource: string) {
               createElement(
                 "figcaption",
                 {},
-                createElement("p", {}, props.caption)
+                createElement("p", {}, props.caption),
               ),
           ]),
         Note: (props) =>
           createElement("div", { className: "note" }, props.children),
       },
     },
-    null
+    null,
   )
   return renderToStaticMarkup(element)
 }

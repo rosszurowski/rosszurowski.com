@@ -1,6 +1,5 @@
-import type { NextConfig } from "next"
-
 import { withContentCollections } from "@content-collections/next"
+import type { NextConfig } from "next"
 import { withPlausibleProxy } from "next-plausible"
 
 const config: NextConfig = {
